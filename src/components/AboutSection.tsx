@@ -2,7 +2,7 @@ export default function AboutSection() {
   return (
     <div className="bg-[#fdfcfb] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-12 lg:pb-16">
-        <div className="text-center text-neutral-800 text-2xl tracking-[0.5em] py-12">
+        <div className="text-center text-neutral-800 text-2xl tracking-[0.5em] pt-20 pb-8">
           * * *
         </div>
         <div className="space-y-4 max-w-4xl mt-0 pt-0">
