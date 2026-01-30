@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Paper Grain Texture - moved to fixed overlay div */
+
+/* --- Suisse Int'l Setup --- */
+
+/* 1. Body Text (Mapeamos Book al peso 400) */
+@font-face {
+  font-family: 'Suisse';
+  src: url('/fonts/suisseintl-book.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 2. Body Italic (Mapeamos Book Italic al peso 400 Italic) */
+@font-face {
+  font-family: 'Suisse';
+  src: url('/fonts/suisseintl-bookit.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* 3. Headings (Bold real) */
+@font-face {
+  font-family: 'Suisse';
+  src: url('/fonts/suisseintl-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Lead-in Style */
+.lead-in-text {
+  font-weight: 700;
+  font-size: 1.15em;
+}
