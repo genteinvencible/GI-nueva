@@ -5,7 +5,7 @@ export default function AboutSection() {
         <div className="text-center text-neutral-800 text-2xl tracking-[0.5em] py-12">
           * * *
         </div>
-        <div className="space-y-4 max-w-4xl">
+        <div className="space-y-4 max-w-4xl mt-0 pt-0">
           {/* Lead-in: Párrafo de transición editorial */}
           <p className="text-[1.75rem] lg:text-[2rem] text-neutral-800 leading-[1.4] font-normal">
             <span className="lead-in-text">Mi nombre es Álvaro Sánchez</span> y desde hace cinco años tengo una suscripción de emails de pago.
