@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 export default function Navbar() {
-  const [activeItem, setActiveItem] = useState('Emails');
+  const [activeItem, setActiveItem] = useState('Home');
 
   const navItems = [
-    { name: 'Emails', href: '#emails' },
+    { name: 'Home', href: '#home' },
     { name: 'Drugs', href: '#drugs' },
     { name: 'About', href: '#about' },
     { name: 'Entrar', href: '#entrar' },
