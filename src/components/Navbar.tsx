@@ -17,7 +17,7 @@ export default function Navbar() {
 
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="#" className="text-xl lg:text-2xl font-bold text-neutral-900 hover:text-neutral-700 transition-colors">
+            <a href="#" className="text-xl lg:text-2xl font-bold text-neutral-900 hover:text-neutral-700 transition-colors" style={{ fontFamily: 'Suisse, sans-serif' }}>
               Gente Invencible
             </a>
           </div>

@@ -38,3 +38,8 @@
   font-weight: 700;
   font-size: 1.15em;
 }
+
+/* Apply Suisse font globally */
+body {
+  font-family: 'Suisse', sans-serif;
+}
