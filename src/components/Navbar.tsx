@@ -14,7 +14,7 @@ export default function Navbar() {
     <>
       {/* Dock flotante en la parte superior */}
       <nav className="fixed top-8 left-1/2 -translate-x-1/2 z-50">
-        <div className="bg-[#111]/85 border-[0.5px] border-white/20 rounded-full shadow-xl shadow-black/20 px-2 py-2 backdrop-blur-md">
+        <div className="bg-white border-[1px] border-neutral-200 rounded-full shadow-lg shadow-black/5 px-2 py-2 backdrop-blur-md">
           <div className="flex items-center gap-1">
             {navItems.map((item) => (
               <a
@@ -24,8 +24,8 @@ export default function Navbar() {
                 className={`
                   px-5 py-2 rounded-full text-[11px] font-medium uppercase tracking-[0.15em] transition-all duration-300 ease-out
                   ${activeItem === item.name
-                    ? 'bg-white text-black font-bold'
-                    : 'text-white hover:bg-neutral-800'
+                    ? 'bg-neutral-900 text-white font-bold'
+                    : 'text-neutral-600 hover:text-black hover:bg-neutral-50'
                   }
                 `}
                 style={{ fontFamily: 'Suisse, sans-serif' }}
