@@ -14,7 +14,7 @@ export default function Navbar() {
     <>
       {/* Dock flotante en la parte superior */}
       <nav className="fixed top-8 left-1/2 -translate-x-1/2 z-50">
-        <div className="bg-neutral-900 border-2 border-white rounded-full shadow-2xl px-2 py-2 backdrop-blur-xl">
+        <div className="bg-[#111] border-[1.5px] border-[#fdfcfb] rounded-full shadow-xl px-2 py-2 backdrop-blur-xl">
           <div className="flex items-center gap-1">
             {navItems.map((item) => (
               <a
@@ -22,9 +22,9 @@ export default function Navbar() {
                 href={item.href}
                 onClick={() => setActiveItem(item.name)}
                 className={`
-                  px-6 py-3 rounded-full text-base font-normal transition-all duration-300 ease-out
+                  px-5 py-2 rounded-full text-[11px] font-medium uppercase tracking-[0.15em] transition-all duration-300 ease-out
                   ${activeItem === item.name
-                    ? 'bg-black text-white'
+                    ? 'bg-white text-black font-bold'
                     : 'text-white hover:bg-neutral-800'
                   }
                 `}
