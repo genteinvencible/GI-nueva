@@ -2,7 +2,7 @@ import alvaroImage from '../../Assests/alvaro_meme_barra_fotoperiodico.png';
 
 export default function Hero() {
   return (
-    <div className="bg-[#fdfcfb] relative overflow-hidden pb-12 lg:pb-24">
+    <div className="bg-[#fdfcfb] relative overflow-hidden pb-12 lg:pb-24 pt-16 lg:pt-20">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-40"></div>
       <div
         className="absolute inset-0 z-50 pointer-events-none opacity-15 mix-blend-multiply"
