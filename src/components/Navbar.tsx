@@ -14,7 +14,7 @@ export default function Navbar() {
     <>
       {/* Dock flotante en la parte superior */}
       <nav className="fixed top-8 left-1/2 -translate-x-1/2 z-50">
-        <div className="bg-[#111] border-[1.5px] border-[#fdfcfb] rounded-full shadow-xl px-2 py-2 backdrop-blur-xl">
+        <div className="bg-[#111]/85 border-[0.5px] border-white/20 rounded-full shadow-xl shadow-black/20 px-2 py-2 backdrop-blur-md">
           <div className="flex items-center gap-1">
             {navItems.map((item) => (
               <a
