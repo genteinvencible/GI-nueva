@@ -35,15 +35,15 @@ export default function AboutSection() {
             {/* Botones con psicología inversa */}
             <div className="flex flex-col sm:flex-row gap-4 pt-8">
               {/* Botón "seguro" - con tag MOST POPULAR */}
-              <button className="relative flex-1 px-8 py-4 bg-neutral-800 text-white text-base font-normal hover:bg-neutral-700 transition-colors duration-200">
-                <span className="absolute -top-2 -right-2 bg-white text-neutral-800 text-[0.65rem] px-2 py-0.5 font-medium tracking-wide border border-neutral-800">
+              <button className="relative flex-1 px-8 py-5 bg-neutral-800 text-white text-base font-medium hover:bg-neutral-700 transition-all duration-200 cursor-pointer shadow-md hover:shadow-lg active:scale-[0.98]">
+                <span className="absolute -top-2 -right-2 bg-white text-neutral-800 text-[0.65rem] px-2 py-0.5 font-medium tracking-wide border border-neutral-800 shadow-sm">
                   MOST POPULAR
                 </span>
                 Demasiado pronto, todavía no nos hemos presentado
               </button>
 
               {/* Botón de email - más discreto, menos llamativo */}
-              <button className="flex-1 px-8 py-4 border border-neutral-300 text-neutral-600 text-base font-normal hover:border-neutral-400 hover:text-neutral-700 transition-colors duration-200">
+              <button className="flex-1 px-8 py-5 border-2 border-neutral-300 text-neutral-600 text-base font-normal hover:border-neutral-500 hover:bg-neutral-50 transition-all duration-200 cursor-pointer active:scale-[0.98]">
                 Ok, toma mi email
               </button>
             </div>
