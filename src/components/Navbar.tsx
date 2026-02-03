@@ -12,15 +12,8 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Logo fijo en la parte superior */}
-      <div className="fixed top-6 left-6 lg:top-8 lg:left-8 z-50">
-        <a href="#" className="text-xl lg:text-2xl font-bold text-neutral-900 hover:text-neutral-700 transition-colors" style={{ fontFamily: 'Suisse, sans-serif' }}>
-          Gente Invencible
-        </a>
-      </div>
-
-      {/* Dock flotante en la parte inferior */}
-      <nav className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50">
+      {/* Dock flotante en la parte superior */}
+      <nav className="fixed top-8 left-1/2 -translate-x-1/2 z-50">
         <div className="bg-neutral-900 border-2 border-white rounded-full shadow-2xl px-2 py-2 backdrop-blur-xl">
           <div className="flex items-center gap-1">
             {navItems.map((item) => (
