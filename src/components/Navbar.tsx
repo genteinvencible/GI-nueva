@@ -28,15 +28,14 @@ export default function Navbar() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-[0.9375rem] font-normal text-neutral-700 hover:text-neutral-900 transition-colors relative group"
+                className="text-lg font-normal text-neutral-700 hover:text-neutral-900 transition-colors"
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-neutral-900 transition-all duration-300 group-hover:w-full"></span>
               </a>
             ))}
             <a
               href="#entrar"
-              className="px-6 py-2.5 bg-neutral-900 text-white text-[0.9375rem] font-normal hover:bg-neutral-800 transition-colors"
+              className="px-6 py-2.5 bg-neutral-900 text-white text-lg font-normal hover:bg-neutral-800 transition-colors"
             >
               Entrar
             </a>
