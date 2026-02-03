@@ -36,8 +36,8 @@ export default function AboutSection() {
             <div className="flex flex-col sm:flex-row gap-4 pt-8">
               {/* Botón "seguro" - con tag MOST POPULAR */}
               <button className="relative flex-1 px-8 py-5 bg-neutral-800 text-white text-base font-medium hover:bg-neutral-700 transition-all duration-200 cursor-pointer shadow-md hover:shadow-lg active:scale-[0.98]">
-                <span className="absolute -top-1 -right-1 bg-white text-neutral-800 text-[0.55rem] px-1.5 py-0.5 font-normal tracking-wider border border-neutral-300 shadow-sm rotate-3">
-                  MOST POPULAR
+                <span className="absolute top-2 right-3 bg-neutral-700 text-neutral-400 text-[0.5rem] px-1.5 py-0.5 font-light tracking-wide border border-neutral-600 rotate-2 opacity-60">
+                  POPULAR
                 </span>
                 Demasiado pronto, todavía no nos hemos presentado
               </button>
