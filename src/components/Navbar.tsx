@@ -17,7 +17,9 @@ export default function Navbar() {
 
           {/* Logo */}
           <div className="flex-shrink-0">
-            {/* Logo placeholder */}
+            <a href="#" className="text-xl lg:text-2xl font-bold text-neutral-900 hover:text-neutral-700 transition-colors">
+              Gente Invencible
+            </a>
           </div>
 
           {/* Desktop Navigation */}
