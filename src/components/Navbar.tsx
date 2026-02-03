@@ -24,8 +24,8 @@ export default function Navbar() {
                 className={`
                   px-6 py-3 rounded-full text-base font-normal transition-all duration-300 ease-out
                   ${activeItem === item.name
-                    ? 'bg-white text-neutral-900'
-                    : 'text-neutral-300 hover:text-white hover:bg-neutral-800'
+                    ? 'bg-black text-white'
+                    : 'text-white hover:bg-neutral-800'
                   }
                 `}
                 style={{ fontFamily: 'Suisse, sans-serif' }}
