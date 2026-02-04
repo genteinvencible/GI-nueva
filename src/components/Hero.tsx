@@ -18,13 +18,12 @@ export default function Hero() {
 
           <div className="space-y-6 lg:space-y-8 animate-fade-in">
             <div className="space-y-6">
-              <h1 className="text-[2.98851rem] sm:text-[3.811875rem] lg:text-6xl xl:text-[4.5rem] 2xl:text-[5rem] font-bold text-neutral-900 leading-[0.85] tracking-[-0.05em]">
-                Escribo emails y hay gente que{' '}
-                <span className="relative">
-                  <span className="relative z-10">paga</span>
-                  <span className="absolute bottom-2 left-0 w-full h-3 bg-neutral-900/10 -rotate-1"></span>
-                </span>{' '}
-                por leerlos.
+              <h1 className="text-6xl md:text-[7rem] font-bold leading-[0.95] tracking-[-0.02em] text-black">
+                Escribo emails y <br />
+                hay gente que <br />
+                <span className="bg-black text-white px-3 py-1 italic inline-block mt-2">
+                  paga por leerlos.
+                </span>
               </h1>
 
               <p className="text-[1.0125544rem] sm:text-[1.157205rem] text-neutral-600 italic max-w-md font-normal">
