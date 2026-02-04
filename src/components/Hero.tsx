@@ -18,7 +18,7 @@ export default function Hero() {
 
           <div className="space-y-6 lg:space-y-8 animate-fade-in">
             <div className="space-y-6">
-              <h1 className="text-[2.98851rem] sm:text-[3.811875rem] lg:text-6xl xl:text-[4.5rem] 2xl:text-[5rem] font-bold text-neutral-900 leading-[1.1] tracking-tight">
+              <h1 className="text-[2.98851rem] sm:text-[3.811875rem] lg:text-6xl xl:text-[4.5rem] 2xl:text-[5rem] font-bold text-neutral-900 leading-[0.85] tracking-[-0.05em]">
                 Escribo emails y hay gente que{' '}
                 <span className="relative">
                   <span className="relative z-10">paga</span>
@@ -39,7 +39,7 @@ export default function Hero() {
             <img
               src={alvaroImage}
               alt="Álvaro Barra"
-              className="w-[85%] h-auto object-cover shadow-md hover:shadow-xl transition-all duration-500 hover:scale-[1.01]"
+              className="w-[85%] h-auto object-cover shadow-md hover:shadow-xl grayscale hover:grayscale-0 transition-all duration-500 hover:scale-[1.01]"
               style={{ filter: 'brightness(0.92) contrast(1.08)' }}
             />
             <p className="mt-4 mb-0 text-sm text-neutral-600 italic text-center lg:text-left max-w-md">
