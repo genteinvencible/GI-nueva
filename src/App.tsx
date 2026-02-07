@@ -7,10 +7,12 @@ import ThemeToggle from './components/ThemeToggle';
 function App() {
   return (
     <ThemeProvider>
-      <Navbar />
-      <ThemeToggle />
-      <Hero />
-      <AboutSection />
+      <div className="relative">
+        <ThemeToggle />
+        <Navbar />
+        <Hero />
+        <AboutSection />
+      </div>
     </ThemeProvider>
   );
 }
