@@ -32,49 +32,6 @@ export default function Hero() {
               </p>
             </div>
 
-            <div className="space-y-4 max-w-xl text-neutral-700 dark:text-white/80 text-base sm:text-[1.05rem] leading-relaxed transition-colors">
-              <p>
-                Mi nombre es Álvaro Sánchez y desde hace cinco años tengo una suscripción de emails de pago.
-              </p>
-
-              <div className="pl-4 border-l-2 border-neutral-300 dark:border-white/20 space-y-1">
-                <p>—¿Cuántos años?</p>
-                <p>—Cinco...</p>
-                <p>—Pues por el cu...</p>
-              </div>
-
-              <p className="font-medium">
-                Ese es el nivel.
-              </p>
-
-              <p>
-                Yo escribo todos los días y otras personas, que no son yo, pagan para leer.
-              </p>
-
-              <p>
-                Así que puedes llamarme escritor, o vendedor. O puedes no llamarme nada.
-              </p>
-
-              <p>
-                Si tienes curiosidad por saber qué lleva a un montón de personas, que no son tú, a pagar por recibir emails, puedes probar gratis durante 17 días.
-              </p>
-
-              <p>
-                Sí, 17.
-              </p>
-
-              <p>
-                O 12 más cinco.
-              </p>
-
-              <p>
-                Solo tienes que entregarme uno de tus bienes más preciados, tu email.
-              </p>
-
-              <p className="text-sm uppercase tracking-wide text-neutral-500 dark:text-white/50">
-                OH ME HA PEDIDO MI EMAIL!!
-              </p>
-            </div>
 
           </div>
 
