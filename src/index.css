@@ -39,7 +39,7 @@
   font-size: 1.15em;
 }
 
-/* Apply Suisse font globally */
 body {
   font-family: 'Suisse', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
