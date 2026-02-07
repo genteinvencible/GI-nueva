@@ -2,32 +2,32 @@ export default function AboutSection() {
   return (
     <div className="bg-[#fdfcfb] dark:bg-[#1a1816] relative overflow-hidden transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-12 lg:pb-16">
-        <div className="text-center text-neutral-800 dark:text-[#8a8580] text-2xl tracking-[0.5em] py-16 transition-colors">
+        <div className="text-center text-neutral-800 dark:text-white/40 text-2xl tracking-[0.5em] py-16 transition-colors">
           * * *
         </div>
         <div className="space-y-4 max-w-4xl mt-0 pt-0">
-          <p className="text-[1.75rem] lg:text-[2rem] text-neutral-800 dark:text-[#f5f4f2] leading-[1.4] font-normal transition-colors">
+          <p className="text-[1.75rem] lg:text-[2rem] text-neutral-800 dark:text-white leading-[1.4] font-normal transition-colors">
             <span className="lead-in-text">Mi nombre es Álvaro Sánchez</span> y desde hace cinco años tengo una suscripción de emails de pago.
           </p>
 
           <div className="space-y-4 pt-2">
-            <p className="text-[1.125rem] text-neutral-800 dark:text-[#b8b4af] leading-relaxed transition-colors">—¿Cuántos años?</p>
-            <p className="text-[1.125rem] text-neutral-800 dark:text-[#b8b4af] leading-relaxed transition-colors">—Cinco...</p>
-            <p className="text-[1.125rem] text-neutral-800 dark:text-[#b8b4af] leading-relaxed transition-colors">—Pues por el c...</p>
+            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors">—¿Cuántos años?</p>
+            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors">—Cinco...</p>
+            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors">—Pues por el c...</p>
 
-            <p className="text-[1.125rem] text-neutral-800 dark:text-[#b8b4af] leading-relaxed transition-colors">
+            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors">
               Ese es el nivel.
             </p>
 
-            <p className="text-[1.125rem] text-neutral-800 dark:text-[#b8b4af] leading-relaxed transition-colors">
+            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors">
               Yo escribo y otras personas, que no son yo, pagan para leer.
             </p>
 
-            <p className="text-[1.125rem] text-neutral-800 dark:text-[#b8b4af] leading-relaxed transition-colors">
+            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors">
               Así que puedes llamarme escritor, o vendedor. O puedes no llamarme nada.
             </p>
 
-            <p className="text-[1.125rem] text-neutral-800 dark:text-[#b8b4af] leading-relaxed transition-colors">
+            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors">
               Si quieres <span className="italic">(yo quiero)</span>, puedes leer gratis durante 17 días. Solo tienes que entregarme uno de tus bienes más preciados, tu email.
             </p>
 
