@@ -13,14 +13,14 @@ export default function AboutSection() {
           <div className="space-y-4 pt-2">
             <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors">—¿Cuántos años?</p>
             <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors">—Cinco...</p>
-            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors">—Pues por el c...</p>
+            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors">—Pues por el cu...</p>
 
             <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors">
               Ese es el nivel.
             </p>
 
             <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors">
-              Yo escribo y otras personas, que no son yo, pagan para leer.
+              Yo escribo todos los días y otras personas, que no son yo, pagan para leer.
             </p>
 
             <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors">
@@ -28,7 +28,23 @@ export default function AboutSection() {
             </p>
 
             <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors">
-              Si quieres <span className="italic">(yo quiero)</span>, puedes leer gratis durante 17 días. Solo tienes que entregarme uno de tus bienes más preciados, tu email.
+              Si tienes curiosidad por saber qué lleva a un montón de personas, que no son tú, a pagar por recibir emails, puedes probar gratis durante 17 días.
+            </p>
+
+            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors">
+              Sí, 17.
+            </p>
+
+            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors">
+              O 12 más cinco.
+            </p>
+
+            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors">
+              Solo tienes que entregarme uno de tus bienes más preciados, tu email.
+            </p>
+
+            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors font-bold">
+              OH ME HA PEDIDO MI EMAIL!!
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-8">
