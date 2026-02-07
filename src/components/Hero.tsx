@@ -18,7 +18,7 @@ export default function Hero() {
 
           <div className="space-y-6 lg:space-y-8 animate-fade-in">
             <div className="space-y-6">
-              <h1 className="text-[2.98851rem] sm:text-[3.811875rem] lg:text-6xl xl:text-[4.5rem] 2xl:text-[5rem] font-bold text-neutral-900 dark:text-white leading-[0.85] tracking-[-0.03em] transition-colors">
+              <h1 className="text-[2.98851rem] sm:text-[3.811875rem] lg:text-6xl xl:text-[4.5rem] 2xl:text-[5rem] font-bold text-neutral-900 dark:text-white leading-[1.1] sm:leading-[0.95] lg:leading-[0.9] tracking-[-0.03em] transition-colors">
                 Escribo emails y hay gente que{' '}
                 <span className="relative">
                   <span className="relative z-10">paga</span>
