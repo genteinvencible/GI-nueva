@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Moon, Sun } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext';
 
 export default function Navbar() {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const { isDarkMode, toggleTheme } = useTheme();
 
   useEffect(() => {
     const controlNavbar = () => {
@@ -51,14 +48,6 @@ export default function Navbar() {
       <div className="w-px h-3 bg-black/10 dark:bg-white/10 mx-1 md:mx-2" />
       <button className="text-black/60 dark:text-neutral-400 hover:text-black dark:hover:text-white px-4 md:px-5 py-2 text-[9px] md:text-[10px] font-medium tracking-[0.2em] uppercase transition-colors">
         ENTRAR
-      </button>
-      <div className="w-px h-3 bg-black/10 dark:bg-white/10 mx-1 md:mx-2" />
-      <button
-        onClick={toggleTheme}
-        className="text-black/60 dark:text-neutral-400 hover:text-black dark:hover:text-white px-3 py-2 transition-colors"
-        aria-label="Toggle theme"
-      >
-        {isDarkMode ? <Sun size={14} /> : <Moon size={14} />}
       </button>
     </nav>
   );
