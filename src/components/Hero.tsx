@@ -1,5 +1,4 @@
 import { useState, useRef } from 'react';
-import alvaroImage from '../../Assests/alvaro_meme_barra_fotoperiodico.png';
 
 interface HeroProps {
   onUnlock: () => void;
@@ -117,7 +116,7 @@ export default function Hero({ onUnlock }: HeroProps) {
 
           <div className="animate-fade-in-delayed lg:pl-8 lg:pt-4 flex flex-col items-center">
             <img
-              src={alvaroImage}
+              src="/alvaro_meme_barra_fotoperiodico.png"
               alt="Álvaro Barra"
               className="w-[85%] h-auto object-cover shadow-md hover:shadow-xl dark:shadow-black/40 dark:hover:shadow-black/60 grayscale hover:grayscale-0 dark:grayscale-0 dark:hover:grayscale transition-all duration-500 hover:scale-[1.01]"
               style={{ filter: 'brightness(0.92) contrast(1.08)' }}
