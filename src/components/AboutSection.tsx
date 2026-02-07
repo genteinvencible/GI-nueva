@@ -39,7 +39,7 @@ export default function AboutSection() {
                 Demasiado pronto, todavía no nos hemos presentado
               </button>
 
-              <button className="flex-1 px-8 py-5 border-2 border-neutral-300 dark:border-white/20 text-neutral-600 dark:text-neutral-300 text-base font-normal hover:border-neutral-500 dark:hover:border-white/30 hover:bg-neutral-50 dark:hover:bg-white/5 transition-all duration-200 cursor-pointer active:scale-[0.98]">
+              <button className="flex-1 px-8 py-5 border-2 border-neutral-300 dark:border-white/20 text-neutral-600 dark:text-white/90 text-base font-normal hover:border-neutral-500 dark:hover:border-white/30 hover:bg-neutral-50 dark:hover:bg-white/5 transition-all duration-200 cursor-pointer active:scale-[0.98]">
                 Ok, toma mi email
               </button>
             </div>
