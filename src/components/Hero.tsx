@@ -27,7 +27,7 @@ export default function Hero() {
           </div>
 
           <div className="animate-fade-in-delayed lg:pl-8 lg:pt-4 flex flex-col items-center w-full">
-            <div className="w-[65%] lg:w-[85%]">
+            <div className="w-[75%] lg:w-[95%]">
               <img
                 src={alvaroImage}
                 alt="Álvaro Barra"
