@@ -24,7 +24,10 @@ export default function AboutSection({ onRevealChapter2 }: AboutSectionProps) {
             </p>
 
             <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors">
-              Yo escribo todos los días y otras personas, que no son yo, pagan para leer.
+              {'Yo escribo todos los d\u00EDas y otras personas, que no son yo, '}
+              <strong>{'pagan para leer'}</strong>
+              {'.'}
+
             </p>
 
             <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors">
@@ -32,7 +35,10 @@ export default function AboutSection({ onRevealChapter2 }: AboutSectionProps) {
             </p>
 
             <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors">
-              Si tienes curiosidad por saber qué lleva a un montón de personas, que no son tú, a pagar por recibir emails, puedes probar gratis durante 17 días.
+              {'Si tienes curiosidad por saber qu\u00E9 lleva a un mont\u00F3n de personas, que no son t\u00FA, a pagar por recibir emails, '}
+              <strong>{'puedes probar gratis'}</strong>
+              {' durante 17 d\u00EDas.'}
+
             </p>
 
             <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors">
