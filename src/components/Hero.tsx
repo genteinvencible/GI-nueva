@@ -10,12 +10,7 @@ export default function Hero() {
           <div className="space-y-6 lg:space-y-8 animate-fade-in">
             <div className="space-y-6">
               <h1 className="text-[2.5rem] sm:text-[3.2rem] lg:text-6xl xl:text-[4.5rem] 2xl:text-[5rem] font-bold text-neutral-900 dark:text-white leading-[1.1] sm:leading-[0.95] lg:leading-[0.9] tracking-[-0.03em] transition-colors">
-                Escribo emails y hay gente que{' '}
-                <span className="relative">
-                  <span className="relative z-10">paga</span>
-                  <span className="absolute bottom-2 left-0 w-full h-3 bg-neutral-900/10 dark:bg-white/15 -rotate-1 transition-colors"></span>
-                </span>{' '}
-                por leerlos.
+                Escribo emails y hay gente que paga por leerlos.
               </h1>
 
               <p className="text-[0.95rem] sm:text-[1.05rem] text-neutral-600 dark:text-white/70 italic max-w-md font-normal transition-colors">
