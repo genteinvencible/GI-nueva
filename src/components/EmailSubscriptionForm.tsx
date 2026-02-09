@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 interface EmailSubscriptionFormProps {
   isOpen: boolean;
@@ -10,7 +10,18 @@ export default function EmailSubscriptionForm({ isOpen }: EmailSubscriptionFormP
   const [errorMsg, setErrorMsg] = useState('');
   const [accepted, setAccepted] = useState(false);
 
+  const containerRef = useRef<HTMLDivElement>(null);
+
   const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  useEffect(() => {
+    if (isOpen && containerRef.current) {
+      const timeout = setTimeout(() => {
+        containerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 300);
+      return () => clearTimeout(timeout);
+    }
+  }, [isOpen]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -46,6 +57,7 @@ export default function EmailSubscriptionForm({ isOpen }: EmailSubscriptionFormP
 
   return (
     <div
+      ref={containerRef}
       className="overflow-hidden transition-all duration-500 ease-out"
       style={{
         maxHeight: isOpen ? '400px' : '0px',
