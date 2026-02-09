@@ -156,6 +156,22 @@ const Chapter2Section = forwardRef<HTMLDivElement, Chapter2SectionProps>(
               >
                 OHHH ME HA VUELTO A PEDIR EL EMAILLL
               </p>
+
+              <div
+                className="flex flex-col sm:flex-row gap-4 pt-8 ch2-stagger"
+                style={{ animationDelay: '1.4s' }}
+              >
+                <button
+                  className="group relative px-7 py-4 bg-transparent border border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-300 text-[0.95rem] leading-snug rounded-lg hover:border-neutral-500 dark:hover:border-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-all duration-300"
+                >
+                  {'Todav\u00EDa es pronto, podr\u00EDas estar muy loco.'}
+                </button>
+                <button
+                  className="group relative px-7 py-4 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 text-[0.95rem] leading-snug rounded-lg hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all duration-300 font-bold"
+                >
+                  {'Toma mi email, te hago hueco con los otros treinta y tres.'}
+                </button>
+              </div>
             </div>
           </div>
         </div>
