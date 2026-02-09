@@ -2,7 +2,7 @@ import alvaroImage from '../../Assests/alvaro_meme_barra_fotoperiodico.png';
 
 export default function Hero() {
   return (
-    <div className="bg-[#fdfcfb] dark:bg-[#1a1816] relative overflow-hidden pb-12 lg:pb-24 pt-16 lg:pt-20 transition-colors duration-300">
+    <div className="bg-[#fdfcfb] dark:bg-[#1a1816] relative overflow-hidden pb-12 lg:pb-24 pt-6 lg:pt-20 transition-colors duration-300">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-40"></div>
       <div
         className="absolute inset-0 z-50 pointer-events-none opacity-15 mix-blend-multiply dark:mix-blend-screen dark:opacity-[0.08]"
@@ -13,7 +13,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-12 lg:pt-32">
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-4 lg:pt-32">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
           <div className="space-y-6 lg:space-y-8 animate-fade-in">
