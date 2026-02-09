@@ -9,7 +9,7 @@ export default function Hero() {
 
           <div className="space-y-6 lg:space-y-8 animate-fade-in">
             <div className="space-y-3 lg:space-y-4">
-              <h1 className="text-[2.3rem] sm:text-[3.2rem] lg:text-6xl xl:text-[4.5rem] 2xl:text-[5rem] font-bold text-neutral-900 dark:text-white leading-[1.1] sm:leading-[0.95] lg:leading-[0.9] tracking-[-0.03em] transition-colors">
+              <h1 className="text-[2.3rem] sm:text-[3.2rem] lg:text-6xl xl:text-[4.5rem] 2xl:text-[5rem] font-bold text-neutral-900 dark:text-white leading-[1.1] sm:leading-[0.95] lg:leading-[0.95] tracking-[-0.03em] transition-colors">
                 Escribo emails y hay gente que paga por leerlos.
               </h1>
 
