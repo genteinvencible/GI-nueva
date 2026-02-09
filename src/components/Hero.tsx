@@ -27,7 +27,7 @@ export default function Hero() {
                 por leerlos.
               </h1>
 
-              <p className="text-[1.0125544rem] sm:text-[1.157205rem] text-neutral-600 dark:text-white/70 italic max-w-md font-normal transition-colors">
+              <p className="text-[0.95rem] sm:text-[1.05rem] text-neutral-600 dark:text-white/70 italic max-w-md font-normal transition-colors">
                 A ver, que la gente paga por cualquier cosa, tampoco te sorprendas.
               </p>
             </div>
