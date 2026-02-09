@@ -48,14 +48,14 @@ export default function AboutSection() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-8">
+              <button className="flex-1 px-8 py-5 border border-neutral-300 dark:border-neutral-600 text-neutral-400 dark:text-neutral-500 text-sm font-normal hover:border-neutral-400 dark:hover:border-neutral-500 hover:text-neutral-500 dark:hover:text-neutral-400 transition-all duration-200 cursor-pointer active:scale-[0.98]">
+                Ok, toma mi email
+              </button>
+
               <button className="relative flex-1 px-8 py-5 bg-neutral-800 dark:bg-neutral-100 text-white dark:text-neutral-900 text-base font-medium hover:bg-neutral-700 dark:hover:bg-white transition-all duration-200 cursor-pointer shadow-md hover:shadow-lg active:scale-[0.98]">
                 <span className="absolute -top-1 -right-1 bg-white dark:bg-neutral-900 text-neutral-800 dark:text-neutral-100 text-[0.55rem] px-1.5 py-0.5 font-normal tracking-wider border border-neutral-300 dark:border-neutral-700 shadow-sm rotate-3 transition-colors">
                   MOST POPULAR
                 </span>
-                Ok, toma mi email
-              </button>
-
-              <button className="flex-1 px-8 py-5 border-2 border-neutral-300 dark:border-neutral-600 text-neutral-600 dark:text-neutral-100 text-base font-normal hover:border-neutral-500 dark:hover:border-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all duration-200 cursor-pointer active:scale-[0.98]">
                 Demasiado pronto, todavía no nos hemos presentado
               </button>
             </div>
