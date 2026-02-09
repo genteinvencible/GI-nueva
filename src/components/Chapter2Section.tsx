@@ -101,7 +101,7 @@ const Chapter2Section = forwardRef<HTMLDivElement, Chapter2SectionProps>(
               >
                 {'Pens\u00E9 que '}
                 <strong>{'a alguien m\u00E1s'}</strong>
-                {' podr\u00EDa interesarle la b\u00FAsqueda y termin\u00E9 montando un negocio alrededor.'}
+                {' podr\u00EDa interesarle y termin\u00E9 montando un negocio alrededor.'}
               </p>
 
               <p
