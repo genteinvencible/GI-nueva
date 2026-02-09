@@ -47,7 +47,7 @@ export default function EmailSubscriptionForm({ isOpen }: EmailSubscriptionFormP
     <div
       className="overflow-hidden transition-all duration-500 ease-out"
       style={{
-        maxHeight: isOpen ? '280px' : '0px',
+        maxHeight: isOpen ? '340px' : '0px',
         opacity: isOpen ? 1 : 0,
       }}
     >
@@ -63,6 +63,9 @@ export default function EmailSubscriptionForm({ isOpen }: EmailSubscriptionFormP
           </div>
         ) : (
           <>
+            <p className="text-[1.125rem] text-neutral-800 dark:text-white mb-1 font-bold">
+              Me alegro. Te estaba esperando.
+            </p>
             <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-4 tracking-wide">
               Un email diario. Sin spam. Te puedes dar de baja cuando quieras.
             </p>
@@ -71,7 +74,7 @@ export default function EmailSubscriptionForm({ isOpen }: EmailSubscriptionFormP
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="tu@email.com"
+                placeholder="Mete aquí tu mejor email, el peor o el que te salga del higo."
                 className="flex-1 px-5 py-4 bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-600 rounded text-neutral-800 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-500 text-base outline-none focus:border-[#2d6a4f] dark:focus:border-[#52b788] focus:ring-1 focus:ring-[#2d6a4f]/20 dark:focus:ring-[#52b788]/20 transition-all"
               />
               <button
