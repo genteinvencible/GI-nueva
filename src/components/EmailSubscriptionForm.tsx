@@ -8,12 +8,13 @@ export default function EmailSubscriptionForm({ isOpen }: EmailSubscriptionFormP
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
+  const [accepted, setAccepted] = useState(false);
 
   const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!isValidEmail || status === 'loading') return;
+    if (!isValidEmail || !accepted || status === 'loading') return;
 
     setStatus('loading');
     setErrorMsg('');
@@ -47,7 +48,7 @@ export default function EmailSubscriptionForm({ isOpen }: EmailSubscriptionFormP
     <div
       className="overflow-hidden transition-all duration-500 ease-out"
       style={{
-        maxHeight: isOpen ? '340px' : '0px',
+        maxHeight: isOpen ? '400px' : '0px',
         opacity: isOpen ? 1 : 0,
       }}
     >
@@ -79,12 +80,23 @@ export default function EmailSubscriptionForm({ isOpen }: EmailSubscriptionFormP
               />
               <button
                 type="submit"
-                disabled={!isValidEmail || status === 'loading'}
+                disabled={!isValidEmail || !accepted || status === 'loading'}
                 className="px-8 py-4 bg-[#2d6a4f] text-white text-base font-medium rounded hover:bg-[#245a42] dark:bg-[#52b788] dark:text-neutral-900 dark:hover:bg-[#6ec99b] transition-all duration-200 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed active:scale-[0.98] shadow-sm hover:shadow-md"
               >
                 {status === 'loading' ? 'Enviando...' : 'Enviar'}
               </button>
             </form>
+            <label className="flex items-start gap-2.5 mt-3 cursor-pointer select-none group">
+              <input
+                type="checkbox"
+                checked={accepted}
+                onChange={(e) => setAccepted(e.target.checked)}
+                className="mt-0.5 h-4 w-4 rounded border-neutral-300 dark:border-neutral-600 accent-[#2d6a4f] dark:accent-[#52b788] cursor-pointer"
+              />
+              <span className="text-sm text-neutral-500 dark:text-neutral-400 leading-snug group-hover:text-neutral-700 dark:group-hover:text-neutral-300 transition-colors">
+                He leído (y estoy muy de acuerdo) con los términos legales de este tío.
+              </span>
+            </label>
           </>
         )}
         {status === 'error' && errorMsg && (
