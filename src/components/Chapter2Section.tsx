@@ -80,7 +80,7 @@ const Chapter2Section = forwardRef<HTMLDivElement, Chapter2SectionProps>(
                 className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors ch2-stagger"
                 style={{ animationDelay: '0.6s' }}
               >
-                {'Ni coche, ni carnet, ni un Patek Philippe. Imprimirles los 80 modelos, darles cero euros, y decirles:'}
+                {'Ni coche, ni carnet, ni un Patek Philippe. Darles los 80 modelos, cero euros, y decirles:'}
               </p>
 
               <blockquote
