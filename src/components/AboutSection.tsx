@@ -48,7 +48,7 @@ export default function AboutSection() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-8">
-              <button className="flex-1 px-8 py-5 border border-neutral-300 dark:border-neutral-600 text-neutral-400 dark:text-neutral-500 text-sm font-normal hover:border-neutral-400 dark:hover:border-neutral-500 hover:text-neutral-500 dark:hover:text-neutral-400 transition-all duration-200 cursor-pointer active:scale-[0.98]">
+              <button className="flex-1 px-8 py-5 border-2 border-neutral-300 dark:border-neutral-600 text-neutral-500 dark:text-neutral-400 text-base font-normal hover:border-neutral-500 dark:hover:border-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all duration-200 cursor-pointer active:scale-[0.98]">
                 Ok, toma mi email
               </button>
 
