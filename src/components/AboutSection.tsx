@@ -2,10 +2,10 @@ export default function AboutSection() {
   return (
     <div className="bg-[#fdfcfb] dark:bg-[#1a1816] relative overflow-hidden transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-12 lg:pb-16">
-        <div className="text-center text-neutral-800 dark:text-white text-4xl lg:text-5xl tracking-[0.2em] pt-4 lg:pt-8 pb-4 lg:pb-8 transition-colors">
+        <div className="text-center text-neutral-800 dark:text-white text-4xl lg:text-5xl tracking-[0.5em] pt-4 lg:pt-8 pb-4 lg:pb-8 transition-colors">
           * * *
         </div>
-        <div className="space-y-4 max-w-4xl mx-auto lg:mx-0 mt-0 pt-0">
+        <div className="space-y-4 max-w-4xl mt-0 pt-0">
           <p className="text-[1.75rem] lg:text-[2rem] text-neutral-800 dark:text-white leading-[1.15] font-normal transition-colors">
             <span className="lead-in-text">Mi nombre es Álvaro Sánchez</span> y desde hace cinco años tengo una suscripción de emails de pago.
           </p>
