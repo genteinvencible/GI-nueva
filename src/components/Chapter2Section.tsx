@@ -161,14 +161,10 @@ const Chapter2Section = forwardRef<HTMLDivElement, Chapter2SectionProps>(
                 className="flex flex-col sm:flex-row gap-4 pt-8 ch2-stagger"
                 style={{ animationDelay: '1.4s' }}
               >
-                <button
-                  className="group relative px-7 py-4 bg-transparent border border-neutral-300 dark:border-neutral-600 text-neutral-700 dark:text-neutral-300 text-[0.95rem] leading-snug rounded-lg hover:border-neutral-500 dark:hover:border-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-all duration-300"
-                >
+                <button className="flex-1 px-8 py-5 border-2 border-neutral-300 dark:border-neutral-600 text-neutral-500 dark:text-neutral-400 text-base font-normal hover:border-neutral-500 dark:hover:border-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all duration-200 cursor-pointer active:scale-[0.98]">
                   {'Todav\u00EDa es pronto, podr\u00EDas estar muy loco.'}
                 </button>
-                <button
-                  className="group relative px-7 py-4 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 text-[0.95rem] leading-snug rounded-lg hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all duration-300 font-bold"
-                >
+                <button className="relative flex-1 px-8 py-5 bg-neutral-800 dark:bg-neutral-100 text-white dark:text-neutral-900 text-base font-medium hover:bg-neutral-700 dark:hover:bg-white transition-all duration-200 cursor-pointer shadow-md hover:shadow-lg active:scale-[0.98]">
                   {'Toma mi email, te hago hueco con los otros treinta y tres.'}
                 </button>
               </div>
