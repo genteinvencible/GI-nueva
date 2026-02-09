@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-4 lg:pt-32">
         <div className="flex flex-col items-center gap-8 lg:gap-12">
 
-          <div className="space-y-3 animate-fade-in text-center max-w-3xl">
+          <div className="space-y-3 animate-fade-in max-w-3xl w-full self-start">
             <h1 className="text-[2.5rem] sm:text-[3.2rem] lg:text-6xl xl:text-[4.5rem] 2xl:text-[5rem] font-bold text-neutral-900 dark:text-white leading-[1.1] sm:leading-[0.95] lg:leading-[0.9] tracking-[-0.03em] transition-colors">
               Escribo emails y hay gente que paga por leerlos.
             </h1>
