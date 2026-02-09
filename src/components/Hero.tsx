@@ -2,7 +2,7 @@ import alvaroImage from '../../Assests/alvaro_meme_barra_fotoperiodico.png';
 
 export default function Hero() {
   return (
-    <div className="bg-[#fdfcfb] dark:bg-[#1a1816] relative overflow-hidden pb-4 lg:pb-8 pt-6 lg:pt-20 transition-colors duration-300">
+    <div className="bg-transparent relative overflow-hidden pb-4 lg:pb-8 pt-6 lg:pt-20 transition-colors duration-300">
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 lg:pt-32">
         <div className="grid lg:grid-cols-2 gap-4 lg:gap-20 items-start">
