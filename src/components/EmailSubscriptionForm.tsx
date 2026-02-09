@@ -64,11 +64,8 @@ export default function EmailSubscriptionForm({ isOpen }: EmailSubscriptionFormP
           </div>
         ) : (
           <>
-            <p className="text-[1.125rem] text-neutral-800 dark:text-white mb-1 font-bold">
+            <p className="text-[1.125rem] text-neutral-800 dark:text-white mb-4 font-bold">
               Me alegro. Te estaba esperando.
-            </p>
-            <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-4 tracking-wide">
-              Un email diario. Sin spam. Te puedes dar de baja cuando quieras.
             </p>
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
               <input
