@@ -6,44 +6,44 @@ export default function AboutSection() {
           * * *
         </div>
         <div className="space-y-4 max-w-4xl mt-0 pt-0">
-          <p className="text-[1.75rem] lg:text-[2rem] text-neutral-800 dark:text-white leading-[1.4] font-normal transition-colors">
+          <p className="text-[1.75rem] lg:text-[2rem] text-neutral-800 dark:text-white leading-[1.25] font-normal transition-colors">
             <span className="lead-in-text">Mi nombre es Álvaro Sánchez</span> y desde hace cinco años tengo una suscripción de emails de pago.
           </p>
 
           <div className="space-y-4 pt-2">
-            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors">—¿Cuántos años?</p>
-            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors">—Cinco...</p>
-            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors">—Pues por el cu...</p>
+            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-normal transition-colors">—¿Cuántos años?</p>
+            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-normal transition-colors">—Cinco...</p>
+            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-normal transition-colors">—Pues por el cu...</p>
 
-            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors">
+            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-normal transition-colors">
               Ese es el nivel.
             </p>
 
-            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors">
+            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-normal transition-colors">
               Yo escribo todos los días y otras personas, que no son yo, pagan para leer.
             </p>
 
-            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors">
+            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-normal transition-colors">
               Así que puedes llamarme escritor, o vendedor. O puedes no llamarme nada.
             </p>
 
-            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors">
+            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-normal transition-colors">
               Si tienes curiosidad por saber qué lleva a un montón de personas, que no son tú, a pagar por recibir emails, puedes probar gratis durante 17 días.
             </p>
 
-            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors">
+            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-normal transition-colors">
               Sí, 17.
             </p>
 
-            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors">
+            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-normal transition-colors">
               O 12 más cinco.
             </p>
 
-            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors">
+            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-normal transition-colors">
               Solo tienes que entregarme uno de tus bienes más preciados, tu email.
             </p>
 
-            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors font-bold">
+            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-normal transition-colors font-bold">
               OH ME HA PEDIDO MI EMAIL!!
             </p>
 
