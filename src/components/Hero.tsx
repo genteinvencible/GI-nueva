@@ -4,10 +4,10 @@ export default function Hero() {
   return (
     <div className="bg-[#fdfcfb] dark:bg-[#1a1816] relative overflow-hidden pb-4 lg:pb-8 pt-6 lg:pt-20 transition-colors duration-300">
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-4 lg:pt-32">
-        <div className="flex flex-col items-start gap-8 lg:gap-12 max-w-5xl mx-auto">
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-12 pt-4 lg:pt-32">
+        <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-16">
 
-          <div className="space-y-3 animate-fade-in w-full">
+          <div className="space-y-3 animate-fade-in w-full lg:w-fit lg:max-w-max text-left">
             <h1 className="text-[2.5rem] sm:text-[3.2rem] lg:text-6xl xl:text-[4.5rem] 2xl:text-[5rem] font-bold text-neutral-900 dark:text-white leading-[1.1] sm:leading-[0.95] lg:leading-[0.9] tracking-[-0.03em] transition-colors">
               Escribo emails y hay gente que paga por leerlos.
             </h1>
@@ -17,8 +17,8 @@ export default function Hero() {
             </p>
           </div>
 
-          <div className="animate-fade-in-delayed flex flex-col items-center w-full">
-            <div className="w-[75%] sm:w-[60%] lg:w-[55%]">
+          <div className="animate-fade-in-delayed flex flex-col items-center w-full lg:w-auto">
+            <div className="w-[75%] sm:w-[60%] lg:w-[380px] xl:w-[420px]">
               <img
                 src={alvaroImage}
                 alt="Álvaro Barra"
