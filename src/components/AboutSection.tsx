@@ -1,4 +1,8 @@
-export default function AboutSection() {
+interface AboutSectionProps {
+  onRevealChapter2: () => void;
+}
+
+export default function AboutSection({ onRevealChapter2 }: AboutSectionProps) {
   return (
     <div className="bg-transparent relative overflow-hidden transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-12 lg:pb-16">
@@ -52,7 +56,10 @@ export default function AboutSection() {
                 Ok, toma mi email
               </button>
 
-              <button className="relative flex-1 px-8 py-5 bg-neutral-800 dark:bg-neutral-100 text-white dark:text-neutral-900 text-base font-medium hover:bg-neutral-700 dark:hover:bg-white transition-all duration-200 cursor-pointer shadow-md hover:shadow-lg active:scale-[0.98]">
+              <button
+                onClick={onRevealChapter2}
+                className="relative flex-1 px-8 py-5 bg-neutral-800 dark:bg-neutral-100 text-white dark:text-neutral-900 text-base font-medium hover:bg-neutral-700 dark:hover:bg-white transition-all duration-200 cursor-pointer shadow-md hover:shadow-lg active:scale-[0.98]"
+              >
                 <span className="absolute -top-1 -right-1 bg-white dark:bg-neutral-900 text-neutral-800 dark:text-neutral-100 text-[0.55rem] px-1.5 py-0.5 font-normal tracking-wider border border-neutral-300 dark:border-neutral-700 shadow-sm rotate-3 transition-colors">
                   MOST POPULAR
                 </span>
