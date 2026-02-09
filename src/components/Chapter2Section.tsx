@@ -161,21 +161,22 @@ const Chapter2Section = forwardRef<HTMLDivElement, Chapter2SectionProps>(
               </p>
 
               <div
-                className="flex flex-col sm:flex-row gap-4 pt-8 ch2-stagger"
+                className="pt-8 space-y-4 ch2-stagger"
                 style={{ animationDelay: '1.4s' }}
               >
-                <button className="flex-1 px-8 py-5 border-2 border-neutral-300 dark:border-neutral-600 text-neutral-500 dark:text-neutral-400 text-base font-normal hover:border-neutral-500 dark:hover:border-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all duration-200 cursor-pointer active:scale-[0.98]">
+                <button className="w-full px-8 py-5 border-2 border-neutral-300 dark:border-neutral-600 text-neutral-500 dark:text-neutral-400 text-base font-normal hover:border-neutral-500 dark:hover:border-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all duration-200 cursor-pointer active:scale-[0.98]">
                   {'Todav\u00EDa es pronto, podr\u00EDas estar muy loco.'}
                 </button>
+
                 <button
                   onClick={() => setShowForm(!showForm)}
-                  className="relative flex-1 px-8 py-5 bg-neutral-800 dark:bg-neutral-100 text-white dark:text-neutral-900 text-base font-medium hover:bg-neutral-700 dark:hover:bg-white transition-all duration-200 cursor-pointer shadow-md hover:shadow-lg active:scale-[0.98]"
+                  className="relative w-full px-8 py-5 bg-neutral-800 dark:bg-neutral-100 text-white dark:text-neutral-900 text-base font-medium hover:bg-neutral-700 dark:hover:bg-white transition-all duration-200 cursor-pointer shadow-md hover:shadow-lg active:scale-[0.98]"
                 >
                   {'Toma mi email, te hago hueco con los otros treinta y tres.'}
                 </button>
-              </div>
 
-              <EmailSubscriptionForm isOpen={showForm} />
+                <EmailSubscriptionForm isOpen={showForm} />
+              </div>
             </div>
           </div>
         </div>
