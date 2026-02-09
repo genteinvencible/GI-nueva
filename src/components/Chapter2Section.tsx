@@ -41,7 +41,7 @@ const Chapter2Section = forwardRef<HTMLDivElement, Chapter2SectionProps>(
               {'Te cuento qu\u00E9 es esto.'}
             </p>
 
-            <div className="space-y-5 lg:space-y-6 mb-10 lg:mb-14">
+            <div className="space-y-5 lg:space-y-6">
               <p
                 className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors ch2-stagger"
                 style={{ animationDelay: '0.3s' }}
@@ -50,7 +50,7 @@ const Chapter2Section = forwardRef<HTMLDivElement, Chapter2SectionProps>(
               </p>
 
               <p
-                className="text-[1.125rem] text-neutral-600 dark:text-neutral-400 leading-relaxed transition-colors ch2-stagger"
+                className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors ch2-stagger"
                 style={{ animationDelay: '0.4s' }}
               >
                 {'\u00BFY qu\u00E9 es un modelo mental?'}
@@ -62,9 +62,7 @@ const Chapter2Section = forwardRef<HTMLDivElement, Chapter2SectionProps>(
               >
                 {'Pues una idea de c\u00F3mo funciona el mundo, una abstracci\u00F3n de la realidad que te permite entenderla.'}
               </p>
-            </div>
 
-            <div className="space-y-5 lg:space-y-6 mb-10 lg:mb-14">
               <p
                 className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors ch2-stagger"
                 style={{ animationDelay: '0.55s' }}
@@ -90,9 +88,7 @@ const Chapter2Section = forwardRef<HTMLDivElement, Chapter2SectionProps>(
                   {'(Y h\u00E1ganse hombres).'}
                 </p>
               </blockquote>
-            </div>
 
-            <div className="space-y-5 lg:space-y-6 mb-10 lg:mb-14">
               <p
                 className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors ch2-stagger"
                 style={{ animationDelay: '0.75s' }}
@@ -115,11 +111,9 @@ const Chapter2Section = forwardRef<HTMLDivElement, Chapter2SectionProps>(
               >
                 {'S\u00ED, diario, de lunes a domingo, de enero a diciembre. Agosto incluido.'}
               </p>
-            </div>
 
-            <div className="space-y-5 lg:space-y-6 mb-10 lg:mb-14">
               <p
-                className="text-[1.125rem] text-neutral-600 dark:text-neutral-400 leading-relaxed transition-colors ch2-stagger"
+                className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors ch2-stagger"
                 style={{ animationDelay: '0.95s' }}
               >
                 {'Pero eso es mucho, \u00BFno?'}
@@ -131,9 +125,7 @@ const Chapter2Section = forwardRef<HTMLDivElement, Chapter2SectionProps>(
               >
                 {'Es que yo acostumbro a vivir todos los d\u00EDas. Y me imagino que t\u00FA tambi\u00E9n.'}
               </p>
-            </div>
 
-            <div className="space-y-5 lg:space-y-6">
               <p
                 className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors ch2-stagger"
                 style={{ animationDelay: '1.1s' }}
