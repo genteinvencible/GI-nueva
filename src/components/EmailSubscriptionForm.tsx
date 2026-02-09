@@ -84,21 +84,26 @@ export default function EmailSubscriptionForm({ isOpen }: EmailSubscriptionFormP
               <br />
               O muy malo.
             </p>
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Mete aquí el email que quieras"
-                className="flex-1 px-5 py-4 bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-600 rounded text-neutral-800 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-500 text-base outline-none focus:border-[#2d6a4f] dark:focus:border-[#52b788] focus:ring-1 focus:ring-[#2d6a4f]/20 dark:focus:ring-[#52b788]/20 transition-all"
-              />
-              <button
-                type="submit"
-                disabled={!isValidEmail || !accepted || status === 'loading'}
-                className="px-8 py-4 bg-[#2d6a4f] text-white text-base font-medium rounded hover:bg-[#245a42] dark:bg-[#52b788] dark:text-neutral-900 dark:hover:bg-[#6ec99b] transition-all duration-200 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed active:scale-[0.98] shadow-sm hover:shadow-md"
-              >
-                {status === 'loading' ? 'Enviando...' : 'Enviar'}
-              </button>
+            <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+              <div className="flex flex-col sm:flex-row gap-3">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Mete aquí el email que quieras"
+                  className="flex-1 px-5 py-4 bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-600 rounded text-neutral-800 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-500 text-base outline-none focus:border-[#2d6a4f] dark:focus:border-[#52b788] focus:ring-1 focus:ring-[#2d6a4f]/20 dark:focus:ring-[#52b788]/20 transition-all"
+                />
+                <button
+                  type="submit"
+                  disabled={!isValidEmail || !accepted || status === 'loading'}
+                  className="px-8 py-4 bg-[#2d6a4f] text-white text-base font-medium rounded hover:bg-[#245a42] dark:bg-[#52b788] dark:text-neutral-900 dark:hover:bg-[#6ec99b] transition-all duration-200 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed active:scale-[0.98] shadow-sm hover:shadow-md"
+                >
+                  {status === 'loading' ? 'Enviando...' : 'Enviar'}
+                </button>
+              </div>
+              <p className="text-sm text-neutral-500 dark:text-neutral-400 -mt-1">
+                No prometo no mandarte spam.
+              </p>
             </form>
             <label className="flex items-start gap-2.5 mt-3 cursor-pointer select-none group">
               <input
