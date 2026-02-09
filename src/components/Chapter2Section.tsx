@@ -13,82 +13,145 @@ const Chapter2Section = forwardRef<HTMLDivElement, Chapter2SectionProps>(
         ref={ref}
         className="bg-transparent relative overflow-hidden transition-colors duration-300"
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-12 lg:pb-16">
-          <div className="text-center text-neutral-800 dark:text-white text-4xl lg:text-5xl tracking-[0.25em] pt-4 lg:pt-8 pb-4 lg:pb-8 transition-colors">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-16 lg:pb-24">
+          <div className="text-center text-neutral-800 dark:text-white text-4xl lg:text-5xl tracking-[0.25em] pt-4 lg:pt-8 pb-6 lg:pb-10 transition-colors">
             * * *
           </div>
 
-          <div className="space-y-4 max-w-4xl mt-0 pt-0 animate-chapter2-in">
-            <p className="text-[0.85rem] tracking-[0.25em] uppercase text-neutral-400 dark:text-neutral-500 font-bold transition-colors">
-              Cap&iacute;tulo 2
+          <div className="max-w-4xl mt-0 pt-0">
+            <p
+              className="text-[0.8rem] tracking-[0.3em] uppercase text-neutral-400 dark:text-neutral-500 font-bold transition-colors mb-8 lg:mb-12 ch2-stagger"
+              style={{ animationDelay: '0s' }}
+            >
+              {'Cap\u00EDtulo 2'}
             </p>
 
-            <div className="space-y-6 pt-2">
-              <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors">
-                Me parece justo, yo tampoco dar&iacute;a mi email por trig&eacute;simo cuarta vez esta semana.
+            <p
+              className="text-[1.75rem] lg:text-[2rem] text-neutral-800 dark:text-white leading-[1.15] font-normal transition-colors mb-10 lg:mb-14 ch2-stagger"
+              style={{ animationDelay: '0.1s' }}
+            >
+              <span className="lead-in-text">Me parece justo,</span>{' '}
+              {'yo tampoco dar\u00EDa mi email por trig\u00E9simo cuarta vez esta semana.'}
+            </p>
+
+            <p
+              className="text-[1.25rem] lg:text-[1.4rem] text-neutral-800 dark:text-white leading-snug transition-colors mb-10 lg:mb-14 ch2-stagger"
+              style={{ animationDelay: '0.2s' }}
+            >
+              {'Te cuento qu\u00E9 es esto.'}
+            </p>
+
+            <div className="space-y-5 lg:space-y-6 mb-10 lg:mb-14">
+              <p
+                className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors ch2-stagger"
+                style={{ animationDelay: '0.3s' }}
+              >
+                {'Una vez le\u00ED a Charlie Munger (que era un se\u00F1or muy listo) que ochenta modelos mentales son suficientes para que te vaya muy bien en la vida. Y me empe\u00F1\u00E9 en encontrarlos.'}
               </p>
 
-              <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors">
-                Te cuento qu&eacute; es esto.
+              <p
+                className="text-[1.125rem] text-neutral-600 dark:text-neutral-400 leading-relaxed transition-colors ch2-stagger"
+                style={{ animationDelay: '0.4s' }}
+              >
+                {'\u00BFY qu\u00E9 es un modelo mental?'}
               </p>
 
-              <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors">
-                Una vez le&iacute; a Charlie Munger (que era un se&ntilde;or muy listo) que ochenta modelos mentales son suficientes para que te vaya muy bien en la vida. Y me empe&ntilde;&eacute; en encontrarlos.
+              <p
+                className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors ch2-stagger"
+                style={{ animationDelay: '0.45s' }}
+              >
+                {'Pues una idea de c\u00F3mo funciona el mundo, una abstracci\u00F3n de la realidad que te permite entenderla.'}
+              </p>
+            </div>
+
+            <div className="space-y-5 lg:space-y-6 mb-10 lg:mb-14">
+              <p
+                className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors ch2-stagger"
+                style={{ animationDelay: '0.55s' }}
+              >
+                {'Lo que pens\u00E9 fue que ser\u00EDa un gran regalo para mis hijos cuando cumplieran los 18.'}
               </p>
 
-              <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors">
-                &iquest;Y qu&eacute; es un modelo mental?
+              <p
+                className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors ch2-stagger"
+                style={{ animationDelay: '0.6s' }}
+              >
+                {'Ni coche, ni carnet, ni un Patek Philippe. Imprimirles los 80 modelos, darles cero euros, y decirles:'}
               </p>
 
-              <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors">
-                Pues una idea de c&oacute;mo funciona el mundo, una abstracci&oacute;n de la realidad que te permite entenderla.
+              <blockquote
+                className="border-l-2 border-neutral-300 dark:border-neutral-600 pl-6 py-1 ch2-stagger"
+                style={{ animationDelay: '0.65s' }}
+              >
+                <p className="text-[1.125rem] text-neutral-700 dark:text-neutral-300 leading-relaxed italic transition-colors">
+                  {'Chavales, yo tampoco s\u00E9 vivir, estoy improvisando, pero hasta aqu\u00ED mis avances.'}
+                </p>
+                <p className="text-[1.125rem] text-neutral-700 dark:text-neutral-300 leading-relaxed italic transition-colors mt-3">
+                  {'(Y h\u00E1ganse hombres).'}
+                </p>
+              </blockquote>
+            </div>
+
+            <div className="space-y-5 lg:space-y-6 mb-10 lg:mb-14">
+              <p
+                className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors ch2-stagger"
+                style={{ animationDelay: '0.75s' }}
+              >
+                {'Pens\u00E9 que a alguien m\u00E1s podr\u00EDa interesarle la b\u00FAsqueda y termin\u00E9 montando un negocio alrededor.'}
               </p>
 
-              <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors">
-                Lo que pens&eacute; fue que ser&iacute;a un gran regalo para mis hijos cuando cumplieran los 18.
+              <p
+                className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors ch2-stagger"
+                style={{ animationDelay: '0.8s' }}
+              >
+                {'Ahora, en ese buscar que se convirti\u00F3 en '}
+                <span className="italic">business</span>
+                {', me dedico a leer, escuchar, sacar ideas, mezclarlas con las m\u00EDas, y contarlas en un email diario.'}
               </p>
 
-              <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors">
-                Ni coche, ni carnet, ni un Patek Philippe. Imprimirles los 80 modelos, darles cero euros, y decirles:
+              <p
+                className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors font-bold ch2-stagger"
+                style={{ animationDelay: '0.85s' }}
+              >
+                {'S\u00ED, diario, de lunes a domingo, de enero a diciembre. Agosto incluido.'}
+              </p>
+            </div>
+
+            <div className="space-y-5 lg:space-y-6 mb-10 lg:mb-14">
+              <p
+                className="text-[1.125rem] text-neutral-600 dark:text-neutral-400 leading-relaxed transition-colors ch2-stagger"
+                style={{ animationDelay: '0.95s' }}
+              >
+                {'Pero eso es mucho, \u00BFno?'}
               </p>
 
-              <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors italic">
-                Chavales, yo tampoco s&eacute; vivir, estoy improvisando, pero hasta aqu&iacute; mis avances.
+              <p
+                className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors ch2-stagger"
+                style={{ animationDelay: '1s' }}
+              >
+                {'Es que yo acostumbro a vivir todos los d\u00EDas. Y me imagino que t\u00FA tambi\u00E9n.'}
               </p>
+            </div>
 
-              <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors italic">
-                (Y h&aacute;ganse hombres).
-              </p>
-
-              <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors">
-                Pens&eacute; que a alguien m&aacute;s podr&iacute;a interesarle la b&uacute;squeda y termin&eacute; montando un negocio alrededor.
-              </p>
-
-              <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors">
-                Ahora, en ese buscar que se convirti&oacute; en <span className="italic">business</span>, me dedico a leer, escuchar, sacar ideas, mezclarlas con las m&iacute;as, y contarlas en un email diario.
-              </p>
-
-              <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors">
-                S&iacute;, diario, de lunes a domingo, de enero a diciembre. Agosto incluido.
-              </p>
-
-              <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors">
-                Pero eso es mucho, &iquest;no?
-              </p>
-
-              <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors">
-                Es que yo acostumbro a vivir todos los d&iacute;as. Y me imagino que t&uacute; tambi&eacute;n.
-              </p>
-
-              <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors">
+            <div className="space-y-5 lg:space-y-6">
+              <p
+                className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors ch2-stagger"
+                style={{ animationDelay: '1.1s' }}
+              >
                 Si quieres saber si merece la pena (o si esto es una profunda gilipollez) puedes leer gratis un tiempo.
               </p>
 
-              <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors">
+              <p
+                className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors ch2-stagger"
+                style={{ animationDelay: '1.15s' }}
+              >
                 No mucho, pero lo suficiente para saber si a mis hijos les espera un futuro muy oscuro, o todo lo contrario.
               </p>
 
-              <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors font-bold">
+              <p
+                className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors font-bold pt-6 ch2-stagger"
+                style={{ animationDelay: '1.25s' }}
+              >
                 OHHH ME HA VUELTO A PEDIR EL EMAILLL
               </p>
             </div>
@@ -96,18 +159,19 @@ const Chapter2Section = forwardRef<HTMLDivElement, Chapter2SectionProps>(
         </div>
 
         <style>{`
-          @keyframes chapter2-in {
+          @keyframes ch2FadeUp {
             from {
               opacity: 0;
-              transform: translateY(30px);
+              transform: translateY(18px);
             }
             to {
               opacity: 1;
               transform: translateY(0);
             }
           }
-          .animate-chapter2-in {
-            animation: chapter2-in 0.9s ease-out forwards;
+          .ch2-stagger {
+            opacity: 0;
+            animation: ch2FadeUp 0.7s ease-out forwards;
           }
         `}</style>
       </div>
