@@ -47,35 +47,45 @@ export default function EmailSubscriptionForm({ isOpen }: EmailSubscriptionFormP
     <div
       className="overflow-hidden transition-all duration-500 ease-out"
       style={{
-        maxHeight: isOpen ? '200px' : '0px',
+        maxHeight: isOpen ? '280px' : '0px',
         opacity: isOpen ? 1 : 0,
       }}
     >
-      <div className="pt-6">
+      <div className="mt-2 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white/60 dark:bg-white/[0.04] p-6 shadow-sm">
         {status === 'success' ? (
-          <p className="text-[1.125rem] text-neutral-800 dark:text-white transition-colors">
-            Hecho. El primero ya está en camino.
-          </p>
+          <div className="flex items-center gap-3">
+            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#2d6a4f]/10 dark:bg-[#52b788]/15 text-[#2d6a4f] dark:text-[#52b788] text-lg">
+              {'✓'}
+            </span>
+            <p className="text-[1.125rem] text-neutral-800 dark:text-white transition-colors">
+              Hecho. El primero ya está en camino.
+            </p>
+          </div>
         ) : (
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="tu@email.com"
-              className="flex-1 px-5 py-4 bg-transparent border-2 border-neutral-300 dark:border-neutral-600 text-neutral-800 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-500 text-base outline-none focus:border-neutral-500 dark:focus:border-neutral-400 transition-colors"
-            />
-            <button
-              type="submit"
-              disabled={!isValidEmail || status === 'loading'}
-              className="px-8 py-4 bg-neutral-800 dark:bg-neutral-100 text-white dark:text-neutral-900 text-base font-medium hover:bg-neutral-700 dark:hover:bg-white transition-all duration-200 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed active:scale-[0.98]"
-            >
-              {status === 'loading' ? 'Enviando...' : 'Enviar'}
-            </button>
-          </form>
+          <>
+            <p className="text-sm text-neutral-500 dark:text-neutral-400 mb-4 tracking-wide">
+              Un email diario. Sin spam. Te puedes dar de baja cuando quieras.
+            </p>
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="tu@email.com"
+                className="flex-1 px-5 py-4 bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-600 rounded text-neutral-800 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-500 text-base outline-none focus:border-[#2d6a4f] dark:focus:border-[#52b788] focus:ring-1 focus:ring-[#2d6a4f]/20 dark:focus:ring-[#52b788]/20 transition-all"
+              />
+              <button
+                type="submit"
+                disabled={!isValidEmail || status === 'loading'}
+                className="px-8 py-4 bg-[#2d6a4f] text-white text-base font-medium rounded hover:bg-[#245a42] dark:bg-[#52b788] dark:text-neutral-900 dark:hover:bg-[#6ec99b] transition-all duration-200 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed active:scale-[0.98] shadow-sm hover:shadow-md"
+              >
+                {status === 'loading' ? 'Enviando...' : 'Enviar'}
+              </button>
+            </form>
+          </>
         )}
         {status === 'error' && errorMsg && (
-          <p className="text-sm text-red-500 dark:text-red-400 mt-2">{errorMsg}</p>
+          <p className="text-sm text-red-500 dark:text-red-400 mt-3">{errorMsg}</p>
         )}
       </div>
     </div>
