@@ -13,7 +13,7 @@ export default function Hero() {
                 Escribo emails y hay gente que paga por leerlos.
               </h1>
 
-              <p className="text-[1.25rem] sm:text-[1.5rem] lg:text-[1.75rem] text-neutral-600 dark:text-white/70 font-normal transition-colors">
+              <p className="text-[1.1rem] sm:text-[1.3rem] lg:text-[1.5rem] text-neutral-600 dark:text-white/70 font-normal transition-colors">
                 A ver, que la gente paga por cualquier cosa, tampoco te sorprendas.
               </p>
             </div>
