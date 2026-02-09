@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <div className="bg-[#fdfcfb] dark:bg-[#1a1816] relative overflow-hidden pb-4 lg:pb-8 pt-6 lg:pt-20 transition-colors duration-300">
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-4 lg:pt-32">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 lg:pt-32">
         <div className="grid lg:grid-cols-2 gap-4 lg:gap-20 items-start">
 
           <div className="space-y-6 lg:space-y-8 animate-fade-in">
@@ -13,7 +13,7 @@ export default function Hero() {
                 Escribo emails y hay gente que paga por leerlos.
               </h1>
 
-              <p className="text-[1.25rem] sm:text-[1.5rem] lg:text-[1.75rem] text-neutral-600 dark:text-white/70 max-w-md font-normal transition-colors">
+              <p className="text-[1.25rem] sm:text-[1.5rem] lg:text-[1.75rem] text-neutral-600 dark:text-white/70 lg:max-w-md font-normal transition-colors">
                 A ver, que la gente paga por cualquier cosa, tampoco te sorprendas.
               </p>
             </div>
