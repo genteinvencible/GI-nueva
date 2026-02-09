@@ -1,8 +1,13 @@
+import { useState } from 'react';
+import EmailSubscriptionForm from './EmailSubscriptionForm';
+
 interface AboutSectionProps {
   onRevealChapter2: () => void;
 }
 
 export default function AboutSection({ onRevealChapter2 }: AboutSectionProps) {
+  const [showForm, setShowForm] = useState(false);
+
   return (
     <div className="bg-transparent relative overflow-hidden transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-12 lg:pb-16">
@@ -58,7 +63,10 @@ export default function AboutSection({ onRevealChapter2 }: AboutSectionProps) {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-8">
-              <button className="flex-1 px-8 py-5 border-2 border-neutral-300 dark:border-neutral-600 text-neutral-500 dark:text-neutral-400 text-base font-normal hover:border-neutral-500 dark:hover:border-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all duration-200 cursor-pointer active:scale-[0.98]">
+              <button
+                onClick={() => setShowForm(!showForm)}
+                className="flex-1 px-8 py-5 border-2 border-neutral-300 dark:border-neutral-600 text-neutral-500 dark:text-neutral-400 text-base font-normal hover:border-neutral-500 dark:hover:border-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all duration-200 cursor-pointer active:scale-[0.98]"
+              >
                 Ok, toma mi email
               </button>
 
@@ -72,6 +80,8 @@ export default function AboutSection({ onRevealChapter2 }: AboutSectionProps) {
                 Demasiado pronto, todavía no nos hemos presentado
               </button>
             </div>
+
+            <EmailSubscriptionForm isOpen={showForm} />
           </div>
         </div>
       </div>
