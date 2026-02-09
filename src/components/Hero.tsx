@@ -29,7 +29,7 @@ export default function Hero() {
                 className="w-full h-auto object-cover shadow-md hover:shadow-xl dark:shadow-black/40 dark:hover:shadow-black/60 grayscale hover:grayscale-0 dark:grayscale-0 dark:hover:grayscale transition-all duration-500 hover:scale-[1.01]"
                 style={{ filter: 'brightness(0.92) contrast(1.08)' }}
               />
-              <p className="mt-2 mb-0 text-sm text-neutral-600 dark:text-white/60 italic text-center lg:text-left transition-colors">
+              <p className="mt-2 mb-0 text-sm text-neutral-600 dark:text-white/60 italic text-center lg:text-left transition-colors -mx-4 lg:mx-0">
                 Esto podría llamarse "Desde la barra del bar", pero entonces no me pagaría nadie. Digo yo.
               </p>
             </div>
