@@ -172,7 +172,7 @@ const Chapter2Section = forwardRef<HTMLDivElement, Chapter2SectionProps>(
                   onClick={() => setShowForm(!showForm)}
                   className="relative w-full px-8 py-5 bg-neutral-800 dark:bg-neutral-100 text-white dark:text-neutral-900 text-base font-medium hover:bg-neutral-700 dark:hover:bg-white transition-all duration-200 cursor-pointer shadow-md hover:shadow-lg active:scale-[0.98]"
                 >
-                  {'Toma mi email, te hago hueco con los otros treinta y tres.'}
+                  {'Me alegro. Te estaba esperando. Otra vez.'}
                 </button>
 
                 <EmailSubscriptionForm isOpen={showForm} />
