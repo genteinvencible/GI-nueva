@@ -23,7 +23,7 @@ const Chapter2Section = forwardRef<HTMLDivElement, Chapter2SectionProps>(
               className="text-[0.8rem] tracking-[0.3em] uppercase text-neutral-400 dark:text-neutral-500 font-bold transition-colors mb-8 lg:mb-12 ch2-stagger"
               style={{ animationDelay: '0s' }}
             >
-              {'Cap\u00EDtulo 2'}
+              {'Cap\u00EDtulo 2 — tu dinero'}
             </p>
 
             <p
