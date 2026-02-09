@@ -2,16 +2,7 @@ import alvaroImage from '../../Assests/alvaro_meme_barra_fotoperiodico.png';
 
 export default function Hero() {
   return (
-    <div className="bg-[#fdfcfb] dark:bg-[#1a1816] relative overflow-hidden pb-6 lg:pb-24 pt-6 lg:pt-20 transition-colors duration-300">
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-40"></div>
-      <div
-        className="absolute inset-0 z-50 pointer-events-none opacity-15 mix-blend-multiply dark:mix-blend-screen dark:opacity-[0.08]"
-        style={{
-          backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")",
-          backgroundRepeat: 'repeat',
-          backgroundSize: '200px 200px'
-        }}
-      />
+    <div className="bg-[#fdfcfb] dark:bg-[#1a1816] relative overflow-hidden pb-4 lg:pb-8 pt-6 lg:pt-20 transition-colors duration-300">
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-4 lg:pt-32">
         <div className="grid lg:grid-cols-2 gap-4 lg:gap-20 items-start">
