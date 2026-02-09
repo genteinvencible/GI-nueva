@@ -26,16 +26,18 @@ export default function Hero() {
 
           </div>
 
-          <div className="animate-fade-in-delayed lg:pl-8 lg:pt-4 flex flex-col items-center">
-            <img
-              src={alvaroImage}
-              alt="Álvaro Barra"
-              className="w-[65%] lg:w-[85%] h-auto object-cover shadow-md hover:shadow-xl dark:shadow-black/40 dark:hover:shadow-black/60 grayscale hover:grayscale-0 dark:grayscale-0 dark:hover:grayscale transition-all duration-500 hover:scale-[1.01]"
-              style={{ filter: 'brightness(0.92) contrast(1.08)' }}
-            />
-            <p className="mt-2 mb-0 text-sm text-neutral-600 dark:text-white/60 italic text-center lg:text-left max-w-md transition-colors">
-              Esto podría llamarse "Desde la barra del bar", pero entonces no me pagaría nadie. Digo yo.
-            </p>
+          <div className="animate-fade-in-delayed lg:pl-8 lg:pt-4 flex flex-col items-center w-full">
+            <div className="w-[65%] lg:w-[85%]">
+              <img
+                src={alvaroImage}
+                alt="Álvaro Barra"
+                className="w-full h-auto object-cover shadow-md hover:shadow-xl dark:shadow-black/40 dark:hover:shadow-black/60 grayscale hover:grayscale-0 dark:grayscale-0 dark:hover:grayscale transition-all duration-500 hover:scale-[1.01]"
+                style={{ filter: 'brightness(0.92) contrast(1.08)' }}
+              />
+              <p className="mt-2 mb-0 text-sm text-neutral-600 dark:text-white/60 italic text-center lg:text-left transition-colors">
+                Esto podría llamarse "Desde la barra del bar", pero entonces no me pagaría nadie. Digo yo.
+              </p>
+            </div>
           </div>
 
         </div>
