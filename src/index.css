@@ -63,3 +63,23 @@ body::before {
   pointer-events: none;
   z-index: 9999;
 }
+
+/* Scrollbar shadow - desktop only */
+@media (min-width: 768px) {
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 100%;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.04), transparent);
+    pointer-events: none;
+    z-index: 9998;
+  }
+
+  .dark body::after,
+  html.dark body::after {
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.2), transparent);
+  }
+}
