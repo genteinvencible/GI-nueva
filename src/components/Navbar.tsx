@@ -41,16 +41,16 @@ export default function Navbar() {
         HOME
       </button>
       <button className="text-black/60 dark:text-neutral-400 hover:text-black dark:hover:text-white px-4 md:px-5 py-2 text-[9px] md:text-[10px] font-medium tracking-[0.2em] uppercase transition-colors">
-        DRUGS
+        ABOUT
       </button>
       <button className="text-black/60 dark:text-neutral-400 hover:text-black dark:hover:text-white px-4 md:px-5 py-2 text-[9px] md:text-[10px] font-medium tracking-[0.2em] uppercase transition-colors">
-        ABOUT
+        FAQS
+      </button>
+      <button className="text-black/60 dark:text-neutral-400 hover:text-black dark:hover:text-white px-4 md:px-5 py-2 text-[9px] md:text-[10px] font-medium tracking-[0.2em] uppercase transition-colors">
+        CHAT
       </button>
       <div className="w-px h-3 bg-black/10 dark:bg-white/10 mx-1 md:mx-2" />
       <ThemeToggle />
-      <button className="text-black/60 dark:text-neutral-400 hover:text-black dark:hover:text-white px-4 md:px-5 py-2 text-[9px] md:text-[10px] font-medium tracking-[0.2em] uppercase transition-colors">
-        ENTRAR
-      </button>
     </nav>
   );
 }
