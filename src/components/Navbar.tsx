@@ -51,6 +51,11 @@ export default function Navbar() {
         ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-20 opacity-0'}
       `}
     >
+      {/* Fondo con backdrop blur cuando hay scroll */}
+      {hasScrolled && (
+        <div className="absolute inset-0 -inset-x-8 -inset-y-4 bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md rounded-2xl -z-10" />
+      )}
+
       {/* Lámpara con luz intensa */}
       <div className="relative w-[350px] md:w-[450px] mb-5">
         {/* Línea de luz estilizada y tenue */}
