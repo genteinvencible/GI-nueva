@@ -42,9 +42,9 @@ export default function Navbar() {
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-400 dark:via-amber-300 to-transparent" />
         </div>
 
-        {/* Luz proyectada SOLO hacia abajo */}
-        <div className="absolute top-1 left-1/2 -translate-x-1/2 w-[400px] h-32 bg-gradient-to-b from-amber-300/40 dark:from-amber-200/50 via-amber-200/20 dark:via-amber-100/30 to-transparent blur-2xl pointer-events-none" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[320px] h-24 bg-gradient-to-b from-amber-200/30 dark:from-amber-100/40 to-transparent blur-xl pointer-events-none" />
+        {/* Luz proyectada SOLO hacia abajo - muy tenue */}
+        <div className="absolute top-1 left-1/2 -translate-x-1/2 w-[400px] h-32 bg-gradient-to-b from-amber-300/15 dark:from-amber-200/20 via-amber-200/8 dark:via-amber-100/12 to-transparent blur-2xl pointer-events-none" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[320px] h-24 bg-gradient-to-b from-amber-200/12 dark:from-amber-100/15 to-transparent blur-xl pointer-events-none" />
       </div>
 
       {/* Menú de navegación */}
