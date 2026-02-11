@@ -69,13 +69,13 @@ export default function Navbar() {
         <button className="text-black dark:text-white px-4 md:px-5 py-2.5 text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase transition-colors">
           HOME
         </button>
-        <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-4 md:px-5 py-2.5 text-[9px] md:text-[10px] font-medium tracking-[0.2em] uppercase transition-colors">
+        <button className="hidden md:block text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-4 md:px-5 py-2.5 text-[9px] md:text-[10px] font-medium tracking-[0.2em] uppercase transition-colors">
           ABOUT
         </button>
-        <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-4 md:px-5 py-2.5 text-[9px] md:text-[10px] font-medium tracking-[0.2em] uppercase transition-colors">
+        <button className="hidden md:block text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-4 md:px-5 py-2.5 text-[9px] md:text-[10px] font-medium tracking-[0.2em] uppercase transition-colors">
           FAQS
         </button>
-        <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-4 md:px-5 py-2.5 text-[9px] md:text-[10px] font-medium tracking-[0.2em] uppercase transition-colors">
+        <button className="hidden md:block text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-4 md:px-5 py-2.5 text-[9px] md:text-[10px] font-medium tracking-[0.2em] uppercase transition-colors">
           CHAT
         </button>
         <div className="w-px h-4 bg-black/10 dark:bg-white/10 mx-1 md:mx-2" />
