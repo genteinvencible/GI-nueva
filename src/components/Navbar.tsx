@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ThemeToggle from './ThemeToggle';
 
 export default function Navbar() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [hasScrolled, setHasScrolled] = useState(false);
 
@@ -11,17 +11,17 @@ export default function Navbar() {
       const currentScrollY = window.scrollY;
       const isMobile = window.innerWidth < 768;
 
-      // En móvil, solo mostrar después de hacer scroll
+      // En móvil, siempre visible o con comportamiento de scroll
       if (isMobile) {
-        if (currentScrollY > 50) {
+        if (currentScrollY < 50) {
+          setIsVisible(true);
+        } else {
           setHasScrolled(true);
           if (currentScrollY > lastScrollY) {
             setIsVisible(false);
           } else {
             setIsVisible(true);
           }
-        } else {
-          setIsVisible(false);
         }
       } else {
         // En desktop, comportamiento normal
@@ -47,7 +47,7 @@ export default function Navbar() {
         fixed left-1/2 -translate-x-1/2 z-50
         flex flex-col items-center
         transition-all duration-500 ease-in-out
-        top-8
+        top-4 md:top-8
         ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-20 opacity-0'}
       `}
     >
