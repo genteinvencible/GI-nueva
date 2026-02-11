@@ -5,6 +5,35 @@ export interface BannerMessage {
   avatar: string;
 }
 
+const avatarStyles = [
+  'adventurer',
+  'adventurer-neutral',
+  'avataaars',
+  'big-ears',
+  'big-ears-neutral',
+  'big-smile',
+  'bottts',
+  'croodles',
+  'croodles-neutral',
+  'fun-emoji',
+  'lorelei',
+  'lorelei-neutral',
+  'micah',
+  'miniavs',
+  'notionists',
+  'notionists-neutral',
+  'open-peeps',
+  'personas',
+  'pixel-art',
+  'pixel-art-neutral',
+];
+
+function getAvatarForMessage(messageId: string): string {
+  const styleIndex = messageId.charCodeAt(messageId.length - 1) % avatarStyles.length;
+  const style = avatarStyles[styleIndex];
+  return `https://api.dicebear.com/7.x/${style}/svg?seed=${messageId}`;
+}
+
 export const bannerMessages: BannerMessage[] = [
   {
     id: 'msg1',
@@ -85,35 +114,6 @@ export const bannerMessages: BannerMessage[] = [
     avatar: getAvatarForMessage('msg13'),
   },
 ];
-
-const avatarStyles = [
-  'adventurer',
-  'adventurer-neutral',
-  'avataaars',
-  'big-ears',
-  'big-ears-neutral',
-  'big-smile',
-  'bottts',
-  'croodles',
-  'croodles-neutral',
-  'fun-emoji',
-  'lorelei',
-  'lorelei-neutral',
-  'micah',
-  'miniavs',
-  'notionists',
-  'notionists-neutral',
-  'open-peeps',
-  'personas',
-  'pixel-art',
-  'pixel-art-neutral',
-];
-
-function getAvatarForMessage(messageId: string): string {
-  const styleIndex = messageId.charCodeAt(messageId.length - 1) % avatarStyles.length;
-  const style = avatarStyles[styleIndex];
-  return `https://api.dicebear.com/7.x/${style}/svg?seed=${messageId}`;
-}
 
 export const spanishCities = [
   'Guadalajara',
