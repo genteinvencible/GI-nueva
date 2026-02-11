@@ -45,15 +45,17 @@ function App() {
     <ThemeProvider>
       <div className="relative">
         <Navbar />
-        <Hero />
-        <AboutSection
-          ref={emailButtonRef}
-          onRevealChapter2={handleRevealChapter2}
-          onFormOpenChange={setIsFormOpen}
-          onInputFocusChange={setIsInputFocused}
-          onSubscribe={() => setHasSubscribed(true)}
-        />
-        <Chapter2Section ref={chapter2Ref} visible={chapter2Visible} />
+        <div className="pt-20 md:pt-24">
+          <Hero />
+          <AboutSection
+            ref={emailButtonRef}
+            onRevealChapter2={handleRevealChapter2}
+            onFormOpenChange={setIsFormOpen}
+            onInputFocusChange={setIsInputFocused}
+            onSubscribe={() => setHasSubscribed(true)}
+          />
+          <Chapter2Section ref={chapter2Ref} visible={chapter2Visible} />
+        </div>
 
         {currentMessage && (
           <AntiSocialBanner
