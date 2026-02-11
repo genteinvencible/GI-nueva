@@ -35,7 +35,7 @@ export default function Navbar() {
       `}
     >
       {/* Lámpara con luz intensa */}
-      <div className="relative w-[350px] md:w-[450px] mb-8">
+      <div className="relative w-[350px] md:w-[450px] mb-5">
         {/* Línea de luz estilizada y tenue */}
         <div className="relative h-[2px]">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-400/30 dark:via-amber-300/35 to-transparent blur-[1px]" />
