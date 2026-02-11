@@ -19,7 +19,7 @@ function App() {
 
   const scrollTriggered = useScrollTrigger(emailButtonRef);
 
-  const { currentMessage, isVisible } = useBannerSystem({
+  const { currentMessage, currentAvatar, isVisible } = useBannerSystem({
     scrollTriggered,
     isFormOpen,
     isInputFocused,
@@ -58,6 +58,7 @@ function App() {
         {currentMessage && (
           <AntiSocialBanner
             message={currentMessage}
+            avatar={currentAvatar}
             isVisible={isVisible}
             onClose={handleCloseBanner}
           />

@@ -3,6 +3,7 @@ import { bannerMessages, processMessage } from '../data/bannerMessages';
 
 interface BannerSystemState {
   currentMessage: string | null;
+  currentAvatar: string | null;
   isVisible: boolean;
 }
 
@@ -25,6 +26,7 @@ export function useBannerSystem({
   hasSubscribed,
 }: UseBannerSystemOptions): BannerSystemState {
   const [currentMessage, setCurrentMessage] = useState<string | null>(null);
+  const [currentAvatar, setCurrentAvatar] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(false);
   const messageIndexRef = useRef(0);
   const displayTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -48,6 +50,7 @@ export function useBannerSystem({
       isActiveRef.current = false;
       setIsVisible(false);
       setCurrentMessage(null);
+      setCurrentAvatar(null);
       return;
     }
 
@@ -67,6 +70,7 @@ export function useBannerSystem({
 
       // Mostrar el banner
       setCurrentMessage(processedMessage);
+      setCurrentAvatar(message.avatar || null);
       setIsVisible(true);
 
       // Programar el ocultamiento del banner después de BANNER_DISPLAY_TIME
@@ -76,6 +80,7 @@ export function useBannerSystem({
         // Esperar a que termine la animación de fade out
         fadeOutTimeoutRef.current = setTimeout(() => {
           setCurrentMessage(null);
+          setCurrentAvatar(null);
 
           // Esperar BANNER_PAUSE_TIME antes de mostrar el siguiente
           pauseTimeoutRef.current = setTimeout(showNextBanner, BANNER_PAUSE_TIME);
@@ -98,6 +103,7 @@ export function useBannerSystem({
 
   return {
     currentMessage,
+    currentAvatar,
     isVisible,
   };
 }

@@ -3,6 +3,7 @@ import { useMemo } from 'react';
 
 interface AntiSocialBannerProps {
   message: string;
+  avatar?: string | null;
   isVisible: boolean;
   onClose: () => void;
 }
@@ -38,12 +39,13 @@ function getRandomAvatar(): string {
 
 export default function AntiSocialBanner({
   message,
+  avatar,
   isVisible,
   onClose,
 }: AntiSocialBannerProps) {
   if (!message) return null;
 
-  const avatarUrl = useMemo(() => getRandomAvatar(), [message]);
+  const avatarUrl = useMemo(() => avatar || getRandomAvatar(), [message, avatar]);
 
   return (
     <div

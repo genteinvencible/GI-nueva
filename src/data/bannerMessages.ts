@@ -2,6 +2,7 @@ export interface BannerMessage {
   id: string;
   text: string;
   type: 'static' | 'time' | 'city' | 'seconds';
+  avatar?: string;
 }
 
 export const bannerMessages: BannerMessage[] = [
