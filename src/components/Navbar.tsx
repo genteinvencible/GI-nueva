@@ -30,9 +30,8 @@ export default function Navbar() {
         fixed left-1/2 -translate-x-1/2 z-50
         flex flex-col items-center
         transition-all duration-500 ease-in-out
-        md:top-8 md:bottom-auto
-        bottom-8 md:bottom-auto
-        ${isVisible ? 'translate-y-0 opacity-100' : (lastScrollY > 10 ? 'translate-y-20 opacity-0 md:-translate-y-20' : '')}
+        top-8
+        ${isVisible ? 'translate-y-0 opacity-100' : (lastScrollY > 10 ? '-translate-y-20 opacity-0' : '')}
       `}
     >
       {/* Lámpara con luz intensa */}
