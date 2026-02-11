@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { bannerMessages, processMessage, BannerMessage } from '../data/bannerMessages';
 
 interface BannerSystemState {
@@ -13,6 +13,9 @@ interface UseBannerSystemOptions {
   hasSubscribed: boolean;
 }
 
+const BANNER_DISPLAY_TIME = 12000;
+const BANNER_PAUSE_TIME = 60000;
+
 export function useBannerSystem({
   scrollTriggered,
   isFormOpen,
@@ -22,7 +25,8 @@ export function useBannerSystem({
   const [currentMessage, setCurrentMessage] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [messageIndex, setMessageIndex] = useState(0);
-  const [elapsedTime, setElapsedTime] = useState(0);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const isShowingRef = useRef(false);
 
   const getNextMessage = useCallback((): BannerMessage => {
     const message = bannerMessages[messageIndex];
@@ -30,53 +34,64 @@ export function useBannerSystem({
     return message;
   }, [messageIndex]);
 
-  const showBanner = useCallback(() => {
-    const message = getNextMessage();
-    const processedMessage = processMessage(message);
-    setCurrentMessage(processedMessage);
-    setIsVisible(true);
+  const scheduleNextBanner = useCallback(() => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
 
-    setTimeout(() => {
-      setIsVisible(false);
-      setTimeout(() => {
-        setCurrentMessage(null);
-      }, 300);
-    }, 7000);
-  }, [getNextMessage]);
+    timeoutRef.current = setTimeout(() => {
+      if (!isInputFocused && !isFormOpen && !hasSubscribed && isShowingRef.current) {
+        const message = getNextMessage();
+        const processedMessage = processMessage(message);
+        setCurrentMessage(processedMessage);
+        setIsVisible(true);
+
+        setTimeout(() => {
+          setIsVisible(false);
+          setTimeout(() => {
+            setCurrentMessage(null);
+            scheduleNextBanner();
+          }, 300);
+        }, BANNER_DISPLAY_TIME);
+      }
+    }, BANNER_PAUSE_TIME);
+  }, [isInputFocused, isFormOpen, hasSubscribed, getNextMessage]);
 
   useEffect(() => {
-    if (!scrollTriggered || hasSubscribed) return;
+    if (!scrollTriggered || hasSubscribed) {
+      isShowingRef.current = false;
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+      return;
+    }
+
+    isShowingRef.current = true;
 
     const initialDelay = setTimeout(() => {
-      showBanner();
-    }, 4000);
-
-    return () => clearTimeout(initialDelay);
-  }, [scrollTriggered, hasSubscribed, showBanner]);
-
-  useEffect(() => {
-    if (!scrollTriggered || hasSubscribed || isInputFocused) return;
-
-    const intervalTime = 45000;
-
-    const interval = setInterval(() => {
       if (!isInputFocused && !isFormOpen) {
-        showBanner();
+        const message = getNextMessage();
+        const processedMessage = processMessage(message);
+        setCurrentMessage(processedMessage);
+        setIsVisible(true);
+
+        setTimeout(() => {
+          setIsVisible(false);
+          setTimeout(() => {
+            setCurrentMessage(null);
+            scheduleNextBanner();
+          }, 300);
+        }, BANNER_DISPLAY_TIME);
       }
-    }, intervalTime);
+    }, 5000);
 
-    return () => clearInterval(interval);
-  }, [scrollTriggered, hasSubscribed, isInputFocused, isFormOpen, showBanner]);
-
-  useEffect(() => {
-    if (!scrollTriggered || hasSubscribed) return;
-
-    const timer = setInterval(() => {
-      setElapsedTime((prev) => prev + 1000);
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, [scrollTriggered, hasSubscribed]);
+    return () => {
+      clearTimeout(initialDelay);
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, [scrollTriggered, hasSubscribed, isInputFocused, isFormOpen, getNextMessage, scheduleNextBanner]);
 
   return {
     currentMessage,
