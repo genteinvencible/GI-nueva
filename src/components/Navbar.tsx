@@ -37,9 +37,10 @@ export default function Navbar() {
     >
       {/* Lámpara con luz intensa */}
       <div className="relative w-[350px] md:w-[450px] mb-8">
-        {/* Línea de luz uniforme - SIN blur para evitar luz hacia arriba */}
-        <div className="relative h-1">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-400 dark:via-amber-300 to-transparent" />
+        {/* Línea de luz estilizada y tenue */}
+        <div className="relative h-[2px]">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-400/40 dark:via-amber-300/30 to-transparent blur-[1px]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-300/50 dark:via-amber-200/40 to-transparent" style={{ width: '60%', left: '20%' }} />
         </div>
 
         {/* Luz proyectada SOLO hacia abajo */}
