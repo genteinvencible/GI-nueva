@@ -42,9 +42,9 @@ export default function Navbar() {
           {/* Línea base de color uniforme */}
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-400 dark:via-amber-300 to-transparent" />
 
-          {/* Capas de brillo alrededor de la línea */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-400 dark:via-amber-300 to-transparent blur-sm" />
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-400 dark:via-amber-300 to-transparent blur-md scale-105" />
+          {/* Capas de brillo horizontales solo (sin expansión vertical) */}
+          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-amber-400 dark:via-amber-300 to-transparent blur-sm" />
+          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-amber-400 dark:via-amber-300 to-transparent blur-md scale-x-105" />
         </div>
 
         {/* Luz proyectada SOLO hacia abajo */}
