@@ -34,11 +34,9 @@ export default function Navbar() {
         transition-all duration-500 ease-in-out
         md:top-8 md:bottom-auto
         bottom-8 md:bottom-auto
-        relative overflow-visible
         ${isVisible ? 'translate-y-0 opacity-100' : (lastScrollY > 10 ? 'translate-y-20 opacity-0 md:-translate-y-20' : '')}
       `}
     >
-      <div className="absolute -top-24 left-0 right-0 h-24 bg-gradient-to-b from-white/80 via-white/40 to-transparent dark:from-white/60 dark:via-white/20 blur-2xl pointer-events-none" />
       <button className="bg-black dark:bg-white text-white dark:text-neutral-900 px-5 md:px-6 py-2 rounded-full text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase transition-colors">
         HOME
       </button>
