@@ -36,7 +36,7 @@ export default function Navbar() {
       `}
     >
       {/* Lámpara con luz solo hacia abajo */}
-      <div className="relative w-[350px] md:w-[450px] mb-16">
+      <div className="relative w-[350px] md:w-[450px] mb-3">
         {/* Línea de luz más gruesa */}
         <div className="relative h-[3px]">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-400 dark:via-amber-400/60 to-transparent" />
@@ -44,7 +44,7 @@ export default function Navbar() {
         </div>
 
         {/* Luz proyectada en forma cónica desde el centro */}
-        <div className="absolute top-[3px] left-0 right-0 h-72 overflow-hidden pointer-events-none">
+        <div className="absolute top-[3px] left-0 right-0 h-52 overflow-hidden pointer-events-none">
           {/* Capa exterior - más ancha abajo */}
           <div
             className="absolute top-0 left-1/2 -translate-x-1/2 bg-gradient-to-b from-amber-300/15 dark:from-amber-400/18 via-amber-200/8 dark:via-amber-400/9 to-transparent blur-3xl"
