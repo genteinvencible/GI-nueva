@@ -49,9 +49,9 @@ export default function Navbar() {
           <div
             className="absolute top-0 left-1/2 -translate-x-1/2 bg-gradient-to-b from-amber-300/15 dark:from-amber-400/18 via-amber-200/8 dark:via-amber-400/9 to-transparent blur-3xl"
             style={{
-              width: '200px',
+              width: '400px',
               height: '100%',
-              clipPath: 'polygon(45% 0%, 55% 0%, 100% 100%, 0% 100%)'
+              clipPath: 'polygon(40% 0%, 60% 0%, 100% 100%, 0% 100%)'
             }}
           />
 
@@ -59,9 +59,9 @@ export default function Navbar() {
           <div
             className="absolute top-0 left-1/2 -translate-x-1/2 bg-gradient-to-b from-amber-300/20 dark:from-amber-400/22 via-amber-200/10 dark:via-amber-400/11 to-transparent blur-2xl"
             style={{
-              width: '150px',
-              height: '80%',
-              clipPath: 'polygon(47% 0%, 53% 0%, 90% 100%, 10% 100%)'
+              width: '300px',
+              height: '85%',
+              clipPath: 'polygon(42% 0%, 58% 0%, 95% 100%, 5% 100%)'
             }}
           />
 
@@ -69,9 +69,9 @@ export default function Navbar() {
           <div
             className="absolute top-0 left-1/2 -translate-x-1/2 bg-gradient-to-b from-amber-200/25 dark:from-amber-400/28 via-amber-200/12 dark:via-amber-400/14 to-transparent blur-xl"
             style={{
-              width: '100px',
-              height: '60%',
-              clipPath: 'polygon(48% 0%, 52% 0%, 80% 100%, 20% 100%)'
+              width: '200px',
+              height: '70%',
+              clipPath: 'polygon(44% 0%, 56% 0%, 85% 100%, 15% 100%)'
             }}
           />
         </div>
