@@ -37,21 +37,43 @@ export default function Navbar() {
     >
       {/* Lámpara con luz solo hacia abajo */}
       <div className="relative w-[350px] md:w-[450px] mb-8">
-        {/* Línea de luz nítida y uniforme */}
-        <div className="relative h-[2px]">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-400 dark:via-amber-400/50 to-transparent" />
+        {/* Línea de luz más gruesa */}
+        <div className="relative h-[3px]">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-400 dark:via-amber-400/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-300/50 dark:via-amber-300/30 to-transparent blur-sm" />
         </div>
 
-        {/* Luz proyectada SOLO hacia abajo - resplandor amplio y tenue */}
-        <div className="absolute top-[2px] left-0 right-0 h-48 overflow-hidden pointer-events-none">
-          {/* Capa exterior más amplia */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-48 bg-gradient-to-b from-amber-300/20 dark:from-amber-400/20 via-amber-200/10 dark:via-amber-400/10 to-transparent blur-3xl" />
+        {/* Luz proyectada en forma cónica desde el centro */}
+        <div className="absolute top-[3px] left-0 right-0 h-64 overflow-hidden pointer-events-none">
+          {/* Capa exterior - más ancha abajo */}
+          <div
+            className="absolute top-0 left-1/2 -translate-x-1/2 bg-gradient-to-b from-amber-300/15 dark:from-amber-400/18 via-amber-200/8 dark:via-amber-400/9 to-transparent blur-3xl"
+            style={{
+              width: '200px',
+              height: '100%',
+              clipPath: 'polygon(45% 0%, 55% 0%, 100% 100%, 0% 100%)'
+            }}
+          />
 
-          {/* Capa intermedia */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[450px] h-36 bg-gradient-to-b from-amber-300/25 dark:from-amber-400/25 via-amber-200/12 dark:via-amber-400/12 to-transparent blur-2xl" />
+          {/* Capa intermedia - cónica */}
+          <div
+            className="absolute top-0 left-1/2 -translate-x-1/2 bg-gradient-to-b from-amber-300/20 dark:from-amber-400/22 via-amber-200/10 dark:via-amber-400/11 to-transparent blur-2xl"
+            style={{
+              width: '150px',
+              height: '80%',
+              clipPath: 'polygon(47% 0%, 53% 0%, 90% 100%, 10% 100%)'
+            }}
+          />
 
-          {/* Capa central más intensa */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] h-24 bg-gradient-to-b from-amber-200/30 dark:from-amber-400/30 to-transparent blur-xl" />
+          {/* Capa central - más concentrada */}
+          <div
+            className="absolute top-0 left-1/2 -translate-x-1/2 bg-gradient-to-b from-amber-200/25 dark:from-amber-400/28 via-amber-200/12 dark:via-amber-400/14 to-transparent blur-xl"
+            style={{
+              width: '100px',
+              height: '60%',
+              clipPath: 'polygon(48% 0%, 52% 0%, 80% 100%, 20% 100%)'
+            }}
+          />
         </div>
       </div>
 
