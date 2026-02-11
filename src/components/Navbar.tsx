@@ -35,46 +35,21 @@ export default function Navbar() {
         ${isVisible ? 'translate-y-0 opacity-100' : (lastScrollY > 10 ? 'translate-y-20 opacity-0 md:-translate-y-20' : '')}
       `}
     >
-      {/* Lámpara con luz solo hacia abajo */}
-      <div className="relative w-[350px] md:w-[450px] mb-3">
-        {/* Línea de luz más gruesa */}
-        <div className="relative h-[3px]">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-400 dark:via-amber-400/60 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-300/50 dark:via-amber-300/30 to-transparent blur-sm" />
+      {/* Lámpara con luz intensa */}
+      <div className="relative w-[350px] md:w-[450px] mb-8">
+        {/* Línea de luz uniforme */}
+        <div className="relative h-1">
+          {/* Línea base de color uniforme */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-400 dark:via-amber-300 to-transparent" />
+
+          {/* Capas de brillo alrededor de la línea */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-400 dark:via-amber-300 to-transparent blur-sm" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-400 dark:via-amber-300 to-transparent blur-md scale-105" />
         </div>
 
-        {/* Luz proyectada en forma cónica desde el centro */}
-        <div className="absolute top-[3px] left-0 right-0 h-52 overflow-hidden pointer-events-none">
-          {/* Capa exterior - más ancha abajo */}
-          <div
-            className="absolute top-0 left-1/2 -translate-x-1/2 bg-gradient-to-b from-amber-300/15 dark:from-amber-400/18 via-amber-200/8 dark:via-amber-400/9 to-transparent blur-3xl"
-            style={{
-              width: '800px',
-              height: '100%',
-              clipPath: 'polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%)'
-            }}
-          />
-
-          {/* Capa intermedia - cónica */}
-          <div
-            className="absolute top-0 left-1/2 -translate-x-1/2 bg-gradient-to-b from-amber-300/20 dark:from-amber-400/22 via-amber-200/10 dark:via-amber-400/11 to-transparent blur-2xl"
-            style={{
-              width: '700px',
-              height: '90%',
-              clipPath: 'polygon(22% 0%, 78% 0%, 98% 100%, 2% 100%)'
-            }}
-          />
-
-          {/* Capa central - más concentrada */}
-          <div
-            className="absolute top-0 left-1/2 -translate-x-1/2 bg-gradient-to-b from-amber-200/25 dark:from-amber-400/28 via-amber-200/12 dark:via-amber-400/14 to-transparent blur-xl"
-            style={{
-              width: '550px',
-              height: '80%',
-              clipPath: 'polygon(25% 0%, 75% 0%, 90% 100%, 10% 100%)'
-            }}
-          />
-        </div>
+        {/* Luz proyectada SOLO hacia abajo */}
+        <div className="absolute top-1 left-1/2 -translate-x-1/2 w-[400px] h-32 bg-gradient-to-b from-amber-300/40 dark:from-amber-200/50 via-amber-200/20 dark:via-amber-100/30 to-transparent blur-2xl pointer-events-none" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[320px] h-24 bg-gradient-to-b from-amber-200/30 dark:from-amber-100/40 to-transparent blur-xl pointer-events-none" />
       </div>
 
       {/* Menú de navegación */}
