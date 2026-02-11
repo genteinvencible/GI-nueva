@@ -1,4 +1,5 @@
 import { X } from 'lucide-react';
+import { useMemo } from 'react';
 
 interface AntiSocialBannerProps {
   message: string;
@@ -6,24 +7,33 @@ interface AntiSocialBannerProps {
   onClose: () => void;
 }
 
-const avatarColors = [
-  'bg-amber-600',
-  'bg-stone-600',
-  'bg-slate-600',
-  'bg-teal-700',
-  'bg-emerald-700',
-  'bg-cyan-700',
-  'bg-neutral-700',
-  'bg-zinc-600',
+const avatarStyles = [
+  'adventurer',
+  'adventurer-neutral',
+  'avataaars',
+  'big-ears',
+  'big-ears-neutral',
+  'big-smile',
+  'bottts',
+  'croodles',
+  'croodles-neutral',
+  'fun-emoji',
+  'lorelei',
+  'lorelei-neutral',
+  'micah',
+  'miniavs',
+  'notionists',
+  'notionists-neutral',
+  'open-peeps',
+  'personas',
+  'pixel-art',
+  'pixel-art-neutral',
 ];
 
-function getRandomInitial(): string {
-  const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  return letters[Math.floor(Math.random() * letters.length)];
-}
-
-function getRandomColor(): string {
-  return avatarColors[Math.floor(Math.random() * avatarColors.length)];
+function getRandomAvatar(): string {
+  const style = avatarStyles[Math.floor(Math.random() * avatarStyles.length)];
+  const seed = Math.random().toString(36).substring(7);
+  return `https://api.dicebear.com/7.x/${style}/svg?seed=${seed}`;
 }
 
 export default function AntiSocialBanner({
@@ -33,8 +43,7 @@ export default function AntiSocialBanner({
 }: AntiSocialBannerProps) {
   if (!message) return null;
 
-  const initial = getRandomInitial();
-  const avatarColor = getRandomColor();
+  const avatarUrl = useMemo(() => getRandomAvatar(), [message]);
 
   return (
     <div
@@ -50,10 +59,12 @@ export default function AntiSocialBanner({
       }}
     >
       <div className="flex items-start gap-3 bg-white/95 dark:bg-neutral-800/95 backdrop-blur-md border border-neutral-200 dark:border-neutral-700 rounded-lg shadow-lg p-3.5 sm:p-4 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200">
-        <div
-          className={`flex-shrink-0 w-9 h-9 sm:w-10 sm:h-10 ${avatarColor} rounded-full flex items-center justify-center text-white font-bold text-xs sm:text-sm`}
-        >
-          {initial}
+        <div className="flex-shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden bg-neutral-100 dark:bg-neutral-700">
+          <img
+            src={avatarUrl}
+            alt="Avatar"
+            className="w-full h-full object-cover"
+          />
         </div>
 
         <div className="flex-1 min-w-0">
