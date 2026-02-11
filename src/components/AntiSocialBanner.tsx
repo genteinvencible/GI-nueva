@@ -28,8 +28,9 @@ export default function AntiSocialBanner({
         animation: isVisible ? 'bannerSlideUp 0.5s ease-out' : undefined,
       }}
     >
-      <div className="flex items-start gap-3 bg-white/80 dark:bg-neutral-800/80 backdrop-blur-xl border border-black/5 dark:border-white/10 rounded-lg shadow-lg p-3.5 sm:p-4 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200" style={{ boxShadow: '-12px 0 24px rgba(0, 0, 0, 0.12), 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)' }}>
-        <div className="flex-shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden bg-neutral-100 dark:bg-neutral-700">
+      <div className="relative flex items-start gap-3 bg-[#faf8f5]/95 dark:bg-neutral-800/80 backdrop-blur-xl border border-black/5 dark:border-white/10 rounded-lg shadow-lg p-3.5 sm:p-4 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 overflow-hidden" style={{ boxShadow: '-12px 0 24px rgba(0, 0, 0, 0.12), 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)' }}>
+        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "url('https://grainy-gradients.vercel.app/noise.svg')", opacity: 0.07 }}></div>
+        <div className="relative flex-shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden bg-neutral-100 dark:bg-neutral-700">
           <img
             src={avatar}
             alt="Avatar"
@@ -37,7 +38,7 @@ export default function AntiSocialBanner({
           />
         </div>
 
-        <div className="flex-1 min-w-0">
+        <div className="relative flex-1 min-w-0">
           <p className="text-xs sm:text-sm text-neutral-800 dark:text-neutral-100 leading-snug font-normal">
             {message}
           </p>
@@ -45,7 +46,7 @@ export default function AntiSocialBanner({
 
         <button
           onClick={onClose}
-          className="flex-shrink-0 text-neutral-400 hover:text-neutral-600 dark:text-neutral-500 dark:hover:text-neutral-300 transition-colors p-1 -mt-1 -mr-1"
+          className="relative flex-shrink-0 text-neutral-400 hover:text-neutral-600 dark:text-neutral-500 dark:hover:text-neutral-300 transition-colors p-1 -mt-1 -mr-1"
           aria-label="Cerrar notificación"
         >
           <X size={16} />
