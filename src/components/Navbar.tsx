@@ -37,15 +37,15 @@ export default function Navbar() {
     >
       {/* Lámpara con luz solo hacia abajo */}
       <div className="relative w-[350px] md:w-[450px] mb-8">
-        {/* Línea de luz nítida y uniforme - sin blur */}
+        {/* Línea de luz nítida y uniforme - más tenue en modo oscuro */}
         <div className="relative h-[2px]">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-400 dark:via-amber-300 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-400 dark:via-amber-400/40 to-transparent" />
         </div>
 
-        {/* Luz proyectada SOLO hacia abajo - contenedor que corta la luz hacia arriba */}
+        {/* Luz proyectada SOLO hacia abajo - mucho más tenue en modo oscuro */}
         <div className="absolute top-[2px] left-0 right-0 h-32 overflow-hidden pointer-events-none">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-32 bg-gradient-to-b from-amber-300/50 dark:from-amber-200/60 via-amber-200/25 dark:via-amber-100/35 to-transparent blur-2xl" />
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[320px] h-24 bg-gradient-to-b from-amber-200/40 dark:from-amber-100/50 to-transparent blur-xl" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-32 bg-gradient-to-b from-amber-300/50 dark:from-amber-400/15 via-amber-200/25 dark:via-amber-400/8 to-transparent blur-2xl" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[320px] h-24 bg-gradient-to-b from-amber-200/40 dark:from-amber-400/12 to-transparent blur-xl" />
         </div>
       </div>
 
