@@ -2,9 +2,15 @@ import { useEffect, useRef, useState } from 'react';
 
 interface EmailSubscriptionFormProps {
   isOpen: boolean;
+  onInputFocusChange?: (isFocused: boolean) => void;
+  onSubscribe?: () => void;
 }
 
-export default function EmailSubscriptionForm({ isOpen }: EmailSubscriptionFormProps) {
+export default function EmailSubscriptionForm({
+  isOpen,
+  onInputFocusChange,
+  onSubscribe
+}: EmailSubscriptionFormProps) {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
@@ -49,6 +55,7 @@ export default function EmailSubscriptionForm({ isOpen }: EmailSubscriptionFormP
       }
 
       setStatus('success');
+      onSubscribe?.();
     } catch (err) {
       setStatus('error');
       setErrorMsg(err instanceof Error ? err.message : 'Algo ha ido mal.');
@@ -90,6 +97,8 @@ export default function EmailSubscriptionForm({ isOpen }: EmailSubscriptionFormP
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  onFocus={() => onInputFocusChange?.(true)}
+                  onBlur={() => onInputFocusChange?.(false)}
                   placeholder="Mete aquí el email que quieras"
                   className="flex-1 px-5 py-4 bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-600 rounded text-neutral-800 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-500 text-base outline-none focus:border-[#2d6a4f] dark:focus:border-[#52b788] focus:ring-1 focus:ring-[#2d6a4f]/20 dark:focus:ring-[#52b788]/20 transition-all"
                 />

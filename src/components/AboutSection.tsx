@@ -1,12 +1,22 @@
-import { useState } from 'react';
+import { useState, forwardRef } from 'react';
 import EmailSubscriptionForm from './EmailSubscriptionForm';
 
 interface AboutSectionProps {
   onRevealChapter2: () => void;
+  onFormOpenChange?: (isOpen: boolean) => void;
+  onInputFocusChange?: (isFocused: boolean) => void;
+  onSubscribe?: () => void;
 }
 
-export default function AboutSection({ onRevealChapter2 }: AboutSectionProps) {
-  const [showForm, setShowForm] = useState(false);
+const AboutSection = forwardRef<HTMLButtonElement, AboutSectionProps>(
+  ({ onRevealChapter2, onFormOpenChange, onInputFocusChange, onSubscribe }, ref) => {
+    const [showForm, setShowForm] = useState(false);
+
+    const handleToggleForm = () => {
+      const newState = !showForm;
+      setShowForm(newState);
+      onFormOpenChange?.(newState);
+    };
 
   return (
     <div className="bg-transparent relative overflow-hidden transition-colors duration-300">
@@ -64,13 +74,18 @@ export default function AboutSection({ onRevealChapter2 }: AboutSectionProps) {
 
             <div className="pt-8 space-y-4">
               <button
-                onClick={() => setShowForm(!showForm)}
+                ref={ref}
+                onClick={handleToggleForm}
                 className="w-full px-8 py-5 border-2 border-neutral-300 dark:border-neutral-600 text-neutral-500 dark:text-neutral-400 text-base font-normal hover:border-neutral-500 dark:hover:border-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all duration-200 cursor-pointer active:scale-[0.98]"
               >
                 Ok, toma mi email
               </button>
 
-              <EmailSubscriptionForm isOpen={showForm} />
+              <EmailSubscriptionForm
+                isOpen={showForm}
+                onInputFocusChange={onInputFocusChange}
+                onSubscribe={onSubscribe}
+              />
 
               <button
                 onClick={onRevealChapter2}
@@ -87,4 +102,8 @@ export default function AboutSection({ onRevealChapter2 }: AboutSectionProps) {
       </div>
     </div>
   );
-}
+});
+
+AboutSection.displayName = 'AboutSection';
+
+export default AboutSection;
