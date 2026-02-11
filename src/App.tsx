@@ -1,7 +1,7 @@
 import { useState, useRef, useCallback } from 'react';
 import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
-import { LampDemo } from './components/LampEffect';
+import Hero from './components/Hero';
 import AboutSection from './components/AboutSection';
 import Chapter2Section from './components/Chapter2Section';
 import AntiSocialBanner from './components/AntiSocialBanner';
@@ -45,7 +45,7 @@ function App() {
     <ThemeProvider>
       <div className="relative">
         <Navbar />
-        <LampDemo />
+        <Hero />
         <AboutSection
           ref={emailButtonRef}
           onRevealChapter2={handleRevealChapter2}
