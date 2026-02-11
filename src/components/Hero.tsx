@@ -27,14 +27,28 @@ export default function Hero() {
 
           <div className="animate-fade-in-delayed lg:pl-8 lg:pt-4 flex flex-col items-center w-full">
             <div className="w-[75%] lg:w-[95%]">
-              <img
-                src={isHovering ? alvaroImageLooking : alvaroImageNormal}
-                alt="Álvaro Barra"
-                className="w-full h-auto object-cover shadow-md hover:shadow-xl dark:shadow-black/40 dark:hover:shadow-black/60 grayscale hover:grayscale-0 dark:grayscale-0 dark:hover:grayscale transition-all duration-500 hover:scale-[1.01]"
-                style={{ filter: 'brightness(0.92) contrast(1.08)' }}
-                onMouseEnter={() => setIsHovering(true)}
-                onMouseLeave={() => setIsHovering(false)}
-              />
+              <div className="relative">
+                <img
+                  src={alvaroImageNormal}
+                  alt="Álvaro Barra"
+                  className="w-full h-auto object-cover shadow-md dark:shadow-black/40 transition-opacity duration-300"
+                  style={{
+                    filter: 'brightness(0.92) contrast(1.08)',
+                    opacity: isHovering ? 0 : 1
+                  }}
+                />
+                <img
+                  src={alvaroImageLooking}
+                  alt="Álvaro Barra"
+                  className="absolute top-0 left-0 w-full h-auto object-cover shadow-md dark:shadow-black/40 transition-opacity duration-300"
+                  style={{
+                    filter: 'brightness(0.92) contrast(1.08)',
+                    opacity: isHovering ? 1 : 0
+                  }}
+                  onMouseEnter={() => setIsHovering(true)}
+                  onMouseLeave={() => setIsHovering(false)}
+                />
+              </div>
               <p className="mt-2 mb-0 text-sm text-neutral-600 dark:text-white/60 italic text-center lg:text-left transition-colors -mx-4 lg:mx-0">
                 Esto podría llamarse "Desde la barra del bar", pero entonces no me pagaría nadie. Digo yo.
               </p>
