@@ -7,68 +7,68 @@ export interface BannerMessage {
 export const bannerMessages: BannerMessage[] = [
   {
     id: 'msg1',
-    text: 'Hace {MINUTES} minutos, alguien que no eres tú acaba de suscribirse.',
+    text: 'Hace {MINUTES} minutos, alguien que no eres tú acaba de dar su email.',
     type: 'time',
   },
   {
     id: 'msg2',
-    text: 'Hace {MINUTES} minutos alguien de {CITY} ha dado su email.',
-    type: 'time',
+    text: 'Alguien más en {CITY} acaba de suscribirse. Y tú aquí todavía.',
+    type: 'city',
   },
   {
     id: 'msg3',
-    text: '{CITY} tiene 1 nuevo suscriptor.',
-    type: 'city',
+    text: '{SECONDS} segundos para decidir si te la juegas o no.',
+    type: 'seconds',
   },
   {
     id: 'msg4',
-    text: 'Nuevo suscriptor en {CITY} hace {MINUTES} minutos.',
-    type: 'time',
+    text: 'Tu email a cambio de 17 días para decidir si esto es una gilipollez. Suena justo.',
+    type: 'static',
   },
   {
     id: 'msg5',
-    text: '{SECONDS} segundos hasta que otro se suscriba antes que tú.',
-    type: 'seconds',
+    text: 'Hace {MINUTES} minutos, un lector nuevo. Tú sigues en la duda.',
+    type: 'time',
   },
   {
     id: 'msg6',
-    text: '17 días gratis, cero euros. {SECONDS} segundos para decidir.',
-    type: 'seconds',
-  },
-  {
-    id: 'msg7',
-    text: 'Otra persona de {CITY} acaba de empezar a probar gratis.',
+    text: 'Nuevo suscriptor desde {CITY}. Tiene 17 días para decidir.',
     type: 'city',
   },
   {
+    id: 'msg7',
+    text: 'Si te esperas otros {SECONDS} segundos, esto va a seguir aquí igual.',
+    type: 'seconds',
+  },
+  {
     id: 'msg8',
-    text: 'Nuevos suscriptores en {CITY}.',
+    text: 'Otro de {CITY} acaba de apuntarse. Tú todavía pensando.',
     type: 'city',
   },
   {
     id: 'msg9',
-    text: 'Tu email a cambio de 17 días para decidir si esto es una gilipollez.',
-    type: 'static',
-  },
-  {
-    id: 'msg10',
-    text: 'Alguien en {CITY} ha dado el paso hace {MINUTES} minutos.',
+    text: 'Hace {MINUTES} minutos alguien se apuntó sin leer tanto como tú.',
     type: 'time',
   },
   {
+    id: 'msg10',
+    text: '{SECONDS} segundos de reflexión profunda. O te apuntas, o sigues scrolleando.',
+    type: 'seconds',
+  },
+  {
     id: 'msg11',
-    text: 'Nuevo suscriptor hace {MINUTES} minutos. No te quedes atrás.',
+    text: 'Ya van {MINUTES} minutos desde el último suscriptor. Pero sin prisa.',
     type: 'time',
   },
   {
     id: 'msg12',
-    text: '17 días. Cero euros. Decide en {SECONDS} segundos.',
-    type: 'seconds',
+    text: 'Alguien en {CITY} ya tiene el primer email. Tú aún no.',
+    type: 'city',
   },
   {
     id: 'msg13',
-    text: 'Alguien de {CITY} ya está leyendo el primer email.',
-    type: 'city',
+    text: '17 días de prueba. Cero euros. Cero compromiso. {SECONDS} segundos para decidir.',
+    type: 'seconds',
   },
 ];
 
