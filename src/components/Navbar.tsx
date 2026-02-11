@@ -38,13 +38,13 @@ export default function Navbar() {
       <div className="relative w-[350px] md:w-[450px] mb-5">
         {/* Línea de luz estilizada y tenue */}
         <div className="relative h-[2px]">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-400/30 dark:via-amber-300/35 to-transparent blur-[1px]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-300/40 dark:via-amber-200/45 to-transparent" style={{ width: '60%', left: '20%' }} />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-400/40 dark:via-amber-300/45 to-transparent blur-[1px]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-300/50 dark:via-amber-200/55 to-transparent" style={{ width: '60%', left: '20%' }} />
         </div>
 
         {/* Luz proyectada SOLO hacia abajo */}
-        <div className="absolute top-1 left-1/2 -translate-x-1/2 w-[400px] h-32 bg-gradient-to-b from-amber-300/22 dark:from-amber-200/24 via-amber-200/13 dark:via-amber-100/15 to-transparent blur-2xl pointer-events-none" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[320px] h-24 bg-gradient-to-b from-amber-200/18 dark:from-amber-100/18 to-transparent blur-xl pointer-events-none" />
+        <div className="absolute top-1 left-1/2 -translate-x-1/2 w-[400px] h-32 bg-gradient-to-b from-amber-300/28 dark:from-amber-200/30 via-amber-200/18 dark:via-amber-100/20 to-transparent blur-2xl pointer-events-none" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[320px] h-24 bg-gradient-to-b from-amber-200/24 dark:from-amber-100/24 to-transparent blur-xl pointer-events-none" />
       </div>
 
       {/* Menú de navegación */}
