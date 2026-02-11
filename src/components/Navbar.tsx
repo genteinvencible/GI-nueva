@@ -45,13 +45,13 @@ export default function Navbar() {
         {/* Luz proyectada SOLO hacia abajo - resplandor amplio y tenue */}
         <div className="absolute top-[2px] left-0 right-0 h-48 overflow-hidden pointer-events-none">
           {/* Capa exterior más amplia */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-48 bg-gradient-to-b from-amber-300/40 dark:from-amber-400/20 via-amber-200/20 dark:via-amber-400/10 to-transparent blur-3xl" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-48 bg-gradient-to-b from-amber-300/20 dark:from-amber-400/20 via-amber-200/10 dark:via-amber-400/10 to-transparent blur-3xl" />
 
           {/* Capa intermedia */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[450px] h-36 bg-gradient-to-b from-amber-300/50 dark:from-amber-400/25 via-amber-200/25 dark:via-amber-400/12 to-transparent blur-2xl" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[450px] h-36 bg-gradient-to-b from-amber-300/25 dark:from-amber-400/25 via-amber-200/12 dark:via-amber-400/12 to-transparent blur-2xl" />
 
           {/* Capa central más intensa */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] h-24 bg-gradient-to-b from-amber-200/50 dark:from-amber-400/30 to-transparent blur-xl" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] h-24 bg-gradient-to-b from-amber-200/30 dark:from-amber-400/30 to-transparent blur-xl" />
         </div>
       </div>
 
