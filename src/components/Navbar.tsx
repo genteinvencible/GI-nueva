@@ -35,14 +35,27 @@ export default function Navbar() {
         ${isVisible ? 'translate-y-0 opacity-100' : (lastScrollY > 10 ? 'translate-y-20 opacity-0 md:-translate-y-20' : '')}
       `}
     >
-      {/* Línea de luz superior - lámpara */}
-      <div className="relative w-[300px] md:w-[400px] h-1 mb-6">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-400 dark:via-amber-300 to-transparent opacity-80 blur-sm" />
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-300 dark:via-amber-200 to-transparent" />
+      {/* Lámpara con luz intensa */}
+      <div className="relative w-[350px] md:w-[450px] mb-6">
+        {/* Resplandor amplio */}
+        <div className="absolute -inset-y-4 inset-x-0 bg-gradient-to-b from-amber-300/40 dark:from-amber-200/50 to-transparent blur-2xl" />
+
+        {/* Línea de luz con capas de brillo */}
+        <div className="relative h-2">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-500 dark:via-amber-300 to-transparent blur-md" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-400 dark:via-amber-200 to-transparent blur-sm" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-300 dark:via-yellow-100 to-transparent" />
+
+          {/* Puntos de luz más brillantes */}
+          <div className="absolute left-1/2 -translate-x-1/2 w-32 h-2 bg-white dark:bg-yellow-50 blur-sm opacity-70" />
+        </div>
+
+        {/* Halo de luz que cae sobre el menú */}
+        <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[300px] h-20 bg-gradient-radial from-amber-200/30 dark:from-amber-100/40 to-transparent blur-xl pointer-events-none" />
       </div>
 
       {/* Menú de navegación */}
-      <nav className="flex items-center gap-1">
+      <nav className="flex items-center gap-1 relative">
         <button className="text-black dark:text-white px-4 md:px-5 py-2 text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase transition-colors">
           HOME
         </button>
