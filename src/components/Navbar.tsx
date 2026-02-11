@@ -2,24 +2,21 @@ import React, { useState, useEffect } from 'react';
 import ThemeToggle from './ThemeToggle';
 
 export default function Navbar() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [hasScrolled, setHasScrolled] = useState(false);
 
   useEffect(() => {
-    // Inicializar según el dispositivo
-    const isMobile = window.innerWidth < 768;
-    setIsVisible(!isMobile); // Desktop visible, móvil oculto al inicio
-
     const controlNavbar = () => {
       const currentScrollY = window.scrollY;
       const isMobile = window.innerWidth < 768;
 
+      // En móvil, siempre visible o con comportamiento de scroll
       if (isMobile) {
-        // En móvil, solo aparece tras hacer scroll
         if (currentScrollY < 50) {
-          setIsVisible(false);
+          setIsVisible(true);
         } else {
-          // Tras 50px de scroll, aparece/desaparece según dirección
+          setHasScrolled(true);
           if (currentScrollY > lastScrollY) {
             setIsVisible(false);
           } else {
