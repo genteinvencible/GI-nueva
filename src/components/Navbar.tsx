@@ -44,14 +44,14 @@ export default function Navbar() {
         </div>
 
         {/* Luz proyectada en forma cónica desde el centro */}
-        <div className="absolute top-[3px] left-0 right-0 h-64 overflow-hidden pointer-events-none">
+        <div className="absolute top-[3px] left-0 right-0 h-40 overflow-hidden pointer-events-none">
           {/* Capa exterior - más ancha abajo */}
           <div
             className="absolute top-0 left-1/2 -translate-x-1/2 bg-gradient-to-b from-amber-300/15 dark:from-amber-400/18 via-amber-200/8 dark:via-amber-400/9 to-transparent blur-3xl"
             style={{
-              width: '400px',
+              width: '600px',
               height: '100%',
-              clipPath: 'polygon(40% 0%, 60% 0%, 100% 100%, 0% 100%)'
+              clipPath: 'polygon(30% 0%, 70% 0%, 100% 100%, 0% 100%)'
             }}
           />
 
@@ -59,9 +59,9 @@ export default function Navbar() {
           <div
             className="absolute top-0 left-1/2 -translate-x-1/2 bg-gradient-to-b from-amber-300/20 dark:from-amber-400/22 via-amber-200/10 dark:via-amber-400/11 to-transparent blur-2xl"
             style={{
-              width: '300px',
-              height: '85%',
-              clipPath: 'polygon(42% 0%, 58% 0%, 95% 100%, 5% 100%)'
+              width: '500px',
+              height: '90%',
+              clipPath: 'polygon(32% 0%, 68% 0%, 95% 100%, 5% 100%)'
             }}
           />
 
@@ -69,9 +69,9 @@ export default function Navbar() {
           <div
             className="absolute top-0 left-1/2 -translate-x-1/2 bg-gradient-to-b from-amber-200/25 dark:from-amber-400/28 via-amber-200/12 dark:via-amber-400/14 to-transparent blur-xl"
             style={{
-              width: '200px',
-              height: '70%',
-              clipPath: 'polygon(44% 0%, 56% 0%, 85% 100%, 15% 100%)'
+              width: '350px',
+              height: '80%',
+              clipPath: 'polygon(35% 0%, 65% 0%, 85% 100%, 15% 100%)'
             }}
           />
         </div>
