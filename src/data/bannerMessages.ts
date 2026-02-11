@@ -8,17 +8,17 @@ export interface BannerMessage {
 export const bannerMessages: BannerMessage[] = [
   {
     id: 'msg1',
-    text: 'Alguien en Guadalajara no se ha suscrito hace {MINUTES} minutos',
+    text: 'Alguien en Guadalajara NO se ha suscrito hace {MINUTES} minutos.',
     type: 'time',
   },
   {
     id: 'msg2',
-    text: 'Este otro inútil se ha ido sin dejar su email hace {MINUTES} minutos',
+    text: 'Este otro inútil se ha ido sin dejar su email hace {MINUTES} minutos.',
     type: 'time',
   },
   {
     id: 'msg3',
-    text: 'Otro cobarde cerró esta página sin meter su email. Sigue así, llegarás cerca',
+    text: 'Otro cobarde cerró esta página sin meter su email. Sigue así, llegarás cerca.',
     type: 'static',
   },
   {
@@ -28,17 +28,17 @@ export const bannerMessages: BannerMessage[] = [
   },
   {
     id: 'msg5',
-    text: '3847 personas han leído esto y se han ido, así les irá',
+    text: '3847 personas han leído esto y se han ido, así les irá.',
     type: 'static',
   },
   {
     id: 'msg6',
-    text: 'Un malnacido de Ronda (Málaga) ha vuelto a Instagram sin suscribirse. Un saludo',
+    text: 'Un malnacido de Ronda (Málaga) ha vuelto a Instagram sin suscribirse. Un saludo.',
     type: 'static',
   },
   {
     id: 'msg7',
-    text: 'Alguien cerca de ti ha huido hace {SECONDS} segundos, pero tú ni caso',
+    text: 'Alguien cerca de ti ha huido hace {SECONDS} segundos, pero tú ni caso.',
     type: 'seconds',
   },
   {
@@ -48,27 +48,27 @@ export const bannerMessages: BannerMessage[] = [
   },
   {
     id: 'msg9',
-    text: 'Si no soy Manuel Bartual, ¿por qué tengo este hilazo?',
+    text: 'Si no soy Manuel Bartual, ¿por qué tengo este hilazo?.',
     type: 'static',
   },
   {
     id: 'msg10',
-    text: 'Alguien cerca de tu casa ha instalado paneles solares, y no se ha suscrito. Muy mal',
+    text: 'Alguien cerca de tu casa ha instalado paneles solares, y no se ha suscrito. Muy mal.',
     type: 'static',
   },
   {
     id: 'msg11',
-    text: '1 de 4 personas entienden la foto de arriba',
+    text: '1 de 4 personas entienden la foto de arriba.',
     type: 'static',
   },
   {
     id: 'msg12',
-    text: '7 de cada 19 personas dejan su apreciado email. Y a 12 de ellas les deseo lo peor',
+    text: '7 de cada 19 personas dejan su apreciado email. Y a 12 de ellas les deseo lo peor.',
     type: 'static',
   },
   {
     id: 'msg13',
-    text: 'Un abrazafarolas, un peregrino, acaba de salir de esta página, sin dejar su email. Lo veo muy desmejorado',
+    text: 'Un abrazafarolas, un peregrino, acaba de salir de esta página, sin dejar su email. Lo veo muy desmejorado.',
     type: 'static',
   },
 ];
