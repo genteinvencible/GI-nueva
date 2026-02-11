@@ -2,19 +2,36 @@ import React, { useState, useEffect } from 'react';
 import ThemeToggle from './ThemeToggle';
 
 export default function Navbar() {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [hasScrolled, setHasScrolled] = useState(false);
 
   useEffect(() => {
     const controlNavbar = () => {
       const currentScrollY = window.scrollY;
+      const isMobile = window.innerWidth < 768;
 
-      if (currentScrollY < 10) {
-        setIsVisible(true);
-      } else if (currentScrollY > lastScrollY) {
-        setIsVisible(false);
+      // En móvil, solo mostrar después de hacer scroll
+      if (isMobile) {
+        if (currentScrollY > 50) {
+          setHasScrolled(true);
+          if (currentScrollY > lastScrollY) {
+            setIsVisible(false);
+          } else {
+            setIsVisible(true);
+          }
+        } else {
+          setIsVisible(false);
+        }
       } else {
-        setIsVisible(true);
+        // En desktop, comportamiento normal
+        if (currentScrollY < 10) {
+          setIsVisible(true);
+        } else if (currentScrollY > lastScrollY) {
+          setIsVisible(false);
+        } else {
+          setIsVisible(true);
+        }
       }
 
       setLastScrollY(currentScrollY);
@@ -31,7 +48,7 @@ export default function Navbar() {
         flex flex-col items-center
         transition-all duration-500 ease-in-out
         top-8
-        ${isVisible ? 'translate-y-0 opacity-100' : (lastScrollY > 10 ? '-translate-y-20 opacity-0' : '')}
+        ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-20 opacity-0'}
       `}
     >
       {/* Lámpara con luz intensa */}
