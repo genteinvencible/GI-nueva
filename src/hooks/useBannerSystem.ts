@@ -14,7 +14,7 @@ interface UseBannerSystemOptions {
 }
 
 const BANNER_DISPLAY_TIME = 12000;
-const BANNER_PAUSE_TIME = 120000;
+const BANNER_PAUSE_TIME = 30000;
 
 export function useBannerSystem({
   scrollTriggered,
