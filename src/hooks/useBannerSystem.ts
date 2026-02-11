@@ -21,31 +21,17 @@ export function useBannerSystem({
 }: UseBannerSystemOptions): BannerSystemState {
   const [currentMessage, setCurrentMessage] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [usedMessages, setUsedMessages] = useState<Set<string>>(new Set());
+  const [messageIndex, setMessageIndex] = useState(0);
   const [elapsedTime, setElapsedTime] = useState(0);
 
-  const getRandomMessage = useCallback((): BannerMessage | null => {
-    const availableMessages = bannerMessages.filter(
-      (msg) => !usedMessages.has(msg.id)
-    );
-
-    if (availableMessages.length === 0) {
-      setUsedMessages(new Set());
-      return bannerMessages[Math.floor(Math.random() * bannerMessages.length)];
-    }
-
-    const randomIndex = Math.floor(Math.random() * availableMessages.length);
-    const selectedMessage = availableMessages[randomIndex];
-
-    setUsedMessages((prev) => new Set([...prev, selectedMessage.id]));
-
-    return selectedMessage;
-  }, [usedMessages]);
+  const getNextMessage = useCallback((): BannerMessage => {
+    const message = bannerMessages[messageIndex];
+    setMessageIndex((prev) => (prev + 1) % bannerMessages.length);
+    return message;
+  }, [messageIndex]);
 
   const showBanner = useCallback(() => {
-    const message = getRandomMessage();
-    if (!message) return;
-
+    const message = getNextMessage();
     const processedMessage = processMessage(message);
     setCurrentMessage(processedMessage);
     setIsVisible(true);
@@ -56,7 +42,7 @@ export function useBannerSystem({
         setCurrentMessage(null);
       }, 300);
     }, 7000);
-  }, [getRandomMessage]);
+  }, [getNextMessage]);
 
   useEffect(() => {
     if (!scrollTriggered || hasSubscribed) return;
@@ -71,7 +57,7 @@ export function useBannerSystem({
   useEffect(() => {
     if (!scrollTriggered || hasSubscribed || isInputFocused) return;
 
-    const intervalTime = elapsedTime > 90000 ? 25000 : Math.floor(Math.random() * 15000) + 20000;
+    const intervalTime = 45000;
 
     const interval = setInterval(() => {
       if (!isInputFocused && !isFormOpen) {
@@ -80,7 +66,7 @@ export function useBannerSystem({
     }, intervalTime);
 
     return () => clearInterval(interval);
-  }, [scrollTriggered, hasSubscribed, isInputFocused, isFormOpen, elapsedTime, showBanner]);
+  }, [scrollTriggered, hasSubscribed, isInputFocused, isFormOpen, showBanner]);
 
   useEffect(() => {
     if (!scrollTriggered || hasSubscribed) return;
