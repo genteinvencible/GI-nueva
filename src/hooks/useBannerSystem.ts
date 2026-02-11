@@ -70,7 +70,7 @@ export function useBannerSystem({
 
       // Mostrar el banner
       setCurrentMessage(processedMessage);
-      setCurrentAvatar(message.avatar || null);
+      setCurrentAvatar(message.avatar);
       setIsVisible(true);
 
       // Programar el ocultamiento del banner después de BANNER_DISPLAY_TIME
