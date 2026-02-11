@@ -55,7 +55,7 @@ export function useBannerSystem({
       setTimeout(() => {
         setCurrentMessage(null);
       }, 300);
-    }, 6500);
+    }, 7000);
   }, [getRandomMessage]);
 
   useEffect(() => {
@@ -71,7 +71,7 @@ export function useBannerSystem({
   useEffect(() => {
     if (!scrollTriggered || hasSubscribed || isInputFocused) return;
 
-    const intervalTime = elapsedTime > 90000 ? 10000 : Math.floor(Math.random() * 8000) + 12000;
+    const intervalTime = elapsedTime > 90000 ? 25000 : Math.floor(Math.random() * 15000) + 20000;
 
     const interval = setInterval(() => {
       if (!isInputFocused && !isFormOpen) {
