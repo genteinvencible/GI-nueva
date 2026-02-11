@@ -28,7 +28,7 @@ export default function AntiSocialBanner({
         animation: isVisible ? 'bannerSlideUp 0.5s ease-out' : undefined,
       }}
     >
-      <div className="flex items-start gap-3 bg-white/95 dark:bg-neutral-800/95 backdrop-blur-md border border-neutral-200 dark:border-neutral-700 rounded-lg shadow-lg p-3.5 sm:p-4 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200">
+      <div className="flex items-start gap-3 bg-white/60 dark:bg-neutral-900/60 backdrop-blur-xl border border-black/5 dark:border-white/10 rounded-lg shadow-lg p-3.5 sm:p-4 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200">
         <div className="flex-shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden bg-neutral-100 dark:bg-neutral-700">
           <img
             src={avatar}
@@ -38,7 +38,7 @@ export default function AntiSocialBanner({
         </div>
 
         <div className="flex-1 min-w-0">
-          <p className="text-xs sm:text-sm text-neutral-800 dark:text-neutral-100 leading-snug">
+          <p className="text-xs sm:text-sm text-neutral-800 dark:text-neutral-100 leading-snug font-normal">
             {message}
           </p>
         </div>
