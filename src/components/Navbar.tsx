@@ -7,6 +7,7 @@ export default function Navbar() {
     return typeof window !== 'undefined' ? window.innerWidth >= 768 : true;
   });
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
     const controlNavbar = () => {
@@ -17,21 +18,27 @@ export default function Navbar() {
       if (isMobile) {
         if (currentScrollY < 50) {
           setIsVisible(true);
+          setIsSticky(false);
         } else {
           if (currentScrollY > lastScrollY) {
             setIsVisible(false);
+            setIsSticky(false);
           } else {
             setIsVisible(true);
+            setIsSticky(true);
           }
         }
       } else {
         // En desktop, comportamiento normal
         if (currentScrollY < 10) {
           setIsVisible(true);
+          setIsSticky(false);
         } else if (currentScrollY > lastScrollY) {
           setIsVisible(false);
+          setIsSticky(false);
         } else {
           setIsVisible(true);
+          setIsSticky(true);
         }
       }
 
@@ -48,7 +55,7 @@ export default function Navbar() {
         fixed left-1/2 -translate-x-1/2 z-50
         flex flex-col items-center
         transition-all duration-500 ease-in-out
-        top-4 md:top-8
+        ${isSticky ? 'top-4' : 'top-4 md:top-8'}
         ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-20 opacity-0'}
       `}
     >
