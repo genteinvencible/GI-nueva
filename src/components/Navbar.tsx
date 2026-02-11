@@ -37,14 +37,9 @@ export default function Navbar() {
     >
       {/* Lámpara con luz intensa */}
       <div className="relative w-[350px] md:w-[450px] mb-8">
-        {/* Línea de luz uniforme */}
+        {/* Línea de luz uniforme - SIN blur para evitar luz hacia arriba */}
         <div className="relative h-1">
-          {/* Línea base de color uniforme */}
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-400 dark:via-amber-300 to-transparent" />
-
-          {/* Capas de brillo horizontales solo (sin expansión vertical) */}
-          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-amber-400 dark:via-amber-300 to-transparent blur-sm" />
-          <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-amber-400 dark:via-amber-300 to-transparent blur-md scale-x-105" />
         </div>
 
         {/* Luz proyectada SOLO hacia abajo */}
