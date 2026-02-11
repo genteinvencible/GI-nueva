@@ -28,7 +28,7 @@ export default function AntiSocialBanner({
         animation: isVisible ? 'bannerSlideUp 0.5s ease-out' : undefined,
       }}
     >
-      <div className="relative flex items-start gap-3 bg-[#faf8f5]/95 dark:bg-neutral-800/80 backdrop-blur-xl border border-black/5 dark:border-white/10 rounded-lg shadow-lg p-3.5 sm:p-4 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 overflow-hidden" style={{ boxShadow: '-12px 0 24px rgba(0, 0, 0, 0.12), 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)' }}>
+      <div className="relative flex items-start gap-3 bg-[#faf8f5]/95 dark:bg-neutral-800/80 backdrop-blur-xl border border-black/5 dark:border-white/10 rounded-lg shadow-lg p-3.5 sm:p-4 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 overflow-hidden" style={{ boxShadow: '-16px 0 32px rgba(0, 0, 0, 0.06), 16px 0 32px rgba(0, 0, 0, 0.06), 0 4px 8px -2px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04)' }}>
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "url('https://grainy-gradients.vercel.app/noise.svg')", opacity: 0.07 }}></div>
         <div className="relative flex-shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden bg-neutral-100 dark:bg-neutral-700">
           <img
