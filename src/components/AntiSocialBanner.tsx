@@ -28,7 +28,7 @@ export default function AntiSocialBanner({
         animation: isVisible ? 'bannerSlideUp 0.5s ease-out' : undefined,
       }}
     >
-      <div className="flex items-start gap-3 bg-white/80 dark:bg-neutral-800/80 backdrop-blur-xl border border-black/5 dark:border-white/10 rounded-lg shadow-lg p-3.5 sm:p-4 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200" style={{ boxShadow: '-2px 0 8px rgba(0, 0, 0, 0.03), 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)' }}>
+      <div className="flex items-start gap-3 bg-white/80 dark:bg-neutral-800/80 backdrop-blur-xl border border-black/5 dark:border-white/10 rounded-lg shadow-lg p-3.5 sm:p-4 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200" style={{ boxShadow: '-12px 0 24px rgba(0, 0, 0, 0.12), 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)' }}>
         <div className="flex-shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden bg-neutral-100 dark:bg-neutral-700">
           <img
             src={avatar}
