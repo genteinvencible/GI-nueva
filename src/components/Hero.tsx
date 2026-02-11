@@ -31,7 +31,7 @@ export default function Hero() {
                 <img
                   src={alvaroImageNormal}
                   alt="Álvaro Barra"
-                  className="w-full h-auto object-cover shadow-md dark:shadow-black/40 transition-opacity duration-700"
+                  className="w-full h-auto object-cover shadow-md dark:shadow-black/40 transition-opacity duration-[1400ms]"
                   style={{
                     filter: 'brightness(0.92) contrast(1.08)',
                     opacity: isHovering ? 0 : 1
@@ -40,7 +40,7 @@ export default function Hero() {
                 <img
                   src={alvaroImageLooking}
                   alt="Álvaro Barra"
-                  className="absolute top-0 left-0 w-full h-auto object-cover shadow-md dark:shadow-black/40 transition-opacity duration-700"
+                  className="absolute top-0 left-0 w-full h-auto object-cover shadow-md dark:shadow-black/40 transition-opacity duration-[1400ms]"
                   style={{
                     filter: 'brightness(0.92) contrast(1.08)',
                     opacity: isHovering ? 1 : 0
