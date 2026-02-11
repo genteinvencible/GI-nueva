@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import ThemeToggle from './ThemeToggle';
 
 export default function Navbar() {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(() => {
+    // En móvil inicia oculto, en desktop visible
+    return typeof window !== 'undefined' ? window.innerWidth >= 768 : true;
+  });
   const [lastScrollY, setLastScrollY] = useState(0);
   const [hasScrolled, setHasScrolled] = useState(false);
 
