@@ -25,35 +25,39 @@ export default function Navbar() {
   }, [lastScrollY]);
 
   return (
-    <nav
+    <div
       className={`
         fixed left-1/2 -translate-x-1/2 z-50
-        flex items-center gap-1 px-6 py-3
+        flex flex-col items-center
         transition-all duration-500 ease-in-out
         md:top-8 md:bottom-auto
         bottom-8 md:bottom-auto
         ${isVisible ? 'translate-y-0 opacity-100' : (lastScrollY > 10 ? 'translate-y-20 opacity-0 md:-translate-y-20' : '')}
-        relative
-        before:content-[''] before:absolute before:inset-0
-        before:bg-[radial-gradient(ellipse_400px_100px_at_center,rgba(255,165,0,0.15),transparent)]
-        dark:before:bg-[radial-gradient(ellipse_400px_100px_at_center,rgba(255,200,100,0.25),transparent)]
-        before:-z-10 before:pointer-events-none
       `}
     >
-      <button className="text-black dark:text-white px-4 md:px-5 py-2 text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase transition-colors">
-        HOME
-      </button>
-      <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-4 md:px-5 py-2 text-[9px] md:text-[10px] font-medium tracking-[0.2em] uppercase transition-colors">
-        ABOUT
-      </button>
-      <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-4 md:px-5 py-2 text-[9px] md:text-[10px] font-medium tracking-[0.2em] uppercase transition-colors">
-        FAQS
-      </button>
-      <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-4 md:px-5 py-2 text-[9px] md:text-[10px] font-medium tracking-[0.2em] uppercase transition-colors">
-        CHAT
-      </button>
-      <div className="w-px h-3 bg-black/10 dark:bg-white/10 mx-1 md:mx-2" />
-      <ThemeToggle />
-    </nav>
+      {/* Línea de luz superior - lámpara */}
+      <div className="relative w-[300px] md:w-[400px] h-1 mb-6">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-400 dark:via-amber-300 to-transparent opacity-80 blur-sm" />
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-300 dark:via-amber-200 to-transparent" />
+      </div>
+
+      {/* Menú de navegación */}
+      <nav className="flex items-center gap-1">
+        <button className="text-black dark:text-white px-4 md:px-5 py-2 text-[9px] md:text-[10px] font-bold tracking-[0.2em] uppercase transition-colors">
+          HOME
+        </button>
+        <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-4 md:px-5 py-2 text-[9px] md:text-[10px] font-medium tracking-[0.2em] uppercase transition-colors">
+          ABOUT
+        </button>
+        <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-4 md:px-5 py-2 text-[9px] md:text-[10px] font-medium tracking-[0.2em] uppercase transition-colors">
+          FAQS
+        </button>
+        <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-4 md:px-5 py-2 text-[9px] md:text-[10px] font-medium tracking-[0.2em] uppercase transition-colors">
+          CHAT
+        </button>
+        <div className="w-px h-3 bg-black/10 dark:bg-white/10 mx-1 md:mx-2" />
+        <ThemeToggle />
+      </nav>
+    </div>
   );
 }
