@@ -7,7 +7,6 @@ export default function Navbar() {
     return typeof window !== 'undefined' ? window.innerWidth >= 768 : true;
   });
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [hasScrolled, setHasScrolled] = useState(false);
 
   useEffect(() => {
     const controlNavbar = () => {
@@ -19,7 +18,6 @@ export default function Navbar() {
         if (currentScrollY < 50) {
           setIsVisible(true);
         } else {
-          setHasScrolled(true);
           if (currentScrollY > lastScrollY) {
             setIsVisible(false);
           } else {
@@ -54,10 +52,8 @@ export default function Navbar() {
         ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-20 opacity-0'}
       `}
     >
-      {/* Fondo con backdrop blur cuando hay scroll */}
-      {hasScrolled && (
-        <div className="absolute inset-0 -inset-x-8 -inset-y-4 bg-white/80 dark:bg-neutral-900/80 backdrop-blur-md rounded-2xl -z-10" />
-      )}
+      {/* Gradiente sutil que extiende la luz de la lámpara */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-gradient-to-b from-white/10 dark:from-black/10 via-white/5 dark:via-black/5 to-transparent pointer-events-none -z-10" />
 
       {/* Lámpara con luz intensa */}
       <div className="relative w-[350px] md:w-[450px] mb-5">
@@ -72,18 +68,18 @@ export default function Navbar() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[320px] h-24 bg-gradient-to-b from-amber-200/24 dark:from-amber-100/24 to-transparent blur-xl pointer-events-none" />
       </div>
 
-      {/* Menú de navegación */}
+      {/* Menú de navegación con sombras sutiles para legibilidad */}
       <nav className="flex items-center gap-1 relative">
-        <button className="text-black dark:text-white px-4 md:px-5 py-2.5 text-[9px] md:text-[11px] font-bold tracking-[0.2em] uppercase transition-colors">
+        <button className="text-black dark:text-white px-4 md:px-5 py-2.5 text-[9px] md:text-[11px] font-bold tracking-[0.2em] uppercase transition-colors [text-shadow:_0_1px_8px_rgb(255_255_255_/_30%)] dark:[text-shadow:_0_1px_8px_rgb(0_0_0_/_40%)]">
           HOME
         </button>
-        <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-4 md:px-5 py-2.5 text-[9px] md:text-[11px] font-medium tracking-[0.2em] uppercase transition-colors">
+        <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-4 md:px-5 py-2.5 text-[9px] md:text-[11px] font-medium tracking-[0.2em] uppercase transition-colors [text-shadow:_0_1px_8px_rgb(255_255_255_/_30%)] dark:[text-shadow:_0_1px_8px_rgb(0_0_0_/_40%)]">
           ABOUT
         </button>
-        <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-4 md:px-5 py-2.5 text-[9px] md:text-[11px] font-medium tracking-[0.2em] uppercase transition-colors">
+        <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-4 md:px-5 py-2.5 text-[9px] md:text-[11px] font-medium tracking-[0.2em] uppercase transition-colors [text-shadow:_0_1px_8px_rgb(255_255_255_/_30%)] dark:[text-shadow:_0_1px_8px_rgb(0_0_0_/_40%)]">
           FAQS
         </button>
-        <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-4 md:px-5 py-2.5 text-[9px] md:text-[11px] font-medium tracking-[0.2em] uppercase transition-colors">
+        <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-4 md:px-5 py-2.5 text-[9px] md:text-[11px] font-medium tracking-[0.2em] uppercase transition-colors [text-shadow:_0_1px_8px_rgb(255_255_255_/_30%)] dark:[text-shadow:_0_1px_8px_rgb(0_0_0_/_40%)]">
           CHAT
         </button>
         <div className="w-px h-4 bg-black/10 dark:bg-white/10 mx-1 md:mx-2" />
