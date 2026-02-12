@@ -75,21 +75,27 @@ export default function Navbar() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[320px] h-24 bg-gradient-to-b from-amber-200/24 dark:from-amber-100/24 to-transparent blur-xl pointer-events-none" />
       </div>
 
-      {/* Menú de navegación con backdrop blur */}
-      <nav className="flex items-center gap-1 relative backdrop-blur-md bg-white/70 dark:bg-black/40 rounded-full px-2 py-1 shadow-lg shadow-black/5 dark:shadow-black/20">
-        <button className="text-black dark:text-white px-4 md:px-5 py-2.5 text-[9px] md:text-[11px] font-bold tracking-[0.2em] uppercase transition-colors">
+      {/* Menú de navegación con ribbon horizontal */}
+      <nav className="flex items-center gap-1 relative">
+        {/* Ribbon de fondo horizontal con degradado desde el centro */}
+        <div className="absolute inset-0 left-1/2 -translate-x-1/2 w-[100vw] h-full -z-10">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/80 dark:via-black/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/60 dark:via-black/40 to-transparent blur-sm" />
+        </div>
+
+        <button className="text-black dark:text-white px-4 md:px-5 py-2.5 text-[9px] md:text-[11px] font-bold tracking-[0.2em] uppercase transition-colors relative">
           HOME
         </button>
-        <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-4 md:px-5 py-2.5 text-[9px] md:text-[11px] font-medium tracking-[0.2em] uppercase transition-colors">
+        <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-4 md:px-5 py-2.5 text-[9px] md:text-[11px] font-medium tracking-[0.2em] uppercase transition-colors relative">
           ABOUT
         </button>
-        <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-4 md:px-5 py-2.5 text-[9px] md:text-[11px] font-medium tracking-[0.2em] uppercase transition-colors">
+        <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-4 md:px-5 py-2.5 text-[9px] md:text-[11px] font-medium tracking-[0.2em] uppercase transition-colors relative">
           FAQS
         </button>
-        <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-4 md:px-5 py-2.5 text-[9px] md:text-[11px] font-medium tracking-[0.2em] uppercase transition-colors">
+        <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-4 md:px-5 py-2.5 text-[9px] md:text-[11px] font-medium tracking-[0.2em] uppercase transition-colors relative">
           CHAT
         </button>
-        <div className="w-px h-4 bg-black/10 dark:bg-white/10 mx-1 md:mx-2" />
+        <div className="w-px h-4 bg-black/10 dark:bg-white/10 mx-1 md:mx-2 relative" />
         <ThemeToggle />
       </nav>
     </div>
