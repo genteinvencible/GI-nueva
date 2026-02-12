@@ -52,15 +52,15 @@ export default function Navbar() {
   return (
     <div
       className={`
-        fixed left-1/2 -translate-x-1/2 z-50
+        fixed left-1/2 -translate-x-1/2 top-0 z-50
         flex flex-col items-center
         transition-all duration-500 ease-in-out
-        ${isSticky ? 'top-4' : 'top-4 md:top-8'}
         ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-20 opacity-0'}
+        pt-4 md:pt-8
       `}
     >
-      {/* Fondo sólido que cubre toda la altura del navbar */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[100vw] h-full -z-30" style={{ backgroundColor: 'var(--bg-color)' }} />
+      {/* Fondo sólido que cubre desde el borde superior de la pantalla */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[100vw] h-[250px] bg-[var(--bg-color)] -z-30" />
 
       {/* Gradiente sutil que extiende la luz de la lámpara */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-gradient-to-b from-white/10 dark:from-black/10 via-white/5 dark:via-black/5 to-transparent pointer-events-none -z-10" />
