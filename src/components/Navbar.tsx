@@ -60,7 +60,7 @@ export default function Navbar() {
       `}
     >
       {/* Fondo sólido que cubre desde el borde superior de la pantalla */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[100vw] h-[90px] bg-[var(--bg-color)] -z-30" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[100vw] h-[80px] bg-[var(--bg-color)] -z-30" />
 
       {/* Gradiente sutil que extiende la luz de la lámpara */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-gradient-to-b from-white/10 dark:from-black/10 via-white/5 dark:via-black/5 to-transparent pointer-events-none -z-10" />
