@@ -42,6 +42,7 @@ body {
   font-family: 'Suisse', sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
   background-color: #f7f3ed;
+  --bg-color: #f7f3ed;
   margin: 0;
   padding: 0;
 }
@@ -49,6 +50,7 @@ body {
 .dark body,
 html.dark body {
   background-color: #141210;
+  --bg-color: #141210;
 }
 
 body::before {

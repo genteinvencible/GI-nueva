@@ -77,6 +77,9 @@ export default function Navbar() {
 
       {/* Menú de navegación con ribbon horizontal */}
       <nav className="flex items-center gap-1 relative">
+        {/* Fondo sólido del color de la página */}
+        <div className="absolute inset-0 left-1/2 -translate-x-1/2 w-[100vw] h-full -z-20" style={{ backgroundColor: 'var(--bg-color)' }} />
+
         {/* Ribbon de fondo horizontal con degradado desde el centro */}
         <div className="absolute inset-0 left-1/2 -translate-x-1/2 w-[100vw] h-full -z-10">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-300/18 dark:via-amber-200/5 to-transparent" />
