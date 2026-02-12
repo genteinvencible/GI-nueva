@@ -59,6 +59,9 @@ export default function Navbar() {
         ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-20 opacity-0'}
       `}
     >
+      {/* Fondo sólido que cubre toda la altura del navbar */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[100vw] h-full -z-30" style={{ backgroundColor: 'var(--bg-color)' }} />
+
       {/* Gradiente sutil que extiende la luz de la lámpara */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-gradient-to-b from-white/10 dark:from-black/10 via-white/5 dark:via-black/5 to-transparent pointer-events-none -z-10" />
 
