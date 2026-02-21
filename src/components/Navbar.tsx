@@ -59,12 +59,11 @@ export default function Navbar() {
       {/* Fondo sólido - en móvil desde abajo, en desktop desde arriba */}
       <div className="absolute bottom-0 md:bottom-auto md:top-0 left-1/2 -translate-x-1/2 w-[100vw] h-[80px] md:h-[110px] bg-[var(--bg-color)] -z-30" />
 
-      {/* Línea horizontal en móvil, degradado en desktop */}
-      <div className="md:hidden absolute bottom-[80px] left-1/2 -translate-x-1/2 w-[100vw] h-[2px] -z-30">
+      {/* Línea horizontal simple para marcar el final del menú */}
+      <div className="absolute bottom-[80px] md:bottom-auto md:top-[110px] left-1/2 -translate-x-1/2 w-[100vw] h-[2px] -z-30">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-400/40 dark:via-amber-300/45 to-transparent blur-[1px]" />
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-300/50 dark:via-amber-200/55 to-transparent" style={{ width: '60%', left: '20%' }} />
       </div>
-      <div className="hidden md:block absolute top-[110px] left-1/2 -translate-x-1/2 w-[100vw] h-[30px] bg-gradient-to-b from-[var(--bg-color)] to-transparent -z-30" />
 
       {/* Gradiente sutil que extiende la luz de la lámpara - solo desktop */}
       <div className="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-gradient-to-b from-white/10 dark:from-black/10 via-white/5 dark:via-black/5 to-transparent pointer-events-none -z-10" />
