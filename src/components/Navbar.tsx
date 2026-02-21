@@ -61,8 +61,8 @@ export default function Navbar() {
 
       {/* Línea horizontal simple para marcar el final del menú */}
       <div className="absolute bottom-[80px] md:bottom-auto md:top-[110px] left-1/2 -translate-x-1/2 w-[100vw] h-[2px] -z-30">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-400/40 dark:via-amber-300/45 to-transparent blur-[1px]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-300/50 dark:via-amber-200/55 to-transparent" style={{ width: '60%', left: '20%' }} />
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-400/40 dark:via-gray-300/45 to-transparent blur-[1px]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-300/50 dark:via-gray-200/55 to-transparent" style={{ width: '60%', left: '20%' }} />
       </div>
 
       {/* Gradiente sutil que extiende la luz de la lámpara - solo desktop */}
@@ -72,8 +72,8 @@ export default function Navbar() {
       <div className="hidden md:block relative w-[450px] mb-5">
         {/* Línea de luz estilizada y tenue */}
         <div className="relative h-[2px]">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-400/40 dark:via-amber-300/45 to-transparent blur-[1px]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-300/50 dark:via-amber-200/55 to-transparent" style={{ width: '60%', left: '20%' }} />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-400/40 dark:via-gray-300/45 to-transparent blur-[1px]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-300/50 dark:via-gray-200/55 to-transparent" style={{ width: '60%', left: '20%' }} />
         </div>
 
         {/* Luz proyectada SOLO hacia abajo */}
