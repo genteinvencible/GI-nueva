@@ -53,14 +53,14 @@ export default function Navbar() {
         flex flex-col items-center
         transition-all duration-500 ease-in-out
         ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 md:-translate-y-20 opacity-0'}
-        pb-4 md:pb-0 md:pt-8
+        pb-4 md:pb-0 md:pt-6
       `}
     >
       {/* Fondo sólido - en móvil desde abajo, en desktop desde arriba */}
-      <div className="absolute bottom-0 md:bottom-auto md:top-0 left-1/2 -translate-x-1/2 w-[100vw] h-[80px] md:h-[110px] bg-[var(--bg-color)] -z-30" />
+      <div className="absolute bottom-0 md:bottom-auto md:top-0 left-1/2 -translate-x-1/2 w-[100vw] h-[80px] md:h-[80px] bg-[var(--bg-color)] -z-30" />
 
       {/* Línea horizontal simple para marcar el final del menú */}
-      <div className="absolute bottom-[80px] md:bottom-auto md:top-[110px] left-1/2 -translate-x-1/2 w-[100vw] h-[2px] -z-30">
+      <div className="absolute bottom-[80px] md:bottom-auto md:top-[80px] left-1/2 -translate-x-1/2 w-[100vw] h-[2px] -z-30">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-400/40 dark:via-gray-300/45 to-transparent blur-[1px]" />
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-300/50 dark:via-gray-200/55 to-transparent" style={{ width: '60%', left: '20%' }} />
       </div>
