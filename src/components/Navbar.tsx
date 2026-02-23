@@ -57,10 +57,10 @@ export default function Navbar() {
       `}
     >
       {/* Fondo sólido - en móvil desde abajo, en desktop desde arriba */}
-      <div className="absolute bottom-0 md:bottom-auto md:top-0 left-1/2 -translate-x-1/2 w-[100vw] h-[80px] md:h-[80px] bg-[var(--bg-color)] -z-30" />
+      <div className="absolute bottom-0 md:bottom-auto md:top-0 left-1/2 -translate-x-1/2 w-[100vw] h-[60px] md:h-[80px] bg-[var(--bg-color)] -z-30" />
 
       {/* Línea horizontal simple para marcar el final del menú */}
-      <div className="absolute bottom-[80px] md:bottom-auto md:top-[80px] left-1/2 -translate-x-1/2 w-[100vw] h-[2px] -z-30">
+      <div className="absolute bottom-[60px] md:bottom-auto md:top-[80px] left-1/2 -translate-x-1/2 w-[100vw] h-[2px] -z-30">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-400/40 dark:via-gray-300/45 to-transparent blur-[1px]" />
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-300/50 dark:via-gray-200/55 to-transparent" style={{ width: '60%', left: '20%' }} />
       </div>
@@ -86,16 +86,16 @@ export default function Navbar() {
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-200/12 dark:via-amber-100/4 to-transparent blur-sm" />
         </div>
 
-        <button className="text-black dark:text-white px-4 md:px-5 py-2 text-[9px] md:text-[11px] font-bold tracking-[0.2em] uppercase transition-colors relative">
+        <button className="text-black dark:text-white px-3 md:px-5 py-1.5 md:py-2 text-[9px] md:text-[11px] font-bold tracking-[0.2em] uppercase transition-colors relative">
           HOME
         </button>
-        <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-4 md:px-5 py-2 text-[9px] md:text-[11px] font-medium tracking-[0.2em] uppercase transition-colors relative">
+        <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-3 md:px-5 py-1.5 md:py-2 text-[9px] md:text-[11px] font-medium tracking-[0.2em] uppercase transition-colors relative">
           ABOUT
         </button>
-        <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-4 md:px-5 py-2 text-[9px] md:text-[11px] font-medium tracking-[0.2em] uppercase transition-colors relative">
+        <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-3 md:px-5 py-1.5 md:py-2 text-[9px] md:text-[11px] font-medium tracking-[0.2em] uppercase transition-colors relative">
           FAQS
         </button>
-        <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-4 md:px-5 py-2 text-[9px] md:text-[11px] font-medium tracking-[0.2em] uppercase transition-colors relative">
+        <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-3 md:px-5 py-1.5 md:py-2 text-[9px] md:text-[11px] font-medium tracking-[0.2em] uppercase transition-colors relative">
           CHAT
         </button>
         <div className="w-px h-4 bg-black/10 dark:bg-white/10 mx-1 md:mx-2 relative" />
