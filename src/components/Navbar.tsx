@@ -69,7 +69,7 @@ export default function Navbar() {
       <div className="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-gradient-to-b from-white/10 dark:from-black/10 via-white/5 dark:via-black/5 to-transparent pointer-events-none -z-10" />
 
       {/* Lámpara con luz intensa - solo desktop */}
-      <div className="hidden md:block relative w-[450px] mb-5">
+      <div className="hidden md:block relative w-[450px] mb-3">
         {/* Luz proyectada SOLO hacia abajo */}
         <div className="absolute top-1 left-1/2 -translate-x-1/2 w-[400px] h-32 bg-gradient-to-b from-amber-300/28 dark:from-amber-200/30 via-amber-200/18 dark:via-amber-100/20 to-transparent blur-2xl pointer-events-none" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[320px] h-24 bg-gradient-to-b from-amber-200/24 dark:from-amber-100/24 to-transparent blur-xl pointer-events-none" />
