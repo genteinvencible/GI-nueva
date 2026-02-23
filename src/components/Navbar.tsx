@@ -86,16 +86,16 @@ export default function Navbar() {
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-amber-200/12 dark:via-amber-100/4 to-transparent blur-sm" />
         </div>
 
-        <button className="text-black dark:text-white px-4 md:px-5 py-2.5 text-[9px] md:text-[11px] font-bold tracking-[0.2em] uppercase transition-colors relative">
+        <button className="text-black dark:text-white px-4 md:px-5 py-2 text-[9px] md:text-[11px] font-bold tracking-[0.2em] uppercase transition-colors relative">
           HOME
         </button>
-        <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-4 md:px-5 py-2.5 text-[9px] md:text-[11px] font-medium tracking-[0.2em] uppercase transition-colors relative">
+        <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-4 md:px-5 py-2 text-[9px] md:text-[11px] font-medium tracking-[0.2em] uppercase transition-colors relative">
           ABOUT
         </button>
-        <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-4 md:px-5 py-2.5 text-[9px] md:text-[11px] font-medium tracking-[0.2em] uppercase transition-colors relative">
+        <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-4 md:px-5 py-2 text-[9px] md:text-[11px] font-medium tracking-[0.2em] uppercase transition-colors relative">
           FAQS
         </button>
-        <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-4 md:px-5 py-2.5 text-[9px] md:text-[11px] font-medium tracking-[0.2em] uppercase transition-colors relative">
+        <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-4 md:px-5 py-2 text-[9px] md:text-[11px] font-medium tracking-[0.2em] uppercase transition-colors relative">
           CHAT
         </button>
         <div className="w-px h-4 bg-black/10 dark:bg-white/10 mx-1 md:mx-2 relative" />
