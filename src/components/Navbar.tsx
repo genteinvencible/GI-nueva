@@ -59,10 +59,10 @@ export default function Navbar() {
       {/* Fondo sólido - en móvil desde abajo, en desktop desde arriba */}
       <div className="absolute bottom-0 md:bottom-auto md:top-0 left-1/2 -translate-x-1/2 w-[100vw] h-[60px] md:h-[80px] bg-[var(--bg-color)] -z-30" />
 
-      {/* Doble línea horizontal para marcar el final del menú */}
-      <div className="absolute bottom-[60px] md:bottom-auto md:top-[80px] left-1/2 -translate-x-1/2 w-[100vw] -z-30">
-        <div className="h-[2px] bg-black dark:bg-white mb-[2px]"></div>
-        <div className="h-[1px] bg-black dark:bg-white"></div>
+      {/* Línea horizontal simple para marcar el final del menú */}
+      <div className="absolute bottom-[60px] md:bottom-auto md:top-[80px] left-1/2 -translate-x-1/2 w-[100vw] h-[2px] -z-30">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-400/40 dark:via-gray-300/45 to-transparent blur-[1px]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-300/50 dark:via-gray-200/55 to-transparent" style={{ width: '60%', left: '20%' }} />
       </div>
 
       {/* Gradiente sutil que extiende la luz de la lámpara - solo desktop */}
