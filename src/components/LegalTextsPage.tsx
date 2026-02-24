@@ -1,11 +1,18 @@
 interface LegalTextsPageProps {
   onNavigateToPolicy: () => void;
+  onBack: () => void;
 }
 
-export default function LegalTextsPage({ onNavigateToPolicy }: LegalTextsPageProps) {
+export default function LegalTextsPage({ onNavigateToPolicy, onBack }: LegalTextsPageProps) {
   return (
     <div className="min-h-screen bg-white dark:bg-black text-neutral-900 dark:text-white">
       <div className="max-w-3xl mx-auto px-6 py-24">
+        <button
+          onClick={onBack}
+          className="mb-8 text-neutral-600 dark:text-neutral-400 hover:text-[#2d6a4f] dark:hover:text-[#52b788] transition-colors"
+        >
+          ← Volver al inicio
+        </button>
         <div className="space-y-8">
           <div>
             <h1 className="text-3xl font-bold mb-4">

@@ -6,9 +6,9 @@ import AboutSection from './components/AboutSection';
 import Chapter2Section from './components/Chapter2Section';
 import ExploreOptionsSection from './components/ExploreOptionsSection';
 import AntiSocialBanner from './components/AntiSocialBanner';
-import PrivacyPolicy from './components/PrivacyPolicy';
 import Footer from './components/Footer';
 import LegalTextsPage from './components/LegalTextsPage';
+import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 import { useScrollTrigger } from './hooks/useScrollTrigger';
 import { useBannerSystem } from './hooks/useBannerSystem';
 
@@ -60,6 +60,19 @@ function App() {
     // El banner se cerrará solo por la animación
   }, []);
 
+  if (showPrivacyPolicy) {
+    return (
+      <ThemeProvider>
+        <PrivacyPolicyPage
+          onBack={() => {
+            setShowPrivacyPolicy(false);
+            setShowLegalTexts(true);
+          }}
+        />
+      </ThemeProvider>
+    );
+  }
+
   if (showLegalTexts) {
     return (
       <ThemeProvider>
@@ -68,6 +81,7 @@ function App() {
             setShowLegalTexts(false);
             setShowPrivacyPolicy(true);
           }}
+          onBack={() => setShowLegalTexts(false)}
         />
       </ThemeProvider>
     );
@@ -102,11 +116,6 @@ function App() {
             onClose={handleCloseBanner}
           />
         )}
-
-        <PrivacyPolicy
-          isOpen={showPrivacyPolicy}
-          onClose={() => setShowPrivacyPolicy(false)}
-        />
       </div>
     </ThemeProvider>
   );
