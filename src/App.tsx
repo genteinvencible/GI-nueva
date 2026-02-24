@@ -106,7 +106,7 @@ function App() {
         />
         <ExploreOptionsSection ref={exploreRef} visible={exploreVisible} />
 
-        <Footer onLegalClick={() => setShowLegalTexts(true)} />
+        {exploreVisible && <Footer onLegalClick={() => setShowLegalTexts(true)} />}
 
         {currentMessage && (
           <AntiSocialBanner
