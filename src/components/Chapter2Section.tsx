@@ -170,14 +170,14 @@ const Chapter2Section = forwardRef<HTMLDivElement, Chapter2SectionProps>(
                   onClick={onExploreClick}
                   className="w-full px-8 py-5 border-2 border-neutral-300 dark:border-neutral-600 text-neutral-500 dark:text-neutral-400 text-base font-normal hover:border-neutral-500 dark:hover:border-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all duration-200 cursor-pointer active:scale-[0.98]"
                 >
-                  {'Todav\u00EDa es pronto, podr\u00EDas estar muy loco.'}
+                  {'Sigue siendo pronto, podr\u00EDas estar muy loco.'}
                 </button>
 
                 <button
                   onClick={() => setShowForm(!showForm)}
                   className="relative w-full px-8 py-5 bg-neutral-800 dark:bg-neutral-100 text-white dark:text-neutral-900 text-base font-medium hover:bg-neutral-700 dark:hover:bg-white transition-all duration-200 cursor-pointer shadow-md hover:shadow-lg active:scale-[0.98]"
                 >
-                  {'Toma mi email, te hago hueco con los otros treinta y tres.'}
+                  {'Toma mi email, te hago otro hueco'}
                 </button>
 
                 <EmailSubscriptionForm isOpen={showForm} />
