@@ -34,7 +34,7 @@ const Chapter2Section = forwardRef<HTMLDivElement, Chapter2SectionProps>(
               style={{ animationDelay: '0.1s' }}
             >
               <span className="lead-in-text">Me parece justo,</span>{' '}
-              {'yo tampoco dar\u00EDa mi email por trig\u00E9simo cuarta vez esta semana.'}
+              {'yo tampoco entregar\u00EDa mi email otra vez esta semana.'}
             </p>
 
             <p
@@ -49,9 +49,7 @@ const Chapter2Section = forwardRef<HTMLDivElement, Chapter2SectionProps>(
                 className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors ch2-stagger"
                 style={{ animationDelay: '0.3s' }}
               >
-                {'Una vez le\u00ED a Charlie Munger (que era un se\u00F1or muy listo) que '}
-                <strong>{'ochenta modelos mentales son suficientes'}</strong>
-                {' para que te vaya muy bien en la vida. Y me empe\u00F1\u00E9 en encontrarlos.'}
+                {'Una vez le\u00ED a Charlie Munger (que era un se\u00F1or muy listo) que ochenta modelos mentales son suficientes para que te vaya muy bien en la vida.'}
               </p>
 
               <p
@@ -65,25 +63,21 @@ const Chapter2Section = forwardRef<HTMLDivElement, Chapter2SectionProps>(
                 className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors ch2-stagger"
                 style={{ animationDelay: '0.45s' }}
               >
-                {'Pues una '}
-                <strong>{'idea de c\u00F3mo funciona el mundo'}</strong>
-                {', una abstracci\u00F3n de la realidad que te permite entenderla.'}
+                {'Pues una idea de c\u00F3mo funciona el mundo, una abstracci\u00F3n de la realidad que te permite entenderla.'}
               </p>
 
               <p
                 className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors ch2-stagger"
                 style={{ animationDelay: '0.55s' }}
               >
-                {'Lo que pens\u00E9 fue que ser\u00EDa un gran '}
-                <strong>{'regalo para mis hijos'}</strong>
-                {' cuando cumplieran los 18.'}
+                {'Lo que pens\u00E9 fue que ser\u00EDa un gran regalo para mis hijos cuando cumplieran los 18.'}
               </p>
 
               <p
                 className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors ch2-stagger"
                 style={{ animationDelay: '0.6s' }}
               >
-                {'Ni coche, ni carnet, ni un Patek Philippe. Darles los 80 modelos, cero euros, y decirles:'}
+                {'Ni coche, ni carnet, ni un Patek Philipe. Imprimirles los 80 modelos, darles cero euros, y decirles:'}
               </p>
 
               <blockquote
@@ -102,9 +96,7 @@ const Chapter2Section = forwardRef<HTMLDivElement, Chapter2SectionProps>(
                 className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors ch2-stagger"
                 style={{ animationDelay: '0.75s' }}
               >
-                {'Pens\u00E9 que '}
-                <strong>{'a alguien m\u00E1s'}</strong>
-                {' podr\u00EDa interesarle y termin\u00E9 montando un negocio alrededor.'}
+                {'Pens\u00E9 que a alguien m\u00E1s podr\u00EDa interesarle y termin\u00E9 montando un negocio alrededor.'}
               </p>
 
               <p
@@ -120,7 +112,7 @@ const Chapter2Section = forwardRef<HTMLDivElement, Chapter2SectionProps>(
                 className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors ch2-stagger"
                 style={{ animationDelay: '0.85s' }}
               >
-                {'S\u00ED, diario, '}<span className="font-bold">de lunes a domingo</span>{', de enero a diciembre. Agosto incluido.'}
+                {'S\u00ED, diario, de lunes a domingo, de enero a diciembre. Agosto incluido.'}
               </p>
 
               <p
@@ -141,9 +133,7 @@ const Chapter2Section = forwardRef<HTMLDivElement, Chapter2SectionProps>(
                 className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors ch2-stagger"
                 style={{ animationDelay: '1.1s' }}
               >
-                {'Si quieres saber si merece la pena (o si esto es una profunda gilipollez) '}
-                <strong>{'puedes leer gratis un tiempo'}</strong>
-                {'.'}
+                {'Si quieres saber si merece la pena (o si esto es una profunda gilipollez) puedes leer gratis un tiempo.'}
               </p>
 
               <p
