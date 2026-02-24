@@ -59,19 +59,45 @@ export default function PrivacyPolicyPage({ onBack }: PrivacyPolicyPageProps) {
           </p>
         </div>
 
-        <LegalChapter number={1} subtitle="Aviso Legal" showDinkus={false}>
+        <nav className="max-w-4xl mb-16 lg:mb-20">
+          <p className="text-[0.8rem] tracking-[0.3em] uppercase text-neutral-400 dark:text-neutral-500 font-bold transition-colors mb-6">
+            Syllabus
+          </p>
+          <ol className="space-y-3">
+            {[
+              { id: 'aviso-legal', label: 'Aviso Legal' },
+              { id: 'politica-privacidad', label: 'Política de Privacidad' },
+              { id: 'politica-cookies', label: 'Política de Cookies' },
+              { id: 'terminos-condiciones', label: 'Términos y Condiciones' },
+            ].map((item, i) => (
+              <li key={item.id}>
+                <a
+                  href={`#${item.id}`}
+                  className="group flex items-baseline gap-3 text-[1.05rem] lg:text-[1.125rem] text-neutral-600 dark:text-neutral-400 hover:text-[#2d6a4f] dark:hover:text-[#52b788] transition-colors"
+                >
+                  <span className="text-[0.8rem] font-bold text-neutral-400 dark:text-neutral-600 group-hover:text-[#2d6a4f] dark:group-hover:text-[#52b788] transition-colors tabular-nums">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+
+        <LegalChapter id="aviso-legal" number={1} subtitle="Aviso Legal" showDinkus={false}>
           <AvisoLegalContent />
         </LegalChapter>
 
-        <LegalChapter number={2} subtitle="Política de Privacidad">
+        <LegalChapter id="politica-privacidad" number={2} subtitle="Política de Privacidad">
           <PrivacidadContent />
         </LegalChapter>
 
-        <LegalChapter number={3} subtitle="Política de Cookies">
+        <LegalChapter id="politica-cookies" number={3} subtitle="Política de Cookies">
           <CookiesContent />
         </LegalChapter>
 
-        <LegalChapter number={4} subtitle="Términos y Condiciones">
+        <LegalChapter id="terminos-condiciones" number={4} subtitle="Términos y Condiciones">
           <TerminosContent />
         </LegalChapter>
       </div>
