@@ -59,7 +59,7 @@ export default function PrivacyPolicyPage({ onBack }: PrivacyPolicyPageProps) {
           </p>
         </div>
 
-        <LegalChapter number={1} subtitle="Aviso Legal">
+        <LegalChapter number={1} subtitle="Aviso Legal" showDinkus={false}>
           <AvisoLegalContent />
         </LegalChapter>
 
