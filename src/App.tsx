@@ -7,6 +7,7 @@ import Chapter2Section from './components/Chapter2Section';
 import ExploreOptionsSection from './components/ExploreOptionsSection';
 import AntiSocialBanner from './components/AntiSocialBanner';
 import PrivacyPolicy from './components/PrivacyPolicy';
+import Footer from './components/Footer';
 import { useScrollTrigger } from './hooks/useScrollTrigger';
 import { useBannerSystem } from './hooks/useBannerSystem';
 
@@ -75,6 +76,8 @@ function App() {
           onExploreClick={handleRevealExplore}
         />
         <ExploreOptionsSection ref={exploreRef} visible={exploreVisible} />
+
+        <Footer onLegalClick={() => setShowPrivacyPolicy(true)} />
 
         {currentMessage && (
           <AntiSocialBanner
