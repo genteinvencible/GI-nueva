@@ -60,9 +60,6 @@ export default function PrivacyPolicyPage({ onBack }: PrivacyPolicyPageProps) {
         </div>
 
         <nav className="max-w-4xl mb-16 lg:mb-20">
-          <p className="text-[0.8rem] tracking-[0.3em] uppercase text-neutral-400 dark:text-neutral-500 font-bold transition-colors mb-6">
-            Syllabus
-          </p>
           <ol className="space-y-3">
             {[
               { id: 'aviso-legal', label: 'Aviso Legal' },
