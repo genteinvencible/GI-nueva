@@ -71,35 +71,26 @@ export default function LegalTextsPage({ onNavigateToPolicy, onBack }: LegalText
               </p>
             </button>
 
-            <button
-              onClick={onNavigateToPolicy}
-              className="w-full text-left px-8 py-5 border-2 border-neutral-300 dark:border-neutral-600 hover:border-neutral-500 dark:hover:border-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all duration-200 cursor-pointer active:scale-[0.98]"
-            >
+            <div className="w-full text-left px-8 py-5 border-2 border-neutral-300 dark:border-neutral-600 opacity-50 cursor-not-allowed">
               <h3 className="text-[1.125rem] font-medium text-neutral-800 dark:text-white mb-2">Aviso Legal</h3>
               <p className="text-base text-neutral-600 dark:text-neutral-400">
                 Información legal de la web
               </p>
-            </button>
+            </div>
 
-            <button
-              onClick={onNavigateToPolicy}
-              className="w-full text-left px-8 py-5 border-2 border-neutral-300 dark:border-neutral-600 hover:border-neutral-500 dark:hover:border-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all duration-200 cursor-pointer active:scale-[0.98]"
-            >
+            <div className="w-full text-left px-8 py-5 border-2 border-neutral-300 dark:border-neutral-600 opacity-50 cursor-not-allowed">
               <h3 className="text-[1.125rem] font-medium text-neutral-800 dark:text-white mb-2">Política de Cookies</h3>
               <p className="text-base text-neutral-600 dark:text-neutral-400">
                 Qué cookies usamos y para qué
               </p>
-            </button>
+            </div>
 
-            <button
-              onClick={onNavigateToPolicy}
-              className="w-full text-left px-8 py-5 border-2 border-neutral-300 dark:border-neutral-600 hover:border-neutral-500 dark:hover:border-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all duration-200 cursor-pointer active:scale-[0.98]"
-            >
+            <div className="w-full text-left px-8 py-5 border-2 border-neutral-300 dark:border-neutral-600 opacity-50 cursor-not-allowed">
               <h3 className="text-[1.125rem] font-medium text-neutral-800 dark:text-white mb-2">Términos y Condiciones</h3>
               <p className="text-base text-neutral-600 dark:text-neutral-400">
                 Condiciones de uso de la plataforma
               </p>
-            </button>
+            </div>
         </div>
       </div>
     </div>
