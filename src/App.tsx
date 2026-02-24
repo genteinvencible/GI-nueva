@@ -4,17 +4,20 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutSection from './components/AboutSection';
 import Chapter2Section from './components/Chapter2Section';
+import ExploreOptionsSection from './components/ExploreOptionsSection';
 import AntiSocialBanner from './components/AntiSocialBanner';
 import { useScrollTrigger } from './hooks/useScrollTrigger';
 import { useBannerSystem } from './hooks/useBannerSystem';
 
 function App() {
   const [chapter2Visible, setChapter2Visible] = useState(false);
+  const [exploreVisible, setExploreVisible] = useState(false);
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [isInputFocused, setIsInputFocused] = useState(false);
   const [hasSubscribed, setHasSubscribed] = useState(false);
 
   const chapter2Ref = useRef<HTMLDivElement>(null);
+  const exploreRef = useRef<HTMLDivElement>(null);
   const emailButtonRef = useRef<HTMLButtonElement>(null);
 
   const scrollTriggered = useScrollTrigger(emailButtonRef);
@@ -37,6 +40,17 @@ function App() {
     }, 50);
   }, [chapter2Visible]);
 
+  const handleRevealExplore = useCallback(() => {
+    if (exploreVisible) {
+      exploreRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+    setExploreVisible(true);
+    setTimeout(() => {
+      exploreRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 50);
+  }, [exploreVisible]);
+
   const handleCloseBanner = useCallback(() => {
     // El banner se cerrará solo por la animación
   }, []);
@@ -53,7 +67,12 @@ function App() {
           onInputFocusChange={setIsInputFocused}
           onSubscribe={() => setHasSubscribed(true)}
         />
-        <Chapter2Section ref={chapter2Ref} visible={chapter2Visible} />
+        <Chapter2Section
+          ref={chapter2Ref}
+          visible={chapter2Visible}
+          onExploreClick={handleRevealExplore}
+        />
+        <ExploreOptionsSection ref={exploreRef} visible={exploreVisible} />
 
         {currentMessage && (
           <AntiSocialBanner

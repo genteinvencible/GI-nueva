@@ -3,10 +3,11 @@ import EmailSubscriptionForm from './EmailSubscriptionForm';
 
 interface Chapter2SectionProps {
   visible: boolean;
+  onExploreClick: () => void;
 }
 
 const Chapter2Section = forwardRef<HTMLDivElement, Chapter2SectionProps>(
-  ({ visible }, ref) => {
+  ({ visible, onExploreClick }, ref) => {
     const [showForm, setShowForm] = useState(false);
 
     if (!visible) return null;
@@ -165,7 +166,10 @@ const Chapter2Section = forwardRef<HTMLDivElement, Chapter2SectionProps>(
                 className="pt-8 space-y-4 ch2-stagger"
                 style={{ animationDelay: '1.4s' }}
               >
-                <button className="w-full px-8 py-5 border-2 border-neutral-300 dark:border-neutral-600 text-neutral-500 dark:text-neutral-400 text-base font-normal hover:border-neutral-500 dark:hover:border-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all duration-200 cursor-pointer active:scale-[0.98]">
+                <button
+                  onClick={onExploreClick}
+                  className="w-full px-8 py-5 border-2 border-neutral-300 dark:border-neutral-600 text-neutral-500 dark:text-neutral-400 text-base font-normal hover:border-neutral-500 dark:hover:border-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all duration-200 cursor-pointer active:scale-[0.98]"
+                >
                   {'Todav\u00EDa es pronto, podr\u00EDas estar muy loco.'}
                 </button>
 
