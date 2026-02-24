@@ -39,18 +39,18 @@ const AboutSection = forwardRef<HTMLButtonElement, AboutSectionProps>(
             </p>
 
             <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors">
-              {'Yo escribo todos los d\u00EDas y otras personas, que no son yo, '}
+              {'Yo escribo todos los d\u00EDas y otras personas '}
               <strong>{'pagan para leer'}</strong>
               {'.'}
 
             </p>
 
             <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors">
-              Así que puedes llamarme escritor, o vendedor. O puedes no llamarme nada.
+              Así que puedes llamarme escritor o vendedor. O puedes no llamarme nada.
             </p>
 
             <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors">
-              {'Si tienes curiosidad por saber qu\u00E9 lleva a un mont\u00F3n de personas, que no son t\u00FA, a pagar por recibir emails, '}
+              {'Si quieres saber qu\u00E9 lleva a un mont\u00F3n de personas a pagar por recibir emails, '}
               <strong>{'puedes probar gratis'}</strong>
               {' durante 17 d\u00EDas.'}
 
