@@ -6,7 +6,7 @@ export default function Hero() {
   const [isHovering, setIsHovering] = useState(false);
 
   return (
-    <div className="bg-transparent relative overflow-hidden pb-4 lg:pb-8 pt-8 lg:pt-32 transition-colors duration-300">
+    <div className="bg-transparent relative overflow-hidden pb-4 lg:pb-8 pt-20 md:pt-24 lg:pt-32 transition-colors duration-300">
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2 lg:pt-16">
         <div className="grid lg:grid-cols-2 gap-4 lg:gap-20 items-start">

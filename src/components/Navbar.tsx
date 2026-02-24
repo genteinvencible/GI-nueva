@@ -13,7 +13,7 @@ export default function Navbar() {
 
       // En móvil, siempre visible o con comportamiento de scroll
       if (isMobile) {
-        if (currentScrollY < 50) {
+        if (currentScrollY < 100) {
           setIsVisible(true);
           setIsSticky(false);
         } else {
