@@ -1,15 +1,10 @@
-import { useState } from 'react';
 import { ArrowLeft } from 'lucide-react';
 
 interface PrivacyPolicyPageProps {
   onBack: () => void;
 }
 
-type LegalSection = 'privacy' | 'legal' | 'cookies' | 'terms';
-
 export default function PrivacyPolicyPage({ onBack }: PrivacyPolicyPageProps) {
-  const [activeSection, setActiveSection] = useState<LegalSection>('privacy');
-
   return (
     <div className="min-h-screen bg-white dark:bg-black text-neutral-900 dark:text-white transition-colors duration-300">
       <div className="max-w-4xl mx-auto px-6 lg:px-8 py-20 lg:py-32">
@@ -25,58 +20,12 @@ export default function PrivacyPolicyPage({ onBack }: PrivacyPolicyPageProps) {
           * * *
         </div>
 
-        <h1 className="text-[1.75rem] lg:text-[2rem] text-neutral-800 dark:text-white leading-[1.15] font-normal transition-colors mb-8">Información Legal</h1>
-
-        <div className="flex gap-3 overflow-x-auto mb-8 pb-2">
-          <button
-            onClick={() => setActiveSection('privacy')}
-            className={`px-6 py-3 text-base font-medium transition-all duration-200 whitespace-nowrap ${
-              activeSection === 'privacy'
-                ? 'bg-neutral-800 dark:bg-neutral-100 text-white dark:text-neutral-900'
-                : 'border-2 border-neutral-300 dark:border-neutral-600 text-neutral-600 dark:text-neutral-400 hover:border-neutral-500 dark:hover:border-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-200'
-            }`}
-          >
-            Privacidad
-          </button>
-          <button
-            onClick={() => setActiveSection('legal')}
-            className={`px-6 py-3 text-base font-medium transition-all duration-200 whitespace-nowrap ${
-              activeSection === 'legal'
-                ? 'bg-neutral-800 dark:bg-neutral-100 text-white dark:text-neutral-900'
-                : 'border-2 border-neutral-300 dark:border-neutral-600 text-neutral-600 dark:text-neutral-400 hover:border-neutral-500 dark:hover:border-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-200'
-            }`}
-          >
-            Aviso Legal
-          </button>
-          <button
-            onClick={() => setActiveSection('cookies')}
-            className={`px-6 py-3 text-base font-medium transition-all duration-200 whitespace-nowrap ${
-              activeSection === 'cookies'
-                ? 'bg-neutral-800 dark:bg-neutral-100 text-white dark:text-neutral-900'
-                : 'border-2 border-neutral-300 dark:border-neutral-600 text-neutral-600 dark:text-neutral-400 hover:border-neutral-500 dark:hover:border-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-200'
-            }`}
-          >
-            Cookies
-          </button>
-          <button
-            onClick={() => setActiveSection('terms')}
-            className={`px-6 py-3 text-base font-medium transition-all duration-200 whitespace-nowrap ${
-              activeSection === 'terms'
-                ? 'bg-neutral-800 dark:bg-neutral-100 text-white dark:text-neutral-900'
-                : 'border-2 border-neutral-300 dark:border-neutral-600 text-neutral-600 dark:text-neutral-400 hover:border-neutral-500 dark:hover:border-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-200'
-            }`}
-          >
-            Términos
-          </button>
-        </div>
-
-        <div className="text-center text-neutral-800 dark:text-white text-4xl lg:text-5xl tracking-[0.25em] py-8 transition-colors">
-          * * *
-        </div>
-
-        <div className="space-y-8 text-neutral-800 dark:text-white leading-snug">
-          {activeSection === 'privacy' && (
-            <>
+        <div className="space-y-16">
+          <section>
+            <h2 className="text-[2rem] lg:text-[2.5rem] text-neutral-800 dark:text-white leading-[1.15] font-normal mb-12 transition-colors">
+              Capítulo 1<br />Política de Privacidad
+            </h2>
+            <div className="space-y-8 text-neutral-800 dark:text-white leading-snug">
               <section>
                 <h3 className="text-[1.5rem] font-bold text-neutral-800 dark:text-white mb-4">
                   ¿Quién hay detrás de esto?
@@ -171,11 +120,18 @@ export default function PrivacyPolicyPage({ onBack }: PrivacyPolicyPageProps) {
                   Si en algún momento actualizo esta política de privacidad, lo comunicaré de forma visible en la web. Si el cambio es relevante y afecta a cómo uso tus datos, te lo haré saber también por email.
                 </p>
               </section>
-            </>
-          )}
+            </div>
+          </section>
 
-          {activeSection === 'legal' && (
-            <>
+          <div className="text-center text-neutral-800 dark:text-white text-4xl lg:text-5xl tracking-[0.25em] py-8 transition-colors">
+            * * *
+          </div>
+
+          <section>
+            <h2 className="text-[2rem] lg:text-[2.5rem] text-neutral-800 dark:text-white leading-[1.15] font-normal mb-12 transition-colors">
+              Capítulo 2<br />Aviso Legal
+            </h2>
+            <div className="space-y-8 text-neutral-800 dark:text-white leading-snug">
               <section>
                 <h3 className="text-[1.5rem] font-bold text-neutral-800 dark:text-white mb-4">
                   ¿Quién hay detrás de esto?
@@ -232,11 +188,18 @@ export default function PrivacyPolicyPage({ onBack }: PrivacyPolicyPageProps) {
                   Este aviso legal se rige por la ley española. Si alguna vez hubiera una disputa (esperemos que no), se resolvería ante los tribunales de Grado, Asturias, salvo que la ley establezca otro fuero en tu favor como consumidor.
                 </p>
               </section>
-            </>
-          )}
+            </div>
+          </section>
 
-          {activeSection === 'cookies' && (
-            <>
+          <div className="text-center text-neutral-800 dark:text-white text-4xl lg:text-5xl tracking-[0.25em] py-8 transition-colors">
+            * * *
+          </div>
+
+          <section>
+            <h2 className="text-[2rem] lg:text-[2.5rem] text-neutral-800 dark:text-white leading-[1.15] font-normal mb-12 transition-colors">
+              Capítulo 3<br />Política de Cookies
+            </h2>
+            <div className="space-y-8 text-neutral-800 dark:text-white leading-snug">
               <section>
                 <h3 className="text-[1.5rem] font-bold text-neutral-800 dark:text-white mb-4">
                   ¿Qué es una cookie?
@@ -321,11 +284,18 @@ export default function PrivacyPolicyPage({ onBack }: PrivacyPolicyPageProps) {
                   Última actualización: febrero de 2026
                 </p>
               </section>
-            </>
-          )}
+            </div>
+          </section>
 
-          {activeSection === 'terms' && (
-            <>
+          <div className="text-center text-neutral-800 dark:text-white text-4xl lg:text-5xl tracking-[0.25em] py-8 transition-colors">
+            * * *
+          </div>
+
+          <section>
+            <h2 className="text-[2rem] lg:text-[2.5rem] text-neutral-800 dark:text-white leading-[1.15] font-normal mb-12 transition-colors">
+              Capítulo 4<br />Términos y Condiciones de Suscripción
+            </h2>
+            <div className="space-y-8 text-neutral-800 dark:text-white leading-snug">
               <section>
                 <h3 className="text-[1.5rem] font-bold text-neutral-800 dark:text-white mb-4">
                   ¿Qué es esto y a quién aplica?
@@ -433,8 +403,8 @@ export default function PrivacyPolicyPage({ onBack }: PrivacyPolicyPageProps) {
                   Última actualización: febrero de 2026
                 </p>
               </section>
-            </>
-          )}
+            </div>
+          </section>
         </div>
       </div>
     </div>
