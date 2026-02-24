@@ -19,7 +19,7 @@ const ExploreOptionsSection = forwardRef<HTMLDivElement, ExploreOptionsSectionPr
               className="text-[1.75rem] lg:text-[2rem] text-neutral-800 dark:text-white leading-[1.15] font-normal transition-colors mb-10 lg:mb-14 explore-stagger"
               style={{ animationDelay: '0s' }}
             >
-              Me gusta tu actitud.
+              <span className="lead-in-text">Me gusta tu actitud.</span>
             </p>
 
             <div className="space-y-5 lg:space-y-6 mb-14 lg:mb-20">
