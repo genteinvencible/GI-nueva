@@ -13,25 +13,18 @@ const ExploreOptionsSection = forwardRef<HTMLDivElement, ExploreOptionsSectionPr
         ref={ref}
         className="bg-transparent relative overflow-hidden transition-colors duration-300"
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-24">
-          {/* Dinkus */}
-          <div className="flex justify-center mb-12 lg:mb-16 explore-stagger" style={{ animationDelay: '0s' }}>
-            <div className="flex items-center gap-4 text-neutral-800 dark:text-white">
-              <span className="text-2xl">*</span>
-              <span className="text-2xl">*</span>
-              <span className="text-2xl">*</span>
-            </div>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-16 lg:pb-24">
+          <div className="text-center text-neutral-800 dark:text-white text-4xl lg:text-5xl tracking-[0.25em] pt-4 lg:pt-8 pb-6 lg:pb-10 transition-colors">
+            * * *
           </div>
 
-          {/* Chapter Title */}
-          <h2
-            className="text-[1rem] lg:text-[1.125rem] font-bold tracking-wide text-neutral-800 dark:text-white mb-12 lg:mb-16 explore-stagger"
-            style={{ animationDelay: '0.05s' }}
-          >
-            CAPÍTULO 3 - BIEN POR TI
-          </h2>
-
-          <div className="max-w-4xl">
+          <div className="max-w-4xl mt-0 pt-0">
+            <p
+              className="text-[0.8rem] tracking-[0.3em] uppercase text-neutral-400 dark:text-neutral-500 font-bold transition-colors mb-8 lg:mb-12 explore-stagger"
+              style={{ animationDelay: '0s' }}
+            >
+              CAPÍTULO 3 — BIEN POR TI
+            </p>
             <p
               className="text-[1.75rem] lg:text-[2rem] text-neutral-800 dark:text-white leading-[1.15] font-normal transition-colors mb-10 lg:mb-14 explore-stagger"
               style={{ animationDelay: '0.1s' }}
