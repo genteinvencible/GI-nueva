@@ -7,7 +7,6 @@ import Chapter2Section from './components/Chapter2Section';
 import ExploreOptionsSection from './components/ExploreOptionsSection';
 import AntiSocialBanner from './components/AntiSocialBanner';
 import Footer from './components/Footer';
-import LegalTextsPage from './components/LegalTextsPage';
 import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 import { useScrollTrigger } from './hooks/useScrollTrigger';
 import { useBannerSystem } from './hooks/useBannerSystem';
@@ -18,8 +17,7 @@ function App() {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [isInputFocused, setIsInputFocused] = useState(false);
   const [hasSubscribed, setHasSubscribed] = useState(false);
-  const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
-  const [showLegalTexts, setShowLegalTexts] = useState(false);
+  const [showLegalPage, setShowLegalPage] = useState(false);
 
   const chapter2Ref = useRef<HTMLDivElement>(null);
   const exploreRef = useRef<HTMLDivElement>(null);
@@ -60,29 +58,10 @@ function App() {
     // El banner se cerrará solo por la animación
   }, []);
 
-  if (showPrivacyPolicy) {
+  if (showLegalPage) {
     return (
       <ThemeProvider>
-        <PrivacyPolicyPage
-          onBack={() => {
-            setShowPrivacyPolicy(false);
-            setShowLegalTexts(true);
-          }}
-        />
-      </ThemeProvider>
-    );
-  }
-
-  if (showLegalTexts) {
-    return (
-      <ThemeProvider>
-        <LegalTextsPage
-          onNavigateToPolicy={() => {
-            setShowLegalTexts(false);
-            setShowPrivacyPolicy(true);
-          }}
-          onBack={() => setShowLegalTexts(false)}
-        />
+        <PrivacyPolicyPage onBack={() => setShowLegalPage(false)} />
       </ThemeProvider>
     );
   }
@@ -90,7 +69,7 @@ function App() {
   return (
     <ThemeProvider>
       <div className="relative">
-        <Navbar onPrivacyClick={() => setShowPrivacyPolicy(true)} />
+        <Navbar onPrivacyClick={() => setShowLegalPage(true)} />
         <Hero />
         <AboutSection
           ref={emailButtonRef}
@@ -106,7 +85,7 @@ function App() {
         />
         <ExploreOptionsSection ref={exploreRef} visible={exploreVisible} />
 
-        {exploreVisible && <Footer onLegalClick={() => setShowLegalTexts(true)} />}
+        {exploreVisible && <Footer onLegalClick={() => setShowLegalPage(true)} />}
 
         {currentMessage && (
           <AntiSocialBanner
