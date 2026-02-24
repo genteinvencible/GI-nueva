@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import ThemeToggle from './ThemeToggle';
 
-export default function Navbar() {
+interface NavbarProps {
+  onPrivacyClick?: () => void;
+}
+
+export default function Navbar({ onPrivacyClick }: NavbarProps) {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isSticky, setIsSticky] = useState(false);
@@ -97,6 +101,12 @@ export default function Navbar() {
         </button>
         <button className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-3 md:px-5 py-1.5 md:py-2 text-[9px] md:text-[11px] font-medium tracking-[0.2em] uppercase transition-colors relative">
           CHAT
+        </button>
+        <button
+          onClick={onPrivacyClick}
+          className="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white px-3 md:px-5 py-1.5 md:py-2 text-[9px] md:text-[11px] font-medium tracking-[0.2em] uppercase transition-colors relative"
+        >
+          LEGAL
         </button>
         <div className="w-px h-4 bg-black/10 dark:bg-white/10 mx-1 md:mx-2 relative" />
         <ThemeToggle />

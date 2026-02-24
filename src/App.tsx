@@ -6,6 +6,7 @@ import AboutSection from './components/AboutSection';
 import Chapter2Section from './components/Chapter2Section';
 import ExploreOptionsSection from './components/ExploreOptionsSection';
 import AntiSocialBanner from './components/AntiSocialBanner';
+import PrivacyPolicy from './components/PrivacyPolicy';
 import { useScrollTrigger } from './hooks/useScrollTrigger';
 import { useBannerSystem } from './hooks/useBannerSystem';
 
@@ -15,6 +16,7 @@ function App() {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [isInputFocused, setIsInputFocused] = useState(false);
   const [hasSubscribed, setHasSubscribed] = useState(false);
+  const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
 
   const chapter2Ref = useRef<HTMLDivElement>(null);
   const exploreRef = useRef<HTMLDivElement>(null);
@@ -58,7 +60,7 @@ function App() {
   return (
     <ThemeProvider>
       <div className="relative">
-        <Navbar />
+        <Navbar onPrivacyClick={() => setShowPrivacyPolicy(true)} />
         <Hero />
         <AboutSection
           ref={emailButtonRef}
@@ -82,6 +84,11 @@ function App() {
             onClose={handleCloseBanner}
           />
         )}
+
+        <PrivacyPolicy
+          isOpen={showPrivacyPolicy}
+          onClose={() => setShowPrivacyPolicy(false)}
+        />
       </div>
     </ThemeProvider>
   );
