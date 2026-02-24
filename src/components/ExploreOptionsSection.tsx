@@ -14,10 +14,27 @@ const ExploreOptionsSection = forwardRef<HTMLDivElement, ExploreOptionsSectionPr
         className="bg-transparent relative overflow-hidden transition-colors duration-300"
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-24">
+          {/* Dinkus */}
+          <div className="flex justify-center mb-12 lg:mb-16 explore-stagger" style={{ animationDelay: '0s' }}>
+            <div className="flex items-center gap-4 text-neutral-800 dark:text-white">
+              <span className="text-2xl">*</span>
+              <span className="text-2xl">*</span>
+              <span className="text-2xl">*</span>
+            </div>
+          </div>
+
+          {/* Chapter Title */}
+          <h2
+            className="text-[1rem] lg:text-[1.125rem] font-bold tracking-wide text-neutral-800 dark:text-white mb-12 lg:mb-16 explore-stagger"
+            style={{ animationDelay: '0.05s' }}
+          >
+            CAPÍTULO 3 - BIEN POR TI
+          </h2>
+
           <div className="max-w-4xl">
             <p
               className="text-[1.75rem] lg:text-[2rem] text-neutral-800 dark:text-white leading-[1.15] font-normal transition-colors mb-10 lg:mb-14 explore-stagger"
-              style={{ animationDelay: '0s' }}
+              style={{ animationDelay: '0.1s' }}
             >
               <span className="lead-in-text">Me gusta tu actitud.</span>
             </p>
@@ -25,28 +42,28 @@ const ExploreOptionsSection = forwardRef<HTMLDivElement, ExploreOptionsSectionPr
             <div className="space-y-5 lg:space-y-6 mb-14 lg:mb-20">
               <p
                 className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors explore-stagger"
-                style={{ animationDelay: '0.1s' }}
+                style={{ animationDelay: '0.2s' }}
               >
                 Para descubrir si este es un lugar terrible para tu email, o muy bueno, ahora puedes:
               </p>
 
               <p
                 className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors explore-stagger"
-                style={{ animationDelay: '0.2s' }}
+                style={{ animationDelay: '0.3s' }}
               >
                 Leer el <strong>ABOUT</strong> (que es yo intentando convencerte de que me des tu email, mientras te cuento algunas chorradas de mí).
               </p>
 
               <p
                 className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors explore-stagger"
-                style={{ animationDelay: '0.3s' }}
+                style={{ animationDelay: '0.4s' }}
               >
                 También puedes leer las <strong>FAQs</strong>, que es lo mismo, pero con algunas preguntas que podrías estar no haciéndote.
               </p>
 
               <p
                 className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors explore-stagger"
-                style={{ animationDelay: '0.4s' }}
+                style={{ animationDelay: '0.5s' }}
               >
                 O, ya menos personal, puedes leer cómo fue mi <strong>boda "libre de sobres"</strong> y por qué, 6 años después, sigo ganando dinero con ella. (Sí, fue una boda rara, como los emails).
               </p>
@@ -54,7 +71,7 @@ const ExploreOptionsSection = forwardRef<HTMLDivElement, ExploreOptionsSectionPr
 
             <div
               className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 explore-stagger"
-              style={{ animationDelay: '0.5s' }}
+              style={{ animationDelay: '0.6s' }}
             >
               <a
                 href="#about"
