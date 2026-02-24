@@ -8,6 +8,7 @@ import ExploreOptionsSection from './components/ExploreOptionsSection';
 import AntiSocialBanner from './components/AntiSocialBanner';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import Footer from './components/Footer';
+import LegalTextsPage from './components/LegalTextsPage';
 import { useScrollTrigger } from './hooks/useScrollTrigger';
 import { useBannerSystem } from './hooks/useBannerSystem';
 
@@ -18,6 +19,7 @@ function App() {
   const [isInputFocused, setIsInputFocused] = useState(false);
   const [hasSubscribed, setHasSubscribed] = useState(false);
   const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
+  const [showLegalTexts, setShowLegalTexts] = useState(false);
 
   const chapter2Ref = useRef<HTMLDivElement>(null);
   const exploreRef = useRef<HTMLDivElement>(null);
@@ -58,6 +60,19 @@ function App() {
     // El banner se cerrará solo por la animación
   }, []);
 
+  if (showLegalTexts) {
+    return (
+      <ThemeProvider>
+        <LegalTextsPage
+          onNavigateToPolicy={() => {
+            setShowLegalTexts(false);
+            setShowPrivacyPolicy(true);
+          }}
+        />
+      </ThemeProvider>
+    );
+  }
+
   return (
     <ThemeProvider>
       <div className="relative">
@@ -77,7 +92,7 @@ function App() {
         />
         <ExploreOptionsSection ref={exploreRef} visible={exploreVisible} />
 
-        <Footer onLegalClick={() => setShowPrivacyPolicy(true)} />
+        <Footer onLegalClick={() => setShowLegalTexts(true)} />
 
         {currentMessage && (
           <AntiSocialBanner
