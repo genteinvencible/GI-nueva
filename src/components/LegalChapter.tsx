@@ -1,12 +1,11 @@
 interface LegalChapterProps {
   number: number;
   subtitle: string;
-  title: string;
   children: React.ReactNode;
   showDinkus?: boolean;
 }
 
-export default function LegalChapter({ number, subtitle, title, children, showDinkus = true }: LegalChapterProps) {
+export default function LegalChapter({ number, subtitle, children, showDinkus = true }: LegalChapterProps) {
   return (
     <>
       {showDinkus && (
@@ -18,10 +17,6 @@ export default function LegalChapter({ number, subtitle, title, children, showDi
       <div className="max-w-4xl mt-0 pt-0">
         <p className="text-[0.8rem] tracking-[0.3em] uppercase text-neutral-400 dark:text-neutral-500 font-bold transition-colors mb-8 lg:mb-12">
           {`Capítulo ${number} — ${subtitle}`}
-        </p>
-
-        <p className="text-[1.75rem] lg:text-[2rem] text-neutral-800 dark:text-white leading-[1.15] font-normal transition-colors mb-10 lg:mb-14">
-          <span className="lead-in-text">{title}</span>
         </p>
 
         <div className="space-y-8">

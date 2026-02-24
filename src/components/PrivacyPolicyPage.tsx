@@ -21,19 +21,19 @@ export default function PrivacyPolicyPage({ onBack }: PrivacyPolicyPageProps) {
           <span>Volver</span>
         </button>
 
-        <LegalChapter number={1} subtitle="Aviso Legal" title="Aviso Legal">
+        <LegalChapter number={1} subtitle="Aviso Legal">
           <AvisoLegalContent />
         </LegalChapter>
 
-        <LegalChapter number={2} subtitle="Política de Privacidad" title="Política de Privacidad">
+        <LegalChapter number={2} subtitle="Política de Privacidad">
           <PrivacidadContent />
         </LegalChapter>
 
-        <LegalChapter number={3} subtitle="Política de Cookies" title="Política de Cookies">
+        <LegalChapter number={3} subtitle="Política de Cookies">
           <CookiesContent />
         </LegalChapter>
 
-        <LegalChapter number={4} subtitle="Términos y Condiciones" title="Términos y Condiciones de Suscripción">
+        <LegalChapter number={4} subtitle="Términos y Condiciones">
           <TerminosContent />
         </LegalChapter>
       </div>
