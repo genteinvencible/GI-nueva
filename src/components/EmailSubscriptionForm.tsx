@@ -15,6 +15,7 @@ export default function EmailSubscriptionForm({
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
   const [accepted, setAccepted] = useState(false);
+  const [showLegalTerms, setShowLegalTerms] = useState(false);
 
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -67,7 +68,7 @@ export default function EmailSubscriptionForm({
       ref={containerRef}
       className="overflow-hidden transition-all duration-500 ease-out"
       style={{
-        maxHeight: isOpen ? '400px' : '0px',
+        maxHeight: isOpen ? '1000px' : '0px',
         opacity: isOpen ? 1 : 0,
       }}
     >
@@ -119,9 +120,65 @@ export default function EmailSubscriptionForm({
                 className="mt-0.5 h-4 w-4 rounded border-neutral-300 dark:border-neutral-600 accent-[#2d6a4f] dark:accent-[#52b788] cursor-pointer"
               />
               <span className="text-sm text-neutral-500 dark:text-neutral-400 leading-snug group-hover:text-neutral-700 dark:group-hover:text-neutral-300 transition-colors">
-                He leído (y estoy muy de acuerdo) con los términos legales de este tío.
+                He leído (y estoy muy de acuerdo) con los{' '}
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setShowLegalTerms(!showLegalTerms);
+                  }}
+                  className="underline hover:text-neutral-700 dark:hover:text-neutral-200 transition-colors"
+                >
+                  términos legales
+                </button>{' '}
+                de este tío.
               </span>
             </label>
+            {showLegalTerms && (
+              <div className="mt-4 p-4 bg-neutral-50 dark:bg-neutral-800/50 rounded border border-neutral-200 dark:border-neutral-700 text-sm text-neutral-700 dark:text-neutral-300 space-y-3">
+                <p className="font-bold">Información diferente, para gente inteligente, sobre protección de datos</p>
+
+                <p>
+                  ✔️ El responsable de todo lo que pasa aquí soy yo, Álvaro Sánchez, como no puede ser de otra forma.
+                </p>
+
+                <p>
+                  Por tanto, si te estafo la culpa es mía.
+                </p>
+
+                <p>
+                  Bueno, todo no, si los emails te cambian la vida tendrás que agradecérselo a tu madre, que te la dio.
+                </p>
+
+                <p>
+                  ✔️ Cuando metas tu email, el mejor, el peor o el que más te apetezca, recibirás un email para confirmar que eres humano.
+                </p>
+
+                <p>
+                  Te adelanto que no es un email de confirmación más. Mucha gente no pasa de ahí.
+                </p>
+
+                <p>
+                  ✔️ Solo hay hueco para el email porque no quiero ningún otro dato tuyo.
+                </p>
+
+                <p>
+                  No te pido el nombre porque no tengo pensado hacer como que somos amigos. Podríamos llegar a serlo, pero me estaría arriesgando a que pusieras una mongolada (que es lo que yo haría).
+                </p>
+
+                <p>
+                  Los emails están bien, pero si empiezas con un "Hola, Pep Guardiola", podrían estar peor.
+                </p>
+
+                <p>
+                  ✔️ En todos los emails hay un botón enorme para borrarse. Para darle no hace falta ser inteligente. Si lo que lees no te dan ganas de sacar la tarjeta mi consejo es que le des. Yo ni me entero, de verdad.
+                </p>
+
+                <p>
+                  ✔️ Creo que hay que añadir algo más de que puedes acceder a tus datos, rectificarlos y olvidarlos. Sin problema, llamo a Will Smith y que me enchufe con su aparato.
+                </p>
+              </div>
+            )}
           </>
         )}
         {status === 'error' && errorMsg && (
