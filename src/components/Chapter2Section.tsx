@@ -112,7 +112,7 @@ const Chapter2Section = forwardRef<HTMLDivElement, Chapter2SectionProps>(
                 className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors ch2-stagger"
                 style={{ animationDelay: '0.85s' }}
               >
-                {'S\u00ED, diario, de lunes a domingo, de enero a diciembre. Agosto incluido.'}
+                {'S\u00ED, diario, '}<strong>de lunes a domingo</strong>{', de enero a diciembre. Agosto incluido.'}
               </p>
 
               <p
