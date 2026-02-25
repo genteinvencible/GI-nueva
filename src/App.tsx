@@ -59,6 +59,7 @@ function App() {
   }, []);
 
   if (showLegalPage) {
+    window.scrollTo(0, 0);
     return (
       <ThemeProvider>
         <PrivacyPolicyPage onBack={() => setShowLegalPage(false)} />
