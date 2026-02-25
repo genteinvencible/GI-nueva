@@ -69,7 +69,7 @@ function App() {
   return (
     <ThemeProvider>
       <div className="relative">
-        <Navbar onPrivacyClick={() => setShowLegalPage(true)} />
+        <Navbar />
         <Hero />
         <AboutSection
           ref={emailButtonRef}
