@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import EmailSubscriptionForm from './EmailSubscriptionForm';
 import aboutImage from '../../Assests/about_image.png';
 
@@ -6,25 +5,18 @@ interface AboutPageProps {
   onBack: () => void;
 }
 
-const checkItems = [
+const checkItems1 = [
   {
     text: (
       <>
-        Madrile{'\u00F1'}o. Y no, no es una casualidad, es una <strong>serie de casualidades</strong>.
+        He nacido y vivo en Asturias, pero no me sale estar orgulloso de las casualidades.
       </>
     ),
   },
   {
     text: (
       <>
-        <strong>Padre de tres</strong> ni{'\u00F1'}os peque{'\u00F1'}os que no lo van a tener f{'\u00E1'}cil con un padre como yo.
-      </>
-    ),
-  },
-  {
-    text: (
-      <>
-        En plena <strong>crisis de los 40</strong>.
+        Tengo 42 a{'\u00F1'}os, pero a ratos hago el monguer igual que con 17. Y a ratos no.
       </>
     ),
   },
@@ -40,7 +32,7 @@ const checkItems2 = [
   {
     text: (
       <>
-        Me gustan los <strong>animales</strong>. Tengo un perro y un gato. Pero me gustan m{'\u00E1'}s los perros. Y tambi{'\u00E9'}n me gustan m{'\u00E1'}s las personas que prefieren los perros.
+        Soy padre de tres ni{'\u00F1'}os y eso ha afectado bastante a mi vida. Dir{'\u00ED'}a que para bien, pero me espero a la adolescencia.
       </>
     ),
     delay: '0.85s',
@@ -48,7 +40,15 @@ const checkItems2 = [
   {
     text: (
       <>
-        <strong>Fl{'\u00E1'}cido</strong>. Estoy fl{'\u00E1'}cido. Pero eso es culpa de mis hijos. Bueno, y de un metabolismo que ha cambiado de opini{'\u00F3'}n.
+        Antes meditaba mucho.
+      </>
+    ),
+    delay: '0.9s',
+  },
+  {
+    text: (
+      <>
+        Luego menos.
       </>
     ),
     delay: '0.95s',
@@ -56,15 +56,70 @@ const checkItems2 = [
   {
     text: (
       <>
-        Creo firmemente que <strong>es m{'\u00E1'}s jodido ser feliz</strong> de lo que nos han contado.
+        Pensaba que la crisis de los 40 era un mito, hasta que vi a gente de esta edad teniendo esta edad.
       </>
     ),
-    delay: '1.05s',
+    delay: '1.0s',
+  },
+];
+
+const middleLines2 = [
+  { text: 'Y volv\u00ED a meditar.', delay: '1.05s' },
+];
+
+const checkItems3 = [
+  {
+    text: (
+      <>
+        Soy eneatipo 3, creo.
+      </>
+    ),
+    delay: '1.1s',
+  },
+  {
+    text: (
+      <>
+        Uso el bid{'\u00E9'}.
+      </>
+    ),
+    delay: '1.15s',
+  },
+  {
+    text: (
+      <>
+        Durante siete a{'\u00F1'}os de mi vida no me com{'\u00ED'} animales. Luego volv{'\u00ED'} a hacerlo. Pero no podr{'\u00ED'}a defender ninguna de las dos.
+      </>
+    ),
+    delay: '1.2s',
+  },
+  {
+    text: (
+      <>
+        Estoy bastante convencido de que fl{'\u00E1'}cido es m{'\u00E1'}s jodido ser feliz.
+      </>
+    ),
+    delay: '1.25s',
+  },
+  {
+    text: (
+      <>
+        Soy cintur{'\u00F3'}n blanco de la vida, y de jiu-jitsu, pero con dos grados.
+      </>
+    ),
+    delay: '1.3s',
+  },
+  {
+    text: (
+      <>
+        La cantidad de temas sobre los que no s{'\u00E9'} nada ridiculiza a los pocos sobre los que s{'\u00ED'} s{'\u00E9'} algo.
+      </>
+    ),
+    delay: '1.35s',
   },
 ];
 
 export default function AboutPage({ onBack }: AboutPageProps) {
-  const [showForm, setShowForm] = useState(false);
+  void onBack;
 
   return (
     <div className="min-h-screen bg-transparent text-neutral-900 dark:text-white transition-colors duration-300">
@@ -107,7 +162,7 @@ export default function AboutPage({ onBack }: AboutPageProps) {
 
         <div className="max-w-4xl">
           <ul className="space-y-4">
-            {checkItems.map((item, i) => (
+            {checkItems1.map((item, i) => (
               <li
                 key={i}
                 className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors pl-6 border-l-2 border-neutral-300 dark:border-neutral-700 about-stagger"
@@ -142,38 +197,55 @@ export default function AboutPage({ onBack }: AboutPageProps) {
             ))}
           </ul>
 
+          <div className="space-y-3 py-8 pl-2">
+            {middleLines2.map((line, i) => (
+              <p
+                key={i}
+                className="text-[1.125rem] text-neutral-600 dark:text-neutral-400 leading-relaxed transition-colors about-stagger"
+                style={{ animationDelay: line.delay }}
+              >
+                {line.text}
+              </p>
+            ))}
+          </div>
+
+          <ul className="space-y-4">
+            {checkItems3.map((item, i) => (
+              <li
+                key={i}
+                className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors pl-6 border-l-2 border-neutral-300 dark:border-neutral-700 about-stagger"
+                style={{ animationDelay: item.delay }}
+              >
+                {item.text}
+              </li>
+            ))}
+          </ul>
+
           <div className="space-y-6 pt-14">
             <p
               className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors about-stagger"
-              style={{ animationDelay: '1.15s' }}
+              style={{ animationDelay: '1.45s' }}
             >
               Otra cosa importante, valoro mi tiempo por encima de todo, y prometo no hacerte perder el tuyo.
             </p>
 
             <p
               className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors about-stagger"
-              style={{ animationDelay: '1.25s' }}
+              style={{ animationDelay: '1.55s' }}
             >
               Ojo, que <strong>igual ya te he ca{'\u00ED'}do bien y me quieres dejar tu email</strong>. D{'\u00E9'}jame pon{'\u00E9'}rtelo f{'\u00E1'}cil:
             </p>
 
             <div
-              className="pt-4 space-y-4 about-stagger"
-              style={{ animationDelay: '1.35s' }}
+              className="pt-4 about-stagger"
+              style={{ animationDelay: '1.65s' }}
             >
-              <button
-                onClick={() => setShowForm(!showForm)}
-                className="w-full px-8 py-5 bg-neutral-800 dark:bg-neutral-100 text-white dark:text-neutral-900 text-base font-medium hover:bg-neutral-700 dark:hover:bg-white transition-all duration-200 cursor-pointer shadow-md hover:shadow-lg active:scale-[0.98]"
-              >
-                Toma mi email, te hago otro hueco
-              </button>
-
-              <EmailSubscriptionForm isOpen={showForm} />
+              <EmailSubscriptionForm isOpen={true} />
             </div>
 
             <p
               className="text-[1.5rem] lg:text-[1.75rem] text-neutral-800 dark:text-white font-normal transition-colors pt-8 about-stagger"
-              style={{ animationDelay: '1.45s' }}
+              style={{ animationDelay: '1.75s' }}
             >
               Y lo m{'\u00E1'}s importante:
             </p>
