@@ -34,7 +34,7 @@ const cards = [
     title: 'Lo de la boda sin sobres.',
     text: 'Esto puede ofender a algunas personas. Tú podrías ser de esas. No le des en ese caso.',
     ctaPositive: 'Me interesa',
-    ctaNegative: 'Tu boda me la suda',
+    ctaNegative: 'Me la suda',
   },
 ];
 
