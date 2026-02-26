@@ -164,10 +164,11 @@ export default function AboutPage({ onBack }: AboutPageProps) {
             {checkItems1.map((item, i) => (
               <li
                 key={i}
-                className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors pl-6 border-l-2 border-neutral-300 dark:border-neutral-700 about-stagger"
+                className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors pl-0 about-stagger flex items-baseline gap-3"
                 style={{ animationDelay: `${0.35 + i * 0.1}s` }}
               >
-                {item.text}
+                <span className="text-neutral-400 dark:text-neutral-500 select-none shrink-0">*</span>
+                <span>{item.text}</span>
               </li>
             ))}
           </ul>
@@ -188,10 +189,11 @@ export default function AboutPage({ onBack }: AboutPageProps) {
             {checkItems2.map((item, i) => (
               <li
                 key={i}
-                className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors pl-6 border-l-2 border-neutral-300 dark:border-neutral-700 about-stagger"
+                className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors pl-0 about-stagger flex items-baseline gap-3"
                 style={{ animationDelay: item.delay }}
               >
-                {item.text}
+                <span className="text-neutral-400 dark:text-neutral-500 select-none shrink-0">*</span>
+                <span>{item.text}</span>
               </li>
             ))}
           </ul>
@@ -212,10 +214,11 @@ export default function AboutPage({ onBack }: AboutPageProps) {
             {checkItems3.map((item, i) => (
               <li
                 key={i}
-                className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors pl-6 border-l-2 border-neutral-300 dark:border-neutral-700 about-stagger"
+                className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors pl-0 about-stagger flex items-baseline gap-3"
                 style={{ animationDelay: item.delay }}
               >
-                {item.text}
+                <span className="text-neutral-400 dark:text-neutral-500 select-none shrink-0">*</span>
+                <span>{item.text}</span>
               </li>
             ))}
           </ul>
