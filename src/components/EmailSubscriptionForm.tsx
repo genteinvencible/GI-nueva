@@ -21,14 +21,6 @@ export default function EmailSubscriptionForm({
 
   const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-  useEffect(() => {
-    if (isOpen && containerRef.current) {
-      const timeout = setTimeout(() => {
-        containerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }, 300);
-      return () => clearTimeout(timeout);
-    }
-  }, [isOpen]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
