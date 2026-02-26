@@ -232,7 +232,7 @@ export default function AboutPage({ onBack }: AboutPageProps) {
             </RevealBlock>
 
             <RevealBlock className="pt-4" delay={0.2}>
-              <EmailSubscriptionForm isOpen={true} hideIntroText={true} />
+              <EmailSubscriptionForm isOpen={true} hideIntroText={true} hideSpamText={true} />
             </RevealBlock>
 
             <RevealBlock

@@ -5,13 +5,15 @@ interface EmailSubscriptionFormProps {
   onInputFocusChange?: (isFocused: boolean) => void;
   onSubscribe?: () => void;
   hideIntroText?: boolean;
+  hideSpamText?: boolean;
 }
 
 export default function EmailSubscriptionForm({
   isOpen,
   onInputFocusChange,
   onSubscribe,
-  hideIntroText = false
+  hideIntroText = false,
+  hideSpamText = false
 }: EmailSubscriptionFormProps) {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -104,9 +106,11 @@ export default function EmailSubscriptionForm({
                   {status === 'loading' ? 'Enviando...' : 'Enviar'}
                 </button>
               </div>
-              <p className="text-sm text-neutral-500 dark:text-neutral-400 -mt-1">
-                No prometo no mandarte spam.
-              </p>
+              {!hideSpamText && (
+                <p className="text-sm text-neutral-500 dark:text-neutral-400 -mt-1">
+                  No prometo no mandarte spam.
+                </p>
+              )}
             </form>
             <label className="flex items-start gap-2.5 mt-3 cursor-pointer select-none group">
               <input
