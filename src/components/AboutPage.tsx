@@ -124,15 +124,14 @@ export default function AboutPage({ onBack }: AboutPageProps) {
   return (
     <div className="min-h-screen bg-transparent text-neutral-900 dark:text-white transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-32">
+        <div className="mb-20 lg:mb-28 about-stagger" style={{ animationDelay: '0.05s' }}>
+          <p className="text-[2rem] sm:text-[2.5rem] lg:text-[3.25rem] text-neutral-800 dark:text-white leading-[1.15] font-normal transition-colors max-w-4xl">
+            Como esto es online y mientras t{'\u00FA'} est{'\u00E1'}s leyendo yo puedo estar en cualquier sitio, incluso muerto, nos vamos a ahorrar los dos besos.
+          </p>
+        </div>
+
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start mb-16 lg:mb-24">
           <div className="space-y-6">
-            <p
-              className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors about-stagger"
-              style={{ animationDelay: '0.05s' }}
-            >
-              Como esto es online y mientras t{'\u00FA'} est{'\u00E1'}s leyendo yo puedo estar en cualquier sitio, incluso muerto, <strong>nos vamos a ahorrar los dos besos.</strong>
-            </p>
-
             <p
               className="text-[1.75rem] lg:text-[2rem] text-neutral-800 dark:text-white leading-[1.15] font-normal transition-colors about-stagger"
               style={{ animationDelay: '0.15s' }}
