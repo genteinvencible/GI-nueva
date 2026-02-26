@@ -152,7 +152,7 @@ export default function AboutPage({ onBack }: AboutPageProps) {
 
           <RevealBlock
             as="p"
-            className="text-[1.125rem] text-neutral-600 dark:text-neutral-300 leading-relaxed transition-colors"
+            className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors"
             delay={0.15}
           >
             Ey {'\u{1F44B}'}
@@ -214,9 +214,7 @@ export default function AboutPage({ onBack }: AboutPageProps) {
             </ul>
           </div>
 
-          <div className="mt-20 lg:mt-28 space-y-5">
-            <RevealBlock className="w-12 h-px bg-neutral-300 dark:bg-neutral-700" />
-
+          <div className="mt-5 space-y-5">
             <RevealBlock
               as="p"
               className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors"
