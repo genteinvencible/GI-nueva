@@ -73,7 +73,6 @@ function App() {
   }, []);
 
   if (showLegalPage) {
-    window.scrollTo(0, 0);
     return (
       <ThemeProvider>
         <Navbar activePage="home" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} />
