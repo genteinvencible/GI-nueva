@@ -134,7 +134,7 @@ export default function AboutPage({ onBack }: AboutPageProps) {
     <div className="min-h-screen bg-transparent text-neutral-900 dark:text-white transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-24 lg:pt-36 pb-20 lg:pb-32">
 
-        <div className="mb-12 lg:mb-20 space-y-5">
+        <div className="mb-7 lg:mb-10 space-y-5">
           <RevealBlock
             as="p"
             className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors"
@@ -175,7 +175,7 @@ export default function AboutPage({ onBack }: AboutPageProps) {
               <RevealBlock
                 key={i}
                 as="li"
-                className="list-none text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors pl-9 mt-5"
+                className={`list-none text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors pl-9 mt-5 ${i === middleLines.length - 1 ? 'mb-10' : ''}`}
                 delay={i * 0.08}
               >
                 {line.text}
