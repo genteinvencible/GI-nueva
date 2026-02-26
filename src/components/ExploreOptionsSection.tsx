@@ -39,7 +39,8 @@ const cards = [
     text: 'Esto puede ofender a algunas personas. Tú podrías ser de esas. No le des en ese caso.',
     ctaPositive: 'Me interesa',
     ctaNegative: 'Me la suda',
-    hasNegativeAction: false,
+    hasNegativeAction: true,
+    negativeMessage: 'Y a mí la tuya, ya sabes por qué lo hago. Por tu E-M-A-I-L.',
   },
 ];
 
