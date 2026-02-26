@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { X } from 'lucide-react';
 
 interface CardEmailFormProps {
@@ -12,18 +12,28 @@ export default function CardEmailForm({ isOpen, onClose }: CardEmailFormProps) {
   const [errorMsg, setErrorMsg] = useState('');
   const [accepted, setAccepted] = useState(false);
   const [showLegalTerms, setShowLegalTerms] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
 
   const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   useEffect(() => {
-    if (isOpen && containerRef.current) {
-      const timeout = setTimeout(() => {
-        containerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }, 350);
-      return () => clearTimeout(timeout);
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
     }
+    return () => {
+      document.body.style.overflow = '';
+    };
   }, [isOpen]);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    window.addEventListener('keydown', handleKey);
+    return () => window.removeEventListener('keydown', handleKey);
+  }, [isOpen, onClose]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -57,27 +67,30 @@ export default function CardEmailForm({ isOpen, onClose }: CardEmailFormProps) {
     }
   };
 
+  if (!isOpen) return null;
+
   return (
     <div
-      ref={containerRef}
-      className="overflow-hidden transition-all duration-500 ease-out max-w-6xl"
-      style={{
-        maxHeight: isOpen ? '1000px' : '0px',
-        opacity: isOpen ? 1 : 0,
-      }}
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6"
+      onClick={onClose}
     >
-      <div className="mt-8 lg:mt-10 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white/60 dark:bg-white/[0.04] p-6 lg:p-8 shadow-sm relative">
+      <div className="absolute inset-0 bg-black/50 dark:bg-black/70 backdrop-blur-sm animate-[fadeIn_0.2s_ease-out]" />
+
+      <div
+        className="relative w-full max-w-lg bg-[#faf8f4] dark:bg-[#1a1816] border border-neutral-200 dark:border-neutral-700 rounded-lg p-6 sm:p-8 shadow-2xl dark:shadow-black/60 animate-[modalSlideUp_0.3s_ease-out]"
+        onClick={(e) => e.stopPropagation()}
+      >
         <button
           type="button"
           onClick={onClose}
-          className="absolute top-4 right-4 p-1 text-neutral-400 dark:text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors"
+          className="absolute top-4 right-4 p-1.5 rounded-full text-neutral-400 dark:text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 hover:bg-neutral-200/50 dark:hover:bg-neutral-700/50 transition-all"
           aria-label="Cerrar"
         >
           <X className="w-5 h-5" />
         </button>
 
         {status === 'success' ? (
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 py-4">
             <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#2d6a4f]/10 dark:bg-[#52b788]/15 text-[#2d6a4f] dark:text-[#52b788] text-lg">
               {'✓'}
             </span>
@@ -87,27 +100,26 @@ export default function CardEmailForm({ isOpen, onClose }: CardEmailFormProps) {
           </div>
         ) : (
           <>
-            <p className="text-[1.125rem] text-neutral-800 dark:text-white mb-5 leading-relaxed">
+            <p className="text-[1.125rem] text-neutral-800 dark:text-white mb-5 leading-relaxed pr-8">
               Ok, igual entonces es que ya me quieres dar tu email.
             </p>
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-              <div className="flex flex-col sm:flex-row gap-3">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Tu email aquí"
-                  className="flex-1 px-5 py-4 bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-600 rounded text-neutral-800 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-500 text-base outline-none focus:border-[#2d6a4f] dark:focus:border-[#52b788] focus:ring-1 focus:ring-[#2d6a4f]/20 dark:focus:ring-[#52b788]/20 transition-all"
-                />
-                <button
-                  type="submit"
-                  disabled={!isValidEmail || !accepted || status === 'loading'}
-                  className="px-8 py-4 bg-[#2d6a4f] text-white text-base font-medium rounded hover:bg-[#245a42] dark:bg-[#52b788] dark:text-neutral-900 dark:hover:bg-[#6ec99b] transition-all duration-200 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed active:scale-[0.98] shadow-sm hover:shadow-md"
-                >
-                  {status === 'loading' ? 'Enviando...' : 'Enviar'}
-                </button>
-              </div>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Tu email aquí"
+                className="w-full px-5 py-4 bg-white dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-600 rounded text-neutral-800 dark:text-white placeholder-neutral-400 dark:placeholder-neutral-500 text-base outline-none focus:border-[#2d6a4f] dark:focus:border-[#52b788] focus:ring-1 focus:ring-[#2d6a4f]/20 dark:focus:ring-[#52b788]/20 transition-all"
+                autoFocus
+              />
+              <button
+                type="submit"
+                disabled={!isValidEmail || !accepted || status === 'loading'}
+                className="w-full px-8 py-4 bg-[#2d6a4f] text-white text-base font-medium rounded hover:bg-[#245a42] dark:bg-[#52b788] dark:text-neutral-900 dark:hover:bg-[#6ec99b] transition-all duration-200 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed active:scale-[0.98] shadow-sm hover:shadow-md"
+              >
+                {status === 'loading' ? 'Enviando...' : 'Enviar'}
+              </button>
             </form>
 
             <label className="flex items-start gap-2.5 mt-4 cursor-pointer select-none group">
@@ -134,7 +146,7 @@ export default function CardEmailForm({ isOpen, onClose }: CardEmailFormProps) {
             </label>
 
             {showLegalTerms && (
-              <div className="mt-4 p-4 bg-neutral-50 dark:bg-neutral-800/50 rounded border border-neutral-200 dark:border-neutral-700 text-sm text-neutral-700 dark:text-neutral-300 space-y-3">
+              <div className="mt-4 p-4 bg-neutral-50 dark:bg-neutral-800/50 rounded border border-neutral-200 dark:border-neutral-700 text-sm text-neutral-700 dark:text-neutral-300 space-y-3 max-h-48 overflow-y-auto">
                 <p className="font-bold">Información diferente, para gente inteligente, sobre protección de datos</p>
                 <p>El responsable de todo lo que pasa aquí soy yo, Álvaro Sánchez.</p>
                 <p>Cuando metas tu email recibirás un email para confirmar que eres humano.</p>
@@ -150,6 +162,23 @@ export default function CardEmailForm({ isOpen, onClose }: CardEmailFormProps) {
           <p className="text-sm text-red-500 dark:text-red-400 mt-3">{errorMsg}</p>
         )}
       </div>
+
+      <style>{`
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        @keyframes modalSlideUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px) scale(0.97);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+      `}</style>
     </div>
   );
 }
