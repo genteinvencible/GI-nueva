@@ -142,6 +142,15 @@ export default function AboutPage({ onBack }: AboutPageProps) {
           </span>
         </div>
 
+        <div className="max-w-4xl mb-8 lg:mb-12">
+          <RevealBlock
+            as="p"
+            className="text-[0.8rem] tracking-[0.3em] uppercase text-neutral-400 dark:text-neutral-500 font-bold transition-colors"
+          >
+            {'About \u2014 o sea, sobre m\u00ED'}
+          </RevealBlock>
+        </div>
+
         <div className="mb-7 lg:mb-10 space-y-5 max-w-3xl">
           <RevealBlock
             as="p"
