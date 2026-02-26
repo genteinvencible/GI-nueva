@@ -28,7 +28,8 @@ const cards = [
     text: '¿Me vas a cambiar la vida? ¿Cuánto cuesta lo que vendes? ¿Fran Perea el que lo lea?',
     ctaPositive: 'Leo las FAQs',
     ctaNegative: 'No las leo',
-    hasNegativeAction: false,
+    hasNegativeAction: true,
+    negativeMessage: 'Entonces, si no hay preguntas, ya puedes meter aquí tu email. Si tienes huevos, claro.',
   },
   {
     id: 'boda',
@@ -44,7 +45,7 @@ const cards = [
 
 const ExploreOptionsSection = forwardRef<HTMLDivElement, ExploreOptionsSectionProps>(
   ({ visible }, ref) => {
-    const [showEmailForm, setShowEmailForm] = useState(false);
+    const [emailModalSource, setEmailModalSource] = useState<string | null>(null);
 
     if (!visible) return null;
 
@@ -142,7 +143,7 @@ const ExploreOptionsSection = forwardRef<HTMLDivElement, ExploreOptionsSectionPr
                       onClick={(e) => {
                         e.preventDefault();
                         e.stopPropagation();
-                        setShowEmailForm(true);
+                        setEmailModalSource(card.id);
                       }}
                       className="text-[0.7rem] lg:text-[0.75rem] text-neutral-400 dark:text-neutral-500 italic hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors"
                     >
@@ -158,7 +159,11 @@ const ExploreOptionsSection = forwardRef<HTMLDivElement, ExploreOptionsSectionPr
             ))}
           </div>
 
-          <CardEmailForm isOpen={showEmailForm} onClose={() => setShowEmailForm(false)} />
+          <CardEmailForm
+            isOpen={emailModalSource !== null}
+            onClose={() => setEmailModalSource(null)}
+            message={cards.find((c) => c.id === emailModalSource)?.negativeMessage}
+          />
         </div>
 
         <style>{`

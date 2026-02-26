@@ -4,9 +4,10 @@ import { X } from 'lucide-react';
 interface CardEmailFormProps {
   isOpen: boolean;
   onClose: () => void;
+  message?: string;
 }
 
-export default function CardEmailForm({ isOpen, onClose }: CardEmailFormProps) {
+export default function CardEmailForm({ isOpen, onClose, message }: CardEmailFormProps) {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
@@ -101,7 +102,7 @@ export default function CardEmailForm({ isOpen, onClose }: CardEmailFormProps) {
         ) : (
           <>
             <p className="text-[1.125rem] text-neutral-800 dark:text-white mb-5 leading-relaxed pr-8">
-              Ok, igual entonces es que ya me quieres dar tu email.
+              {message || 'Ok, igual entonces es que ya me quieres dar tu email.'}
             </p>
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-3">
