@@ -1,8 +1,42 @@
 import { forwardRef } from 'react';
+import { ArrowRight } from 'lucide-react';
+import aboutImage from '../../Assests/about_image.png';
+import faqsImage from '../../Assests/imagen_faqs.png';
+import bodaImage from '../../Assests/imagen_lo_de_la_boda.png';
 
 interface ExploreOptionsSectionProps {
   visible: boolean;
 }
+
+const cards = [
+  {
+    href: '#about',
+    image: aboutImage,
+    subtitle: 'Capítulo personal',
+    title: 'About (o sea, sobre mí)',
+    text: 'Verás cuántos años tengo, cuántos hijos (creo que) tengo, y a qué no dedico el tiempo libre.',
+    ctaPositive: 'Ir ahora',
+    ctaNegative: 'Me da igual',
+  },
+  {
+    href: '#faq',
+    image: faqsImage,
+    subtitle: 'Respuestas dudosas',
+    title: 'Preguntas frecuentes (o no tanto)',
+    text: '¿Me vas a cambiar la vida? ¿Cuánto cuesta lo que vendes? ¿Fran Perea el que lo lea? Entre otras menos importantes.',
+    ctaPositive: 'Leo las FAQs',
+    ctaNegative: 'No las leo',
+  },
+  {
+    href: '#boda',
+    image: bodaImage,
+    subtitle: 'Historia real',
+    title: 'Lo de la boda sin sobres.',
+    text: 'Esto puede ofender a algunas personas. Dale si no eres de esas personas.',
+    ctaPositive: 'Me interesa',
+    ctaNegative: 'Tu boda me la suda',
+  },
+];
 
 const ExploreOptionsSection = forwardRef<HTMLDivElement, ExploreOptionsSectionProps>(
   ({ visible }, ref) => {
@@ -61,47 +95,51 @@ const ExploreOptionsSection = forwardRef<HTMLDivElement, ExploreOptionsSectionPr
                 O, ya menos personal, puedes leer cómo fue mi <strong>boda "libre de sobres"</strong> y por qué, 6 años después, sigo ganando dinero con ella. (Sí, fue una boda rara, como los emails).
               </p>
             </div>
+          </div>
 
-            <div
-              className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 explore-stagger"
-              style={{ animationDelay: '0.6s' }}
-            >
+          <div
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 explore-stagger max-w-6xl"
+            style={{ animationDelay: '0.6s' }}
+          >
+            {cards.map((card) => (
               <a
-                href="#about"
-                className="group flex flex-col items-start p-8 lg:p-10 border-2 border-neutral-300 dark:border-neutral-600 hover:border-neutral-500 dark:hover:border-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all duration-200"
+                key={card.href}
+                href={card.href}
+                className="editorial-card group flex flex-col border border-neutral-300 dark:border-neutral-600 bg-[#faf8f4] dark:bg-[#1a1816] hover:shadow-lg dark:hover:shadow-black/40 transition-all duration-300 overflow-hidden"
               >
-                <h3 className="text-xl lg:text-2xl font-bold text-neutral-800 dark:text-white mb-3 transition-colors">
-                  About
-                </h3>
-                <p className="text-sm lg:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed transition-colors">
-                  Algunas chorradas sobre mí mientras intento convencerte
-                </p>
-              </a>
+                <div className="overflow-hidden">
+                  <img
+                    src={card.image}
+                    alt={card.title}
+                    className="w-full aspect-[4/3] object-cover grayscale group-hover:grayscale-[60%] transition-all duration-500 group-hover:scale-[1.03]"
+                  />
+                </div>
 
-              <a
-                href="#faq"
-                className="group flex flex-col items-start p-8 lg:p-10 border-2 border-neutral-300 dark:border-neutral-600 hover:border-neutral-500 dark:hover:border-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all duration-200"
-              >
-                <h3 className="text-xl lg:text-2xl font-bold text-neutral-800 dark:text-white mb-3 transition-colors">
-                  Preguntas frecuentes y no tan frecuentes
-                </h3>
-                <p className="text-sm lg:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed transition-colors">
-                  Preguntas que podrías estar no haciéndote
-                </p>
-              </a>
+                <div className="flex flex-col flex-1 px-5 pt-4 pb-0 lg:px-6 lg:pt-5">
+                  <span className="text-[0.65rem] tracking-[0.25em] uppercase text-neutral-400 dark:text-neutral-500 font-bold mb-2">
+                    {card.subtitle}
+                  </span>
 
-              <a
-                href="#boda"
-                className="group flex flex-col items-start p-8 lg:p-10 border-2 border-neutral-300 dark:border-neutral-600 hover:border-neutral-500 dark:hover:border-neutral-400 hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-all duration-200"
-              >
-                <h3 className="text-xl lg:text-2xl font-bold text-neutral-800 dark:text-white mb-3 transition-colors">
-                  Lo de la boda
-                </h3>
-                <p className="text-sm lg:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed transition-colors">
-                  Una boda libre de sobres que sigue generando ingresos
-                </p>
+                  <h3 className="text-[1.25rem] lg:text-[1.4rem] font-bold text-neutral-900 dark:text-white leading-[1.15] mb-3 transition-colors">
+                    {card.title}
+                  </h3>
+
+                  <p className="text-[0.85rem] lg:text-[0.9rem] text-neutral-600 dark:text-neutral-400 leading-[1.6] flex-1 mb-5 transition-colors" style={{ textAlign: 'justify', textAlignLast: 'left' }}>
+                    {card.text}
+                  </p>
+                </div>
+
+                <div className="border-t border-neutral-300 dark:border-neutral-600 px-5 py-3 lg:px-6 lg:py-3.5 flex items-center justify-between mt-auto">
+                  <span className="text-[0.8rem] lg:text-[0.85rem] font-bold italic text-neutral-800 dark:text-neutral-200 group-hover:text-neutral-950 dark:group-hover:text-white transition-colors">
+                    {card.ctaPositive}
+                  </span>
+                  <ArrowRight className="w-4 h-4 text-neutral-800 dark:text-neutral-200 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
+                  <span className="text-[0.7rem] lg:text-[0.75rem] text-neutral-400 dark:text-neutral-500 italic">
+                    {card.ctaNegative}
+                  </span>
+                </div>
               </a>
-            </div>
+            ))}
           </div>
         </div>
 
