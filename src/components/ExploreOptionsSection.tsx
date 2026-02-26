@@ -12,7 +12,7 @@ const cards = [
   {
     href: '#about',
     image: aboutImage,
-    subtitle: 'Capítulo personal',
+
     title: 'About (o sea, sobre mí)',
     text: 'Verás cuántos años tengo, cuántos hijos (creo que) tengo, y a qué no dedico el tiempo libre.',
     ctaPositive: 'Ir ahora',
@@ -21,7 +21,7 @@ const cards = [
   {
     href: '#faq',
     image: faqsImage,
-    subtitle: 'Respuestas dudosas',
+
     title: 'Preguntas frecuentes (o no tanto)',
     text: '¿Me vas a cambiar la vida? ¿Cuánto cuesta lo que vendes? ¿Fran Perea el que lo lea? Entre otras menos importantes.',
     ctaPositive: 'Leo las FAQs',
@@ -30,7 +30,7 @@ const cards = [
   {
     href: '#boda',
     image: bodaImage,
-    subtitle: 'Historia real',
+
     title: 'Lo de la boda sin sobres.',
     text: 'Esto puede ofender a algunas personas. Dale si no eres de esas personas.',
     ctaPositive: 'Me interesa',
@@ -116,10 +116,6 @@ const ExploreOptionsSection = forwardRef<HTMLDivElement, ExploreOptionsSectionPr
                 </div>
 
                 <div className="flex flex-col flex-1 px-5 pt-4 pb-0 lg:px-6 lg:pt-5">
-                  <span className="text-[0.65rem] tracking-[0.25em] uppercase text-neutral-400 dark:text-neutral-500 font-bold mb-2">
-                    {card.subtitle}
-                  </span>
-
                   <h3 className="text-[1.25rem] lg:text-[1.4rem] font-bold text-neutral-900 dark:text-white leading-[1.15] mb-3 transition-colors">
                     {card.title}
                   </h3>
