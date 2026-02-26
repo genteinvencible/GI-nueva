@@ -137,7 +137,7 @@ export default function AboutPage({ onBack }: AboutPageProps) {
         <div className="mb-7 lg:mb-10 space-y-5 max-w-3xl">
           <RevealBlock
             as="p"
-            className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors"
+            className="text-[1.15rem] lg:text-[1.25rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors"
           >
             Como esto es online y mientras t{'\u00FA'} est{'\u00E1'}s leyendo yo puedo estar en cualquier sitio, incluso muerto, nos vamos a ahorrar los dos besos.
           </RevealBlock>
