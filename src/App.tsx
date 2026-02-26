@@ -69,7 +69,6 @@ function App() {
   const handleGoAbout = useCallback(() => {
     setShowAboutPage(true);
     setShowLegalPage(false);
-    window.scrollTo(0, 0);
   }, []);
 
   if (showLegalPage) {
