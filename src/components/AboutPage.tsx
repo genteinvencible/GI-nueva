@@ -1,7 +1,5 @@
 import { Check } from 'lucide-react';
 import EmailSubscriptionForm from './EmailSubscriptionForm';
-import aboutImage from '../../Assests/about_image.png';
-
 interface AboutPageProps {
   onBack: () => void;
 }
@@ -148,42 +146,27 @@ export default function AboutPage({ onBack }: AboutPageProps) {
     <div className="min-h-screen bg-transparent text-neutral-900 dark:text-white transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-24 lg:pt-36 pb-20 lg:pb-32">
 
-        <div className="mb-16 lg:mb-24 about-stagger" style={{ animationDelay: '0.05s' }}>
-          <p className="text-[1.85rem] sm:text-[2.25rem] lg:text-[3rem] text-neutral-800 dark:text-white leading-[1.18] font-normal transition-colors max-w-3xl">
+        <div className="mb-12 lg:mb-20 space-y-5">
+          <p
+            className="text-[1.6rem] lg:text-[1.85rem] text-neutral-800 dark:text-white leading-[1.2] font-normal transition-colors about-stagger"
+            style={{ animationDelay: '0.05s' }}
+          >
+            <span className="lead-in-text">Mi nombre es {'\u00C1'}lvaro.</span>
+          </p>
+
+          <p
+            className="text-[1.125rem] text-neutral-600 dark:text-neutral-300 leading-relaxed transition-colors about-stagger"
+            style={{ animationDelay: '0.15s' }}
+          >
+            Ey {'\u{1F44B}'}
+          </p>
+
+          <p
+            className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors about-stagger"
+            style={{ animationDelay: '0.25s' }}
+          >
             Como esto es online y mientras t{'\u00FA'} est{'\u00E1'}s leyendo yo puedo estar en cualquier sitio, incluso muerto, nos vamos a ahorrar los dos besos.
           </p>
-        </div>
-
-        <div className="grid lg:grid-cols-[1fr_auto] gap-12 lg:gap-20 items-start mb-20 lg:mb-28">
-          <div className="space-y-5">
-            <p
-              className="text-[1.6rem] lg:text-[1.85rem] text-neutral-800 dark:text-white leading-[1.2] font-normal transition-colors about-stagger"
-              style={{ animationDelay: '0.15s' }}
-            >
-              <span className="lead-in-text">Mi nombre es {'\u00C1'}lvaro.</span>
-            </p>
-
-            <p
-              className="text-[1.125rem] text-neutral-600 dark:text-neutral-300 leading-relaxed transition-colors about-stagger"
-              style={{ animationDelay: '0.25s' }}
-            >
-              Ey {'\u{1F44B}'}
-            </p>
-          </div>
-
-          <div className="about-stagger flex justify-center lg:justify-end order-first lg:order-last" style={{ animationDelay: '0.2s' }}>
-            <div className="w-[65%] sm:w-[50%] lg:w-72 xl:w-80">
-              <div className="relative overflow-hidden">
-                <img
-                  src={aboutImage}
-                  alt={'\u00C1lvaro'}
-                  className="w-full h-auto object-cover shadow-lg dark:shadow-black/50"
-                  style={{ filter: 'brightness(0.92) contrast(1.08)' }}
-                />
-                <div className="absolute inset-0 ring-1 ring-inset ring-black/5 dark:ring-white/5" />
-              </div>
-            </div>
-          </div>
         </div>
 
         <div className="max-w-3xl">
