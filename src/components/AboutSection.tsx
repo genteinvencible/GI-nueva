@@ -1,5 +1,6 @@
 import { useState, forwardRef } from 'react';
 import EmailSubscriptionForm from './EmailSubscriptionForm';
+import RevealBlock from './RevealBlock';
 
 interface AboutSectionProps {
   onRevealChapter2: () => void;
@@ -21,58 +22,66 @@ const AboutSection = forwardRef<HTMLButtonElement, AboutSectionProps>(
   return (
     <div className="bg-transparent relative overflow-hidden transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-12 lg:pb-16">
-        <div className="text-center text-neutral-800 dark:text-white text-4xl lg:text-5xl tracking-[0.25em] pt-4 lg:pt-8 pb-4 lg:pb-8 transition-colors">
+        <RevealBlock className="text-center text-neutral-800 dark:text-white text-4xl lg:text-5xl tracking-[0.25em] pt-4 lg:pt-8 pb-4 lg:pb-8 transition-colors">
           * * *
-        </div>
+        </RevealBlock>
         <div className="space-y-4 max-w-4xl mt-0 pt-0">
-          <p className="text-[1.75rem] lg:text-[2rem] text-neutral-800 dark:text-white leading-[1.15] font-normal transition-colors">
-            <span className="lead-in-text">Mi nombre es Álvaro Sánchez</span> y desde hace cinco años tengo una suscripción de emails de pago.
-          </p>
+          <RevealBlock
+            as="p"
+            className="text-[1.75rem] lg:text-[2rem] text-neutral-800 dark:text-white leading-[1.15] font-normal transition-colors"
+            delay={0.1}
+          >
+            <span className="lead-in-text">Mi nombre es Alvaro Sanchez</span> y desde hace cinco anos tengo una suscripcion de emails de pago.
+          </RevealBlock>
 
           <div className="space-y-4 pt-2">
-            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors">—¿Cuántos años?</p>
-            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors">—Cinco...</p>
-            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors">—Pues por el cu...</p>
+            <RevealBlock as="p" className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors" delay={0.2}>
+              --Cuantos anos?
+            </RevealBlock>
+            <RevealBlock as="p" className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors" delay={0.25}>
+              --Cinco...
+            </RevealBlock>
+            <RevealBlock as="p" className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors" delay={0.3}>
+              --Pues por el cu...
+            </RevealBlock>
 
-            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors">
+            <RevealBlock as="p" className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors" delay={0.35}>
               Ese es el nivel.
-            </p>
+            </RevealBlock>
 
-            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors">
+            <RevealBlock as="p" className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors" delay={0.4}>
               {'Yo escribo todos los d\u00EDas y otras personas (que no son yo) '}
               <strong>{'pagan para leer'}</strong>
               {'.'}
+            </RevealBlock>
 
-            </p>
+            <RevealBlock as="p" className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors" delay={0.45}>
+              Asi que puedes llamarme escritor, o vendedor. O puedes no llamarme nada.
+            </RevealBlock>
 
-            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors">
-              Así que puedes llamarme escritor, o vendedor. O puedes no llamarme nada.
-            </p>
-
-            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors">
+            <RevealBlock as="p" className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors" delay={0.5}>
               {'Si quieres saber qu\u00E9 lleva a un mont\u00F3n de personas (que no son t\u00FA) a pagar por recibir emails, '}
               <strong>{'puedes probar gratis'}</strong>
               {' durante 17 d\u00EDas.'}
+            </RevealBlock>
 
-            </p>
+            <RevealBlock as="p" className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors" delay={0.55}>
+              Si, 17.
+            </RevealBlock>
 
-            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors">
-              Sí, 17.
-            </p>
+            <RevealBlock as="p" className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors" delay={0.6}>
+              O 12 mas cinco.
+            </RevealBlock>
 
-            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors">
-              O 12 más cinco.
-            </p>
+            <RevealBlock as="p" className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors" delay={0.65}>
+              Solo tienes que entregarme uno de tus bienes mas preciados, tu email.
+            </RevealBlock>
 
-            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors">
-              Solo tienes que entregarme uno de tus bienes más preciados, tu email.
-            </p>
-
-            <p className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors font-bold">
+            <RevealBlock as="p" className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors font-bold" delay={0.7}>
               OH ME HA PEDIDO MI EMAIL!!
-            </p>
+            </RevealBlock>
 
-            <div className="pt-8 space-y-4">
+            <RevealBlock className="pt-8 space-y-4" delay={0.8}>
               <button
                 ref={ref}
                 onClick={handleToggleForm}
@@ -94,9 +103,9 @@ const AboutSection = forwardRef<HTMLButtonElement, AboutSectionProps>(
                 <span className="absolute -top-1 -right-1 bg-white dark:bg-neutral-900 text-neutral-800 dark:text-neutral-100 text-[0.55rem] px-1.5 py-0.5 font-normal tracking-wider border border-neutral-300 dark:border-neutral-700 shadow-sm rotate-3 transition-colors">
                   MOST POPULAR
                 </span>
-                Demasiado pronto, todavía no nos hemos presentado
+                Demasiado pronto, todavia no nos hemos presentado
               </button>
-            </div>
+            </RevealBlock>
           </div>
         </div>
       </div>

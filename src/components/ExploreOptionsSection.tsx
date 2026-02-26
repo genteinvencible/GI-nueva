@@ -4,6 +4,7 @@ import aboutImage from '../../Assests/about_image.png';
 import faqsImage from '../../Assests/imagen_faqs.png';
 import bodaImage from '../../Assests/imagen_lo_de_la_boda.png';
 import CardEmailForm from './CardEmailForm';
+import RevealBlock from './RevealBlock';
 
 interface ExploreOptionsSectionProps {
   visible: boolean;
@@ -14,8 +15,8 @@ const cards = [
     id: 'about',
     href: '#about',
     image: aboutImage,
-    title: 'About (o sea, sobre mí)',
-    text: 'Verás cuántos años tengo, cuántos hijos (creo que) tengo, y a qué no dedico el tiempo libre.',
+    title: 'About (o sea, sobre mi)',
+    text: 'Veras cuantos anos tengo, cuantos hijos (creo que) tengo, y a que no dedico el tiempo libre.',
     ctaPositive: 'Ir ahora',
     ctaNegative: 'Me da igual',
     hasNegativeAction: true,
@@ -25,22 +26,22 @@ const cards = [
     href: '#faq',
     image: faqsImage,
     title: 'Preguntas Frecuentes (o no)',
-    text: '¿Me vas a cambiar la vida? ¿Cuánto cuesta lo que vendes? ¿Fran Perea el que lo lea?',
+    text: 'Me vas a cambiar la vida? Cuanto cuesta lo que vendes? Fran Perea el que lo lea?',
     ctaPositive: 'Leo las FAQs',
     ctaNegative: 'No las leo',
     hasNegativeAction: true,
-    negativeMessage: 'Entonces, si no hay preguntas, ya puedes meter aquí tu email. Si tienes huevos, claro.',
+    negativeMessage: 'Entonces, si no hay preguntas, ya puedes meter aqui tu email. Si tienes huevos, claro.',
   },
   {
     id: 'boda',
     href: '#boda',
     image: bodaImage,
     title: 'Lo de la boda sin sobres.',
-    text: 'Esto puede ofender a algunas personas. Tú podrías ser de esas. No le des en ese caso.',
+    text: 'Esto puede ofender a algunas personas. Tu podrias ser de esas. No le des en ese caso.',
     ctaPositive: 'Me interesa',
     ctaNegative: 'Me la suda',
     hasNegativeAction: true,
-    negativeMessage: 'Y a mí la tuya, ya sabes por qué lo hago. Por tu E-M-A-I-L.',
+    negativeMessage: 'Y a mi la tuya, ya sabes por que lo hago. Por tu E-M-A-I-L.',
   },
 ];
 
@@ -56,58 +57,64 @@ const ExploreOptionsSection = forwardRef<HTMLDivElement, ExploreOptionsSectionPr
         className="bg-transparent relative overflow-hidden transition-colors duration-300"
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-16 lg:pb-24">
-          <div className="text-center text-neutral-800 dark:text-white text-4xl lg:text-5xl tracking-[0.25em] pt-4 lg:pt-8 pb-6 lg:pb-10 transition-colors">
+          <RevealBlock className="text-center text-neutral-800 dark:text-white text-4xl lg:text-5xl tracking-[0.25em] pt-4 lg:pt-8 pb-6 lg:pb-10 transition-colors">
             * * *
-          </div>
+          </RevealBlock>
 
           <div className="max-w-4xl mt-0 pt-0">
-            <p
-              className="text-[0.8rem] tracking-[0.3em] uppercase text-neutral-400 dark:text-neutral-500 font-bold transition-colors mb-8 lg:mb-12 explore-stagger"
-              style={{ animationDelay: '0s' }}
+            <RevealBlock
+              as="p"
+              className="text-[0.8rem] tracking-[0.3em] uppercase text-neutral-400 dark:text-neutral-500 font-bold transition-colors mb-8 lg:mb-12"
+              delay={0.1}
             >
-              CAPÍTULO 3 — BIEN POR TI
-            </p>
-            <p
-              className="text-[1.75rem] lg:text-[2rem] text-neutral-800 dark:text-white leading-[1.15] font-normal transition-colors mb-10 lg:mb-14 explore-stagger"
-              style={{ animationDelay: '0.1s' }}
+              CAPITULO 3 — BIEN POR TI
+            </RevealBlock>
+            <RevealBlock
+              as="p"
+              className="text-[1.75rem] lg:text-[2rem] text-neutral-800 dark:text-white leading-[1.15] font-normal transition-colors mb-10 lg:mb-14"
+              delay={0.2}
             >
               <span className="lead-in-text">Me gusta tu actitud.</span>
-            </p>
+            </RevealBlock>
 
             <div className="space-y-5 lg:space-y-6 mb-14 lg:mb-20">
-              <p
-                className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors explore-stagger"
-                style={{ animationDelay: '0.2s' }}
+              <RevealBlock
+                as="p"
+                className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors"
+                delay={0.3}
               >
                 Para descubrir si este es un lugar terrible para tu email, o muy bueno, ahora puedes:
-              </p>
+              </RevealBlock>
 
-              <p
-                className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors explore-stagger"
-                style={{ animationDelay: '0.3s' }}
+              <RevealBlock
+                as="p"
+                className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors"
+                delay={0.4}
               >
-                Leer el <strong>ABOUT</strong> (que es yo intentando convencerte de que me des tu email, mientras te cuento algunas chorradas de mí).
-              </p>
+                Leer el <strong>ABOUT</strong> (que es yo intentando convencerte de que me des tu email, mientras te cuento algunas chorradas de mi).
+              </RevealBlock>
 
-              <p
-                className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors explore-stagger"
-                style={{ animationDelay: '0.4s' }}
+              <RevealBlock
+                as="p"
+                className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors"
+                delay={0.5}
               >
-                También puedes leer las <strong>FAQs</strong>, que es lo mismo, pero con algunas preguntas que podrías estar no haciéndote.
-              </p>
+                Tambien puedes leer las <strong>FAQs</strong>, que es lo mismo, pero con algunas preguntas que podrias estar no haciendote.
+              </RevealBlock>
 
-              <p
-                className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors explore-stagger"
-                style={{ animationDelay: '0.5s' }}
+              <RevealBlock
+                as="p"
+                className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors"
+                delay={0.6}
               >
-                O, ya menos personal, puedes leer cómo fue mi <strong>boda "libre de sobres"</strong> y por qué, 6 años después, sigo ganando dinero con ella. (Sí, fue una boda rara, como los emails).
-              </p>
+                O, ya menos personal, puedes leer como fue mi <strong>boda "libre de sobres"</strong> y por que, 6 anos despues, sigo ganando dinero con ella. (Si, fue una boda rara, como los emails).
+              </RevealBlock>
             </div>
           </div>
 
-          <div
-            className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 explore-stagger max-w-6xl"
-            style={{ animationDelay: '0.6s' }}
+          <RevealBlock
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl"
+            delay={0.7}
           >
             {cards.map((card) => (
               <a
@@ -158,7 +165,7 @@ const ExploreOptionsSection = forwardRef<HTMLDivElement, ExploreOptionsSectionPr
                 </div>
               </a>
             ))}
-          </div>
+          </RevealBlock>
 
           <CardEmailForm
             isOpen={emailModalSource !== null}
@@ -166,23 +173,6 @@ const ExploreOptionsSection = forwardRef<HTMLDivElement, ExploreOptionsSectionPr
             message={cards.find((c) => c.id === emailModalSource)?.negativeMessage}
           />
         </div>
-
-        <style>{`
-          @keyframes exploreFadeUp {
-            from {
-              opacity: 0;
-              transform: translateY(18px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-          .explore-stagger {
-            opacity: 0;
-            animation: exploreFadeUp 0.7s ease-out forwards;
-          }
-        `}</style>
       </div>
     );
   }
