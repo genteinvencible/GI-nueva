@@ -1,8 +1,9 @@
-import { forwardRef } from 'react';
+import { forwardRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import aboutImage from '../../Assests/about_image.png';
 import faqsImage from '../../Assests/imagen_faqs.png';
 import bodaImage from '../../Assests/imagen_lo_de_la_boda.png';
+import CardEmailForm from './CardEmailForm';
 
 interface ExploreOptionsSectionProps {
   visible: boolean;
@@ -10,36 +11,41 @@ interface ExploreOptionsSectionProps {
 
 const cards = [
   {
+    id: 'about',
     href: '#about',
     image: aboutImage,
-
     title: 'About (o sea, sobre mí)',
     text: 'Verás cuántos años tengo, cuántos hijos (creo que) tengo, y a qué no dedico el tiempo libre.',
     ctaPositive: 'Ir ahora',
     ctaNegative: 'Me da igual',
+    hasNegativeAction: true,
   },
   {
+    id: 'faq',
     href: '#faq',
     image: faqsImage,
-
     title: 'Preguntas Frecuentes (o no)',
     text: '¿Me vas a cambiar la vida? ¿Cuánto cuesta lo que vendes? ¿Fran Perea el que lo lea?',
     ctaPositive: 'Leo las FAQs',
     ctaNegative: 'No las leo',
+    hasNegativeAction: false,
   },
   {
+    id: 'boda',
     href: '#boda',
     image: bodaImage,
-
     title: 'Lo de la boda sin sobres.',
     text: 'Esto puede ofender a algunas personas. Tú podrías ser de esas. No le des en ese caso.',
     ctaPositive: 'Me interesa',
     ctaNegative: 'Me la suda',
+    hasNegativeAction: false,
   },
 ];
 
 const ExploreOptionsSection = forwardRef<HTMLDivElement, ExploreOptionsSectionProps>(
   ({ visible }, ref) => {
+    const [showEmailForm, setShowEmailForm] = useState(false);
+
     if (!visible) return null;
 
     return (
@@ -102,39 +108,58 @@ const ExploreOptionsSection = forwardRef<HTMLDivElement, ExploreOptionsSectionPr
             style={{ animationDelay: '0.6s' }}
           >
             {cards.map((card) => (
-              <a
-                key={card.href}
-                href={card.href}
-                className="editorial-card group flex flex-col border border-neutral-300 dark:border-neutral-600 bg-[#faf8f4] dark:bg-[#1a1816] hover:shadow-lg dark:hover:shadow-black/40 transition-all duration-300 overflow-hidden"
-              >
-                <div className="overflow-hidden">
-                  <img
-                    src={card.image}
-                    alt={card.title}
-                    className="w-full aspect-[4/3] object-cover grayscale group-hover:grayscale-[60%] transition-all duration-500 group-hover:scale-[1.03]"
-                  />
-                </div>
+              <div key={card.id} className="flex flex-col">
+                <a
+                  href={card.href}
+                  className="editorial-card group flex flex-col flex-1 border border-neutral-300 dark:border-neutral-600 bg-[#faf8f4] dark:bg-[#1a1816] hover:shadow-lg dark:hover:shadow-black/40 transition-all duration-300 overflow-hidden"
+                >
+                  <div className="overflow-hidden">
+                    <img
+                      src={card.image}
+                      alt={card.title}
+                      className="w-full aspect-[4/3] object-cover grayscale group-hover:grayscale-[60%] transition-all duration-500 group-hover:scale-[1.03]"
+                    />
+                  </div>
 
-                <div className="flex flex-col flex-1 px-5 pt-4 pb-0 lg:px-6 lg:pt-5">
-                  <h3 className="text-[1.25rem] lg:text-[1.4rem] font-bold text-neutral-900 dark:text-white leading-[1.15] mb-3 transition-colors">
-                    {card.title}
-                  </h3>
+                  <div className="flex flex-col flex-1 px-5 pt-4 pb-0 lg:px-6 lg:pt-5">
+                    <h3 className="text-[1.25rem] lg:text-[1.4rem] font-bold text-neutral-900 dark:text-white leading-[1.15] mb-3 transition-colors">
+                      {card.title}
+                    </h3>
 
-                  <p className="text-[0.85rem] lg:text-[0.9rem] text-neutral-600 dark:text-neutral-400 leading-[1.6] flex-1 mb-5 transition-colors" style={{ textAlign: 'justify', textAlignLast: 'left' }}>
-                    {card.text}
-                  </p>
-                </div>
+                    <p className="text-[0.85rem] lg:text-[0.9rem] text-neutral-600 dark:text-neutral-400 leading-[1.6] flex-1 mb-5 transition-colors" style={{ textAlign: 'justify', textAlignLast: 'left' }}>
+                      {card.text}
+                    </p>
+                  </div>
 
-                <div className="border-t border-neutral-300 dark:border-neutral-600 px-5 py-3 lg:px-6 lg:py-3.5 flex items-center justify-between mt-auto">
-                  <span className="text-[0.8rem] lg:text-[0.85rem] font-bold italic text-neutral-800 dark:text-neutral-200 group-hover:text-neutral-950 dark:group-hover:text-white transition-colors">
-                    {card.ctaPositive}
-                  </span>
-                  <ArrowRight className="w-4 h-4 text-neutral-800 dark:text-neutral-200 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
-                  <span className="text-[0.7rem] lg:text-[0.75rem] text-neutral-400 dark:text-neutral-500 italic">
-                    {card.ctaNegative}
-                  </span>
-                </div>
-              </a>
+                  <div className="border-t border-neutral-300 dark:border-neutral-600 px-5 py-3 lg:px-6 lg:py-3.5 flex items-center justify-between mt-auto">
+                    <span className="text-[0.8rem] lg:text-[0.85rem] font-bold italic text-neutral-800 dark:text-neutral-200 group-hover:text-neutral-950 dark:group-hover:text-white transition-colors">
+                      {card.ctaPositive}
+                    </span>
+                    <ArrowRight className="w-4 h-4 text-neutral-800 dark:text-neutral-200 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
+                    {card.hasNegativeAction ? (
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          setShowEmailForm(true);
+                        }}
+                        className="text-[0.7rem] lg:text-[0.75rem] text-neutral-400 dark:text-neutral-500 italic hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors"
+                      >
+                        {card.ctaNegative}
+                      </button>
+                    ) : (
+                      <span className="text-[0.7rem] lg:text-[0.75rem] text-neutral-400 dark:text-neutral-500 italic">
+                        {card.ctaNegative}
+                      </span>
+                    )}
+                  </div>
+                </a>
+
+                {card.hasNegativeAction && (
+                  <CardEmailForm isOpen={showEmailForm} />
+                )}
+              </div>
             ))}
           </div>
         </div>
