@@ -134,6 +134,14 @@ export default function AboutPage({ onBack }: AboutPageProps) {
     <div className="min-h-screen bg-transparent text-neutral-900 dark:text-white transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-24 lg:pt-36 pb-20 lg:pb-32">
 
+        <div className="flex justify-center mb-8 lg:hidden">
+          <span className="flex items-center gap-3 text-neutral-300 dark:text-neutral-600">
+            <span className="w-1 h-1 rounded-full bg-current" />
+            <span className="w-1 h-1 rounded-full bg-current" />
+            <span className="w-1 h-1 rounded-full bg-current" />
+          </span>
+        </div>
+
         <div className="mb-7 lg:mb-10 space-y-5 max-w-3xl">
           <RevealBlock
             as="p"
