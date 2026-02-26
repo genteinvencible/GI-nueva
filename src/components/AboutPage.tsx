@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { ArrowLeft } from 'lucide-react';
 import EmailSubscriptionForm from './EmailSubscriptionForm';
 import aboutImage from '../../Assests/about_image.png';
 
@@ -70,15 +69,6 @@ export default function AboutPage({ onBack }: AboutPageProps) {
   return (
     <div className="min-h-screen bg-transparent text-neutral-900 dark:text-white transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 lg:py-32">
-        <button
-          onClick={onBack}
-          className="flex items-center gap-2 text-[1.125rem] text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors mb-8 lg:mb-12 about-stagger"
-          style={{ animationDelay: '0s' }}
-        >
-          <ArrowLeft className="w-5 h-5" />
-          <span>Volver</span>
-        </button>
-
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start mb-16 lg:mb-24">
           <div className="space-y-6">
             <p
