@@ -196,7 +196,7 @@ export default function AboutPage({ onBack }: AboutPageProps) {
               <RevealBlock
                 key={i}
                 as="li"
-                className="list-none text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors pl-9 mt-5"
+                className="list-none text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors pl-9 mt-5 mb-5"
                 delay={i * 0.08}
               >
                 {line.text}
