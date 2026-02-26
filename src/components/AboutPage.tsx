@@ -171,20 +171,16 @@ export default function AboutPage({ onBack }: AboutPageProps) {
               ))}
             </ul>
 
-            <RevealBlock className="space-y-2 py-10 pl-10">
-              {middleLines.map((line, i) => (
-                <p
-                  key={i}
-                  className="text-[1.05rem] text-neutral-500 dark:text-neutral-400 leading-relaxed transition-colors italic"
-                  style={{
-                    opacity: 1,
-                    transitionDelay: `${i * 0.06}s`,
-                  }}
-                >
-                  {line.text}
-                </p>
-              ))}
-            </RevealBlock>
+            {middleLines.map((line, i) => (
+              <RevealBlock
+                key={i}
+                as="li"
+                className="list-none text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors pl-9"
+                delay={i * 0.08}
+              >
+                {line.text}
+              </RevealBlock>
+            ))}
 
             <ul className="space-y-5">
               {checkItems2.map((item, i) => (
@@ -196,16 +192,16 @@ export default function AboutPage({ onBack }: AboutPageProps) {
               ))}
             </ul>
 
-            <RevealBlock className="space-y-2 py-10 pl-10">
-              {middleLines2.map((line, i) => (
-                <p
-                  key={i}
-                  className="text-[1.05rem] text-neutral-500 dark:text-neutral-400 leading-relaxed transition-colors italic"
-                >
-                  {line.text}
-                </p>
-              ))}
-            </RevealBlock>
+            {middleLines2.map((line, i) => (
+              <RevealBlock
+                key={i}
+                as="li"
+                className="list-none text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors pl-9"
+                delay={i * 0.08}
+              >
+                {line.text}
+              </RevealBlock>
+            ))}
 
             <ul className="space-y-5">
               {checkItems3.map((item, i) => (
