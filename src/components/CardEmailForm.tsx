@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
+import { X } from 'lucide-react';
 
 interface CardEmailFormProps {
   isOpen: boolean;
+  onClose: () => void;
 }
 
-export default function CardEmailForm({ isOpen }: CardEmailFormProps) {
+export default function CardEmailForm({ isOpen, onClose }: CardEmailFormProps) {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
@@ -64,7 +66,16 @@ export default function CardEmailForm({ isOpen }: CardEmailFormProps) {
         opacity: isOpen ? 1 : 0,
       }}
     >
-      <div className="mt-8 lg:mt-10 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white/60 dark:bg-white/[0.04] p-6 lg:p-8 shadow-sm">
+      <div className="mt-8 lg:mt-10 rounded-lg border border-neutral-200 dark:border-neutral-700 bg-white/60 dark:bg-white/[0.04] p-6 lg:p-8 shadow-sm relative">
+        <button
+          type="button"
+          onClick={onClose}
+          className="absolute top-4 right-4 p-1 text-neutral-400 dark:text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors"
+          aria-label="Cerrar"
+        >
+          <X className="w-5 h-5" />
+        </button>
+
         {status === 'success' ? (
           <div className="flex items-center gap-3">
             <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#2d6a4f]/10 dark:bg-[#52b788]/15 text-[#2d6a4f] dark:text-[#52b788] text-lg">

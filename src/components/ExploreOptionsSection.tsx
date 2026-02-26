@@ -158,7 +158,7 @@ const ExploreOptionsSection = forwardRef<HTMLDivElement, ExploreOptionsSectionPr
             ))}
           </div>
 
-          <CardEmailForm isOpen={showEmailForm} />
+          <CardEmailForm isOpen={showEmailForm} onClose={() => setShowEmailForm(false)} />
         </div>
 
         <style>{`
