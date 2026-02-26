@@ -147,7 +147,7 @@ export default function AboutPage({ onBack }: AboutPageProps) {
             as="p"
             className="text-[0.8rem] tracking-[0.3em] uppercase text-neutral-400 dark:text-neutral-500 font-bold transition-colors"
           >
-            {'About \u2014 o sea, sobre m\u00ED'}
+            {'About (o sea, sobre m\u00ED, y un poco sobre ti).'}
           </RevealBlock>
         </div>
 
