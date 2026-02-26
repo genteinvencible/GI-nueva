@@ -22,8 +22,8 @@ const cards = [
     href: '#faq',
     image: faqsImage,
 
-    title: 'Preguntas frecuentes (o no tanto)',
-    text: '¿Me vas a cambiar la vida? ¿Cuánto cuesta lo que vendes? ¿Fran Perea el que lo lea? Entre otras menos importantes.',
+    title: 'Preguntas Frecuentes (o no)',
+    text: '¿Me vas a cambiar la vida? ¿Cuánto cuesta lo que vendes? ¿Fran Perea el que lo lea?',
     ctaPositive: 'Leo las FAQs',
     ctaNegative: 'No las leo',
   },
@@ -32,7 +32,7 @@ const cards = [
     image: bodaImage,
 
     title: 'Lo de la boda sin sobres.',
-    text: 'Esto puede ofender a algunas personas. Dale si no eres de esas personas.',
+    text: 'Esto puede ofender a algunas personas. Tú podrías ser de esas personas. No le des en ese caso.',
     ctaPositive: 'Me interesa',
     ctaNegative: 'Tu boda me la suda',
   },
