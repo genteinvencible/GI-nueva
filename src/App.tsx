@@ -8,6 +8,7 @@ import ExploreOptionsSection from './components/ExploreOptionsSection';
 import AntiSocialBanner from './components/AntiSocialBanner';
 import Footer from './components/Footer';
 import PrivacyPolicyPage from './components/PrivacyPolicyPage';
+import AboutPage from './components/AboutPage';
 import { useScrollTrigger } from './hooks/useScrollTrigger';
 import { useBannerSystem } from './hooks/useBannerSystem';
 
@@ -18,6 +19,7 @@ function App() {
   const [isInputFocused, setIsInputFocused] = useState(false);
   const [hasSubscribed, setHasSubscribed] = useState(false);
   const [showLegalPage, setShowLegalPage] = useState(false);
+  const [showAboutPage, setShowAboutPage] = useState(false);
 
   const chapter2Ref = useRef<HTMLDivElement>(null);
   const exploreRef = useRef<HTMLDivElement>(null);
@@ -58,11 +60,33 @@ function App() {
     // El banner se cerrará solo por la animación
   }, []);
 
+  const handleGoHome = useCallback(() => {
+    setShowAboutPage(false);
+    setShowLegalPage(false);
+    window.scrollTo(0, 0);
+  }, []);
+
+  const handleGoAbout = useCallback(() => {
+    setShowAboutPage(true);
+    setShowLegalPage(false);
+    window.scrollTo(0, 0);
+  }, []);
+
   if (showLegalPage) {
     window.scrollTo(0, 0);
     return (
       <ThemeProvider>
-        <PrivacyPolicyPage onBack={() => setShowLegalPage(false)} />
+        <Navbar activePage="home" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} />
+        <PrivacyPolicyPage onBack={handleGoHome} />
+      </ThemeProvider>
+    );
+  }
+
+  if (showAboutPage) {
+    return (
+      <ThemeProvider>
+        <Navbar activePage="about" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} />
+        <AboutPage onBack={handleGoHome} />
       </ThemeProvider>
     );
   }
@@ -70,7 +94,7 @@ function App() {
   return (
     <ThemeProvider>
       <div className="relative">
-        <Navbar />
+        <Navbar activePage="home" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} />
         <Hero />
         <AboutSection
           ref={emailButtonRef}
