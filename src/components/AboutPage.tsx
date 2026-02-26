@@ -148,24 +148,24 @@ export default function AboutPage({ onBack }: AboutPageProps) {
 
         <div className="mb-12 lg:mb-20 space-y-5">
           <p
-            className="text-[1.6rem] lg:text-[1.85rem] text-neutral-800 dark:text-white leading-[1.2] font-normal transition-colors about-stagger"
+            className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors about-stagger"
             style={{ animationDelay: '0.05s' }}
+          >
+            Como esto es online y mientras t{'\u00FA'} est{'\u00E1'}s leyendo yo puedo estar en cualquier sitio, incluso muerto, nos vamos a ahorrar los dos besos.
+          </p>
+
+          <p
+            className="text-[1.6rem] lg:text-[1.85rem] text-neutral-800 dark:text-white leading-[1.2] font-normal transition-colors about-stagger"
+            style={{ animationDelay: '0.15s' }}
           >
             <span className="lead-in-text">Mi nombre es {'\u00C1'}lvaro.</span>
           </p>
 
           <p
             className="text-[1.125rem] text-neutral-600 dark:text-neutral-300 leading-relaxed transition-colors about-stagger"
-            style={{ animationDelay: '0.15s' }}
-          >
-            Ey {'\u{1F44B}'}
-          </p>
-
-          <p
-            className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors about-stagger"
             style={{ animationDelay: '0.25s' }}
           >
-            Como esto es online y mientras t{'\u00FA'} est{'\u00E1'}s leyendo yo puedo estar en cualquier sitio, incluso muerto, nos vamos a ahorrar los dos besos.
+            Ey {'\u{1F44B}'}
           </p>
         </div>
 
