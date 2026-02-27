@@ -10,6 +10,7 @@ import Footer from './components/Footer';
 import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 import AboutPage from './components/AboutPage';
 import FaqsPage from './components/FaqsPage';
+import BodaPage from './components/BodaPage';
 import { useScrollTrigger } from './hooks/useScrollTrigger';
 import { useBannerSystem } from './hooks/useBannerSystem';
 
@@ -22,6 +23,7 @@ function App() {
   const [showLegalPage, setShowLegalPage] = useState(false);
   const [showAboutPage, setShowAboutPage] = useState(false);
   const [showFaqsPage, setShowFaqsPage] = useState(false);
+  const [showBodaPage, setShowBodaPage] = useState(false);
 
   const chapter2Ref = useRef<HTMLDivElement>(null);
   const exploreRef = useRef<HTMLDivElement>(null);
@@ -66,6 +68,7 @@ function App() {
     setShowAboutPage(false);
     setShowLegalPage(false);
     setShowFaqsPage(false);
+    setShowBodaPage(false);
     window.scrollTo(0, 0);
   }, []);
 
@@ -73,6 +76,7 @@ function App() {
     setShowAboutPage(true);
     setShowLegalPage(false);
     setShowFaqsPage(false);
+    setShowBodaPage(false);
     window.scrollTo(0, 0);
   }, []);
 
@@ -80,6 +84,15 @@ function App() {
     setShowFaqsPage(true);
     setShowAboutPage(false);
     setShowLegalPage(false);
+    setShowBodaPage(false);
+    window.scrollTo(0, 0);
+  }, []);
+
+  const handleGoBoda = useCallback(() => {
+    setShowBodaPage(true);
+    setShowAboutPage(false);
+    setShowLegalPage(false);
+    setShowFaqsPage(false);
     window.scrollTo(0, 0);
   }, []);
 
@@ -110,6 +123,15 @@ function App() {
     );
   }
 
+  if (showBodaPage) {
+    return (
+      <ThemeProvider>
+        <Navbar activePage="home" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} onFaqsClick={handleGoFaqs} />
+        <BodaPage onBack={handleGoHome} />
+      </ThemeProvider>
+    );
+  }
+
   return (
     <ThemeProvider>
       <div className="relative">
@@ -127,7 +149,7 @@ function App() {
           visible={chapter2Visible}
           onExploreClick={handleRevealExplore}
         />
-        <ExploreOptionsSection ref={exploreRef} visible={exploreVisible} />
+        <ExploreOptionsSection ref={exploreRef} visible={exploreVisible} onBodaClick={handleGoBoda} />
 
         {exploreVisible && <Footer onLegalClick={() => setShowLegalPage(true)} />}
 

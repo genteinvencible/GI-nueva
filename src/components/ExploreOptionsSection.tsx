@@ -8,6 +8,7 @@ import RevealBlock from './RevealBlock';
 
 interface ExploreOptionsSectionProps {
   visible: boolean;
+  onBodaClick?: () => void;
 }
 
 const cards = [
@@ -46,7 +47,7 @@ const cards = [
 ];
 
 const ExploreOptionsSection = forwardRef<HTMLDivElement, ExploreOptionsSectionProps>(
-  ({ visible }, ref) => {
+  ({ visible, onBodaClick }, ref) => {
     const [emailModalSource, setEmailModalSource] = useState<string | null>(null);
 
     if (!visible) return null;
@@ -119,8 +120,9 @@ const ExploreOptionsSection = forwardRef<HTMLDivElement, ExploreOptionsSectionPr
             {cards.map((card) => (
               <a
                 key={card.id}
-                href={card.href}
-                className="editorial-card group flex flex-col border border-neutral-300 dark:border-neutral-600 bg-[#faf8f4] dark:bg-[#1a1816] hover:shadow-lg dark:hover:shadow-black/40 transition-all duration-300 overflow-hidden"
+                href={card.id === 'boda' ? undefined : card.href}
+                onClick={card.id === 'boda' ? (e) => { e.preventDefault(); onBodaClick?.(); } : undefined}
+                className="editorial-card group flex flex-col border border-neutral-300 dark:border-neutral-600 bg-[#faf8f4] dark:bg-[#1a1816] hover:shadow-lg dark:hover:shadow-black/40 transition-all duration-300 overflow-hidden cursor-pointer"
               >
                 <div className="overflow-hidden">
                   <img
