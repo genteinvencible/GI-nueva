@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import EmailSubscriptionForm from './EmailSubscriptionForm';
 import RevealBlock from './RevealBlock';
+import FaqsHero from './FaqsHero';
 
 interface FaqsPageProps {
   onBack: () => void;
@@ -14,42 +15,9 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
 
   return (
     <div className="min-h-screen bg-transparent text-neutral-900 dark:text-white transition-colors duration-300">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-24 lg:pt-36 pb-20 lg:pb-32">
+      <FaqsHero />
 
-        <div className="flex justify-center mb-8 lg:hidden">
-          <span className="flex items-center gap-3 text-neutral-300 dark:text-neutral-600">
-            <span className="w-1 h-1 rounded-full bg-current" />
-            <span className="w-1 h-1 rounded-full bg-current" />
-            <span className="w-1 h-1 rounded-full bg-current" />
-          </span>
-        </div>
-
-        <div className="max-w-4xl mb-8 lg:mb-12">
-          <RevealBlock
-            as="p"
-            className="text-[0.8rem] tracking-[0.3em] uppercase text-neutral-400 dark:text-neutral-500 font-bold transition-colors"
-          >
-            FAQS.
-          </RevealBlock>
-        </div>
-
-        <div className="mb-7 lg:mb-10 space-y-5 max-w-3xl">
-          <RevealBlock
-            as="p"
-            className="text-[1.6rem] lg:text-[1.85rem] text-neutral-800 dark:text-white leading-[1.2] font-normal transition-colors"
-          >
-            Preguntas frecuentes.
-          </RevealBlock>
-
-          <RevealBlock
-            as="p"
-            className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors"
-            delay={0.1}
-          >
-            Bueno, algunas son frecuentes, otras no tanto, y otras me las he inventado. Es el mercado, amigo.
-          </RevealBlock>
-        </div>
-
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-20 lg:pb-32">
         <div className="max-w-3xl space-y-16">
 
           <RevealBlock className="space-y-5" delay={0.15}>
@@ -59,13 +27,6 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
               {'\u00BF'}Me ves cara de querer ense{'\u00F1'}arte algo?
             </p>
-            <div className="my-6">
-              <img
-                src="/Assests/alvaro_dimitri_baile_low.png"
-                alt="Alvaro bailando"
-                className="rounded-lg shadow-md max-w-full md:max-w-md"
-              />
-            </div>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors font-bold">
               Ahora en serio:
             </p>
