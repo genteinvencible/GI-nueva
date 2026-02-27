@@ -9,6 +9,7 @@ import AntiSocialBanner from './components/AntiSocialBanner';
 import Footer from './components/Footer';
 import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 import AboutPage from './components/AboutPage';
+import FaqsPage from './components/FaqsPage';
 import { useScrollTrigger } from './hooks/useScrollTrigger';
 import { useBannerSystem } from './hooks/useBannerSystem';
 
@@ -20,6 +21,7 @@ function App() {
   const [hasSubscribed, setHasSubscribed] = useState(false);
   const [showLegalPage, setShowLegalPage] = useState(false);
   const [showAboutPage, setShowAboutPage] = useState(false);
+  const [showFaqsPage, setShowFaqsPage] = useState(false);
 
   const chapter2Ref = useRef<HTMLDivElement>(null);
   const exploreRef = useRef<HTMLDivElement>(null);
@@ -63,18 +65,28 @@ function App() {
   const handleGoHome = useCallback(() => {
     setShowAboutPage(false);
     setShowLegalPage(false);
+    setShowFaqsPage(false);
     window.scrollTo(0, 0);
   }, []);
 
   const handleGoAbout = useCallback(() => {
     setShowAboutPage(true);
     setShowLegalPage(false);
+    setShowFaqsPage(false);
+    window.scrollTo(0, 0);
+  }, []);
+
+  const handleGoFaqs = useCallback(() => {
+    setShowFaqsPage(true);
+    setShowAboutPage(false);
+    setShowLegalPage(false);
+    window.scrollTo(0, 0);
   }, []);
 
   if (showLegalPage) {
     return (
       <ThemeProvider>
-        <Navbar activePage="home" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} />
+        <Navbar activePage="home" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} onFaqsClick={handleGoFaqs} />
         <PrivacyPolicyPage onBack={handleGoHome} />
       </ThemeProvider>
     );
@@ -83,8 +95,17 @@ function App() {
   if (showAboutPage) {
     return (
       <ThemeProvider>
-        <Navbar activePage="about" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} />
+        <Navbar activePage="about" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} onFaqsClick={handleGoFaqs} />
         <AboutPage onBack={handleGoHome} />
+      </ThemeProvider>
+    );
+  }
+
+  if (showFaqsPage) {
+    return (
+      <ThemeProvider>
+        <Navbar activePage="faqs" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} onFaqsClick={handleGoFaqs} />
+        <FaqsPage onBack={handleGoHome} />
       </ThemeProvider>
     );
   }
@@ -92,7 +113,7 @@ function App() {
   return (
     <ThemeProvider>
       <div className="relative">
-        <Navbar activePage="home" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} />
+        <Navbar activePage="home" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} onFaqsClick={handleGoFaqs} />
         <Hero />
         <AboutSection
           ref={emailButtonRef}
