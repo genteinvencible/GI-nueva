@@ -18,7 +18,7 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
       <FaqsHero />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-20 lg:pb-32">
-        <div className="max-w-3xl space-y-16">
+        <div className="max-w-3xl space-y-12">
 
           <RevealBlock className="space-y-5" delay={0.15}>
             <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic">
@@ -53,6 +53,10 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
             </p>
           </RevealBlock>
 
+          <div className="flex justify-center items-center py-2">
+            <span className="text-neutral-400 dark:text-neutral-500 tracking-[0.5em] text-sm">* * *</span>
+          </div>
+
           <RevealBlock className="space-y-5" delay={0.1}>
             <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic">
               Ah que tus emails son de IA.
@@ -70,6 +74,10 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
               Otro spoiler: para que te den ganas, en otro de los emails verás las cifras de un negocio de IA en el que estoy metido.
             </p>
           </RevealBlock>
+
+          <div className="flex justify-center items-center py-2">
+            <span className="text-neutral-400 dark:text-neutral-500 tracking-[0.5em] text-sm">* * *</span>
+          </div>
 
           <RevealBlock className="space-y-5" delay={0.1}>
             <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic">
@@ -97,6 +105,10 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
               O sí.
             </p>
           </RevealBlock>
+
+          <div className="flex justify-center items-center py-2">
+            <span className="text-neutral-400 dark:text-neutral-500 tracking-[0.5em] text-sm">* * *</span>
+          </div>
 
           <RevealBlock className="space-y-5" delay={0.1}>
             <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic">
@@ -130,6 +142,10 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
               El nivel ya lo conocías.
             </p>
           </RevealBlock>
+
+          <div className="flex justify-center items-center py-2">
+            <span className="text-neutral-400 dark:text-neutral-500 tracking-[0.5em] text-sm">* * *</span>
+          </div>
 
           <RevealBlock className="space-y-5" delay={0.1}>
             <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic">
@@ -191,6 +207,10 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
             </p>
           </RevealBlock>
 
+          <div className="flex justify-center items-center py-2">
+            <span className="text-neutral-400 dark:text-neutral-500 tracking-[0.5em] text-sm">* * *</span>
+          </div>
+
           <RevealBlock className="space-y-5" delay={0.1}>
             <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic">
               ¿Me vas a cambiar la vida?
@@ -199,6 +219,10 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
               No, la vida hay que traerla cambiada de casa.
             </p>
           </RevealBlock>
+
+          <div className="flex justify-center items-center py-2">
+            <span className="text-neutral-400 dark:text-neutral-500 tracking-[0.5em] text-sm">* * *</span>
+          </div>
 
           <RevealBlock className="space-y-5" delay={0.1}>
             <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic">
@@ -224,6 +248,10 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
             </div>
           </RevealBlock>
 
+          <div className="flex justify-center items-center py-2">
+            <span className="text-neutral-400 dark:text-neutral-500 tracking-[0.5em] text-sm">* * *</span>
+          </div>
+
           <RevealBlock className="space-y-5" delay={0.1}>
             <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic">
               ¿Tienes testimonios?
@@ -235,6 +263,10 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
               Que yo te ponga una foto y una frase de alguien que está feliz de pagarme por leer, tiene un problema: que esa persona no es tú.
             </p>
           </RevealBlock>
+
+          <div className="flex justify-center items-center py-2">
+            <span className="text-neutral-400 dark:text-neutral-500 tracking-[0.5em] text-sm">* * *</span>
+          </div>
 
           <RevealBlock className="space-y-5" delay={0.1}>
             <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic">
