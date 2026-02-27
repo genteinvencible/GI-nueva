@@ -21,7 +21,7 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
         <div className="max-w-3xl space-y-16">
 
           <RevealBlock className="space-y-5" delay={0.15}>
-            <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors">
+            <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic">
               ¿Esto es un curso?
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
@@ -61,7 +61,7 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
           </RevealBlock>
 
           <RevealBlock className="space-y-5" delay={0.1}>
-            <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors">
+            <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic">
               Ah que tus emails son de IA.
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
@@ -79,7 +79,7 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
           </RevealBlock>
 
           <RevealBlock className="space-y-5" delay={0.1}>
-            <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors">
+            <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic">
               ¿De qué temas escribes?
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
@@ -106,7 +106,7 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
           </RevealBlock>
 
           <RevealBlock className="space-y-5" delay={0.1}>
-            <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors">
+            <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic">
               Si te doy mi email, ¿me vas a estafar?
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
@@ -139,7 +139,7 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
           </RevealBlock>
 
           <RevealBlock className="space-y-5" delay={0.1}>
-            <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors">
+            <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic">
               No me fío, quiero ver tu currículum.
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
@@ -199,7 +199,7 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
           </RevealBlock>
 
           <RevealBlock className="space-y-5" delay={0.1}>
-            <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors">
+            <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic">
               ¿Me vas a cambiar la vida?
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
@@ -208,7 +208,7 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
           </RevealBlock>
 
           <RevealBlock className="space-y-5" delay={0.1}>
-            <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors">
+            <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic">
               ¿Qué hay después de los 17 emails gratis?
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
@@ -232,7 +232,7 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
           </RevealBlock>
 
           <RevealBlock className="space-y-5" delay={0.1}>
-            <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors">
+            <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic">
               ¿Tienes testimonios?
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
@@ -244,7 +244,7 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
           </RevealBlock>
 
           <RevealBlock className="space-y-5" delay={0.1}>
-            <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors">
+            <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic">
               ¿Me puedo suscribir a los emails de pago directamente?
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
