@@ -27,13 +27,6 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
               ¿Me ves cara de querer enseñarte algo?
             </p>
-            <div className="my-6">
-              <img
-                src="/Assests/alvaro_dimitri_baile_low.png"
-                alt="Alvaro bailando con Dimitri"
-                className="rounded-lg shadow-md max-w-full md:max-w-md"
-              />
-            </div>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors font-bold">
               Ahora en serio:
             </p>
