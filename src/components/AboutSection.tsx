@@ -31,12 +31,12 @@ const AboutSection = forwardRef<HTMLButtonElement, AboutSectionProps>(
             className="text-[1.75rem] lg:text-[2rem] text-neutral-800 dark:text-white leading-[1.15] font-normal transition-colors"
             delay={0.1}
           >
-            <span className="lead-in-text">Mi nombre es Alvaro Sanchez</span> y desde hace cinco anos tengo una suscripcion de emails de pago.
+            <span className="lead-in-text">Mi nombre es Álvaro Sánchez</span> y desde hace cinco años tengo una suscripción de emails de pago.
           </RevealBlock>
 
           <div className="space-y-4 pt-2">
             <RevealBlock as="p" className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors" delay={0.2}>
-              --Cuantos anos?
+              --¿Cuántos años?
             </RevealBlock>
             <RevealBlock as="p" className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors" delay={0.25}>
               --Cinco...

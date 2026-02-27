@@ -16,7 +16,7 @@ const cards = [
     href: '#about',
     image: aboutImage,
     title: 'About (o sea, sobre mi)',
-    text: 'Veras cuantos anos tengo, cuantos hijos (creo que) tengo, y a que no dedico el tiempo libre.',
+    text: 'Verás cuántos años tengo, cuántos hijos (creo que) tengo, y a qué no dedico el tiempo libre.',
     ctaPositive: 'Ir ahora',
     ctaNegative: 'Me da igual',
     hasNegativeAction: true,
