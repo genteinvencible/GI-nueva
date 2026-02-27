@@ -22,73 +22,104 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
 
           <RevealBlock className="space-y-5" delay={0.15}>
             <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors">
-              {'\u00BF'}Esto es un curso?
+              ¿Esto es un curso?
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              {'\u00BF'}Me ves cara de querer ense{'\u00F1'}arte algo?
+              ¿Me ves cara de querer enseñarte algo?
             </p>
+            <div className="my-6">
+              <img
+                src="/Assests/alvaro_dimitri_baile_low.png"
+                alt="Alvaro bailando con Dimitri"
+                className="rounded-lg shadow-md max-w-full md:max-w-md"
+              />
+            </div>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors font-bold">
               Ahora en serio:
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              Desde 2016, de alguna forma, ya ha cambiado bastante {'\u00AB'}lo de los cursos{'\u00BB'} en internet.
+              En algún momento estos emails sí tuvieron cierta intención formativa, pero hace bastante que no.
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              El p{'\u00FA'}blico empieza a darse cuenta de que a partir de cierto punto, lo importante no est{'\u00E1'} en una lecci{'\u00F3'}n m{'\u00E1'}s, en un nuevo marco te{'\u00F3'}rico que antes no conoc{'\u00ED'}a.
+              ¿Por qué?
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              En 2026, y adem{'\u00E1'}s contando con chat-GPT, creo firmemente que nos sobra informaci{'\u00F3'}n y nos falta perspectiva.
+              Pues porque el Internet de 2015, cuando yo empecé en estos mundillos, era muy diferente.
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              Y si eso es cierto, hay que hacer otra cosa.
+              2016-2026 fue la época dorada de los cursos online, pero ahora la cosa ha cambiado.
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              La perspectiva que podr{'\u00ED'}amos tener en internet en 2036 es de lo que va mi email (gratuito) <strong className="font-bold text-neutral-800 dark:text-white">{'\u00AB'}Hablemos del Internet de 2036{'\u00BB'}</strong>.
+              La explicación es interesante, pero no me cabe aquí. Si quieres leerla está en el tercer correo (de los diecisiete) que recibirás si... bueno, ya sabes, lo de tu email.
+            </p>
+            <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
+              Se titula <strong className="font-bold text-neutral-800 dark:text-white">Hablemos del Internet de 2036</strong>.
+            </p>
+            <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
+              Ahí verás la jugada explicada al completo. Y verás cómo la IA ha influido en todo esto (spoiler: mucho).
             </p>
           </RevealBlock>
 
           <RevealBlock className="space-y-5" delay={0.1}>
             <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors">
-              Ah que tus emails son de IA
+              Ah que tus emails son de IA.
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              {'\u00A1'}S{'\u00ED'}, son incre{'\u00ED'}bles! ChatGPT me ha permitido optimizar mis comunicaciones al m{'\u00E1'}ximo {'\u{1F680}'} Si quieres saber m{'\u00E1'}s sobre c{'\u00F3'}mo la IA puede revolucionar tu d{'\u00ED'}a a d{'\u00ED'}a, {'\u00A1'}no dudes en preguntar!
+              ¡Estupenda idea! 🚀 Escribir de Inteligencia Artificial es una gran decisión, ¿quieres te explique las razones objetivas y estratégicas?
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              Perd{'\u00F3'}n, que se me col{'\u00F3'} chatgpt.
+              Perdón, que se me coló chatgpt.
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              Mis emails no son de IA, pero s{'\u00ED'} que escribo sobre ello (y uso IA para mis proyectos). Es l{'\u00F3'}gico, si contar{'\u00E1'}n que en 2025 eso ya ha movido (solo en Estados Unidos) 60.000 millones de d{'\u00F3'}lares, y si eso ya es incre{'\u00ED'}ble, espera porque ser{'\u00E1'} mucho m{'\u00E1'}s.
+              Mis emails no son de IA, ni mucho menos, pero sí que leerás varios con mis extensas andanzas en el tema.
+            </p>
+            <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
+              Otro spoiler: para que te den ganas, en otro de los emails verás las cifras de un negocio de IA en el que estoy metido.
             </p>
           </RevealBlock>
 
           <RevealBlock className="space-y-5" delay={0.1}>
             <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors">
-              {'\u00BF'}De qu{'\u00E9'} temas escribes?
+              ¿De qué temas escribes?
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              Persuasi{'\u00F3'}n, Muerte, Dios, Creatividad, Negocios en Internet.
+              El futuro no lo sé, así que solo te puedo decir de qué he escrito los últimos 5 años.
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              Modelos Mentales, psicolog{'\u00ED'}a evolutiva e incertidumbre.
+              Con diferente acierto, pero he escrito sobre Persuasión, Muerte, Dios, Creatividad, Negocios en Internet...
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              Sobre Dios a{'\u00FA'}n no he escrito tanto, pero Dios es buen tema.
+              También (mucho) de Modelos Mentales, psicología evolutiva e incertidumbre.
+            </p>
+            <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
+              Sí, incertidumbre.
+            </p>
+            <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
+              Por eso, sobre qué voy a escribir mañana solo lo sabe Dios.
+            </p>
+            <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
+              Bueno, no, Dios tampoco.
+            </p>
+            <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
+              O sí.
             </p>
           </RevealBlock>
 
           <RevealBlock className="space-y-5" delay={0.1}>
             <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors">
-              Si te doy mi email, {'\u00BF'}me vas a estafar?
+              Si te doy mi email, ¿me vas a estafar?
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
               Solo hay dos formas de saberlo.
+            </p>
+            <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
+              Una es dándole a este botón.
             </p>
             <button
               onClick={() => setShowPrincipe(!showPrincipe)}
               className="px-6 py-3 bg-[#2d6a4f] text-white text-base font-medium rounded hover:bg-[#245a42] dark:bg-[#52b788] dark:text-neutral-900 dark:hover:bg-[#6ec99b] transition-all duration-200 cursor-pointer active:scale-[0.98] shadow-sm hover:shadow-md"
             >
-              {showPrincipe ? 'Ocultar' : 'Pulsa aqu\u00ED para ver una'}
+              {showPrincipe ? 'Ocultar' : 'Pulsa aquí'}
             </button>
             {showPrincipe && (
               <div className="my-6 animate-fade-in">
@@ -100,40 +131,76 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
               </div>
             )}
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              Y la otra ya sabes cu{'\u00E1'}l. El nivel ya lo conoc{'\u00ED'}as.
+              Y la otra ya sabes cuál.
+            </p>
+            <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
+              El nivel ya lo conocías.
             </p>
           </RevealBlock>
 
           <RevealBlock className="space-y-5" delay={0.1}>
             <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors">
-              No me f{'\u00ED'}o, quiero ver tu curr{'\u00ED'}culum
+              No me fío, quiero ver tu currículum.
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              Yo tampoco me f{'\u00ED'}o de la gente que se f{'\u00ED'}a de los curr{'\u00ED'}culums, pero ah{'\u00ED'} va:
+              ¿Esto todavía existe?
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              Estudi{'\u00E9'} ADE porque me dije {'\u00AB'}administrar empresas, {'\u00BF'}a qui{'\u00E9'}n no le interesa?{'\u00BB'}. Me sali{'\u00F3'} mal la jugada, tras las pr{'\u00E1'}cticas en un banco me vi vendiendo pisos, en 2008.
+              Pensé que mostrarla era la única forma de demostrar valía.
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              Luego regentamos un bar de copas, nos fuimos a Madrid, y empec{'\u00E9'} a dar clases de p{'\u00E1'}del y de alem{'\u00E1'}n (lo s{'\u00E9'}).
+              Pero bueno, ya que preguntas:
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              Pero en paralelo ya estaba con webs de afiliaci{'\u00F3'}n. De hecho viv{'\u00ED'} el despegue de estas cosas que ahora os suenan m{'\u00E1'}s (genteinvecible.com, cosas as{'\u00ED'}). Desde 2018 trabajo en remoto.
+              Estudié ADE, no me digas porqué.
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              Tambi{'\u00E9'}n he montado, junto a mi socio, una marca de ropa (tiene su historia), una saas de SEO local, y hemos invertido en podcasts.
+              Hice las prácticas en un banco y –tampoco me digas porqué– me quedé a trabajar allí.
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              Desde que volv{'\u00ED'} a Oviedo me he especializado en monetizaci{'\u00F3'}n de audiencias.
+              Luego llegó lo que llamaron crisis de 2008 y me salvó.
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              A d{'\u00ED'}a de hoy sigo ah{'\u00ED'}, lo que me diferencia es que adem{'\u00E1'}s de eso, escribo y tengo un grupo de gente que paga por leerme.
+              Me puse a vender los pisos que nadie quería. Y vendí muchos.
+            </p>
+            <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
+              Luego abrí un bar de copas. Y bebí muchas.
+            </p>
+            <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
+              Buenos tiempos.
+            </p>
+            <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
+              La vida volvió con otro intento de sentarme en una oficina, pero duró poco.
+            </p>
+            <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
+              Me fui a Madrid, me hice profesor de pádel, y de alemán, y de lo que fuera con tal de no volver a calentar mi comida en un microondas compartido.
+            </p>
+            <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
+              A la vez, empecé a montar webs de afiliación, genteinvecible (que era un blog) y otros negocios raros.
+            </p>
+            <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
+              Me fue bien.
+            </p>
+            <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
+              Dejé las oficinas, las clases de todo, Madrid, y desde 2018 trabajo en mi casa, o donde puedo.
+            </p>
+            <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
+              Por el camino, he montado una marca de ropa, un saas de SEO local, un par de podcast a los que les fue moderadamente bien y me he medio especializado en monetización de audiencias.
+            </p>
+            <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
+              ¿En quéee?
+            </p>
+            <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
+              Pues en convertir audiencia en producto. O atención en dinero.
+            </p>
+            <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
+              He tenido muchos socios, solo me he peleado con uno, y ahora (2026) vivo bastante tranquilo a las afueras de Oviedo, escribo mucho, de la vida, y hay gente que paga por leer. Lo que me hace pensar que les gusta.
             </p>
           </RevealBlock>
 
           <RevealBlock className="space-y-5" delay={0.1}>
             <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors">
-              {'\u00BF'}Me vas a cambiar la vida?
+              ¿Me vas a cambiar la vida?
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
               No, la vida hay que traerla cambiada de casa.
@@ -142,19 +209,22 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
 
           <RevealBlock className="space-y-5" delay={0.1}>
             <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors">
-              {'\u00BF'}Qu{'\u00E9'} hay despu{'\u00E9'}s de los 17 emails gratis?
+              ¿Qué hay después de los 17 emails gratis?
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              Un formulario con la pasarela de pago de Stripe.
+              Hay una pasarela de pago. De Stripe, en concreto.
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              Vamos, que el d{'\u00ED'}a 18, 19 y 20 (y todos los que vienen) se piden con la tarjeta en la mano.
+              Para leer los días 18 y 19 (y el 20 también) hay que sacar la tarjeta.
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              Pero no nos chupemos las pollas todav{'\u00ED'}a.
+              Me atrevo a decir que, si has llegado hasta aquí, casi seguro la vas a sacar feliz. Pero bueno, no nos chupemos las pollas todavía.
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              Dame una E, dame una M, dame una A, dame una I, dame una L:
+              Quizá soy un mequetrefe y todavía no lo sabes.
+            </p>
+            <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
+              Solo hay una forma de averiguarlo, dame una E, dame una M, dame una A, dame una I...
             </p>
             <div className="pt-4">
               <EmailSubscriptionForm isOpen={true} hideIntroText={true} hideSpamText={true} />
@@ -163,28 +233,28 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
 
           <RevealBlock className="space-y-5" delay={0.1}>
             <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors">
-              {'\u00BF'}Tienes testimonios?
+              ¿Tienes testimonios?
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              El testimonio ha muerto, como los cursos.
+              Sí, y muchos, pero ¿sabes qué pasa? que con los testimonios ha pasado lo mismo que con los cursos. Tuvieron su prime a la vez que Messi y Cristiano, pero ya han quedado para ligas menores.
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              Yo puedo preguntarle a mis suscriptores (algunos me leen desde 2019, ya te puedes imaginar por qu{'\u00E9'}) y ellos me dir{'\u00E1'}n que s{'\u00ED'}, que claro, que por supuesto.
-            </p>
-            <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              Pero esa persona no eres t{'\u00FA'}.
+              Que yo te ponga una foto y una frase de alguien que está feliz de pagarme por leer, tiene un problema: que esa persona no es tú.
             </p>
           </RevealBlock>
 
           <RevealBlock className="space-y-5" delay={0.1}>
             <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors">
-              {'\u00BF'}Me puedo suscribir a los emails de pago directamente?
+              ¿Me puedo suscribir a los emails de pago directamente?
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              No. Bueno, s{'\u00ED'}...
+              No.
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              Pero los 17 gratis son como los de pago. Si no te gustan los primeros no te van a gustar los segundos, as{'\u00ED'} que...
+              Bueno, sí, porque los 17 emails "gratis" son como los de pago, pero sin meter la tarjeta.
+            </p>
+            <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
+              Para hacerlo ahora:
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <button
@@ -220,7 +290,7 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
             onClick={(e) => e.stopPropagation()}
           >
             <p className="text-[1.2rem] lg:text-[1.3rem] text-neutral-800 dark:text-white mb-6 leading-[1.5]">
-              Para ser un gilipollas, pero con tu email, aqu{'\u00ED'}.
+              Para ser un gilipollas, pero con tu email, aquí.
             </p>
             <EmailSubscriptionForm isOpen={true} hideIntroText={true} hideSpamText={true} />
             <button
