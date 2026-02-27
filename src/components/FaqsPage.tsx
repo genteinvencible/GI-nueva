@@ -47,6 +47,10 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
             </p>
           </RevealBlock>
 
+          <div className="flex justify-center py-4">
+            <span className="text-neutral-400 dark:text-neutral-500 text-lg tracking-[0.5em]">***</span>
+          </div>
+
           <RevealBlock className="space-y-5" delay={0.1}>
             <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal italic transition-colors">
               Ah que tus emails son de IA
@@ -62,6 +66,10 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
             </p>
           </RevealBlock>
 
+          <div className="flex justify-center py-4">
+            <span className="text-neutral-400 dark:text-neutral-500 text-lg tracking-[0.5em]">***</span>
+          </div>
+
           <RevealBlock className="space-y-5" delay={0.1}>
             <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal italic transition-colors">
               {'\u00BF'}De qu{'\u00E9'} temas escribes?
@@ -76,6 +84,10 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
               Sobre Dios a{'\u00FA'}n no he escrito tanto, pero Dios es buen tema.
             </p>
           </RevealBlock>
+
+          <div className="flex justify-center py-4">
+            <span className="text-neutral-400 dark:text-neutral-500 text-lg tracking-[0.5em]">***</span>
+          </div>
 
           <RevealBlock className="space-y-5" delay={0.1}>
             <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal italic transition-colors">
@@ -104,6 +116,10 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
             </p>
           </RevealBlock>
 
+          <div className="flex justify-center py-4">
+            <span className="text-neutral-400 dark:text-neutral-500 text-lg tracking-[0.5em]">***</span>
+          </div>
+
           <RevealBlock className="space-y-5" delay={0.1}>
             <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal italic transition-colors">
               No me f{'\u00ED'}o, quiero ver tu curr{'\u00ED'}culum
@@ -131,6 +147,10 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
             </p>
           </RevealBlock>
 
+          <div className="flex justify-center py-4">
+            <span className="text-neutral-400 dark:text-neutral-500 text-lg tracking-[0.5em]">***</span>
+          </div>
+
           <RevealBlock className="space-y-5" delay={0.1}>
             <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal italic transition-colors">
               {'\u00BF'}Me vas a cambiar la vida?
@@ -139,6 +159,10 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
               No, la vida hay que traerla cambiada de casa.
             </p>
           </RevealBlock>
+
+          <div className="flex justify-center py-4">
+            <span className="text-neutral-400 dark:text-neutral-500 text-lg tracking-[0.5em]">***</span>
+          </div>
 
           <RevealBlock className="space-y-5" delay={0.1}>
             <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal italic transition-colors">
@@ -161,6 +185,10 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
             </div>
           </RevealBlock>
 
+          <div className="flex justify-center py-4">
+            <span className="text-neutral-400 dark:text-neutral-500 text-lg tracking-[0.5em]">***</span>
+          </div>
+
           <RevealBlock className="space-y-5" delay={0.1}>
             <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal italic transition-colors">
               {'\u00BF'}Tienes testimonios?
@@ -175,6 +203,10 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
               Pero esa persona no eres t{'\u00FA'}.
             </p>
           </RevealBlock>
+
+          <div className="flex justify-center py-4">
+            <span className="text-neutral-400 dark:text-neutral-500 text-lg tracking-[0.5em]">***</span>
+          </div>
 
           <RevealBlock className="space-y-5" delay={0.1}>
             <p className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal italic transition-colors">
