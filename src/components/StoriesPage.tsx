@@ -20,7 +20,7 @@ export default function StoriesPage({
   onFaqsClick,
   onStoriesClick,
 }: StoriesPageProps) {
-  const { isDark } = useTheme();
+  const { isDarkMode: isDark } = useTheme();
   const [selectedStoryIndex, setSelectedStoryIndex] = useState<number | null>(null);
   const [progress, setProgress] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
