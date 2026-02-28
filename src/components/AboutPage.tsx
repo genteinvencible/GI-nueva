@@ -260,6 +260,76 @@ export default function AboutPage({ onBack }: AboutPageProps) {
               Y lo m{'\u00E1'}s importante:
             </RevealBlock>
           </div>
+
+          <div className="mt-20 lg:mt-28 space-y-6">
+            <RevealBlock
+              as="p"
+              className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors"
+              delay={0.1}
+            >
+              Me gusta escribir para gente inteligente.
+            </RevealBlock>
+
+            <RevealBlock
+              as="p"
+              className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors"
+              delay={0.15}
+            >
+              Por eso no te voy a regalar ning{'\u00FA'}n ebook, ni a decirte que "detesto el spam tanto como t{'\u00FA'}", porque te podr{'\u00ED'}a estar mintiendo.
+            </RevealBlock>
+
+            <RevealBlock
+              as="p"
+              className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors"
+              delay={0.2}
+            >
+              Tambi{'\u00E9'}n te voy a ahorrar alguna chorrada como la de "pon aqu{'\u00ED'} tu mejor email".
+            </RevealBlock>
+
+            <RevealBlock
+              as="p"
+              className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors"
+              delay={0.25}
+            >
+              Pon el que quieras, si es que quieres poner uno.
+            </RevealBlock>
+
+            <RevealBlock
+              as="p"
+              className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors"
+              delay={0.3}
+            >
+              Solo te digo que mando muchos emails contando mis andanzas e, incomprensiblemente, hay gente que paga por leerlos.
+            </RevealBlock>
+
+            <RevealBlock
+              as="p"
+              className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors"
+              delay={0.35}
+            >
+              A algunos hasta les gusta.
+            </RevealBlock>
+
+            <RevealBlock
+              as="p"
+              className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors"
+              delay={0.4}
+            >
+              No te voy a pedir que saques la tarjeta, todav{'\u00ED'}a, pero si quieres saber si de verdad son buenos puedes leer gratis un tiempo.
+            </RevealBlock>
+
+            <RevealBlock
+              as="p"
+              className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors"
+              delay={0.45}
+            >
+              Lo que no hay es garant{'\u00ED'}a de que te vaya a cambiar la vida, aqu{'\u00ED'} la vida hay que traerla cambiada de casa.
+            </RevealBlock>
+
+            <RevealBlock className="pt-6" delay={0.5}>
+              <EmailSubscriptionForm isOpen={true} hideIntroText={true} hideSpamText={true} />
+            </RevealBlock>
+          </div>
         </div>
       </div>
     </div>
