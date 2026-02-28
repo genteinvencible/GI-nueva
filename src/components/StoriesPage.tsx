@@ -225,7 +225,7 @@ export default function StoriesPage({
 
       <main className="pt-24 pb-24">
         <div className="w-full">
-          <div className={`flex gap-4 px-4 py-4 overflow-x-auto scrollbar-hide ${isDark ? 'bg-[#0a0a0a]' : 'bg-[#FAF9F6]'}`}>
+          <div className="flex gap-4 px-4 py-4 overflow-x-auto scrollbar-hide">
             {storiesData.map((story, index) => (
               <button
                 key={story.id}
