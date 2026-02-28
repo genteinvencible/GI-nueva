@@ -48,18 +48,18 @@ export default function BodaPage({ onBack }: BodaPageProps) {
       <div className="max-w-3xl mx-auto px-6 lg:px-8 pb-20 lg:pb-32">
         <div className="space-y-5">
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
-            El 4 de septiembre de 2021, Carmen y yo nos casamos, pero no fue una boda "normal".
+            El 4 de septiembre de 2021, Carmen y yo nos casamos, pero <strong className="font-bold text-neutral-800 dark:text-white">no fue una boda "normal"</strong>.
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
-            Podríamos llamarla boda low-cost, pero la idea de lowcost me suena a quiero y no puedo, a fichar a Braithwaite porque Messi cobra mucho.
+            Podríamos llamarla boda low-cost, pero la idea de lowcost me suena a <strong className="font-bold text-neutral-800 dark:text-white">quiero y no puedo</strong>, a fichar a Braithwaite porque Messi cobra mucho.
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
-            Lo que nosotros hicimos, bajo mi sesgada opinión, fue mejor.
+            Lo que nosotros hicimos, bajo mi sesgada opinión, <strong className="font-bold text-neutral-800 dark:text-white">fue mejor</strong>.
           </RevealBlock>
 
-          <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
+          <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors font-bold">
             Quiero y puedo.
           </RevealBlock>
 
@@ -76,7 +76,7 @@ export default function BodaPage({ onBack }: BodaPageProps) {
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
-            Sí, nos ha costado, porque hemos pagado nosotros. Los invitados estaban, de verdad, invitados. El regalo era venir.
+            Sí, nos ha costado, porque <strong className="font-bold text-neutral-800 dark:text-white">hemos pagado nosotros</strong>. Los invitados estaban, de verdad, invitados. <strong className="font-bold text-neutral-800 dark:text-white">El regalo era venir</strong>.
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors font-bold">
@@ -101,7 +101,7 @@ export default function BodaPage({ onBack }: BodaPageProps) {
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
-            Ataviada en un traje con una cola de 8 metros, Lady Di se casó con el Príncipe Carlos de Inglaterra ante 2500 invitados, mientras otros 750 millones de personas veían el bodorrio por televisión.
+            Ataviada en un traje con una cola de 8 metros, Lady Di se casó con el Príncipe Carlos de Inglaterra ante <strong className="font-bold text-neutral-800 dark:text-white">2500 invitados</strong>, mientras otros <strong className="font-bold text-neutral-800 dark:text-white">750 millones de personas</strong> veían el bodorrio por televisión.
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
@@ -129,7 +129,7 @@ export default function BodaPage({ onBack }: BodaPageProps) {
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
-            Par de oficinistas de clase media, que no tienen un castillo en Balmoral ni pedrigree alguno, deciden montan un convite que cuesta cuarenta veces sus sueldos.
+            Par de oficinistas de clase media, que no tienen un castillo en Balmoral ni pedrigree alguno, deciden montan un convite que cuesta <strong className="font-bold text-neutral-800 dark:text-white">cuarenta veces sus sueldos</strong>.
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
@@ -145,7 +145,7 @@ export default function BodaPage({ onBack }: BodaPageProps) {
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
-            Ignorando que el York lo tienen en la nevera y no en el apellido, algunos incluso tiran fuegos artificiales antes de irse a alguna isla paradisiaca con el dinero de los invitados.
+            Ignorando que el York lo tienen en la nevera y no en el apellido, algunos incluso tiran fuegos artificiales antes de irse a alguna isla paradisiaca <strong className="font-bold text-neutral-800 dark:text-white">con el dinero de los invitados</strong>.
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
@@ -181,11 +181,11 @@ export default function BodaPage({ onBack }: BodaPageProps) {
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
-            Es como si celebro mi cumpleaños, contrato a Britney Spears porque mi sueño es que me cante Oops I did it again vestida de rojo y luego pido 200 pavos de "invitación".
+            Es como si celebro mi cumpleaños, contrato a Britney Spears porque mi sueño es que me cante Oops I did it again vestida de rojo y luego <strong className="font-bold text-neutral-800 dark:text-white">pido 200 pavos de "invitación"</strong>.
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
-            Pues con las bodas igual: Quiero ser Cenicienta, toma el número de cuenta.
+            Pues con las bodas igual: <strong className="font-bold text-neutral-800 dark:text-white">Quiero ser Cenicienta, toma el número de cuenta</strong>.
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
@@ -193,7 +193,7 @@ export default function BodaPage({ onBack }: BodaPageProps) {
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
-            La consecuencia de esas bodas es que a la gente la invitación le cae como cuando te pilla el radar a 73km/h en un 50. Las palabras invitación y putada se acercan demasiado. Mal vamos.
+            La consecuencia de esas bodas es que a la gente la invitación le cae como cuando te pilla el radar a 73km/h en un 50. Las palabras <strong className="font-bold text-neutral-800 dark:text-white">invitación y putada se acercan demasiado</strong>. Mal vamos.
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
@@ -222,7 +222,7 @@ export default function BodaPage({ onBack }: BodaPageProps) {
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
-            O sea que para que en una boda haya invitados tienen que pagar los novios. Punto. Lo otro es un error lingüístico.
+            O sea que para que en una boda haya invitados <strong className="font-bold text-neutral-800 dark:text-white">tienen que pagar los novios</strong>. Punto. Lo otro es un error lingüístico.
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
@@ -238,7 +238,7 @@ export default function BodaPage({ onBack }: BodaPageProps) {
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
-            Solo los match recibieron invitación, y no sus parejas. Este es un detalle importante.
+            <strong className="font-bold text-neutral-800 dark:text-white">Solo los match recibieron invitación</strong>, y no sus parejas. Este es un detalle importante.
           </RevealBlock>
         </div>
 
@@ -267,7 +267,7 @@ export default function BodaPage({ onBack }: BodaPageProps) {
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
-            Ser tú el que paga tiene algo muy bueno, te aseguras que las invitaciones a tu boda son reales y sinceras. No les metes a los dudosos la patata caliente en un sobre lacrado.
+            Ser tú el que paga tiene algo muy bueno, <strong className="font-bold text-neutral-800 dark:text-white">te aseguras que las invitaciones a tu boda son reales y sinceras</strong>. No les metes a los dudosos la patata caliente en un sobre lacrado.
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors font-bold">
@@ -283,11 +283,11 @@ export default function BodaPage({ onBack }: BodaPageProps) {
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
-            Eso pasa en las bodas que son ciento y la madre. Mejor bodas pequeñas, sencillas y bien atendidas, como las cartas de los buenos restaurantes.
+            Eso pasa en las bodas que son ciento y la madre. Mejor <strong className="font-bold text-neutral-800 dark:text-white">bodas pequeñas, sencillas y bien atendidas</strong>, como las cartas de los buenos restaurantes.
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
-            Además, al hacerlo así, entre los cincuenta y cinco que fuimos todo eran caras conocidas y, lo mejor, todas tenían ganas de verse. La consecuencia fue que lo pasamos como los indios.
+            Además, al hacerlo así, entre los <strong className="font-bold text-neutral-800 dark:text-white">cincuenta y cinco que fuimos</strong> todo eran caras conocidas y, lo mejor, todas tenían ganas de verse. La consecuencia fue que <strong className="font-bold text-neutral-800 dark:text-white">lo pasamos como los indios</strong>.
           </RevealBlock>
         </div>
 
@@ -324,15 +324,15 @@ export default function BodaPage({ onBack }: BodaPageProps) {
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
-            Además, como también queríamos que fuera animalesfree, adaptaron el menú al veganismo del novio, o sea yo, que nos salió a 45€ por persona, comida y bebida.
+            Además, como también queríamos que fuera animalesfree, adaptaron el menú al veganismo del novio, o sea yo, que nos salió a <strong className="font-bold text-neutral-800 dark:text-white">45€ por persona</strong>, comida y bebida.
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
-            Eso sí, nada de banquete y obligar a la gente a estar tres horas sentados. Todos de pie y que cada uno hable con quien quiera.
+            Eso sí, <strong className="font-bold text-neutral-800 dark:text-white">nada de banquete</strong> y obligar a la gente a estar tres horas sentados. <strong className="font-bold text-neutral-800 dark:text-white">Todos de pie</strong> y que cada uno hable con quien quiera.
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
-            Como el evento no estaría completo sin unas copas la invitación incluyó barra libre, pero nada de pagar por horas, eso es una malísima decisión financiera, pagamos lo que se consumió.
+            Como el evento no estaría completo sin unas copas la invitación incluyó barra libre, pero nada de pagar por horas, eso es una malísima decisión financiera, <strong className="font-bold text-neutral-800 dark:text-white">pagamos lo que se consumió</strong>.
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
@@ -356,7 +356,7 @@ export default function BodaPage({ onBack }: BodaPageProps) {
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
-            Cuando estábamos a punto de pedirle a un colega que llevara la réflex dimos con un chaval encantador que entendió el concepto de boda y nos cobró 450€.
+            Cuando estábamos a punto de pedirle a un colega que llevara la réflex dimos con un chaval encantador que entendió el concepto de boda y nos cobró <strong className="font-bold text-neutral-800 dark:text-white">450€</strong>.
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
@@ -385,18 +385,18 @@ export default function BodaPage({ onBack }: BodaPageProps) {
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
-            Sumando lo que tardamos en acercarnos dos veces al restaurante y lo que tardé en escribir y mandar la invitación, calculo unas cuatro horas.
+            Sumando lo que tardamos en acercarnos dos veces al restaurante y lo que tardé en escribir y mandar la invitación, calculo unas <strong className="font-bold text-neutral-800 dark:text-white">cuatro horas</strong>.
           </RevealBlock>
 
-          <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
+          <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors font-bold">
             Cero llamadas de teléfono.
           </RevealBlock>
 
-          <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
+          <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors font-bold">
             Cero reuniones con "proveedores"
           </RevealBlock>
 
-          <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
+          <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors font-bold">
             Cero ir a hacernos los entendidos probando menús.
           </RevealBlock>
 
@@ -456,11 +456,11 @@ export default function BodaPage({ onBack }: BodaPageProps) {
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
-            ¿Mucho? ¿poco? dependerá del bolsillo, pero creo que depende más de las ganas de hacerlo.
+            ¿Mucho? ¿poco? dependerá del bolsillo, pero creo que <strong className="font-bold text-neutral-800 dark:text-white">depende más de las ganas de hacerlo</strong>.
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
-            Por cierto, Carmen, además, se compró un vestido en Zara que le costó 75€. Yo tenía camisas de sobra. Lo sentimos por Pronovias.
+            Por cierto, Carmen, además, se compró un vestido en Zara que le costó <strong className="font-bold text-neutral-800 dark:text-white">75€</strong>. Yo tenía camisas de sobra. Lo sentimos por Pronovias.
           </RevealBlock>
         </div>
 
@@ -554,7 +554,7 @@ export default function BodaPage({ onBack }: BodaPageProps) {
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
-            Pero vamos, que si crees que otra boda es posible y que no hace falta saquear a nadie, que bastantes gastos tendrán, celebrar un día de amor es más fácil de lo que parece. Para nosotros fue fácil y maravilloso.
+            Pero vamos, que si crees que otra boda es posible y que no hace falta saquear a nadie, que bastantes gastos tendrán, <strong className="font-bold text-neutral-800 dark:text-white">celebrar un día de amor es más fácil de lo que parece</strong>. Para nosotros fue fácil y maravilloso.
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
