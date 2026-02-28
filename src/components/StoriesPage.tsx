@@ -34,6 +34,7 @@ export default function StoriesPage({
   return (
     <div className={`min-h-screen ${isDark ? 'bg-[#0a0a0a]' : 'bg-[#FAF9F6]'}`}>
       <Navbar
+        onHomeClick={onBackClick}
         onAboutClick={onAboutClick}
         onBodaClick={onBodaClick}
         onFaqsClick={onFaqsClick}
@@ -43,60 +44,48 @@ export default function StoriesPage({
 
       <main className="pt-32 pb-24 px-6">
         <div className="max-w-4xl mx-auto">
-          <button
-            onClick={onBackClick}
-            className={`mb-8 text-sm font-medium tracking-wide transition-colors ${
-              isDark ? 'text-white/60 hover:text-white' : 'text-neutral-500 hover:text-neutral-900'
-            }`}
-          >
-            &larr; VOLVER
-          </button>
-
-          <h1
-            className={`text-4xl md:text-5xl font-bold mb-4 ${
-              isDark ? 'text-white' : 'text-neutral-900'
-            }`}
-          >
-            Stories
-          </h1>
           <p
-            className={`text-lg mb-12 ${
-              isDark ? 'text-white/60' : 'text-neutral-600'
+            className={`text-sm font-medium tracking-wider mb-8 ${
+              isDark ? 'text-white/50' : 'text-neutral-500'
             }`}
           >
-            Momentos especiales en formato vertical
+            Recent stories
           </p>
 
-          <div className="flex flex-wrap gap-6 justify-center md:justify-start">
+          <div className="flex flex-wrap gap-6">
             {storiesData.map((story, index) => (
               <button
                 key={story.id}
                 onClick={() => handleStoryClick(index)}
                 className="group flex flex-col items-center gap-3"
               >
-                <div className="relative">
-                  <div
-                    className="w-24 h-24 md:w-28 md:h-28 rounded-full p-[3px] bg-gradient-to-br from-amber-400 via-amber-500 to-amber-600
-                               group-hover:from-amber-300 group-hover:via-amber-400 group-hover:to-amber-500
-                               transition-all duration-300 group-hover:scale-105"
+                <div className="relative w-20 h-20 md:w-24 md:h-24">
+                  <svg
+                    className="absolute inset-0 w-full h-full"
+                    viewBox="0 0 100 100"
                   >
-                    <div
-                      className={`w-full h-full rounded-full flex items-center justify-center ${
-                        isDark ? 'bg-[#0a0a0a]' : 'bg-[#FAF9F6]'
-                      }`}
-                    >
-                      <story.icon
-                        className={`w-10 h-10 md:w-12 md:h-12 transition-colors duration-300 ${
-                          isDark
-                            ? 'text-amber-400/80 group-hover:text-amber-400'
-                            : 'text-amber-600/80 group-hover:text-amber-600'
-                        }`}
-                      />
-                    </div>
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r="46"
+                      fill="none"
+                      stroke={isDark ? '#333' : '#222'}
+                      strokeWidth="3"
+                      strokeDasharray="18 6"
+                      strokeLinecap="round"
+                      className="transition-all duration-300 group-hover:stroke-amber-500"
+                    />
+                  </svg>
+                  <div className="absolute inset-[6px] rounded-full overflow-hidden">
+                    <img
+                      src={story.thumbnailUrl}
+                      alt={story.title}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
                   </div>
                 </div>
                 <span
-                  className={`text-sm font-medium transition-colors ${
+                  className={`text-xs font-medium transition-colors max-w-[80px] truncate ${
                     isDark
                       ? 'text-white/70 group-hover:text-white'
                       : 'text-neutral-600 group-hover:text-neutral-900'
@@ -106,30 +95,6 @@ export default function StoriesPage({
                 </span>
               </button>
             ))}
-          </div>
-
-          <div
-            className={`mt-16 p-6 rounded-2xl ${
-              isDark ? 'bg-white/5' : 'bg-neutral-100'
-            }`}
-          >
-            <h2
-              className={`text-lg font-semibold mb-2 ${
-                isDark ? 'text-white' : 'text-neutral-900'
-              }`}
-            >
-              Como ver las stories
-            </h2>
-            <ul
-              className={`space-y-2 text-sm ${
-                isDark ? 'text-white/60' : 'text-neutral-600'
-              }`}
-            >
-              <li>Haz clic en un circulo para abrir la story</li>
-              <li>Toca los lados para avanzar o retroceder</li>
-              <li>Toca el centro para pausar/reanudar</li>
-              <li>Usa las flechas del teclado o ESC para cerrar</li>
-            </ul>
           </div>
         </div>
       </main>

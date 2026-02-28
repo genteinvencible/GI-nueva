@@ -131,8 +131,12 @@ export default function StoryViewer({ stories, initialIndex, onClose }: StoryVie
 
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center">
-              <currentStory.icon className="w-5 h-5 text-white" />
+            <div className="w-10 h-10 rounded-full overflow-hidden">
+              <img
+                src={currentStory.thumbnailUrl}
+                alt={currentStory.title}
+                className="w-full h-full object-cover"
+              />
             </div>
             <span className="text-white font-medium">{currentStory.title}</span>
           </div>

@@ -1,10 +1,8 @@
-import { Plane, Megaphone, LucideIcon } from 'lucide-react';
-
 export interface StoryData {
   id: string;
   title: string;
   videoUrl: string;
-  icon: LucideIcon;
+  thumbnailUrl: string;
 }
 
 export const storiesData: StoryData[] = [
@@ -12,12 +10,12 @@ export const storiesData: StoryData[] = [
     id: 'story-1',
     title: 'Nos vamos',
     videoUrl: '/Assests/nos_vamos_dr_vertical.mp4',
-    icon: Plane,
+    thumbnailUrl: '/Assests/carmen&alvaro_(222).jpg',
   },
   {
     id: 'story-2',
     title: 'Al loro',
     videoUrl: '/Assests/al_loro_laporta.mp4',
-    icon: Megaphone,
+    thumbnailUrl: '/Assests/carmen&alvaro_(232).jpg',
   },
 ];
