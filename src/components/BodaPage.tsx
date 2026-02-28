@@ -13,12 +13,6 @@ export default function BodaPage({ onBack }: BodaPageProps) {
     <div className="min-h-screen bg-[#faf8f4] dark:bg-[#141210] text-neutral-900 dark:text-white transition-colors duration-300">
       <div className="bg-[#d8d4cb] dark:bg-[#2a2622] pt-32 lg:pt-40 pb-32 lg:pb-44 transition-colors duration-300">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <RevealBlock>
-            <span className="inline-block px-4 py-1.5 border border-neutral-700 dark:border-neutral-400 rounded-full text-[0.75rem] lg:text-[0.8rem] font-medium text-neutral-700 dark:text-neutral-300 mb-6 lg:mb-8 transition-colors">
-              Bodas
-            </span>
-          </RevealBlock>
-
           <RevealBlock
             as="h1"
             className="text-[1.9rem] sm:text-[2.5rem] lg:text-[3.2rem] text-neutral-900 dark:text-white leading-[1.1] font-bold transition-colors mb-6 lg:mb-8"
