@@ -1,5 +1,7 @@
 import EmailSubscriptionForm from './EmailSubscriptionForm';
 import RevealBlock from './RevealBlock';
+import PullQuote from './PullQuote';
+import SectionDivider from './SectionDivider';
 import bodaImage from '../../Assests/imagen_lo_de_la_boda.png';
 
 interface BodaPageProps {
@@ -59,9 +61,7 @@ export default function BodaPage({ onBack }: BodaPageProps) {
             Lo que nosotros hicimos, bajo mi sesgada opinión, <strong className="font-bold text-neutral-800 dark:text-white">fue mejor</strong>.
           </RevealBlock>
 
-          <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors font-bold">
-            Quiero y puedo.
-          </RevealBlock>
+          <PullQuote>Quiero y puedo.</PullQuote>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
             A ver tú qué opinas.
@@ -79,18 +79,18 @@ export default function BodaPage({ onBack }: BodaPageProps) {
             Sí, nos ha costado, porque <strong className="font-bold text-neutral-800 dark:text-white">hemos pagado nosotros</strong>. Los invitados estaban, de verdad, invitados. <strong className="font-bold text-neutral-800 dark:text-white">El regalo era venir</strong>.
           </RevealBlock>
 
-          <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors font-bold">
-            Sobresfree.
-          </RevealBlock>
+          <PullQuote>Sobresfree.</PullQuote>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
             Te lo cuento en detalle, pero primero:
           </RevealBlock>
         </div>
 
+        <SectionDivider />
+
         <RevealBlock
           as="h2"
-          className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic mt-14 mb-6"
+          className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic mb-6"
         >
           ¿Qué es una boda "Príncipe Carlos"?
         </RevealBlock>
@@ -176,9 +176,7 @@ export default function BodaPage({ onBack }: BodaPageProps) {
             O pagabodas.
           </RevealBlock>
 
-          <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors font-bold">
-            Pues yo paso.
-          </RevealBlock>
+          <PullQuote>Pues yo paso.</PullQuote>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
             Es como si celebro mi cumpleaños, contrato a Britney Spears porque mi sueño es que me cante Oops I did it again vestida de rojo y luego <strong className="font-bold text-neutral-800 dark:text-white">pido 200 pavos de "invitación"</strong>.
@@ -201,9 +199,11 @@ export default function BodaPage({ onBack }: BodaPageProps) {
           </RevealBlock>
         </div>
 
+        <SectionDivider />
+
         <RevealBlock
           as="h2"
-          className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic mt-14 mb-6"
+          className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic mb-6"
         >
           Revisando el concepto. Ideas sobre una boda low cost que puedes pagar.
         </RevealBlock>
@@ -242,9 +242,11 @@ export default function BodaPage({ onBack }: BodaPageProps) {
           </RevealBlock>
         </div>
 
+        <SectionDivider />
+
         <RevealBlock
           as="h2"
-          className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic mt-14 mb-6"
+          className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic mb-6"
         >
           Los invitados. Una boda libre de remolques
         </RevealBlock>
@@ -291,9 +293,11 @@ export default function BodaPage({ onBack }: BodaPageProps) {
           </RevealBlock>
         </div>
 
+        <SectionDivider />
+
         <RevealBlock
           as="h2"
-          className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic mt-14 mb-6"
+          className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic mb-6"
         >
           Adaptando nuestra boda alternativa a un mercado sobredimensionado
         </RevealBlock>
@@ -368,9 +372,11 @@ export default function BodaPage({ onBack }: BodaPageProps) {
           </RevealBlock>
         </div>
 
+        <SectionDivider />
+
         <RevealBlock
           as="h2"
-          className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic mt-14 mb-6"
+          className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic mb-6"
         >
           Las invitaciones en una boda donde el presupuesto lo pagas tú
         </RevealBlock>
@@ -405,9 +411,11 @@ export default function BodaPage({ onBack }: BodaPageProps) {
           </RevealBlock>
         </div>
 
+        <SectionDivider />
+
         <RevealBlock
           as="h2"
-          className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic mt-14 mb-6"
+          className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic mb-6"
         >
           Esto fue lo que nos costó. El precio una boda lowcost y sobresfree
         </RevealBlock>
@@ -464,9 +472,11 @@ export default function BodaPage({ onBack }: BodaPageProps) {
           </RevealBlock>
         </div>
 
+        <SectionDivider />
+
         <RevealBlock
           as="h2"
-          className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic mt-14 mb-6"
+          className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic mb-6"
         >
           ¿Fuisteis a la iglesia o fue una boda civil?
         </RevealBlock>
@@ -501,9 +511,11 @@ export default function BodaPage({ onBack }: BodaPageProps) {
           </RevealBlock>
         </div>
 
+        <SectionDivider />
+
         <RevealBlock
           as="h2"
-          className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic mt-14 mb-6"
+          className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic mb-6"
         >
           ¿No fuisteis de luna de miel?
         </RevealBlock>
@@ -522,18 +534,13 @@ export default function BodaPage({ onBack }: BodaPageProps) {
           </RevealBlock>
         </div>
 
-        <RevealBlock
-          as="h2"
-          className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic mt-14 mb-6"
-        >
-          Y acabamos.
-        </RevealBlock>
+        <SectionDivider />
 
         <RevealBlock
           as="h2"
-          className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic mt-10 mb-6"
+          className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic mb-6"
         >
-          ¿Debería ser tu boda así?
+          Y acabamos. ¿Debería ser tu boda así?
         </RevealBlock>
 
         <div className="space-y-5">
