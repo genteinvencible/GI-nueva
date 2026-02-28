@@ -2,13 +2,15 @@ import { useState, useEffect } from 'react';
 import ThemeToggle from './ThemeToggle';
 
 interface NavbarProps {
-  activePage?: 'home' | 'about' | 'faqs';
+  activePage?: 'home' | 'about' | 'faqs' | 'boda' | 'stories';
   onHomeClick?: () => void;
   onAboutClick?: () => void;
   onFaqsClick?: () => void;
+  onBodaClick?: () => void;
+  onStoriesClick?: () => void;
 }
 
-export default function Navbar({ activePage = 'home', onHomeClick, onAboutClick, onFaqsClick }: NavbarProps) {
+export default function Navbar({ activePage = 'home', onHomeClick, onAboutClick, onFaqsClick, onBodaClick, onStoriesClick }: NavbarProps) {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -92,8 +94,11 @@ export default function Navbar({ activePage = 'home', onHomeClick, onAboutClick,
         >
           FAQS
         </button>
-        <button className={`${baseClass} ${inactiveClass}`}>
-          CHAT
+        <button
+          onClick={onStoriesClick}
+          className={`${baseClass} ${activePage === 'stories' ? activeClass : inactiveClass}`}
+        >
+          STORIES
         </button>
         <div className="w-px h-4 bg-black/10 dark:bg-white/10 mx-1 md:mx-2 relative" />
         <ThemeToggle />

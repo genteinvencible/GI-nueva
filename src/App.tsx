@@ -11,6 +11,7 @@ import PrivacyPolicyPage from './components/PrivacyPolicyPage';
 import AboutPage from './components/AboutPage';
 import FaqsPage from './components/FaqsPage';
 import BodaPage from './components/BodaPage';
+import StoriesPage from './components/StoriesPage';
 import { useScrollTrigger } from './hooks/useScrollTrigger';
 import { useBannerSystem } from './hooks/useBannerSystem';
 
@@ -24,6 +25,7 @@ function App() {
   const [showAboutPage, setShowAboutPage] = useState(false);
   const [showFaqsPage, setShowFaqsPage] = useState(false);
   const [showBodaPage, setShowBodaPage] = useState(false);
+  const [showStoriesPage, setShowStoriesPage] = useState(false);
 
   const chapter2Ref = useRef<HTMLDivElement>(null);
   const exploreRef = useRef<HTMLDivElement>(null);
@@ -69,6 +71,7 @@ function App() {
     setShowLegalPage(false);
     setShowFaqsPage(false);
     setShowBodaPage(false);
+    setShowStoriesPage(false);
     window.scrollTo(0, 0);
   }, []);
 
@@ -77,6 +80,7 @@ function App() {
     setShowLegalPage(false);
     setShowFaqsPage(false);
     setShowBodaPage(false);
+    setShowStoriesPage(false);
     window.scrollTo(0, 0);
   }, []);
 
@@ -85,6 +89,7 @@ function App() {
     setShowAboutPage(false);
     setShowLegalPage(false);
     setShowBodaPage(false);
+    setShowStoriesPage(false);
     window.scrollTo(0, 0);
   }, []);
 
@@ -93,13 +98,37 @@ function App() {
     setShowAboutPage(false);
     setShowLegalPage(false);
     setShowFaqsPage(false);
+    setShowStoriesPage(false);
     window.scrollTo(0, 0);
   }, []);
+
+  const handleGoStories = useCallback(() => {
+    setShowStoriesPage(true);
+    setShowBodaPage(false);
+    setShowAboutPage(false);
+    setShowLegalPage(false);
+    setShowFaqsPage(false);
+    window.scrollTo(0, 0);
+  }, []);
+
+  if (showStoriesPage) {
+    return (
+      <ThemeProvider>
+        <StoriesPage
+          onBackClick={handleGoHome}
+          onAboutClick={handleGoAbout}
+          onBodaClick={handleGoBoda}
+          onFaqsClick={handleGoFaqs}
+          onStoriesClick={handleGoStories}
+        />
+      </ThemeProvider>
+    );
+  }
 
   if (showLegalPage) {
     return (
       <ThemeProvider>
-        <Navbar activePage="home" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} onFaqsClick={handleGoFaqs} />
+        <Navbar activePage="home" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} onFaqsClick={handleGoFaqs} onStoriesClick={handleGoStories} />
         <PrivacyPolicyPage onBack={handleGoHome} />
       </ThemeProvider>
     );
@@ -108,7 +137,7 @@ function App() {
   if (showAboutPage) {
     return (
       <ThemeProvider>
-        <Navbar activePage="about" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} onFaqsClick={handleGoFaqs} />
+        <Navbar activePage="about" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} onFaqsClick={handleGoFaqs} onStoriesClick={handleGoStories} />
         <AboutPage onBack={handleGoHome} />
       </ThemeProvider>
     );
@@ -117,7 +146,7 @@ function App() {
   if (showFaqsPage) {
     return (
       <ThemeProvider>
-        <Navbar activePage="faqs" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} onFaqsClick={handleGoFaqs} />
+        <Navbar activePage="faqs" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} onFaqsClick={handleGoFaqs} onStoriesClick={handleGoStories} />
         <FaqsPage onBack={handleGoHome} />
       </ThemeProvider>
     );
@@ -126,7 +155,7 @@ function App() {
   if (showBodaPage) {
     return (
       <ThemeProvider>
-        <Navbar activePage="home" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} onFaqsClick={handleGoFaqs} />
+        <Navbar activePage="boda" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} onFaqsClick={handleGoFaqs} onStoriesClick={handleGoStories} />
         <BodaPage onBack={handleGoHome} />
       </ThemeProvider>
     );
@@ -135,7 +164,7 @@ function App() {
   return (
     <ThemeProvider>
       <div className="relative">
-        <Navbar activePage="home" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} onFaqsClick={handleGoFaqs} />
+        <Navbar activePage="home" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} onFaqsClick={handleGoFaqs} onStoriesClick={handleGoStories} />
         <Hero />
         <AboutSection
           ref={emailButtonRef}
