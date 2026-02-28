@@ -18,7 +18,7 @@ export default function BodaPage({ onBack }: BodaPageProps) {
             className="text-[1.9rem] sm:text-[2.5rem] lg:text-[3.2rem] text-neutral-900 dark:text-white leading-[1.1] font-bold transition-colors mb-6 lg:mb-8"
             delay={0.1}
           >
-            Cómo casarte <span className="underline decoration-1 decoration-neutral-400/60 dark:decoration-neutral-500/60 underline-offset-4">sin meter a nadie en un compromiso</span>, salvo a ti (así ha sido nuestra boda sobresfree)
+            Cómo casarte <span className="underline decoration-1 decoration-neutral-400/60 dark:decoration-neutral-500/60 underline-offset-4">sin meter a nadie en un compromiso</span>, salvo a ti (así ha sido nuestra boda <em className="not-italic">sobresfree</em>)
           </RevealBlock>
 
           <RevealBlock delay={0.15}>
@@ -56,7 +56,7 @@ export default function BodaPage({ onBack }: BodaPageProps) {
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
-            Podríamos llamarla boda low-cost, pero la idea de lowcost me suena a <strong className="font-bold text-neutral-800 dark:text-white">quiero y no puedo</strong>, a fichar a Braithwaite porque Messi cobra mucho.
+            Podríamos llamarla boda <em className="italic">low-cost</em>, pero la idea de <em className="italic">lowcost</em> me suena a <strong className="font-bold text-neutral-800 dark:text-white">quiero y no puedo</strong>, a fichar a Braithwaite porque Messi cobra mucho.
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
@@ -83,7 +83,7 @@ export default function BodaPage({ onBack }: BodaPageProps) {
             Sí, nos ha costado, porque <strong className="font-bold text-neutral-800 dark:text-white">hemos pagado nosotros</strong>. Los invitados estaban, de verdad, invitados. <strong className="font-bold text-neutral-800 dark:text-white">El regalo era venir</strong>.
           </RevealBlock>
 
-          <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors font-bold">
+          <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors font-bold italic">
             Sobresfree.
           </RevealBlock>
 
@@ -173,11 +173,11 @@ export default function BodaPage({ onBack }: BodaPageProps) {
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
-            Y claro, como no hay bolsillo que aguante tanta pomposidad el concepto de "invitado" se diluye peligrosamente a paganini.
+            Y claro, como no hay bolsillo que aguante tanta pomposidad el concepto de "invitado" se diluye peligrosamente a <em className="italic">paganini</em>.
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
-            O pagabodas.
+            O <em className="italic">pagabodas</em>.
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors font-bold">
@@ -255,7 +255,7 @@ export default function BodaPage({ onBack }: BodaPageProps) {
 
         <div className="space-y-5">
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
-            Entre mis colegas siempre ha habido risas con la típica persona que va a un evento y solo conoce a su pareja, modo remolque lo llamamos.
+            Entre mis colegas siempre ha habido risas con la típica persona que va a un evento y solo conoce a su pareja, <em className="italic">modo remolque</em> lo llamamos.
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
@@ -319,7 +319,7 @@ export default function BodaPage({ onBack }: BodaPageProps) {
             Nuestra boda fue mucho más fácil.
           </RevealBlock>
 
-          <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors font-bold">
+          <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors font-bold italic">
             Sobrefree y líosfree.
           </RevealBlock>
 
@@ -328,7 +328,7 @@ export default function BodaPage({ onBack }: BodaPageProps) {
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
-            Además, como también queríamos que fuera animalesfree, adaptaron el menú al veganismo del novio, o sea yo, que nos salió a <strong className="font-bold text-neutral-800 dark:text-white">45€ por persona</strong>, comida y bebida.
+            Además, como también queríamos que fuera <em className="italic">animalesfree</em>, adaptaron el menú al veganismo del novio, o sea yo, que nos salió a <strong className="font-bold text-neutral-800 dark:text-white">45€ por persona</strong>, comida y bebida.
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
@@ -413,7 +413,7 @@ export default function BodaPage({ onBack }: BodaPageProps) {
           as="h2"
           className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic mt-14 mb-6"
         >
-          Esto fue lo que nos costó. El precio una boda lowcost y sobresfree
+          Esto fue lo que nos costó. El precio una boda <em className="not-italic">lowcost</em> y <em className="not-italic">sobresfree</em>
         </RevealBlock>
 
         <div className="space-y-5">
@@ -431,7 +431,7 @@ export default function BodaPage({ onBack }: BodaPageProps) {
             </p>
 
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
-              <strong className="font-bold text-neutral-800 dark:text-white">Decoración: 300€.</strong> Como se parecía mucho a una boda vegana hicieron una decoración hortelana muy resultona llena de detalles veggie.
+              <strong className="font-bold text-neutral-800 dark:text-white">Decoración: 300€.</strong> Como se parecía mucho a una boda vegana hicieron una decoración hortelana muy resultona llena de detalles <em className="italic">veggie</em>.
             </p>
 
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
