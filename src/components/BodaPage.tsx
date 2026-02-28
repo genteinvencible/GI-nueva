@@ -52,7 +52,7 @@ export default function BodaPage({ onBack }: BodaPageProps) {
       <div className="max-w-3xl mx-auto px-6 lg:px-8 pb-20 lg:pb-32">
         <div className="space-y-5">
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
-            El 4 de septiembre de 2021, Carmen y yo nos casamos, pero <strong className="font-bold text-neutral-800 dark:text-white">no fue una boda "normal"</strong>.
+            <span className="float-left text-[3.5rem] lg:text-[4rem] font-bold leading-[0.8] mr-2 mt-1 text-neutral-800 dark:text-white">E</span>l 4 de septiembre de 2021, Carmen y yo nos casamos, pero <strong className="font-bold text-neutral-800 dark:text-white">no fue una boda "normal"</strong>.
           </RevealBlock>
 
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
