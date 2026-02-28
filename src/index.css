@@ -85,3 +85,12 @@ body::before {
     background: linear-gradient(to left, rgba(0, 0, 0, 0.2), transparent);
   }
 }
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

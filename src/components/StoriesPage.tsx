@@ -148,16 +148,16 @@ export default function StoriesPage({
         activePage="stories"
       />
 
-      <main className="pt-32 pb-24 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-wrap gap-6 mb-12">
+      <main className="pt-24 pb-24">
+        <div className="w-full">
+          <div className="flex gap-4 px-4 py-4 overflow-x-auto scrollbar-hide">
             {storiesData.map((story, index) => (
               <button
                 key={story.id}
                 onClick={() => handleStoryClick(index)}
-                className="group flex flex-col items-center gap-3"
+                className="group flex flex-col items-center gap-2 flex-shrink-0"
               >
-                <div className={`relative w-20 h-20 md:w-24 md:h-24 ${selectedStoryIndex === index ? 'ring-2 ring-amber-500 ring-offset-2 ring-offset-transparent rounded-full' : ''}`}>
+                <div className="relative w-16 h-16 flex-shrink-0">
                   <svg
                     className="absolute inset-0 w-full h-full"
                     viewBox="0 0 100 100"
@@ -167,7 +167,7 @@ export default function StoriesPage({
                       cy="50"
                       r="46"
                       fill="none"
-                      stroke={selectedStoryIndex === index ? '#f59e0b' : (isDark ? '#333' : '#222')}
+                      stroke={selectedStoryIndex === index ? '#f59e0b' : (isDark ? '#444' : '#333')}
                       strokeWidth="3"
                       strokeDasharray="18 6"
                       strokeLinecap="round"
@@ -198,7 +198,7 @@ export default function StoriesPage({
           </div>
 
           {selectedStoryIndex !== null && currentStory && (
-            <div className="relative w-full bg-black rounded-2xl overflow-hidden">
+            <div className="relative w-full bg-black mt-4">
               <div className="absolute top-0 left-0 right-0 z-10 p-4">
                 <div className="flex gap-1 mb-4">
                   {storiesData.map((_, index) => (
