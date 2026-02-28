@@ -18,7 +18,7 @@ export default function BodaPage({ onBack }: BodaPageProps) {
             className="text-[1.9rem] sm:text-[2.5rem] lg:text-[3.2rem] text-neutral-900 dark:text-white leading-[1.1] font-bold transition-colors mb-6 lg:mb-8"
             delay={0.1}
           >
-            Cómo casarte <span className="underline decoration-[0.12em] decoration-neutral-900/15 dark:decoration-white/20 underline-offset-[0.08em]">sin meter a nadie en un compromiso</span>, salvo a ti (así ha sido nuestra boda <em className="italic">sobresfree</em>)
+            Cómo casarte <span className="underline decoration-[0.12em] decoration-neutral-900/15 dark:decoration-white/20 underline-offset-[0.08em]">sin meter a nadie en un compromiso</span>, salvo a ti (así ha sido nuestra boda sobresfree)
           </RevealBlock>
 
           <RevealBlock delay={0.15}>
