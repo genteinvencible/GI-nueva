@@ -3,7 +3,7 @@ import { useTheme } from '../context/ThemeContext';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { storiesData } from '../data/storiesData';
-import { ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Pause, Play, Volume2, VolumeX } from 'lucide-react';
 
 interface StoriesPageProps {
   onBackClick: () => void;
@@ -24,6 +24,7 @@ export default function StoriesPage({
   const [selectedStoryIndex, setSelectedStoryIndex] = useState<number | null>(null);
   const [progress, setProgress] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const progressIntervalRef = useRef<number | null>(null);
 
@@ -68,6 +69,13 @@ export default function StoriesPage({
       setIsPaused(!isPaused);
     }
   }, [isPaused]);
+
+  const toggleMute = useCallback(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
+    }
+  }, [isMuted]);
 
   useEffect(() => {
     if (selectedStoryIndex === null) return;
@@ -229,6 +237,12 @@ export default function StoriesPage({
                   </div>
 
                   <div className="flex items-center gap-2">
+                    <button
+                      onClick={toggleMute}
+                      className="p-2 text-white/80 hover:text-white transition-colors"
+                    >
+                      {isMuted ? <VolumeX className="w-6 h-6" /> : <Volume2 className="w-6 h-6" />}
+                    </button>
                     <button
                       onClick={togglePause}
                       className="p-2 text-white/80 hover:text-white transition-colors"
