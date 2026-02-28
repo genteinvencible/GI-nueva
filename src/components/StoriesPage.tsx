@@ -110,9 +110,16 @@ export default function StoriesPage({
         setIsPaused(true);
       });
     }
+  }, [selectedStoryIndex]);
+
+  useEffect(() => {
+    if (selectedStoryIndex === null) return;
+
+    const video = videoRef.current;
+    if (!video) return;
 
     const updateProgress = () => {
-      if (video.duration && !isPaused) {
+      if (video.duration) {
         const percentage = (video.currentTime / video.duration) * 100;
         setProgress(percentage);
       }
@@ -125,7 +132,7 @@ export default function StoriesPage({
         clearInterval(progressIntervalRef.current);
       }
     };
-  }, [selectedStoryIndex, isPaused]);
+  }, [selectedStoryIndex]);
 
   const handleVideoEnd = () => {
     goToNext();
