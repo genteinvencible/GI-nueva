@@ -249,7 +249,7 @@ export default function StoriesPage({
                       className="transition-all duration-300 group-hover:stroke-amber-500"
                     />
                   </svg>
-                  <div className="absolute inset-[6px] rounded-full overflow-hidden">
+                  <div className={`absolute inset-[6px] rounded-full overflow-hidden ${isDark ? 'bg-neutral-800' : 'bg-neutral-200'}`}>
                     <img
                       src={story.thumbnailUrl}
                       alt={story.title}
