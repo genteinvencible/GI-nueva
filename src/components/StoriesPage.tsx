@@ -248,7 +248,6 @@ export default function StoriesPage({
                   src={currentStory.videoUrl}
                   className="w-full h-full object-contain"
                   playsInline
-                  muted
                   onEnded={handleVideoEnd}
                 />
 
