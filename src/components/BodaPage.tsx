@@ -21,6 +21,10 @@ export default function BodaPage({ onBack }: BodaPageProps) {
             Cómo casarte sin meter a nadie en un compromiso, salvo a ti (así ha sido nuestra boda sobresfree)
           </RevealBlock>
 
+          <RevealBlock delay={0.15}>
+            <div className="w-12 h-px bg-neutral-400/50 dark:bg-neutral-500/50 mx-auto mb-6 lg:mb-8" />
+          </RevealBlock>
+
           <RevealBlock
             as="p"
             className="text-[1rem] lg:text-[1.15rem] text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto transition-colors"
