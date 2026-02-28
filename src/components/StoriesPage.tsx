@@ -273,8 +273,10 @@ export default function StoriesPage({
           </div>
 
           {selectedStoryIndex !== null && currentStory && (
-            <div className="relative w-full bg-black mt-4">
-              <div className="absolute top-0 left-0 right-0 z-10 p-4">
+            <div className="flex justify-center px-4 mt-8">
+              <div className={`relative w-full max-w-md rounded-3xl overflow-hidden shadow-2xl ${isDark ? 'bg-neutral-900 ring-1 ring-white/10' : 'bg-white ring-1 ring-black/5'}`}>
+                <div className="relative bg-black rounded-2xl m-2 overflow-hidden">
+                  <div className="absolute top-0 left-0 right-0 z-10 p-4">
                 <div className="flex gap-1 mb-4">
                   {storiesData.map((_, index) => (
                     <div
@@ -368,6 +370,8 @@ export default function StoriesPage({
                   <ChevronRight className="w-10 h-10" />
                 </button>
               )}
+                </div>
+              </div>
             </div>
           )}
         </div>
