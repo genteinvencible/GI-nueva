@@ -1,6 +1,14 @@
 import EmailSubscriptionForm from './EmailSubscriptionForm';
 import RevealBlock from './RevealBlock';
 import bodaImage from '../../Assests/imagen_lo_de_la_boda.png';
+import weddingPhoto1 from '../../Assests/carmen&alvaro_(16).jpg';
+import weddingPhoto2 from '../../Assests/carmen&alvaro_(199).jpg';
+import weddingPhoto3 from '../../Assests/carmen&alvaro_(204).jpg';
+import weddingPhoto4 from '../../Assests/carmen&alvaro_(209).jpg';
+import weddingPhoto5 from '../../Assests/carmen&alvaro_(222).jpg';
+import weddingPhoto6 from '../../Assests/carmen&alvaro_(232).jpg';
+import weddingPhoto7 from '../../Assests/carmen&alvaro_(278).jpg';
+import weddingPhoto8 from '../../Assests/carmen&alvaro_(365).jpg';
 
 interface BodaPageProps {
   onBack: () => void;
@@ -295,6 +303,17 @@ export default function BodaPage({ onBack }: BodaPageProps) {
           </RevealBlock>
         </div>
 
+        <RevealBlock className="my-12 lg:my-16">
+          <div className="grid grid-cols-2 gap-3 lg:gap-4">
+            <div className="overflow-hidden shadow-lg dark:shadow-black/30">
+              <img src={weddingPhoto1} alt="Carmen y Alvaro" className="w-full h-48 lg:h-64 object-cover hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div className="overflow-hidden shadow-lg dark:shadow-black/30">
+              <img src={weddingPhoto2} alt="Carmen y Alvaro" className="w-full h-48 lg:h-64 object-cover hover:scale-105 transition-transform duration-500" />
+            </div>
+          </div>
+        </RevealBlock>
+
         <RevealBlock
           as="h2"
           className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors italic mt-14 mb-6"
@@ -371,6 +390,12 @@ export default function BodaPage({ onBack }: BodaPageProps) {
             Seguimos con los sobres.
           </RevealBlock>
         </div>
+
+        <RevealBlock className="my-12 lg:my-16">
+          <div className="overflow-hidden shadow-xl dark:shadow-black/40">
+            <img src={weddingPhoto3} alt="Carmen y Alvaro en su boda" className="w-full h-auto object-cover" />
+          </div>
+        </RevealBlock>
 
         <RevealBlock
           as="h2"
@@ -459,6 +484,20 @@ export default function BodaPage({ onBack }: BodaPageProps) {
             </p>
           </RevealBlock>
 
+          <RevealBlock className="my-10 lg:my-14">
+            <div className="grid grid-cols-3 gap-2 lg:gap-3">
+              <div className="overflow-hidden shadow-lg dark:shadow-black/30">
+                <img src={weddingPhoto4} alt="Carmen y Alvaro" className="w-full h-32 lg:h-48 object-cover hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div className="overflow-hidden shadow-lg dark:shadow-black/30">
+                <img src={weddingPhoto5} alt="Carmen y Alvaro" className="w-full h-32 lg:h-48 object-cover hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div className="overflow-hidden shadow-lg dark:shadow-black/30">
+                <img src={weddingPhoto6} alt="Carmen y Alvaro" className="w-full h-32 lg:h-48 object-cover hover:scale-105 transition-transform duration-500" />
+              </div>
+            </div>
+          </RevealBlock>
+
           <RevealBlock as="p" className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.7] transition-colors">
             ¿Mucho? ¿poco? dependerá del bolsillo, pero creo que <strong className="font-bold text-neutral-800 dark:text-white">depende más de las ganas de hacerlo</strong>.
           </RevealBlock>
@@ -504,6 +543,12 @@ export default function BodaPage({ onBack }: BodaPageProps) {
             No era esperado, pero después nos tiraron arroz.
           </RevealBlock>
         </div>
+
+        <RevealBlock className="my-12 lg:my-16">
+          <div className="overflow-hidden shadow-xl dark:shadow-black/40">
+            <img src={weddingPhoto7} alt="Celebracion de la boda" className="w-full h-auto object-cover" />
+          </div>
+        </RevealBlock>
 
         <RevealBlock
           as="h2"
@@ -569,6 +614,12 @@ export default function BodaPage({ onBack }: BodaPageProps) {
             Álvaro
           </RevealBlock>
         </div>
+
+        <RevealBlock className="my-12 lg:my-16">
+          <div className="overflow-hidden shadow-xl dark:shadow-black/40">
+            <img src={weddingPhoto8} alt="Carmen y Alvaro" className="w-full h-auto object-cover" />
+          </div>
+        </RevealBlock>
 
         <div className="flex justify-center items-center gap-3 text-neutral-300 dark:text-neutral-600 select-none mt-16 mb-10">
           <span className="text-xs">*</span>
