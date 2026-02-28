@@ -24,9 +24,12 @@ export default function StoriesPage({
   const [selectedStoryIndex, setSelectedStoryIndex] = useState<number | null>(null);
   const [progress, setProgress] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [isHolding, setIsHolding] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const progressIntervalRef = useRef<number | null>(null);
+  const holdTimeoutRef = useRef<number | null>(null);
+  const wasPlayingBeforeHoldRef = useRef(false);
 
   const currentStory = selectedStoryIndex !== null ? storiesData[selectedStoryIndex] : null;
   const hasNext = selectedStoryIndex !== null && selectedStoryIndex < storiesData.length - 1;
@@ -138,9 +141,31 @@ export default function StoriesPage({
     goToNext();
   };
 
-  const handleAreaClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const clickX = e.clientX - rect.left;
+  const handleHoldStart = useCallback((clientX: number, rect: DOMRect) => {
+    wasPlayingBeforeHoldRef.current = !isPaused;
+    holdTimeoutRef.current = window.setTimeout(() => {
+      setIsHolding(true);
+      if (videoRef.current && !isPaused) {
+        videoRef.current.pause();
+      }
+    }, 150);
+  }, [isPaused]);
+
+  const handleHoldEnd = useCallback((clientX: number, rect: DOMRect) => {
+    if (holdTimeoutRef.current) {
+      clearTimeout(holdTimeoutRef.current);
+      holdTimeoutRef.current = null;
+    }
+
+    if (isHolding) {
+      setIsHolding(false);
+      if (videoRef.current && wasPlayingBeforeHoldRef.current) {
+        videoRef.current.play();
+      }
+      return;
+    }
+
+    const clickX = clientX - rect.left;
     const width = rect.width;
 
     if (clickX < width * 0.3) {
@@ -150,6 +175,41 @@ export default function StoriesPage({
     } else {
       togglePause();
     }
+  }, [isHolding, goToPrev, goToNext, togglePause]);
+
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    handleHoldStart(e.clientX, rect);
+  };
+
+  const handleMouseUp = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    handleHoldEnd(e.clientX, rect);
+  };
+
+  const handleMouseLeave = () => {
+    if (holdTimeoutRef.current) {
+      clearTimeout(holdTimeoutRef.current);
+      holdTimeoutRef.current = null;
+    }
+    if (isHolding) {
+      setIsHolding(false);
+      if (videoRef.current && wasPlayingBeforeHoldRef.current) {
+        videoRef.current.play();
+      }
+    }
+  };
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const touch = e.touches[0];
+    handleHoldStart(touch.clientX, rect);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const touch = e.changedTouches[0];
+    handleHoldEnd(touch.clientX, rect);
   };
 
   return (
@@ -261,8 +321,12 @@ export default function StoriesPage({
               </div>
 
               <div
-                className="relative w-full aspect-[9/16] max-h-[70vh] mx-auto cursor-pointer"
-                onClick={handleAreaClick}
+                className="relative w-full aspect-[9/16] max-h-[70vh] mx-auto cursor-pointer select-none"
+                onMouseDown={handleMouseDown}
+                onMouseUp={handleMouseUp}
+                onMouseLeave={handleMouseLeave}
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
               >
                 <video
                   ref={videoRef}
@@ -272,7 +336,7 @@ export default function StoriesPage({
                   onEnded={handleVideoEnd}
                 />
 
-                {isPaused && (
+                {isPaused && !isHolding && (
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                     <div className="w-20 h-20 rounded-full bg-black/50 flex items-center justify-center">
                       <Play className="w-10 h-10 text-white ml-1" />
