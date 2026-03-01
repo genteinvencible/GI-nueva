@@ -145,10 +145,10 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
               Pero bueno, ya que preguntas:
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              Estudié ADE, no me digas porqué.
+              Estudié ADE, no me digas por qué.
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              Hice las prácticas en un banco y –tampoco me digas porqué– me quedé a trabajar allí.
+              Hice las prácticas en un banco y –tampoco me digas por qué– me quedé a trabajar allí.
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
               Luego llegó lo que llamaron crisis de 2008 y me salvó.
