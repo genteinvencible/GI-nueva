@@ -1,10 +1,11 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { bannerMessages, processMessage } from '../data/bannerMessages';
 
 interface BannerSystemState {
   currentMessage: string | null;
   currentAvatar: string | null;
   isVisible: boolean;
+  closeBanner: () => void;
 }
 
 interface UseBannerSystemOptions {
@@ -101,9 +102,22 @@ export function useBannerSystem({
     };
   }, [scrollTriggered, hasSubscribed, isFormOpen, isInputFocused]);
 
+  const closeBanner = useCallback(() => {
+    if (displayTimeoutRef.current) clearTimeout(displayTimeoutRef.current);
+    if (fadeOutTimeoutRef.current) clearTimeout(fadeOutTimeoutRef.current);
+
+    setIsVisible(false);
+
+    setTimeout(() => {
+      setCurrentMessage(null);
+      setCurrentAvatar(null);
+    }, FADE_OUT_TIME);
+  }, []);
+
   return {
     currentMessage,
     currentAvatar,
     isVisible,
+    closeBanner,
   };
 }

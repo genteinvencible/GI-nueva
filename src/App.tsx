@@ -33,7 +33,7 @@ function App() {
 
   const scrollTriggered = useScrollTrigger(emailButtonRef);
 
-  const { currentMessage, currentAvatar, isVisible } = useBannerSystem({
+  const { currentMessage, currentAvatar, isVisible, closeBanner } = useBannerSystem({
     scrollTriggered,
     isFormOpen,
     isInputFocused,
@@ -62,9 +62,6 @@ function App() {
     }, 50);
   }, [exploreVisible]);
 
-  const handleCloseBanner = useCallback(() => {
-    // El banner se cerrará solo por la animación
-  }, []);
 
   const handleGoHome = useCallback(() => {
     setShowAboutPage(false);
@@ -187,7 +184,7 @@ function App() {
             message={currentMessage}
             avatar={currentAvatar}
             isVisible={isVisible}
-            onClose={handleCloseBanner}
+            onClose={closeBanner}
           />
         )}
       </div>
