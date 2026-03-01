@@ -36,13 +36,13 @@ const AboutSection = forwardRef<HTMLButtonElement, AboutSectionProps>(
 
           <div className="space-y-4 pt-2">
             <RevealBlock as="p" className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors" delay={0.2}>
-              --¿Cuántos años?
+              —¿Cuántos años?
             </RevealBlock>
             <RevealBlock as="p" className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors" delay={0.25}>
-              --Cinco...
+              —Cinco...
             </RevealBlock>
             <RevealBlock as="p" className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors" delay={0.3}>
-              --Pues por el cu...
+              —Pues por el cu...
             </RevealBlock>
 
             <RevealBlock as="p" className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors" delay={0.35}>
