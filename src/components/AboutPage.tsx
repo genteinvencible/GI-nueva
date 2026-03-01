@@ -254,17 +254,17 @@ export default function AboutPage({ onBack }: AboutPageProps) {
 
             <RevealBlock
               as="p"
-              className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors pt-10"
+              className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors pt-10"
               delay={0.1}
             >
               Y lo m{'\u00E1'}s importante:
             </RevealBlock>
           </div>
 
-          <div className="mt-20 lg:mt-28 space-y-6">
+          <div className="mt-8 lg:mt-12 space-y-6">
             <RevealBlock
               as="p"
-              className="text-[1.4rem] lg:text-[1.6rem] text-neutral-800 dark:text-white font-normal transition-colors"
+              className="text-[1.6rem] lg:text-[1.85rem] text-neutral-800 dark:text-white font-normal transition-colors"
               delay={0.1}
             >
               Me gusta escribir para gente inteligente.
