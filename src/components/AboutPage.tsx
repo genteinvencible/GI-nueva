@@ -10,14 +10,14 @@ const checkItems1 = [
   {
     text: (
       <>
-        He nacido y vivo en Asturias, pero no me sale estar orgulloso de las casualidades.
+        He nacido y vivo en Asturias, pero no me sale estar orgulloso de las <strong className="font-bold text-neutral-800 dark:text-white">casualidades</strong>.
       </>
     ),
   },
   {
     text: (
       <>
-        Tengo 42 a{'\u00F1'}os, pero a ratos hago el monguer igual que con 17. Y a ratos no.
+        Tengo 42 a{'\u00F1'}os, pero <strong className="font-bold text-neutral-800 dark:text-white">a ratos hago el monguer</strong> igual que con 17. Y a ratos no.
       </>
     ),
   },
@@ -33,7 +33,7 @@ const checkItems2 = [
   {
     text: (
       <>
-        Soy padre de tres ni{'\u00F1'}os y eso ha afectado bastante a mi vida. Dir{'\u00ED'}a que para bien, pero me espero a la adolescencia.
+        <strong className="font-bold text-neutral-800 dark:text-white">Soy padre de tres</strong> ni{'\u00F1'}os y eso ha afectado bastante a mi vida. Dir{'\u00ED'}a que para bien, pero me espero a la adolescencia.
       </>
     ),
   },
@@ -54,7 +54,7 @@ const checkItems2 = [
   {
     text: (
       <>
-        Pensaba que la crisis de los 40 era un mito, hasta que vi a gente de esta edad teniendo esta edad.
+        Pensaba que la <strong className="font-bold text-neutral-800 dark:text-white">crisis de los 40</strong> era un mito, hasta que vi a gente de esta edad teniendo esta edad.
       </>
     ),
   },
@@ -82,14 +82,14 @@ const checkItems3 = [
   {
     text: (
       <>
-        Durante siete a{'\u00F1'}os de mi vida no me com{'\u00ED'} animales. Luego volv{'\u00ED'} a hacerlo. Pero no podr{'\u00ED'}a defender ninguna de las dos.
+        Durante siete a{'\u00F1'}os de mi vida <strong className="font-bold text-neutral-800 dark:text-white">no me com{'\u00ED'} animales</strong>. Luego volv{'\u00ED'} a hacerlo. Pero no podr{'\u00ED'}a defender ninguna de las dos.
       </>
     ),
   },
   {
     text: (
       <>
-        Estoy bastante convencido de que fl{'\u00E1'}cido es m{'\u00E1'}s jodido ser feliz.
+        Estoy bastante convencido de que <strong className="font-bold text-neutral-800 dark:text-white">fl{'\u00E1'}cido es m{'\u00E1'}s jodido ser feliz.</strong>
       </>
     ),
   },
@@ -237,7 +237,7 @@ export default function AboutPage({ onBack }: AboutPageProps) {
               className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors"
               delay={0.1}
             >
-              Otra cosa importante, valoro mi tiempo por encima de todo, y prometo no hacerte perder el tuyo.
+              Otra cosa importante, valoro mi <strong className="font-bold text-neutral-800 dark:text-white">tiempo por encima de todo</strong>, y prometo no hacerte perder el tuyo.
             </RevealBlock>
 
             <RevealBlock
@@ -275,7 +275,7 @@ export default function AboutPage({ onBack }: AboutPageProps) {
               className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors"
               delay={0.15}
             >
-              Por eso no te voy a regalar ning{'\u00FA'}n ebook, ni a decirte que "detesto el spam tanto como t{'\u00FA'}", porque te podr{'\u00ED'}a estar mintiendo.
+              Por eso <strong className="font-bold text-neutral-800 dark:text-white">no te voy a regalar ning{'\u00FA'}n ebook</strong>, ni a decirte que "detesto el spam tanto como t{'\u00FA'}", porque te podr{'\u00ED'}a estar mintiendo.
             </RevealBlock>
 
             <RevealBlock
@@ -299,7 +299,7 @@ export default function AboutPage({ onBack }: AboutPageProps) {
               className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors"
               delay={0.3}
             >
-              Solo te digo que mando muchos emails contando mis andanzas e, incomprensiblemente, hay gente que paga por leerlos.
+              Solo te digo que <strong className="font-bold text-neutral-800 dark:text-white">mando muchos emails</strong> contando mis andanzas e, incomprensiblemente, hay gente que paga por leerlos.
             </RevealBlock>
 
             <RevealBlock
@@ -315,7 +315,7 @@ export default function AboutPage({ onBack }: AboutPageProps) {
               className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors"
               delay={0.4}
             >
-              No te voy a pedir que saques la tarjeta, todav{'\u00ED'}a, pero si quieres saber si de verdad son buenos puedes leer gratis un tiempo.
+              No te voy a pedir que saques la tarjeta, todav{'\u00ED'}a, pero <strong className="font-bold text-neutral-800 dark:text-white">si quieres saber si de verdad son buenos</strong> puedes leer gratis un tiempo.
             </RevealBlock>
 
             <RevealBlock
@@ -323,7 +323,7 @@ export default function AboutPage({ onBack }: AboutPageProps) {
               className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors"
               delay={0.45}
             >
-              Lo que no hay es garant{'\u00ED'}a de que te vaya a cambiar la vida, aqu{'\u00ED'} la vida hay que traerla cambiada de casa.
+              Lo que no hay es garant{'\u00ED'}a de que te vaya a cambiar la vida, aqu{'\u00ED'} <strong className="font-bold text-neutral-800 dark:text-white">la vida hay que traerla cambiada de casa.</strong>
             </RevealBlock>
 
             <RevealBlock className="pt-6" delay={0.5}>
