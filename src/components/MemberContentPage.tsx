@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ArrowLeft, BookOpen, LogOut, Loader2, ArrowRight } from 'lucide-react';
+import { ArrowLeft, BookOpen, LogOut, Loader2, ArrowRight, CreditCard, ExternalLink } from 'lucide-react';
 import PostViewer from './PostViewer';
 
 interface MemberContentPageProps {
@@ -40,6 +40,7 @@ export default function MemberContentPage({ onBackClick, onLoginClick }: MemberC
   const [loading, setLoading] = useState(true);
   const [selectedPostSlug, setSelectedPostSlug] = useState<string | null>(null);
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
+  const [portalLoading, setPortalLoading] = useState(false);
 
   useEffect(() => {
     const storedSession = localStorage.getItem('gi_session');
@@ -96,6 +97,37 @@ export default function MemberContentPage({ onBackClick, onLoginClick }: MemberC
 
   const handleBackFromPost = () => {
     setSelectedPostSlug(null);
+  };
+
+  const handleManageSubscription = async () => {
+    if (!session) return;
+
+    setPortalLoading(true);
+    try {
+      const response = await fetch(
+        `${SUPABASE_URL}/functions/v1/stripe-portal`,
+        {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email: session.email }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (data.portalUrl) {
+        window.open(data.portalUrl, '_blank', 'noopener,noreferrer');
+      } else if (data.error) {
+        console.error('Portal error:', data.error);
+      }
+    } catch (err) {
+      console.error('Error opening subscription portal:', err);
+    } finally {
+      setPortalLoading(false);
+    }
   };
 
   if (selectedPostSlug) {
@@ -161,16 +193,29 @@ export default function MemberContentPage({ onBackClick, onLoginClick }: MemberC
             <span className="text-sm font-normal hidden sm:inline">Volver</span>
           </button>
 
-          <div className="flex items-center gap-4">
-            <span className="text-sm text-[#141210]/60 dark:text-[#f7f3ed]/60 hidden sm:inline">
+          <div className="flex items-center gap-3">
+            <span className="text-sm text-[#141210]/60 dark:text-[#f7f3ed]/60 hidden lg:inline">
               {session.email}
             </span>
+            <button
+              onClick={handleManageSubscription}
+              disabled={portalLoading}
+              className="flex items-center gap-2 px-4 py-2 text-sm text-[#141210]/70 dark:text-[#f7f3ed]/70 hover:text-[#141210] dark:hover:text-[#f7f3ed] border border-[#141210]/10 dark:border-[#f7f3ed]/10 rounded-lg hover:border-[#141210]/20 dark:hover:border-[#f7f3ed]/20 transition-all disabled:opacity-50"
+            >
+              {portalLoading ? (
+                <Loader2 className="w-4 h-4 animate-spin" />
+              ) : (
+                <CreditCard className="w-4 h-4" />
+              )}
+              <span className="hidden sm:inline">Suscripcion</span>
+              <ExternalLink className="w-3 h-3 hidden sm:inline opacity-50" />
+            </button>
             <button
               onClick={handleLogout}
               className="flex items-center gap-2 px-4 py-2 text-sm text-[#141210]/70 dark:text-[#f7f3ed]/70 hover:text-[#141210] dark:hover:text-[#f7f3ed] border border-[#141210]/10 dark:border-[#f7f3ed]/10 rounded-lg hover:border-[#141210]/20 dark:hover:border-[#f7f3ed]/20 transition-all"
             >
               <LogOut className="w-4 h-4" />
-              <span className="hidden sm:inline">Cerrar sesion</span>
+              <span className="hidden sm:inline">Salir</span>
             </button>
           </div>
         </div>
