@@ -20,7 +20,7 @@ Deno.serve(async (req: Request) => {
   try {
     const url = new URL(req.url);
     const slug = url.searchParams.get("slug");
-    const filter = url.searchParams.get("filter") || "visibility:members";
+    const filter = url.searchParams.get("filter");
     const limit = url.searchParams.get("limit") || "20";
 
     let ghostUrl: string;
@@ -28,7 +28,7 @@ Deno.serve(async (req: Request) => {
     if (slug) {
       ghostUrl = `${GHOST_URL}/ghost/api/content/posts/slug/${slug}/?key=${GHOST_CONTENT_KEY}&include=tags&formats=html`;
     } else {
-      ghostUrl = `${GHOST_URL}/ghost/api/content/posts/?key=${GHOST_CONTENT_KEY}&include=tags&filter=${encodeURIComponent(filter)}&limit=${limit}`;
+      ghostUrl = `${GHOST_URL}/ghost/api/content/posts/?key=${GHOST_CONTENT_KEY}&include=tags&limit=${limit}${filter ? `&filter=${encodeURIComponent(filter)}` : ""}`;
     }
 
     const response = await fetch(ghostUrl, {
