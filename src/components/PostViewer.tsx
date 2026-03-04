@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ArrowLeft, Loader2, Clock, Calendar } from 'lucide-react';
+import { ArrowLeft, Loader2 } from 'lucide-react';
 
 interface PostViewerProps {
   slug: string;
@@ -116,28 +116,9 @@ export default function PostViewer({ slug, onBack }: PostViewerProps) {
         )}
 
         <header className="mb-10">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#141210] dark:text-[#f7f3ed] mb-6 leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#141210] dark:text-[#f7f3ed] leading-tight">
             {post.title}
           </h1>
-
-          <div className="flex items-center gap-6 text-sm text-[#141210]/50 dark:text-[#f7f3ed]/50">
-            <div className="flex items-center gap-2">
-              <Calendar className="w-4 h-4" />
-              <span>
-                {new Date(post.published_at).toLocaleDateString('es-ES', {
-                  day: 'numeric',
-                  month: 'long',
-                  year: 'numeric',
-                })}
-              </span>
-            </div>
-            {post.reading_time && (
-              <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4" />
-                <span>{post.reading_time} min de lectura</span>
-              </div>
-            )}
-          </div>
         </header>
 
         <div
