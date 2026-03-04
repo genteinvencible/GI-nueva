@@ -239,6 +239,9 @@ export default function MemberContentPage({ onBackClick, onLoginClick }: MemberC
                     <span>Gestionar suscripcion</span>
                     <ExternalLink className="w-3 h-3 ml-auto opacity-50" />
                   </button>
+                  <p className="px-4 py-1.5 text-xs text-[#141210]/40 dark:text-[#f7f3ed]/40">
+                    Se abrira en una ventana segura de Stripe
+                  </p>
                 </div>
 
                 <div className="border-t border-[#141210]/5 dark:border-[#f7f3ed]/5 py-2">
