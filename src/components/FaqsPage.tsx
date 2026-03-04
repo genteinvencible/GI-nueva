@@ -303,7 +303,7 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
             onClick={(e) => e.stopPropagation()}
           >
             <p className="text-[1.2rem] lg:text-[1.3rem] text-neutral-800 dark:text-white mb-6 leading-[1.5]">
-              Para ser un gilipollas, pero con tu email, aquí.
+              Para que sea un mequetrefe, pero con tu email, aquí.
             </p>
             <EmailSubscriptionForm isOpen={true} hideIntroText={true} hideSpamText={true} autoScrollOnOpen={false} />
             <button
