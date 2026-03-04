@@ -6,6 +6,7 @@ interface EmailSubscriptionFormProps {
   onSubscribe?: () => void;
   hideIntroText?: boolean;
   hideSpamText?: boolean;
+  autoScrollOnOpen?: boolean;
 }
 
 export default function EmailSubscriptionForm({
@@ -13,7 +14,8 @@ export default function EmailSubscriptionForm({
   onInputFocusChange,
   onSubscribe,
   hideIntroText = false,
-  hideSpamText = false
+  hideSpamText = false,
+  autoScrollOnOpen = true
 }: EmailSubscriptionFormProps) {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -26,12 +28,12 @@ export default function EmailSubscriptionForm({
   const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   useEffect(() => {
-    if (isOpen && containerRef.current) {
+    if (autoScrollOnOpen && isOpen && containerRef.current) {
       setTimeout(() => {
         containerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }, 100);
     }
-  }, [isOpen]);
+  }, [isOpen, autoScrollOnOpen]);
 
 
   const handleSubmit = async (e: React.FormEvent) => {

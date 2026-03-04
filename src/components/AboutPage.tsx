@@ -249,7 +249,7 @@ export default function AboutPage({ onBack }: AboutPageProps) {
             </RevealBlock>
 
             <RevealBlock className="pt-4" delay={0.2}>
-              <EmailSubscriptionForm isOpen={true} hideIntroText={true} hideSpamText={true} />
+              <EmailSubscriptionForm isOpen={true} hideIntroText={true} hideSpamText={true} autoScrollOnOpen={false} />
             </RevealBlock>
 
             <RevealBlock
@@ -327,7 +327,7 @@ export default function AboutPage({ onBack }: AboutPageProps) {
             </RevealBlock>
 
             <RevealBlock className="pt-6" delay={0.5}>
-              <EmailSubscriptionForm isOpen={true} hideIntroText={true} hideSpamText={true} />
+              <EmailSubscriptionForm isOpen={true} hideIntroText={true} hideSpamText={true} autoScrollOnOpen={false} />
             </RevealBlock>
           </div>
         </div>

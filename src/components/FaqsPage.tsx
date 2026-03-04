@@ -220,7 +220,7 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
               Solo hay una forma de averiguarlo, dame una E, dame una M, dame una A, dame una I...
             </p>
             <div className="pt-4">
-              <EmailSubscriptionForm isOpen={true} hideIntroText={true} hideSpamText={true} />
+              <EmailSubscriptionForm isOpen={true} hideIntroText={true} hideSpamText={true} autoScrollOnOpen={false} />
             </div>
           </RevealBlock>
 
@@ -265,7 +265,7 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
             </div>
             {showDirectSubscribe && (
               <div className="pt-4 animate-fade-in">
-                <EmailSubscriptionForm isOpen={true} hideIntroText={true} hideSpamText={true} />
+                <EmailSubscriptionForm isOpen={true} hideIntroText={true} hideSpamText={true} autoScrollOnOpen={false} />
               </div>
             )}
           </RevealBlock>
@@ -285,7 +285,7 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
             <p className="text-[1.2rem] lg:text-[1.3rem] text-neutral-800 dark:text-white mb-6 leading-[1.5]">
               Para ser un gilipollas, pero con tu email, aquí.
             </p>
-            <EmailSubscriptionForm isOpen={true} hideIntroText={true} hideSpamText={true} />
+            <EmailSubscriptionForm isOpen={true} hideIntroText={true} hideSpamText={true} autoScrollOnOpen={false} />
             <button
               onClick={() => setShowMequetrefeModal(false)}
               className="mt-4 text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 transition-colors"
