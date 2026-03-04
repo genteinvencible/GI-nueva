@@ -1,4 +1,5 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
+import { createClient } from "npm:@supabase/supabase-js@2";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -25,8 +26,10 @@ Deno.serve(async (req: Request) => {
       );
     }
 
-    const resendKey = Deno.env.get("RESEND_API_KEY");
-    if (!resendKey) {
+    const supabaseUrl = Deno.env.get("SUPABASE_URL");
+    const supabaseKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+
+    if (!supabaseUrl || !supabaseKey) {
       return new Response(
         JSON.stringify({ error: "Configuracion del servidor incompleta" }),
         {
@@ -36,25 +39,14 @@ Deno.serve(async (req: Request) => {
       );
     }
 
-    const resendRes = await fetch("https://api.resend.com/audiences/78261f35-a9ad-4de4-b0b4-d7f04e7170c9/contacts", {
-      method: "POST",
-      headers: {
-        "Authorization": `Bearer ${resendKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email,
-        unsubscribed: false,
-      }),
-    });
+    const supabase = createClient(supabaseUrl, supabaseKey);
 
-    if (!resendRes.ok) {
-      const errorData = await resendRes.json().catch(() => ({}));
-      if (errorData.name === "validation_error" && errorData.message?.includes("already exists")) {
-        return new Response(JSON.stringify({ success: true }), {
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
-        });
-      }
+    const { error } = await supabase
+      .from("newsletter_subscribers")
+      .upsert({ email }, { onConflict: "email" });
+
+    if (error) {
+      console.error("Supabase error:", error);
       return new Response(
         JSON.stringify({ error: "No se ha podido registrar el email" }),
         {
@@ -67,7 +59,8 @@ Deno.serve(async (req: Request) => {
     return new Response(JSON.stringify({ success: true }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
-  } catch {
+  } catch (err) {
+    console.error("Error:", err);
     return new Response(JSON.stringify({ error: "Error interno" }), {
       status: 500,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
