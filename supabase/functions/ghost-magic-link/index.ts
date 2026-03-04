@@ -149,43 +149,32 @@ Deno.serve(async (req: Request) => {
 
     const member = memberData.members[0];
 
-    const newToken = await createGhostAdminTokenAsync(ghostAdminKey);
-
     const magicLinkResponse = await fetch(
-      `${ghostUrl}/ghost/api/admin/members/${member.id}/signin_urls/`,
+      `${ghostUrl}/members/api/send-magic-link/`,
       {
-        method: 'GET',
+        method: 'POST',
         headers: {
-          'Authorization': `Ghost ${newToken}`,
           'Content-Type': 'application/json',
         },
+        body: JSON.stringify({
+          email: member.email,
+          emailType: 'signin',
+        }),
       }
     );
 
+    console.log('Magic link send response status:', magicLinkResponse.status);
+
     if (!magicLinkResponse.ok) {
       const errorText = await magicLinkResponse.text();
-      console.error('Magic link error:', errorText);
-      throw new Error('Error al generar enlace de acceso');
-    }
-
-    const magicLinkData = await magicLinkResponse.json();
-    const signinUrl = magicLinkData.member_signin_urls?.[0]?.url;
-
-    if (!signinUrl) {
-      throw new Error('No se pudo obtener el enlace de acceso');
+      console.error('Magic link send error:', errorText);
+      throw new Error('Error al enviar el enlace de acceso');
     }
 
     return new Response(
       JSON.stringify({
         success: true,
-        message: 'Enlace de acceso generado',
-        signinUrl: signinUrl,
-        member: {
-          id: member.id,
-          email: member.email,
-          name: member.name,
-          status: member.status,
-        }
+        message: 'Enlace de acceso enviado',
       }),
       {
         status: 200,
