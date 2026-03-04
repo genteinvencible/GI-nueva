@@ -131,7 +131,7 @@ export default function MemberContentPage({ onBackClick, onLoginClick }: MemberC
       const data = await response.json();
 
       if (data.portalUrl) {
-        window.open(data.portalUrl, '_blank', 'noopener,noreferrer');
+        window.location.href = data.portalUrl;
       } else if (data.error) {
         console.error('Portal error:', data.error);
       }
