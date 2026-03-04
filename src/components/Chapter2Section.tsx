@@ -144,7 +144,7 @@ const Chapter2Section = forwardRef<HTMLDivElement, Chapter2SectionProps>(
                 className="text-[1.125rem] text-neutral-800 dark:text-white leading-relaxed transition-colors"
                 delay={0.25}
               >
-                {'Pero eso es mucho, \u00BFno?'}
+                <em>{'Pero eso es mucho, \u00BFno?'}</em>
               </RevealBlock>
 
               <RevealBlock
