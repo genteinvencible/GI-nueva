@@ -149,6 +149,38 @@ Deno.serve(async (req: Request) => {
 
     const member = memberData.members[0];
 
+    const integrityTokenUrl = `${ghostUrl}/members/api/integrity-token/`;
+    console.log('Fetching integrity token from:', integrityTokenUrl);
+
+    const integrityResponse = await fetch(integrityTokenUrl, {
+      method: 'GET',
+      headers: {
+        'app-pragma': 'no-cache',
+        'x-ghost-version': '5.98',
+      },
+    });
+
+    console.log('Integrity token response status:', integrityResponse.status);
+
+    if (!integrityResponse.ok) {
+      const integrityError = await integrityResponse.text();
+      console.error('Integrity token error:', integrityError);
+      return new Response(
+        JSON.stringify({
+          error: 'Error al obtener token de integridad',
+          details: integrityError,
+          status: integrityResponse.status,
+        }),
+        {
+          status: 502,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        }
+      );
+    }
+
+    const integrityToken = await integrityResponse.text();
+    console.log('Got integrity token');
+
     const magicLinkUrl = `${ghostUrl}/members/api/send-magic-link/`;
     console.log('Sending magic link request to:', magicLinkUrl);
 
@@ -162,6 +194,7 @@ Deno.serve(async (req: Request) => {
         body: JSON.stringify({
           email: member.email,
           emailType: 'signin',
+          integrityToken: integrityToken,
         }),
       }
     );
