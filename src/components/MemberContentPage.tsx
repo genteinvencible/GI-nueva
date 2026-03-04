@@ -129,14 +129,20 @@ export default function MemberContentPage({ onBackClick, onLoginClick }: MemberC
       );
 
       const data = await response.json();
+      console.log('Stripe portal response:', data);
 
       if (data.portalUrl) {
         window.location.href = data.portalUrl;
+      } else if (data.hasSubscription === false) {
+        alert('No se encontro una suscripcion activa para esta cuenta. Si crees que es un error, contacta con soporte.');
       } else if (data.error) {
-        console.error('Portal error:', data.error);
+        alert('Error al abrir el portal: ' + data.error);
+      } else {
+        alert('No se pudo abrir el portal de gestion. Intenta de nuevo.');
       }
     } catch (err) {
       console.error('Error opening subscription portal:', err);
+      alert('Error de conexion. Intenta de nuevo.');
     } finally {
       setPortalLoading(false);
     }
