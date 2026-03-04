@@ -4,6 +4,7 @@ import RevealBlock from './RevealBlock';
 
 interface AboutPageProps {
   onBack: () => void;
+  onFaqsClick: () => void;
 }
 
 const checkItems1 = [
@@ -127,7 +128,7 @@ function CheckItem({ text, delay = 0 }: { text: React.ReactNode; delay?: number 
   );
 }
 
-export default function AboutPage({ onBack }: AboutPageProps) {
+export default function AboutPage({ onBack, onFaqsClick }: AboutPageProps) {
   void onBack;
 
   return (
@@ -328,6 +329,39 @@ export default function AboutPage({ onBack }: AboutPageProps) {
 
             <RevealBlock className="pt-6" delay={0.5}>
               <EmailSubscriptionForm isOpen={true} hideIntroText={true} hideSpamText={true} autoScrollOnOpen={false} />
+            </RevealBlock>
+          </div>
+
+          <div className="mt-16 lg:mt-20 space-y-4">
+            <RevealBlock
+              as="p"
+              className="text-[1.6rem] lg:text-[1.85rem] text-neutral-800 dark:text-white font-normal transition-colors"
+              delay={0.1}
+            >
+              {'\u00BF'}Todav{'\u00ED'}a tienes dudas?
+            </RevealBlock>
+
+            <RevealBlock
+              as="p"
+              className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors"
+              delay={0.15}
+            >
+              Normal, yo tambi{'\u00E9'}n las tendr{'\u00ED'}a.
+            </RevealBlock>
+
+            <RevealBlock
+              as="p"
+              className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors"
+              delay={0.2}
+            >
+              Prueba a resolverlas{' '}
+              <button
+                onClick={onFaqsClick}
+                className="underline underline-offset-4 hover:text-neutral-900 dark:hover:text-white transition-colors cursor-pointer font-medium"
+              >
+                aqu{'\u00ED'}
+              </button>
+              .
             </RevealBlock>
           </div>
         </div>

@@ -133,7 +133,7 @@ function App() {
     return (
       <ThemeProvider>
         <Navbar activePage="about" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} onFaqsClick={handleGoFaqs} onStoriesClick={handleGoStories} />
-        <AboutPage onBack={handleGoHome} />
+        <AboutPage onBack={handleGoHome} onFaqsClick={handleGoFaqs} />
       </ThemeProvider>
     );
   }
