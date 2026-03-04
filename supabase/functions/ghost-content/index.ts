@@ -26,7 +26,7 @@ Deno.serve(async (req: Request) => {
     let ghostUrl: string;
 
     if (slug) {
-      ghostUrl = `${GHOST_URL}/ghost/api/content/posts/slug/${slug}/?key=${GHOST_CONTENT_KEY}&include=tags`;
+      ghostUrl = `${GHOST_URL}/ghost/api/content/posts/slug/${slug}/?key=${GHOST_CONTENT_KEY}&include=tags&formats=html`;
     } else {
       ghostUrl = `${GHOST_URL}/ghost/api/content/posts/?key=${GHOST_CONTENT_KEY}&include=tags&filter=${encodeURIComponent(filter)}&limit=${limit}`;
     }
