@@ -1,10 +1,9 @@
-import { useState, useEffect, useMemo } from 'react';
-import { ArrowLeft, BookOpen, LogOut, Loader2, ChevronRight, Search, X } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { ArrowLeft, BookOpen, LogOut, Loader2, ExternalLink } from 'lucide-react';
 
 interface MemberContentPageProps {
   onBackClick: () => void;
   onLoginClick: () => void;
-  onPostClick: (slug: string) => void;
 }
 
 interface Session {
@@ -24,14 +23,14 @@ interface GhostPost {
   reading_time: number;
 }
 
+const GHOST_URL = 'https://leer.genteinvencible.com';
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-export default function MemberContentPage({ onBackClick, onLoginClick, onPostClick }: MemberContentPageProps) {
+export default function MemberContentPage({ onBackClick, onLoginClick }: MemberContentPageProps) {
   const [session, setSession] = useState<Session | null>(null);
   const [posts, setPosts] = useState<GhostPost[]>([]);
   const [loading, setLoading] = useState(true);
-  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     const storedSession = localStorage.getItem('gi_session');
@@ -83,18 +82,8 @@ export default function MemberContentPage({ onBackClick, onLoginClick, onPostCli
   };
 
   const handleReadPost = (slug: string) => {
-    onPostClick(slug);
+    window.open(`${GHOST_URL}/${slug}/`, '_blank');
   };
-
-  const filteredPosts = useMemo(() => {
-    if (!searchQuery.trim()) return posts;
-    const query = searchQuery.toLowerCase().trim();
-    return posts.filter(
-      (post) =>
-        post.title.toLowerCase().includes(query) ||
-        (post.excerpt && post.excerpt.toLowerCase().includes(query))
-    );
-  }, [posts, searchQuery]);
 
   if (loading) {
     return (
@@ -175,56 +164,23 @@ export default function MemberContentPage({ onBackClick, onLoginClick, onPostCli
           <h1 className="text-3xl md:text-4xl font-bold text-[#141210] dark:text-[#f7f3ed] mb-4">
             Tu biblioteca
           </h1>
-          <p className="text-[#141210]/60 dark:text-[#f7f3ed]/60 text-lg mb-8">
+          <p className="text-[#141210]/60 dark:text-[#f7f3ed]/60 text-lg">
             Contenido exclusivo para miembros de Gente Invencible
           </p>
-
-          <div className="relative max-w-md">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#141210]/40 dark:text-[#f7f3ed]/40" />
-            <input
-              type="text"
-              placeholder="Buscar articulos..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-12 pr-10 py-3 bg-white dark:bg-[#1c1a17] border border-[#141210]/10 dark:border-[#f7f3ed]/10 rounded-xl text-[#141210] dark:text-[#f7f3ed] placeholder-[#141210]/40 dark:placeholder-[#f7f3ed]/40 focus:outline-none focus:border-[#141210]/30 dark:focus:border-[#f7f3ed]/30 transition-colors"
-            />
-            {searchQuery && (
-              <button
-                onClick={() => setSearchQuery('')}
-                className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-[#141210]/40 dark:text-[#f7f3ed]/40 hover:text-[#141210]/70 dark:hover:text-[#f7f3ed]/70 transition-colors"
-              >
-                <X className="w-4 h-4" />
-              </button>
-            )}
-          </div>
         </div>
 
-        {filteredPosts.length === 0 ? (
+        {posts.length === 0 ? (
           <div className="text-center py-20">
             <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[#141210]/5 dark:bg-[#f7f3ed]/5 flex items-center justify-center">
-              {searchQuery ? (
-                <Search className="w-8 h-8 text-[#141210]/40 dark:text-[#f7f3ed]/40" />
-              ) : (
-                <BookOpen className="w-8 h-8 text-[#141210]/40 dark:text-[#f7f3ed]/40" />
-              )}
+              <BookOpen className="w-8 h-8 text-[#141210]/40 dark:text-[#f7f3ed]/40" />
             </div>
             <p className="text-[#141210]/60 dark:text-[#f7f3ed]/60">
-              {searchQuery
-                ? `No se encontraron articulos para "${searchQuery}"`
-                : 'Pronto habra contenido aqui. Vuelve mas tarde.'}
+              Pronto habra contenido aqui. Vuelve mas tarde.
             </p>
-            {searchQuery && (
-              <button
-                onClick={() => setSearchQuery('')}
-                className="mt-4 text-sm text-[#141210]/70 dark:text-[#f7f3ed]/70 hover:text-[#141210] dark:hover:text-[#f7f3ed] underline underline-offset-4 transition-colors"
-              >
-                Limpiar busqueda
-              </button>
-            )}
           </div>
         ) : (
           <div className="grid gap-8 md:grid-cols-2">
-            {filteredPosts.map((post) => (
+            {posts.map((post) => (
               <article
                 key={post.id}
                 onClick={() => handleReadPost(post.slug)}
@@ -265,7 +221,7 @@ export default function MemberContentPage({ onBackClick, onLoginClick, onPostCli
                   )}
                   <div className="mt-4 flex items-center gap-2 text-sm font-medium text-[#141210] dark:text-[#f7f3ed] opacity-0 group-hover:opacity-100 transition-opacity">
                     <span>Leer</span>
-                    <ChevronRight className="w-4 h-4" />
+                    <ExternalLink className="w-4 h-4" />
                   </div>
                 </div>
               </article>
