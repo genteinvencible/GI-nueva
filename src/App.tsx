@@ -13,7 +13,6 @@ import FaqsPage from './components/FaqsPage';
 import BodaPage from './components/BodaPage';
 import StoriesPage from './components/StoriesPage';
 import LoginPage from './components/LoginPage';
-import AuthCallbackPage from './components/AuthCallbackPage';
 import MemberContentPage from './components/MemberContentPage';
 import { useBannerSystem } from './hooks/useBannerSystem';
 
@@ -30,15 +29,12 @@ function App() {
   const [showBodaPage, setShowBodaPage] = useState(false);
   const [showStoriesPage, setShowStoriesPage] = useState(false);
   const [showLoginPage, setShowLoginPage] = useState(false);
-  const [showAuthCallback, setShowAuthCallback] = useState(false);
   const [showMemberContent, setShowMemberContent] = useState(false);
 
   useEffect(() => {
     const path = window.location.pathname;
     if (path === '/login') {
       setShowLoginPage(true);
-    } else if (path === '/auth/callback') {
-      setShowAuthCallback(true);
     } else if (path === '/miembros') {
       setShowMemberContent(true);
     }
@@ -85,7 +81,6 @@ function App() {
     setShowBodaPage(false);
     setShowStoriesPage(false);
     setShowLoginPage(false);
-    setShowAuthCallback(false);
     setShowMemberContent(false);
     window.history.pushState({}, '', '/');
     window.scrollTo(0, 0);
@@ -150,17 +145,6 @@ function App() {
     setShowFaqsPage(false);
     window.scrollTo(0, 0);
   }, []);
-
-  if (showAuthCallback) {
-    return (
-      <ThemeProvider>
-        <AuthCallbackPage
-          onSuccess={handleGoHome}
-          onError={handleGoLogin}
-        />
-      </ThemeProvider>
-    );
-  }
 
   if (showLoginPage) {
     return (
