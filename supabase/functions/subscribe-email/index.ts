@@ -17,7 +17,7 @@ Deno.serve(async (req: Request) => {
 
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return new Response(
-        JSON.stringify({ error: "Email inválido" }),
+        JSON.stringify({ error: "Email invalido" }),
         {
           status: 400,
           headers: { ...corsHeaders, "Content-Type": "application/json" },
@@ -25,10 +25,10 @@ Deno.serve(async (req: Request) => {
       );
     }
 
-    const brevoKey = Deno.env.get("BREVO_API_KEY");
-    if (!brevoKey) {
+    const resendKey = Deno.env.get("RESEND_API_KEY");
+    if (!resendKey) {
       return new Response(
-        JSON.stringify({ error: "Configuración del servidor incompleta" }),
+        JSON.stringify({ error: "Configuracion del servidor incompleta" }),
         {
           status: 500,
           headers: { ...corsHeaders, "Content-Type": "application/json" },
@@ -36,23 +36,21 @@ Deno.serve(async (req: Request) => {
       );
     }
 
-    const brevoRes = await fetch("https://api.brevo.com/v3/contacts", {
+    const resendRes = await fetch("https://api.resend.com/audiences/78261f35-a9ad-4de4-b0b4-d7f04e7170c9/contacts", {
       method: "POST",
       headers: {
-        "api-key": brevoKey,
+        "Authorization": `Bearer ${resendKey}`,
         "Content-Type": "application/json",
-        Accept: "application/json",
       },
       body: JSON.stringify({
         email,
-        listIds: [3],
-        updateEnabled: true,
+        unsubscribed: false,
       }),
     });
 
-    if (!brevoRes.ok) {
-      const errorData = await brevoRes.json().catch(() => ({}));
-      if (errorData.code === "duplicate_parameter") {
+    if (!resendRes.ok) {
+      const errorData = await resendRes.json().catch(() => ({}));
+      if (errorData.name === "validation_error" && errorData.message?.includes("already exists")) {
         return new Response(JSON.stringify({ success: true }), {
           headers: { ...corsHeaders, "Content-Type": "application/json" },
         });
