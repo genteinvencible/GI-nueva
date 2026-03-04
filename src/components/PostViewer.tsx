@@ -122,7 +122,7 @@ export default function PostViewer({ slug, onBack }: PostViewerProps) {
         </header>
 
         <div
-          className="ghost-content"
+          className="prose prose-lg max-w-none dark:prose-invert"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
 
