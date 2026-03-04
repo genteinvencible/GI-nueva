@@ -595,19 +595,19 @@ export default function BodaPage({ onBack }: BodaPageProps) {
           </div>
         </RevealBlock>
 
-        <RevealBlock className="my-12 lg:my-16">
-          <div className="grid grid-cols-2 gap-3 lg:gap-4">
-            <div className="overflow-hidden shadow-lg dark:shadow-black/30">
-              <img src={weddingPhoto1} alt="Carmen y Alvaro" className="w-full h-48 lg:h-64 object-cover hover:scale-105 transition-transform duration-500" />
+        <RevealBlock className="my-12 lg:my-16 -mx-6 lg:-mx-8">
+          <div className="flex gap-4 overflow-x-auto px-6 lg:px-8 pb-4 snap-x snap-mandatory scrollbar-hide">
+            <div className="flex-shrink-0 w-72 lg:w-96 overflow-hidden shadow-lg dark:shadow-black/30 snap-start">
+              <img src={weddingPhoto1} alt="Carmen y Alvaro" className="w-full h-56 lg:h-72 object-cover hover:scale-105 transition-transform duration-500" />
             </div>
-            <div className="overflow-hidden shadow-lg dark:shadow-black/30">
-              <img src={weddingPhoto3} alt="Carmen y Alvaro" className="w-full h-48 lg:h-64 object-cover hover:scale-105 transition-transform duration-500" />
+            <div className="flex-shrink-0 w-72 lg:w-96 overflow-hidden shadow-lg dark:shadow-black/30 snap-start">
+              <img src={weddingPhoto3} alt="Carmen y Alvaro" className="w-full h-56 lg:h-72 object-cover hover:scale-105 transition-transform duration-500" />
             </div>
-            <div className="overflow-hidden shadow-lg dark:shadow-black/30">
-              <img src={weddingPhoto7} alt="Carmen y Alvaro" className="w-full h-48 lg:h-64 object-cover hover:scale-105 transition-transform duration-500" />
+            <div className="flex-shrink-0 w-72 lg:w-96 overflow-hidden shadow-lg dark:shadow-black/30 snap-start">
+              <img src={weddingPhoto7} alt="Carmen y Alvaro" className="w-full h-56 lg:h-72 object-cover hover:scale-105 transition-transform duration-500" />
             </div>
-            <div className="overflow-hidden shadow-lg dark:shadow-black/30">
-              <img src={weddingPhoto8} alt="Carmen y Alvaro" className="w-full h-48 lg:h-64 object-cover hover:scale-105 transition-transform duration-500" />
+            <div className="flex-shrink-0 w-72 lg:w-96 overflow-hidden shadow-lg dark:shadow-black/30 snap-start">
+              <img src={weddingPhoto8} alt="Carmen y Alvaro" className="w-full h-56 lg:h-72 object-cover hover:scale-105 transition-transform duration-500" />
             </div>
           </div>
         </RevealBlock>
