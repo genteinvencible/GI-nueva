@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from 'react';
+import { useState, useRef, useCallback, useEffect } from 'react';
 import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -12,6 +12,8 @@ import AboutPage from './components/AboutPage';
 import FaqsPage from './components/FaqsPage';
 import BodaPage from './components/BodaPage';
 import StoriesPage from './components/StoriesPage';
+import LoginPage from './components/LoginPage';
+import AuthCallbackPage from './components/AuthCallbackPage';
 import { useBannerSystem } from './hooks/useBannerSystem';
 
 function App() {
@@ -26,6 +28,17 @@ function App() {
   const [showFaqsPage, setShowFaqsPage] = useState(false);
   const [showBodaPage, setShowBodaPage] = useState(false);
   const [showStoriesPage, setShowStoriesPage] = useState(false);
+  const [showLoginPage, setShowLoginPage] = useState(false);
+  const [showAuthCallback, setShowAuthCallback] = useState(false);
+
+  useEffect(() => {
+    const path = window.location.pathname;
+    if (path === '/login') {
+      setShowLoginPage(true);
+    } else if (path === '/auth/callback') {
+      setShowAuthCallback(true);
+    }
+  }, []);
 
   const chapter2Ref = useRef<HTMLDivElement>(null);
   const exploreRef = useRef<HTMLDivElement>(null);
@@ -67,6 +80,20 @@ function App() {
     setShowFaqsPage(false);
     setShowBodaPage(false);
     setShowStoriesPage(false);
+    setShowLoginPage(false);
+    setShowAuthCallback(false);
+    window.history.pushState({}, '', '/');
+    window.scrollTo(0, 0);
+  }, []);
+
+  const handleGoLogin = useCallback(() => {
+    setShowLoginPage(true);
+    setShowAboutPage(false);
+    setShowLegalPage(false);
+    setShowFaqsPage(false);
+    setShowBodaPage(false);
+    setShowStoriesPage(false);
+    window.history.pushState({}, '', '/login');
     window.scrollTo(0, 0);
   }, []);
 
@@ -105,6 +132,25 @@ function App() {
     setShowFaqsPage(false);
     window.scrollTo(0, 0);
   }, []);
+
+  if (showAuthCallback) {
+    return (
+      <ThemeProvider>
+        <AuthCallbackPage
+          onSuccess={handleGoHome}
+          onError={handleGoLogin}
+        />
+      </ThemeProvider>
+    );
+  }
+
+  if (showLoginPage) {
+    return (
+      <ThemeProvider>
+        <LoginPage onBackClick={handleGoHome} />
+      </ThemeProvider>
+    );
+  }
 
   if (showStoriesPage) {
     return (
