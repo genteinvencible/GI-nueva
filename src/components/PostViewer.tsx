@@ -122,28 +122,7 @@ export default function PostViewer({ slug, onBack }: PostViewerProps) {
         </header>
 
         <div
-          className="ghost-content prose prose-lg max-w-none
-            prose-headings:text-[#141210] dark:prose-headings:text-[#f7f3ed]
-            prose-headings:font-bold
-            prose-p:text-[#141210]/80 dark:prose-p:text-[#f7f3ed]/80
-            prose-p:leading-relaxed
-            prose-a:text-[#141210] dark:prose-a:text-[#f7f3ed]
-            prose-a:underline prose-a:underline-offset-2
-            prose-strong:text-[#141210] dark:prose-strong:text-[#f7f3ed]
-            prose-blockquote:border-l-[#141210]/20 dark:prose-blockquote:border-l-[#f7f3ed]/20
-            prose-blockquote:text-[#141210]/70 dark:prose-blockquote:text-[#f7f3ed]/70
-            prose-blockquote:italic
-            prose-img:rounded-xl
-            prose-figcaption:text-[#141210]/50 dark:prose-figcaption:text-[#f7f3ed]/50
-            prose-code:text-[#141210] dark:prose-code:text-[#f7f3ed]
-            prose-code:bg-[#141210]/5 dark:prose-code:bg-[#f7f3ed]/5
-            prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
-            prose-pre:bg-[#141210] dark:prose-pre:bg-[#1c1a17]
-            prose-pre:text-[#f7f3ed]
-            prose-hr:border-[#141210]/10 dark:prose-hr:border-[#f7f3ed]/10
-            prose-ul:text-[#141210]/80 dark:prose-ul:text-[#f7f3ed]/80
-            prose-ol:text-[#141210]/80 dark:prose-ol:text-[#f7f3ed]/80
-            prose-li:marker:text-[#141210]/40 dark:prose-li:marker:text-[#f7f3ed]/40"
+          className="ghost-content"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
 
