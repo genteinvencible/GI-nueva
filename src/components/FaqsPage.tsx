@@ -25,7 +25,7 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
               ¿Esto es un curso?
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              ¿Me ves cara de querer enseñarte algo?
+              ¿Me ves cara de <strong className="font-bold">querer enseñarte algo</strong>?
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors font-bold">
               Ahora en serio:
@@ -40,7 +40,7 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
               Pues porque el Internet de 2015, cuando yo empecé en estos mundillos, era muy diferente.
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              2016-2026 fue la época dorada de los cursos online, pero ahora la cosa ha cambiado.
+              2016-2026 fue la <strong className="font-bold">época dorada de los cursos online</strong>, pero ahora la cosa ha cambiado.
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
               La explicación es interesante, pero no me cabe aquí. Si quieres leerla está en el tercer correo (de los diecisiete) que recibirás si... bueno, ya sabes, lo de tu email.
@@ -64,10 +64,10 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
               Perdón, que se me coló chatgpt.
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              Mis emails no son de IA, ni mucho menos, pero sí que leerás varios con mis extensas andanzas en el tema.
+              Mis emails <strong className="font-bold">no son de IA</strong>, ni mucho menos, pero sí que leerás varios con mis extensas andanzas en el tema.
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              Otro spoiler: para que te den ganas, en otro de los emails verás las cifras de un negocio de IA en el que estoy metido.
+              Otro spoiler: para que te den ganas, en otro de los emails verás <strong className="font-bold">las cifras de un negocio de IA</strong> en el que estoy metido.
             </p>
           </RevealBlock>
 
@@ -79,7 +79,7 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
               El futuro no lo sé, así que solo te puedo decir de qué he escrito los últimos 5 años.
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              Con diferente acierto, pero he escrito sobre Persuasión, Muerte, Dios, Creatividad, Negocios en Internet...
+              Con diferente acierto, pero he escrito sobre <strong className="font-bold">Persuasión, Muerte, Dios, Creatividad, Negocios en Internet</strong>...
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
               También (mucho) de Modelos Mentales, psicología evolutiva e incertidumbre.
@@ -184,7 +184,7 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
               ¿En quéee?
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              Pues en convertir audiencia en producto. O atención en dinero.
+              Pues en <strong className="font-bold">convertir audiencia en producto</strong>. O atención en dinero.
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
               He tenido muchos socios, solo me he peleado con uno, y ahora (2026) vivo bastante tranquilo a las afueras de Oviedo, escribo mucho, de la vida, y hay gente que paga por leer. Lo que me hace pensar que les gusta.
@@ -196,7 +196,7 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
               ¿Me vas a cambiar la vida?
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              No, la vida hay que traerla cambiada de casa.
+              No, <strong className="font-bold">la vida hay que traerla cambiada de casa</strong>.
             </p>
           </RevealBlock>
 
@@ -205,7 +205,7 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
               ¿Qué hay después de los 17 emails gratis?
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              Hay una pasarela de pago. De Stripe, en concreto.
+              Hay una <strong className="font-bold">pasarela de pago</strong>. De Stripe, en concreto.
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
               Para leer los días 18 y 19 (y el 20 también) hay que sacar la tarjeta.
@@ -232,7 +232,7 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
               Sí, y muchos, pero ¿sabes qué pasa? que con los testimonios ha pasado lo mismo que con los cursos. Tuvieron su prime a la vez que Messi y Cristiano, pero ya han quedado para ligas menores.
             </p>
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              Que yo te ponga una foto y una frase de alguien que está feliz de pagarme por leer, tiene un problema: que esa persona no es tú.
+              Que yo te ponga una foto y una frase de alguien que está feliz de pagarme por leer, tiene un problema: <strong className="font-bold">que esa persona no es tú</strong>.
             </p>
           </RevealBlock>
 
