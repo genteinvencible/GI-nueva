@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { ArrowLeft, BookOpen, LogOut, Loader2, ChevronRight } from 'lucide-react';
+import { useState, useEffect, useMemo } from 'react';
+import { ArrowLeft, BookOpen, LogOut, Loader2, ChevronRight, Search, X } from 'lucide-react';
 
 interface MemberContentPageProps {
   onBackClick: () => void;
@@ -31,6 +31,7 @@ export default function MemberContentPage({ onBackClick, onLoginClick, onPostCli
   const [session, setSession] = useState<Session | null>(null);
   const [posts, setPosts] = useState<GhostPost[]>([]);
   const [loading, setLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     const storedSession = localStorage.getItem('gi_session');
@@ -84,6 +85,16 @@ export default function MemberContentPage({ onBackClick, onLoginClick, onPostCli
   const handleReadPost = (slug: string) => {
     onPostClick(slug);
   };
+
+  const filteredPosts = useMemo(() => {
+    if (!searchQuery.trim()) return posts;
+    const query = searchQuery.toLowerCase().trim();
+    return posts.filter(
+      (post) =>
+        post.title.toLowerCase().includes(query) ||
+        (post.excerpt && post.excerpt.toLowerCase().includes(query))
+    );
+  }, [posts, searchQuery]);
 
   if (loading) {
     return (
@@ -164,23 +175,56 @@ export default function MemberContentPage({ onBackClick, onLoginClick, onPostCli
           <h1 className="text-3xl md:text-4xl font-bold text-[#141210] dark:text-[#f7f3ed] mb-4">
             Tu biblioteca
           </h1>
-          <p className="text-[#141210]/60 dark:text-[#f7f3ed]/60 text-lg">
+          <p className="text-[#141210]/60 dark:text-[#f7f3ed]/60 text-lg mb-8">
             Contenido exclusivo para miembros de Gente Invencible
           </p>
+
+          <div className="relative max-w-md">
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#141210]/40 dark:text-[#f7f3ed]/40" />
+            <input
+              type="text"
+              placeholder="Buscar articulos..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-12 pr-10 py-3 bg-white dark:bg-[#1c1a17] border border-[#141210]/10 dark:border-[#f7f3ed]/10 rounded-xl text-[#141210] dark:text-[#f7f3ed] placeholder-[#141210]/40 dark:placeholder-[#f7f3ed]/40 focus:outline-none focus:border-[#141210]/30 dark:focus:border-[#f7f3ed]/30 transition-colors"
+            />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery('')}
+                className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-[#141210]/40 dark:text-[#f7f3ed]/40 hover:text-[#141210]/70 dark:hover:text-[#f7f3ed]/70 transition-colors"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            )}
+          </div>
         </div>
 
-        {posts.length === 0 ? (
+        {filteredPosts.length === 0 ? (
           <div className="text-center py-20">
             <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[#141210]/5 dark:bg-[#f7f3ed]/5 flex items-center justify-center">
-              <BookOpen className="w-8 h-8 text-[#141210]/40 dark:text-[#f7f3ed]/40" />
+              {searchQuery ? (
+                <Search className="w-8 h-8 text-[#141210]/40 dark:text-[#f7f3ed]/40" />
+              ) : (
+                <BookOpen className="w-8 h-8 text-[#141210]/40 dark:text-[#f7f3ed]/40" />
+              )}
             </div>
             <p className="text-[#141210]/60 dark:text-[#f7f3ed]/60">
-              Pronto habra contenido aqui. Vuelve mas tarde.
+              {searchQuery
+                ? `No se encontraron articulos para "${searchQuery}"`
+                : 'Pronto habra contenido aqui. Vuelve mas tarde.'}
             </p>
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery('')}
+                className="mt-4 text-sm text-[#141210]/70 dark:text-[#f7f3ed]/70 hover:text-[#141210] dark:hover:text-[#f7f3ed] underline underline-offset-4 transition-colors"
+              >
+                Limpiar busqueda
+              </button>
+            )}
           </div>
         ) : (
           <div className="grid gap-8 md:grid-cols-2">
-            {posts.map((post) => (
+            {filteredPosts.map((post) => (
               <article
                 key={post.id}
                 onClick={() => handleReadPost(post.slug)}
