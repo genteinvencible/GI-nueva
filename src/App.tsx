@@ -14,6 +14,7 @@ import BodaPage from './components/BodaPage';
 import StoriesPage from './components/StoriesPage';
 import LoginPage from './components/LoginPage';
 import MemberContentPage from './components/MemberContentPage';
+import AuthCallbackPage from './components/AuthCallbackPage';
 import { useBannerSystem } from './hooks/useBannerSystem';
 
 function App() {
@@ -30,10 +31,22 @@ function App() {
   const [showStoriesPage, setShowStoriesPage] = useState(false);
   const [showLoginPage, setShowLoginPage] = useState(false);
   const [showMemberContent, setShowMemberContent] = useState(false);
+  const [showAuthCallback, setShowAuthCallback] = useState(false);
+  const [authToken, setAuthToken] = useState<string | null>(null);
 
   useEffect(() => {
     const path = window.location.pathname;
-    if (path === '/login') {
+    const searchParams = new URLSearchParams(window.location.search);
+
+    if (path === '/auth/callback') {
+      const token = searchParams.get('token');
+      if (token) {
+        setAuthToken(token);
+        setShowAuthCallback(true);
+      } else {
+        window.location.href = '/login';
+      }
+    } else if (path === '/login') {
       setShowLoginPage(true);
     } else if (path === '/miembros') {
       setShowMemberContent(true);
@@ -82,6 +95,8 @@ function App() {
     setShowStoriesPage(false);
     setShowLoginPage(false);
     setShowMemberContent(false);
+    setShowAuthCallback(false);
+    setAuthToken(null);
     window.history.pushState({}, '', '/');
     window.scrollTo(0, 0);
   }, []);
@@ -94,6 +109,8 @@ function App() {
     setShowBodaPage(false);
     setShowStoriesPage(false);
     setShowMemberContent(false);
+    setShowAuthCallback(false);
+    setAuthToken(null);
     window.history.pushState({}, '', '/login');
     window.scrollTo(0, 0);
   }, []);
@@ -106,6 +123,8 @@ function App() {
     setShowFaqsPage(false);
     setShowBodaPage(false);
     setShowStoriesPage(false);
+    setShowAuthCallback(false);
+    setAuthToken(null);
     window.history.pushState({}, '', '/miembros');
     window.scrollTo(0, 0);
   }, []);
@@ -145,6 +164,29 @@ function App() {
     setShowFaqsPage(false);
     window.scrollTo(0, 0);
   }, []);
+
+  const handleAuthSuccess = useCallback(() => {
+    setShowAuthCallback(false);
+    setAuthToken(null);
+    setShowMemberContent(true);
+    window.history.pushState({}, '', '/miembros');
+  }, []);
+
+  const handleAuthError = useCallback(() => {
+    console.log('Auth error occurred');
+  }, []);
+
+  if (showAuthCallback && authToken) {
+    return (
+      <ThemeProvider>
+        <AuthCallbackPage
+          token={authToken}
+          onSuccess={handleAuthSuccess}
+          onError={handleAuthError}
+        />
+      </ThemeProvider>
+    );
+  }
 
   if (showLoginPage) {
     return (

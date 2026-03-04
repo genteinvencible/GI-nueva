@@ -1,52 +1,226 @@
-import { ArrowLeft, ExternalLink, BookOpen } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { ArrowLeft, BookOpen, LogOut, Loader2, ExternalLink } from 'lucide-react';
 
 interface MemberContentPageProps {
   onBackClick: () => void;
   onLoginClick: () => void;
 }
 
-const GHOST_URL = 'https://leer.genteinvencible.com';
+interface Session {
+  token: string;
+  email: string;
+  ghostMemberId: string;
+  expiresAt: string;
+}
 
-export default function MemberContentPage({ onBackClick }: MemberContentPageProps) {
-  const handleGoToGhost = () => {
-    window.location.href = GHOST_URL;
+interface GhostPost {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  feature_image: string | null;
+  published_at: string;
+  reading_time: number;
+}
+
+const GHOST_URL = 'https://leer.genteinvencible.com';
+const GHOST_CONTENT_KEY = '2e5f4a5ac17dc61827938b0776';
+
+export default function MemberContentPage({ onBackClick, onLoginClick }: MemberContentPageProps) {
+  const [session, setSession] = useState<Session | null>(null);
+  const [posts, setPosts] = useState<GhostPost[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const storedSession = localStorage.getItem('gi_session');
+    if (storedSession) {
+      try {
+        const parsed = JSON.parse(storedSession);
+        if (new Date(parsed.expiresAt) > new Date()) {
+          setSession(parsed);
+        } else {
+          localStorage.removeItem('gi_session');
+        }
+      } catch {
+        localStorage.removeItem('gi_session');
+      }
+    }
+    setLoading(false);
+  }, []);
+
+  useEffect(() => {
+    if (!session) return;
+
+    const fetchPosts = async () => {
+      try {
+        const response = await fetch(
+          `${GHOST_URL}/ghost/api/content/posts/?key=${GHOST_CONTENT_KEY}&include=tags&filter=visibility:members&limit=20`
+        );
+        if (response.ok) {
+          const data = await response.json();
+          setPosts(data.posts || []);
+        }
+      } catch (err) {
+        console.error('Error fetching posts:', err);
+      }
+    };
+
+    fetchPosts();
+  }, [session]);
+
+  const handleLogout = () => {
+    localStorage.removeItem('gi_session');
+    setSession(null);
+    onLoginClick();
   };
 
+  const handleReadPost = (slug: string) => {
+    window.open(`${GHOST_URL}/${slug}/`, '_blank');
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-[#f7f3ed] dark:bg-[#141210] flex items-center justify-center">
+        <Loader2 className="w-8 h-8 text-[#141210] dark:text-[#f7f3ed] animate-spin" />
+      </div>
+    );
+  }
+
+  if (!session) {
+    return (
+      <div className="min-h-screen bg-[#f7f3ed] dark:bg-[#141210] flex flex-col">
+        <header className="p-6 md:p-8">
+          <button
+            onClick={onBackClick}
+            className="flex items-center gap-2 text-[#141210]/60 dark:text-[#f7f3ed]/60 hover:text-[#141210] dark:hover:text-[#f7f3ed] transition-colors"
+          >
+            <ArrowLeft className="w-5 h-5" />
+            <span className="text-sm font-normal">Volver</span>
+          </button>
+        </header>
+
+        <main className="flex-1 flex items-center justify-center px-6 pb-20">
+          <div className="text-center max-w-lg">
+            <div className="w-20 h-20 mx-auto mb-8 rounded-full bg-[#141210]/5 dark:bg-[#f7f3ed]/5 flex items-center justify-center">
+              <BookOpen className="w-10 h-10 text-[#141210]/60 dark:text-[#f7f3ed]/60" />
+            </div>
+
+            <h1 className="text-3xl md:text-4xl font-bold text-[#141210] dark:text-[#f7f3ed] mb-4">
+              Contenido exclusivo
+            </h1>
+
+            <p className="text-[#141210]/70 dark:text-[#f7f3ed]/70 text-lg mb-10 leading-relaxed">
+              Accede con tu cuenta de miembro para ver articulos exclusivos, historias y mas contenido.
+            </p>
+
+            <button
+              onClick={onLoginClick}
+              className="px-8 py-4 bg-[#141210] dark:bg-[#f7f3ed] text-[#f7f3ed] dark:text-[#141210] font-bold rounded-xl hover:opacity-90 transition-all"
+            >
+              Iniciar sesion
+            </button>
+          </div>
+        </main>
+      </div>
+    );
+  }
+
   return (
-    <div className="min-h-screen bg-[#f7f3ed] dark:bg-[#141210] flex flex-col">
-      <header className="p-6 md:p-8">
-        <button
-          onClick={onBackClick}
-          className="flex items-center gap-2 text-[#141210]/60 dark:text-[#f7f3ed]/60 hover:text-[#141210] dark:hover:text-[#f7f3ed] transition-colors"
-        >
-          <ArrowLeft className="w-5 h-5" />
-          <span className="text-sm font-normal">Volver</span>
-        </button>
+    <div className="min-h-screen bg-[#f7f3ed] dark:bg-[#141210]">
+      <header className="sticky top-0 z-40 bg-[#f7f3ed]/95 dark:bg-[#141210]/95 backdrop-blur-sm border-b border-[#141210]/5 dark:border-[#f7f3ed]/5">
+        <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+          <button
+            onClick={onBackClick}
+            className="flex items-center gap-2 text-[#141210]/60 dark:text-[#f7f3ed]/60 hover:text-[#141210] dark:hover:text-[#f7f3ed] transition-colors"
+          >
+            <ArrowLeft className="w-5 h-5" />
+            <span className="text-sm font-normal hidden sm:inline">Volver</span>
+          </button>
+
+          <div className="flex items-center gap-4">
+            <span className="text-sm text-[#141210]/60 dark:text-[#f7f3ed]/60 hidden sm:inline">
+              {session.email}
+            </span>
+            <button
+              onClick={handleLogout}
+              className="flex items-center gap-2 px-4 py-2 text-sm text-[#141210]/70 dark:text-[#f7f3ed]/70 hover:text-[#141210] dark:hover:text-[#f7f3ed] border border-[#141210]/10 dark:border-[#f7f3ed]/10 rounded-lg hover:border-[#141210]/20 dark:hover:border-[#f7f3ed]/20 transition-all"
+            >
+              <LogOut className="w-4 h-4" />
+              <span className="hidden sm:inline">Cerrar sesion</span>
+            </button>
+          </div>
+        </div>
       </header>
 
-      <main className="flex-1 flex items-center justify-center px-6 pb-20">
-        <div className="text-center max-w-lg">
-          <div className="w-20 h-20 mx-auto mb-8 rounded-full bg-[#141210]/5 dark:bg-[#f7f3ed]/5 flex items-center justify-center">
-            <BookOpen className="w-10 h-10 text-[#141210]/60 dark:text-[#f7f3ed]/60" />
-          </div>
-
+      <main className="max-w-5xl mx-auto px-6 py-12">
+        <div className="mb-12">
           <h1 className="text-3xl md:text-4xl font-bold text-[#141210] dark:text-[#f7f3ed] mb-4">
-            Contenido exclusivo
+            Tu biblioteca
           </h1>
-
-          <p className="text-[#141210]/70 dark:text-[#f7f3ed]/70 text-lg mb-10 leading-relaxed">
-            Todo el contenido exclusivo para miembros esta disponible en nuestra plataforma de lectura.
-            Accede con tu cuenta para disfrutar de articulos, historias y mas.
+          <p className="text-[#141210]/60 dark:text-[#f7f3ed]/60 text-lg">
+            Contenido exclusivo para miembros de Gente Invencible
           </p>
-
-          <button
-            onClick={handleGoToGhost}
-            className="px-8 py-4 bg-[#141210] dark:bg-[#f7f3ed] text-[#f7f3ed] dark:text-[#141210] font-bold rounded-xl hover:opacity-90 transition-all inline-flex items-center gap-3"
-          >
-            Ir a leer.genteinvencible.com
-            <ExternalLink className="w-5 h-5" />
-          </button>
         </div>
+
+        {posts.length === 0 ? (
+          <div className="text-center py-20">
+            <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[#141210]/5 dark:bg-[#f7f3ed]/5 flex items-center justify-center">
+              <BookOpen className="w-8 h-8 text-[#141210]/40 dark:text-[#f7f3ed]/40" />
+            </div>
+            <p className="text-[#141210]/60 dark:text-[#f7f3ed]/60">
+              Pronto habra contenido aqui. Vuelve mas tarde.
+            </p>
+          </div>
+        ) : (
+          <div className="grid gap-8 md:grid-cols-2">
+            {posts.map((post) => (
+              <article
+                key={post.id}
+                onClick={() => handleReadPost(post.slug)}
+                className="group cursor-pointer bg-white dark:bg-[#1c1a17] rounded-2xl overflow-hidden border border-[#141210]/5 dark:border-[#f7f3ed]/5 hover:border-[#141210]/10 dark:hover:border-[#f7f3ed]/10 transition-all hover:shadow-lg"
+              >
+                {post.feature_image && (
+                  <div className="aspect-[16/9] overflow-hidden">
+                    <img
+                      src={post.feature_image}
+                      alt={post.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                )}
+                <div className="p-6">
+                  <div className="flex items-center gap-3 text-sm text-[#141210]/50 dark:text-[#f7f3ed]/50 mb-3">
+                    <span>
+                      {new Date(post.published_at).toLocaleDateString('es-ES', {
+                        day: 'numeric',
+                        month: 'short',
+                        year: 'numeric',
+                      })}
+                    </span>
+                    {post.reading_time && (
+                      <>
+                        <span>•</span>
+                        <span>{post.reading_time} min</span>
+                      </>
+                    )}
+                  </div>
+                  <h2 className="text-xl font-bold text-[#141210] dark:text-[#f7f3ed] mb-3 group-hover:opacity-80 transition-opacity">
+                    {post.title}
+                  </h2>
+                  {post.excerpt && (
+                    <p className="text-[#141210]/60 dark:text-[#f7f3ed]/60 line-clamp-2">
+                      {post.excerpt}
+                    </p>
+                  )}
+                  <div className="mt-4 flex items-center gap-2 text-sm font-medium text-[#141210] dark:text-[#f7f3ed] opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span>Leer</span>
+                    <ExternalLink className="w-4 h-4" />
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        )}
       </main>
     </div>
   );
