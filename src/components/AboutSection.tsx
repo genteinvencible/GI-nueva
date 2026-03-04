@@ -51,7 +51,7 @@ const AboutSection = forwardRef<HTMLButtonElement, AboutSectionProps>(
 
             <RevealBlock as="p" className="text-[1.125rem] text-neutral-800 dark:text-white leading-snug transition-colors" delay={0.4}>
               {'Yo escribo todos los d\u00EDas y otras personas (que no son yo) '}
-              <strong>{'pagan para leer'}</strong>
+              <strong>{'pagan por leer'}</strong>
               {'.'}
             </RevealBlock>
 
