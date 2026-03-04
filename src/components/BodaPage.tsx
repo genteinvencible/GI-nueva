@@ -623,7 +623,7 @@ export default function BodaPage({ onBack }: BodaPageProps) {
             Si has llegado hasta aquí, quizá te interese saber que escribo emails todos los días. Algunos de bodas, otros no. Puedes probar 17 gratis:
           </p>
           <div className="pt-2">
-            <EmailSubscriptionForm isOpen={true} hideIntroText={true} hideSpamText={true} />
+            <EmailSubscriptionForm isOpen={true} hideIntroText={true} hideSpamText={true} autoScrollOnOpen={false} />
           </div>
         </RevealBlock>
       </div>
