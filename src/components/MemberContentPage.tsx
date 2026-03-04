@@ -24,7 +24,8 @@ interface GhostPost {
 }
 
 const GHOST_URL = 'https://leer.genteinvencible.com';
-const GHOST_CONTENT_KEY = '2e5f4a5ac17dc61827938b0776';
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
+const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 export default function MemberContentPage({ onBackClick, onLoginClick }: MemberContentPageProps) {
   const [session, setSession] = useState<Session | null>(null);
@@ -54,7 +55,13 @@ export default function MemberContentPage({ onBackClick, onLoginClick }: MemberC
     const fetchPosts = async () => {
       try {
         const response = await fetch(
-          `${GHOST_URL}/ghost/api/content/posts/?key=${GHOST_CONTENT_KEY}&include=tags&filter=visibility:members&limit=20`
+          `${SUPABASE_URL}/functions/v1/ghost-content?filter=visibility:members&limit=20`,
+          {
+            headers: {
+              'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+              'Content-Type': 'application/json',
+            },
+          }
         );
         if (response.ok) {
           const data = await response.json();
