@@ -260,7 +260,7 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
               </button>
               <button
                 onClick={() => setShowMequetrefeModal(true)}
-                className="px-6 py-3 bg-neutral-200 text-neutral-800 text-base font-medium rounded hover:bg-neutral-300 dark:bg-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-600 transition-all duration-200 cursor-pointer active:scale-[0.98] shadow-sm hover:shadow-md"
+                className="px-6 py-3 bg-neutral-200 text-neutral-800 text-base font-medium rounded hover:bg-neutral-300 dark:bg-neutral-700 dark:text-neutral-200 dark:hover:bg-neutral-600 transition-all duration-200 cursor-pointer active:scale-[0.98] shadow-sm hover:shadow-md rotate-180"
               >
                 Eres un mequetrefe
               </button>
