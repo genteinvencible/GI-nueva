@@ -15,6 +15,7 @@ import StoriesPage from './components/StoriesPage';
 import LoginPage from './components/LoginPage';
 import MemberContentPage from './components/MemberContentPage';
 import AuthCallbackPage from './components/AuthCallbackPage';
+import PostDetailPage from './components/PostDetailPage';
 import { useBannerSystem } from './hooks/useBannerSystem';
 
 function App() {
@@ -33,6 +34,8 @@ function App() {
   const [showMemberContent, setShowMemberContent] = useState(false);
   const [showAuthCallback, setShowAuthCallback] = useState(false);
   const [authToken, setAuthToken] = useState<string | null>(null);
+  const [showPostDetail, setShowPostDetail] = useState(false);
+  const [currentPostSlug, setCurrentPostSlug] = useState<string | null>(null);
 
   useEffect(() => {
     const path = window.location.pathname;
@@ -50,6 +53,12 @@ function App() {
       setShowLoginPage(true);
     } else if (path === '/miembros') {
       setShowMemberContent(true);
+    } else if (path.startsWith('/miembros/')) {
+      const slug = path.replace('/miembros/', '');
+      if (slug) {
+        setCurrentPostSlug(slug);
+        setShowPostDetail(true);
+      }
     }
   }, []);
 
@@ -96,6 +105,8 @@ function App() {
     setShowLoginPage(false);
     setShowMemberContent(false);
     setShowAuthCallback(false);
+    setShowPostDetail(false);
+    setCurrentPostSlug(null);
     setAuthToken(null);
     window.history.pushState({}, '', '/');
     window.scrollTo(0, 0);
@@ -124,8 +135,18 @@ function App() {
     setShowBodaPage(false);
     setShowStoriesPage(false);
     setShowAuthCallback(false);
+    setShowPostDetail(false);
+    setCurrentPostSlug(null);
     setAuthToken(null);
     window.history.pushState({}, '', '/miembros');
+    window.scrollTo(0, 0);
+  }, []);
+
+  const handleGoPostDetail = useCallback((slug: string) => {
+    setCurrentPostSlug(slug);
+    setShowPostDetail(true);
+    setShowMemberContent(false);
+    window.history.pushState({}, '', `/miembros/${slug}`);
     window.scrollTo(0, 0);
   }, []);
 
@@ -196,12 +217,24 @@ function App() {
     );
   }
 
+  if (showPostDetail && currentPostSlug) {
+    return (
+      <ThemeProvider>
+        <PostDetailPage
+          slug={currentPostSlug}
+          onBackClick={handleGoMemberContent}
+        />
+      </ThemeProvider>
+    );
+  }
+
   if (showMemberContent) {
     return (
       <ThemeProvider>
         <MemberContentPage
           onBackClick={handleGoHome}
           onLoginClick={handleGoLogin}
+          onPostClick={handleGoPostDetail}
         />
       </ThemeProvider>
     );
