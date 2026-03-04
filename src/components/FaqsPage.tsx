@@ -116,18 +116,20 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
             </button>
             {showPrincipe && (
               <div className="my-6 animate-fade-in">
-                <img
-                  src="/Assests/alvaro_principe_nigeriano_low.png"
-                  alt="Alvaro principe nigeriano"
-                  className="rounded-lg shadow-md max-w-full md:max-w-md"
-                />
+                <figure>
+                  <img
+                    src="/Assests/alvaro_principe_nigeriano_low.png"
+                    alt="Alvaro principe nigeriano"
+                    className="rounded-lg shadow-md max-w-full md:max-w-md"
+                  />
+                  <figcaption className="mt-2 text-sm text-neutral-500 dark:text-neutral-400 italic">
+                    El nivel ya lo conocías.
+                  </figcaption>
+                </figure>
               </div>
             )}
             <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
               Y la otra ya sabes cuál.
-            </p>
-            <p className="text-[1.1rem] lg:text-[1.15rem] text-neutral-700 dark:text-neutral-200 leading-[1.6] transition-colors">
-              El nivel ya lo conocías.
             </p>
           </RevealBlock>
 
