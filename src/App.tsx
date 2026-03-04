@@ -172,7 +172,7 @@ function App() {
           visible={chapter2Visible}
           onExploreClick={handleRevealExplore}
         />
-        <ExploreOptionsSection ref={exploreRef} visible={exploreVisible} onBodaClick={handleGoBoda} />
+        <ExploreOptionsSection ref={exploreRef} visible={exploreVisible} onBodaClick={handleGoBoda} onAboutClick={handleGoAbout} onFaqsClick={handleGoFaqs} />
 
         {exploreVisible && <Footer onLegalClick={() => setShowLegalPage(true)} />}
 

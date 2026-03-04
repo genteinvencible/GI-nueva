@@ -9,6 +9,8 @@ import RevealBlock from './RevealBlock';
 interface ExploreOptionsSectionProps {
   visible: boolean;
   onBodaClick?: () => void;
+  onAboutClick?: () => void;
+  onFaqsClick?: () => void;
 }
 
 const cards = [
@@ -47,7 +49,7 @@ const cards = [
 ];
 
 const ExploreOptionsSection = forwardRef<HTMLDivElement, ExploreOptionsSectionProps>(
-  ({ visible, onBodaClick }, ref) => {
+  ({ visible, onBodaClick, onAboutClick, onFaqsClick }, ref) => {
     const [emailModalSource, setEmailModalSource] = useState<string | null>(null);
 
     if (!visible) return null;
@@ -120,8 +122,13 @@ const ExploreOptionsSection = forwardRef<HTMLDivElement, ExploreOptionsSectionPr
             {cards.map((card) => (
               <a
                 key={card.id}
-                href={card.id === 'boda' ? undefined : card.href}
-                onClick={card.id === 'boda' ? (e) => { e.preventDefault(); onBodaClick?.(); } : undefined}
+                href={undefined}
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (card.id === 'about') onAboutClick?.();
+                  else if (card.id === 'faq') onFaqsClick?.();
+                  else if (card.id === 'boda') onBodaClick?.();
+                }}
                 className="editorial-card group flex flex-col border border-neutral-300 dark:border-neutral-600 bg-[#faf8f4] dark:bg-[#1a1816] hover:shadow-lg dark:hover:shadow-black/40 transition-all duration-300 overflow-hidden cursor-pointer"
               >
                 <div className="overflow-hidden">
