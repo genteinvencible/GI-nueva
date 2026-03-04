@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { ArrowLeft, BookOpen, LogOut, Loader2, ArrowRight, CreditCard, ExternalLink } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { ArrowLeft, BookOpen, LogOut, Loader2, ArrowRight, CreditCard, ExternalLink, User, ChevronDown } from 'lucide-react';
 import PostViewer from './PostViewer';
 
 interface MemberContentPageProps {
@@ -41,6 +41,18 @@ export default function MemberContentPage({ onBackClick, onLoginClick }: MemberC
   const [selectedPostSlug, setSelectedPostSlug] = useState<string | null>(null);
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const [portalLoading, setPortalLoading] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   useEffect(() => {
     const storedSession = localStorage.getItem('gi_session');
@@ -193,30 +205,56 @@ export default function MemberContentPage({ onBackClick, onLoginClick }: MemberC
             <span className="text-sm font-normal hidden sm:inline">Volver</span>
           </button>
 
-          <div className="flex items-center gap-3">
-            <span className="text-sm text-[#141210]/60 dark:text-[#f7f3ed]/60 hidden lg:inline">
-              {session.email}
-            </span>
+          <div className="relative" ref={menuRef}>
             <button
-              onClick={handleManageSubscription}
-              disabled={portalLoading}
-              className="flex items-center gap-2 px-4 py-2 text-sm text-[#141210]/70 dark:text-[#f7f3ed]/70 hover:text-[#141210] dark:hover:text-[#f7f3ed] border border-[#141210]/10 dark:border-[#f7f3ed]/10 rounded-lg hover:border-[#141210]/20 dark:hover:border-[#f7f3ed]/20 transition-all disabled:opacity-50"
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="flex items-center gap-2 px-3 py-2 text-sm text-[#141210]/70 dark:text-[#f7f3ed]/70 hover:text-[#141210] dark:hover:text-[#f7f3ed] border border-[#141210]/10 dark:border-[#f7f3ed]/10 rounded-lg hover:border-[#141210]/20 dark:hover:border-[#f7f3ed]/20 transition-all"
             >
-              {portalLoading ? (
-                <Loader2 className="w-4 h-4 animate-spin" />
-              ) : (
-                <CreditCard className="w-4 h-4" />
-              )}
-              <span className="hidden sm:inline">Suscripcion</span>
-              <ExternalLink className="w-3 h-3 hidden sm:inline opacity-50" />
+              <User className="w-4 h-4" />
+              <span className="hidden sm:inline max-w-[120px] truncate">{session.email.split('@')[0]}</span>
+              <ChevronDown className={`w-4 h-4 transition-transform ${menuOpen ? 'rotate-180' : ''}`} />
             </button>
-            <button
-              onClick={handleLogout}
-              className="flex items-center gap-2 px-4 py-2 text-sm text-[#141210]/70 dark:text-[#f7f3ed]/70 hover:text-[#141210] dark:hover:text-[#f7f3ed] border border-[#141210]/10 dark:border-[#f7f3ed]/10 rounded-lg hover:border-[#141210]/20 dark:hover:border-[#f7f3ed]/20 transition-all"
-            >
-              <LogOut className="w-4 h-4" />
-              <span className="hidden sm:inline">Salir</span>
-            </button>
+
+            {menuOpen && (
+              <div className="absolute right-0 top-full mt-2 w-64 bg-white dark:bg-[#1c1a17] border border-[#141210]/10 dark:border-[#f7f3ed]/10 rounded-xl shadow-xl overflow-hidden z-50">
+                <div className="px-4 py-3 border-b border-[#141210]/5 dark:border-[#f7f3ed]/5">
+                  <p className="text-xs text-[#141210]/50 dark:text-[#f7f3ed]/50">Conectado como</p>
+                  <p className="text-sm text-[#141210] dark:text-[#f7f3ed] font-medium truncate">{session.email}</p>
+                </div>
+
+                <div className="py-2">
+                  <button
+                    onClick={() => {
+                      setMenuOpen(false);
+                      handleManageSubscription();
+                    }}
+                    disabled={portalLoading}
+                    className="w-full flex items-center gap-3 px-4 py-2.5 text-sm text-[#141210]/70 dark:text-[#f7f3ed]/70 hover:bg-[#141210]/5 dark:hover:bg-[#f7f3ed]/5 hover:text-[#141210] dark:hover:text-[#f7f3ed] transition-colors disabled:opacity-50"
+                  >
+                    {portalLoading ? (
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                    ) : (
+                      <CreditCard className="w-4 h-4" />
+                    )}
+                    <span>Gestionar suscripcion</span>
+                    <ExternalLink className="w-3 h-3 ml-auto opacity-50" />
+                  </button>
+                </div>
+
+                <div className="border-t border-[#141210]/5 dark:border-[#f7f3ed]/5 py-2">
+                  <button
+                    onClick={() => {
+                      setMenuOpen(false);
+                      handleLogout();
+                    }}
+                    className="w-full flex items-center gap-3 px-4 py-2.5 text-sm text-[#141210]/70 dark:text-[#f7f3ed]/70 hover:bg-[#141210]/5 dark:hover:bg-[#f7f3ed]/5 hover:text-[#141210] dark:hover:text-[#f7f3ed] transition-colors"
+                  >
+                    <LogOut className="w-4 h-4" />
+                    <span>Cerrar sesion</span>
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </header>
