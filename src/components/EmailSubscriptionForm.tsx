@@ -25,6 +25,14 @@ export default function EmailSubscriptionForm({
 
   const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
+  useEffect(() => {
+    if (isOpen && containerRef.current) {
+      setTimeout(() => {
+        containerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 100);
+    }
+  }, [isOpen]);
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
