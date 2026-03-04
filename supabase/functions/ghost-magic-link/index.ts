@@ -89,12 +89,17 @@ Deno.serve(async (req: Request) => {
   }
 
   try {
-    const ghostUrl = Deno.env.get('GHOST_URL');
+    let ghostUrl = Deno.env.get('GHOST_URL');
     const ghostAdminKey = Deno.env.get('GHOST_ADMIN_KEY');
 
     if (!ghostUrl || !ghostAdminKey) {
       throw new Error('Ghost configuration missing');
     }
+
+    if (!ghostUrl.startsWith('http://') && !ghostUrl.startsWith('https://')) {
+      ghostUrl = `https://${ghostUrl}`;
+    }
+    ghostUrl = ghostUrl.replace(/\/$/, '');
 
     const { email }: RequestPayload = await req.json();
 

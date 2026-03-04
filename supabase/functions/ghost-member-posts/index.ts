@@ -52,7 +52,7 @@ Deno.serve(async (req: Request) => {
   }
 
   try {
-    const ghostUrl = Deno.env.get('GHOST_URL');
+    let ghostUrl = Deno.env.get('GHOST_URL');
     const ghostAdminKey = Deno.env.get('GHOST_ADMIN_KEY');
     const supabaseUrl = Deno.env.get('SUPABASE_URL');
     const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
@@ -60,6 +60,11 @@ Deno.serve(async (req: Request) => {
     if (!ghostUrl || !ghostAdminKey || !supabaseUrl || !supabaseServiceKey) {
       throw new Error('Configuration missing');
     }
+
+    if (!ghostUrl.startsWith('http://') && !ghostUrl.startsWith('https://')) {
+      ghostUrl = `https://${ghostUrl}`;
+    }
+    ghostUrl = ghostUrl.replace(/\/$/, '');
 
     const sessionToken = req.headers.get('X-Session-Token');
 
