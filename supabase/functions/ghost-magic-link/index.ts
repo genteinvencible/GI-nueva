@@ -47,9 +47,22 @@ function createGhostAdminToken(key: string): string {
 async function createGhostAdminTokenAsync(key: string): Promise<string> {
   const [id, secret] = key.split(':');
 
-  const base64url = (input: ArrayBuffer | string) => {
-    const str = typeof input === 'string' ? input : String.fromCharCode(...new Uint8Array(input));
-    return btoa(str).replace(/\+/g, '-').replace(/\//g, '_').replace(/=/g, '');
+  if (!id || !secret) {
+    throw new Error('Invalid Ghost Admin Key format. Expected format: id:secret');
+  }
+
+  const base64urlEncode = (data: Uint8Array): string => {
+    let binary = '';
+    for (let i = 0; i < data.length; i++) {
+      binary += String.fromCharCode(data[i]);
+    }
+    return btoa(binary).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+  };
+
+  const textToBase64url = (text: string): string => {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(text);
+    return base64urlEncode(data);
   };
 
   const header = { alg: 'HS256', typ: 'JWT', kid: id };
@@ -60,22 +73,31 @@ async function createGhostAdminTokenAsync(key: string): Promise<string> {
     aud: '/admin/'
   };
 
-  const headerB64 = base64url(JSON.stringify(header));
-  const payloadB64 = base64url(JSON.stringify(payload));
+  const headerB64 = textToBase64url(JSON.stringify(header));
+  const payloadB64 = textToBase64url(JSON.stringify(payload));
   const message = `${headerB64}.${payloadB64}`;
 
-  const keyData = new Uint8Array(secret.match(/.{1,2}/g)!.map(byte => parseInt(byte, 16)));
+  const secretBytes = new Uint8Array(
+    secret.match(/.{1,2}/g)!.map(byte => parseInt(byte, 16))
+  );
 
   const cryptoKey = await crypto.subtle.importKey(
     'raw',
-    keyData,
+    secretBytes,
     { name: 'HMAC', hash: 'SHA-256' },
     false,
     ['sign']
   );
 
-  const signature = await crypto.subtle.sign('HMAC', cryptoKey, new TextEncoder().encode(message));
-  const signatureB64 = base64url(signature);
+  const signatureBuffer = await crypto.subtle.sign(
+    'HMAC',
+    cryptoKey,
+    new TextEncoder().encode(message)
+  );
+
+  const signatureB64 = base64urlEncode(new Uint8Array(signatureBuffer));
+
+  console.log('Generated JWT with kid:', id);
 
   return `${message}.${signatureB64}`;
 }
