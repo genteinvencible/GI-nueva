@@ -63,9 +63,43 @@ async function createGhostAdminTokenAsync(key: string): Promise<string> {
 
   const signatureB64 = base64urlEncode(new Uint8Array(signatureBuffer));
 
-  console.log('Generated JWT with kid:', id);
-
   return `${message}.${signatureB64}`;
+}
+
+async function sendEmail(to: string, subject: string, html: string): Promise<boolean> {
+  const resendApiKey = Deno.env.get('RESEND_API_KEY');
+
+  if (!resendApiKey) {
+    console.log('RESEND_API_KEY not configured, skipping email');
+    return false;
+  }
+
+  try {
+    const response = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${resendApiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: 'Carmen & Alvaro <noreply@labodadealvarocarmen.com>',
+        to: [to],
+        subject: subject,
+        html: html,
+      }),
+    });
+
+    if (!response.ok) {
+      const error = await response.text();
+      console.error('Resend API error:', error);
+      return false;
+    }
+
+    return true;
+  } catch (error) {
+    console.error('Error sending email:', error);
+    return false;
+  }
 }
 
 Deno.serve(async (req: Request) => {
@@ -104,7 +138,7 @@ Deno.serve(async (req: Request) => {
 
     const token = await createGhostAdminTokenAsync(ghostAdminKey);
 
-    const apiUrl = `${ghostUrl}/ghost/api/admin/members/?filter=email:'${email}'`;
+    const apiUrl = `${ghostUrl}/ghost/api/admin/members/?filter=email:'${encodeURIComponent(email)}'`;
     console.log('Fetching Ghost API:', apiUrl);
 
     const memberResponse = await fetch(apiUrl, {
@@ -120,8 +154,7 @@ Deno.serve(async (req: Request) => {
 
     if (!memberResponse.ok) {
       const errorText = await memberResponse.text();
-      console.error('Ghost API error status:', memberResponse.status);
-      console.error('Ghost API error body:', errorText);
+      console.error('Ghost API error:', errorText);
       return new Response(
         JSON.stringify({
           error: 'Error al consultar Ghost',
@@ -148,28 +181,33 @@ Deno.serve(async (req: Request) => {
     }
 
     const member = memberData.members[0];
+    console.log('Found member:', member.id, member.email);
 
-    const integrityTokenUrl = `${ghostUrl}/members/api/integrity-token/`;
-    console.log('Fetching integrity token from:', integrityTokenUrl);
+    const signinUrlEndpoint = `${ghostUrl}/ghost/api/admin/members/${member.id}/signin_urls/`;
+    console.log('Getting signin URL from:', signinUrlEndpoint);
 
-    const integrityResponse = await fetch(integrityTokenUrl, {
+    const freshToken = await createGhostAdminTokenAsync(ghostAdminKey);
+
+    const signinResponse = await fetch(signinUrlEndpoint, {
       method: 'GET',
       headers: {
-        'app-pragma': 'no-cache',
-        'x-ghost-version': '5.98',
+        'Authorization': `Ghost ${freshToken}`,
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Accept-Version': 'v5.0',
       },
     });
 
-    console.log('Integrity token response status:', integrityResponse.status);
+    console.log('Signin URL response status:', signinResponse.status);
 
-    if (!integrityResponse.ok) {
-      const integrityError = await integrityResponse.text();
-      console.error('Integrity token error:', integrityError);
+    if (!signinResponse.ok) {
+      const errorText = await signinResponse.text();
+      console.error('Signin URL error:', errorText);
       return new Response(
         JSON.stringify({
-          error: 'Error al obtener token de integridad',
-          details: integrityError,
-          status: integrityResponse.status,
+          error: 'Error al generar enlace de acceso',
+          details: errorText,
+          status: signinResponse.status,
         }),
         {
           status: 502,
@@ -178,41 +216,96 @@ Deno.serve(async (req: Request) => {
       );
     }
 
-    const integrityToken = await integrityResponse.text();
-    console.log('Got integrity token');
+    const signinData = await signinResponse.json();
+    console.log('Signin data received');
 
-    const magicLinkUrl = `${ghostUrl}/members/api/send-magic-link/`;
-    console.log('Sending magic link request to:', magicLinkUrl);
+    if (!signinData.member_signin_urls || signinData.member_signin_urls.length === 0) {
+      return new Response(
+        JSON.stringify({ error: 'No se pudo generar el enlace de acceso' }),
+        {
+          status: 500,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        }
+      );
+    }
 
-    const magicLinkResponse = await fetch(
-      magicLinkUrl,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          email: member.email,
-          emailType: 'signin',
-          integrityToken: integrityToken,
-        }),
-      }
+    const signinUrl = signinData.member_signin_urls[0].url;
+
+    const websiteUrl = 'https://labodadealvarocarmen.com';
+    const redirectUrl = `${websiteUrl}/auth/callback?token=${encodeURIComponent(signinUrl)}`;
+
+    const emailHtml = `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body style="margin: 0; padding: 0; background-color: #f5f5f5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+  <table role="presentation" style="width: 100%; border-collapse: collapse;">
+    <tr>
+      <td align="center" style="padding: 40px 20px;">
+        <table role="presentation" style="width: 100%; max-width: 480px; border-collapse: collapse;">
+          <tr>
+            <td style="background-color: #ffffff; padding: 48px 40px; border-radius: 8px;">
+              <h1 style="margin: 0 0 24px 0; font-size: 24px; font-weight: 600; color: #1a1a1a; text-align: center;">
+                Acceso a Contenido Exclusivo
+              </h1>
+
+              <p style="margin: 0 0 24px 0; font-size: 16px; line-height: 1.6; color: #4a4a4a; text-align: center;">
+                Hola! Haz clic en el boton de abajo para acceder al contenido exclusivo de la boda.
+              </p>
+
+              <table role="presentation" style="width: 100%; border-collapse: collapse;">
+                <tr>
+                  <td align="center" style="padding: 16px 0;">
+                    <a href="${redirectUrl}" style="display: inline-block; padding: 14px 32px; background-color: #1a1a1a; color: #ffffff; text-decoration: none; font-size: 16px; font-weight: 500; border-radius: 6px;">
+                      Acceder ahora
+                    </a>
+                  </td>
+                </tr>
+              </table>
+
+              <p style="margin: 24px 0 0 0; font-size: 14px; line-height: 1.5; color: #888888; text-align: center;">
+                Este enlace es de un solo uso y expirara pronto.
+              </p>
+
+              <hr style="margin: 32px 0; border: none; border-top: 1px solid #e5e5e5;">
+
+              <p style="margin: 0; font-size: 12px; line-height: 1.5; color: #888888; text-align: center;">
+                Si no solicitaste este enlace, puedes ignorar este email.
+              </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding: 24px 0; text-align: center;">
+              <p style="margin: 0; font-size: 12px; color: #888888;">
+                Carmen & Alvaro
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+    `;
+
+    const emailSent = await sendEmail(
+      member.email,
+      'Tu enlace de acceso - Carmen & Alvaro',
+      emailHtml
     );
 
-    console.log('Magic link send response status:', magicLinkResponse.status);
-    const responseText = await magicLinkResponse.text();
-    console.log('Magic link send response body:', responseText);
-
-    if (!magicLinkResponse.ok) {
+    if (!emailSent) {
       return new Response(
         JSON.stringify({
-          error: 'Error al enviar el enlace de acceso',
-          details: responseText,
-          status: magicLinkResponse.status,
-          url: magicLinkUrl,
+          error: 'No se pudo enviar el email. Por favor, contacta con nosotros.',
         }),
         {
-          status: 502,
+          status: 500,
           headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         }
       );
@@ -221,7 +314,7 @@ Deno.serve(async (req: Request) => {
     return new Response(
       JSON.stringify({
         success: true,
-        message: 'Enlace de acceso enviado',
+        message: 'Enlace de acceso enviado a tu email',
       }),
       {
         status: 200,
