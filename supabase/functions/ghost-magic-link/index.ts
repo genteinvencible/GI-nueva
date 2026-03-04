@@ -149,8 +149,11 @@ Deno.serve(async (req: Request) => {
 
     const member = memberData.members[0];
 
+    const magicLinkUrl = `${ghostUrl}/members/api/send-magic-link/`;
+    console.log('Sending magic link request to:', magicLinkUrl);
+
     const magicLinkResponse = await fetch(
-      `${ghostUrl}/members/api/send-magic-link/`,
+      magicLinkUrl,
       {
         method: 'POST',
         headers: {
@@ -164,11 +167,22 @@ Deno.serve(async (req: Request) => {
     );
 
     console.log('Magic link send response status:', magicLinkResponse.status);
+    const responseText = await magicLinkResponse.text();
+    console.log('Magic link send response body:', responseText);
 
     if (!magicLinkResponse.ok) {
-      const errorText = await magicLinkResponse.text();
-      console.error('Magic link send error:', errorText);
-      throw new Error('Error al enviar el enlace de acceso');
+      return new Response(
+        JSON.stringify({
+          error: 'Error al enviar el enlace de acceso',
+          details: responseText,
+          status: magicLinkResponse.status,
+          url: magicLinkUrl,
+        }),
+        {
+          status: 502,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        }
+      );
     }
 
     return new Response(
