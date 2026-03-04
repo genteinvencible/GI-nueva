@@ -115,20 +115,35 @@ Deno.serve(async (req: Request) => {
 
     const token = await createGhostAdminTokenAsync(ghostAdminKey);
 
-    const memberResponse = await fetch(
-      `${ghostUrl}/ghost/api/admin/members/?filter=email:'${encodeURIComponent(email)}'`,
-      {
-        headers: {
-          'Authorization': `Ghost ${token}`,
-          'Content-Type': 'application/json',
-        },
-      }
-    );
+    const apiUrl = `${ghostUrl}/ghost/api/admin/members/?filter=email:'${email}'`;
+    console.log('Fetching Ghost API:', apiUrl);
+
+    const memberResponse = await fetch(apiUrl, {
+      headers: {
+        'Authorization': `Ghost ${token}`,
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Accept-Version': 'v5.0',
+      },
+    });
+
+    console.log('Ghost API response status:', memberResponse.status);
 
     if (!memberResponse.ok) {
       const errorText = await memberResponse.text();
-      console.error('Ghost API error:', errorText);
-      throw new Error('Error al consultar Ghost');
+      console.error('Ghost API error status:', memberResponse.status);
+      console.error('Ghost API error body:', errorText);
+      return new Response(
+        JSON.stringify({
+          error: 'Error al consultar Ghost',
+          details: errorText,
+          status: memberResponse.status
+        }),
+        {
+          status: 502,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        }
+      );
     }
 
     const memberData = await memberResponse.json();
