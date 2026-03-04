@@ -82,7 +82,7 @@ async function sendEmail(to: string, subject: string, html: string): Promise<boo
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Carmen & Alvaro <noreply@labodadealvarocarmen.com>',
+        from: 'Álvaro Gente Invencible <alvaro@genteinvencible.com>',
         to: [to],
         subject: subject,
         html: html,
@@ -231,7 +231,7 @@ Deno.serve(async (req: Request) => {
 
     const signinUrl = signinData.member_signin_urls[0].url;
 
-    const websiteUrl = 'https://labodadealvarocarmen.com';
+    const websiteUrl = 'https://genteinvencible.com';
     const redirectUrl = `${websiteUrl}/auth/callback?token=${encodeURIComponent(signinUrl)}`;
 
     const emailHtml = `
@@ -253,7 +253,7 @@ Deno.serve(async (req: Request) => {
               </h1>
 
               <p style="margin: 0 0 24px 0; font-size: 16px; line-height: 1.6; color: #4a4a4a; text-align: center;">
-                Hola! Haz clic en el boton de abajo para acceder al contenido exclusivo de la boda.
+                Hola! Haz clic en el boton de abajo para acceder al contenido exclusivo de Gente Invencible.
               </p>
 
               <table role="presentation" style="width: 100%; border-collapse: collapse;">
@@ -281,7 +281,7 @@ Deno.serve(async (req: Request) => {
           <tr>
             <td style="padding: 24px 0; text-align: center;">
               <p style="margin: 0; font-size: 12px; color: #888888;">
-                Carmen & Alvaro
+                Gente Invencible
               </p>
             </td>
           </tr>
@@ -295,7 +295,7 @@ Deno.serve(async (req: Request) => {
 
     const emailSent = await sendEmail(
       member.email,
-      'Tu enlace de acceso - Carmen & Alvaro',
+      'Tu enlace de acceso - Gente Invencible',
       emailHtml
     );
 
