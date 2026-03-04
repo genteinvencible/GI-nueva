@@ -115,14 +115,14 @@ export default function PostViewer({ slug, onBack }: PostViewerProps) {
           </div>
         )}
 
-        <header className="mb-10">
+        <header className="mb-10 pb-10 border-b border-[#141210]/10 dark:border-[#f7f3ed]/10">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#141210] dark:text-[#f7f3ed] leading-tight">
             {post.title}
           </h1>
         </header>
 
         <div
-          className="prose prose-lg max-w-none dark:prose-invert"
+          className="prose prose-lg max-w-none dark:prose-invert pt-2"
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
 

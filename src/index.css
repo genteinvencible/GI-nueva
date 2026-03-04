@@ -95,3 +95,34 @@ body::before {
   display: none;
 }
 
+.prose {
+  font-family: 'Suisse', sans-serif;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  font-family: 'Suisse', sans-serif;
+  font-weight: 700;
+}
+
+.prose p,
+.prose li,
+.prose blockquote {
+  font-family: 'Suisse', sans-serif;
+  font-weight: 400;
+}
+
+.prose em,
+.prose i {
+  font-style: italic;
+}
+
+.prose strong,
+.prose b {
+  font-weight: 700;
+}
+
