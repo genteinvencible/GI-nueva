@@ -84,10 +84,8 @@ Deno.serve(async (req: Request) => {
       throw new Error('Ghost configuration missing');
     }
 
-    if (!ghostUrl.startsWith('http://') && !ghostUrl.startsWith('https://')) {
-      ghostUrl = `https://${ghostUrl}`;
-    }
-    ghostUrl = ghostUrl.replace(/\/$/, '');
+    ghostUrl = ghostUrl.replace(/^https?:\/\//, '').replace(/\/$/, '');
+    ghostUrl = `https://${ghostUrl}`;
 
     const { email }: RequestPayload = await req.json();
 
