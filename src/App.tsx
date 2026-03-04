@@ -14,6 +14,7 @@ import BodaPage from './components/BodaPage';
 import StoriesPage from './components/StoriesPage';
 import LoginPage from './components/LoginPage';
 import AuthCallbackPage from './components/AuthCallbackPage';
+import MemberContentPage from './components/MemberContentPage';
 import { useBannerSystem } from './hooks/useBannerSystem';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
   const [showStoriesPage, setShowStoriesPage] = useState(false);
   const [showLoginPage, setShowLoginPage] = useState(false);
   const [showAuthCallback, setShowAuthCallback] = useState(false);
+  const [showMemberContent, setShowMemberContent] = useState(false);
 
   useEffect(() => {
     const path = window.location.pathname;
@@ -37,6 +39,8 @@ function App() {
       setShowLoginPage(true);
     } else if (path === '/auth/callback') {
       setShowAuthCallback(true);
+    } else if (path === '/miembros') {
+      setShowMemberContent(true);
     }
   }, []);
 
@@ -82,6 +86,7 @@ function App() {
     setShowStoriesPage(false);
     setShowLoginPage(false);
     setShowAuthCallback(false);
+    setShowMemberContent(false);
     window.history.pushState({}, '', '/');
     window.scrollTo(0, 0);
   }, []);
@@ -93,7 +98,20 @@ function App() {
     setShowFaqsPage(false);
     setShowBodaPage(false);
     setShowStoriesPage(false);
+    setShowMemberContent(false);
     window.history.pushState({}, '', '/login');
+    window.scrollTo(0, 0);
+  }, []);
+
+  const handleGoMemberContent = useCallback(() => {
+    setShowMemberContent(true);
+    setShowLoginPage(false);
+    setShowAboutPage(false);
+    setShowLegalPage(false);
+    setShowFaqsPage(false);
+    setShowBodaPage(false);
+    setShowStoriesPage(false);
+    window.history.pushState({}, '', '/miembros');
     window.scrollTo(0, 0);
   }, []);
 
@@ -148,6 +166,17 @@ function App() {
     return (
       <ThemeProvider>
         <LoginPage onBackClick={handleGoHome} />
+      </ThemeProvider>
+    );
+  }
+
+  if (showMemberContent) {
+    return (
+      <ThemeProvider>
+        <MemberContentPage
+          onBackClick={handleGoHome}
+          onLoginClick={handleGoLogin}
+        />
       </ThemeProvider>
     );
   }
