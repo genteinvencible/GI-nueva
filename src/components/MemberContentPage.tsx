@@ -64,7 +64,7 @@ export default function MemberContentPage({ onBackClick, onLoginClick }: MemberC
     const fetchPosts = async () => {
       try {
         const response = await fetch(
-          `${SUPABASE_URL}/functions/v1/ghost-content?filter=visibility:members&limit=20`,
+          `${SUPABASE_URL}/functions/v1/ghost-content?limit=20`,
           {
             headers: {
               'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
