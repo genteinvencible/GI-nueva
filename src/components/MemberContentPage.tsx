@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { ArrowLeft, BookOpen, LogOut, Loader2, ExternalLink } from 'lucide-react';
+import { ArrowLeft, BookOpen, LogOut, Loader2, ArrowRight } from 'lucide-react';
+import PostViewer from './PostViewer';
 
 interface MemberContentPageProps {
   onBackClick: () => void;
@@ -23,7 +24,6 @@ interface GhostPost {
   reading_time: number;
 }
 
-const GHOST_URL = 'https://leer.genteinvencible.com';
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
@@ -31,6 +31,7 @@ export default function MemberContentPage({ onBackClick, onLoginClick }: MemberC
   const [session, setSession] = useState<Session | null>(null);
   const [posts, setPosts] = useState<GhostPost[]>([]);
   const [loading, setLoading] = useState(true);
+  const [selectedPostSlug, setSelectedPostSlug] = useState<string | null>(null);
 
   useEffect(() => {
     const storedSession = localStorage.getItem('gi_session');
@@ -82,8 +83,16 @@ export default function MemberContentPage({ onBackClick, onLoginClick }: MemberC
   };
 
   const handleReadPost = (slug: string) => {
-    window.open(`${GHOST_URL}/${slug}/`, '_blank');
+    setSelectedPostSlug(slug);
   };
+
+  const handleBackFromPost = () => {
+    setSelectedPostSlug(null);
+  };
+
+  if (selectedPostSlug) {
+    return <PostViewer slug={selectedPostSlug} onBack={handleBackFromPost} />;
+  }
 
   if (loading) {
     return (
@@ -221,7 +230,7 @@ export default function MemberContentPage({ onBackClick, onLoginClick }: MemberC
                   )}
                   <div className="mt-4 flex items-center gap-2 text-sm font-medium text-[#141210] dark:text-[#f7f3ed] opacity-0 group-hover:opacity-100 transition-opacity">
                     <span>Leer</span>
-                    <ExternalLink className="w-4 h-4" />
+                    <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>
               </article>
