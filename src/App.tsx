@@ -12,7 +12,6 @@ import AboutPage from './components/AboutPage';
 import FaqsPage from './components/FaqsPage';
 import BodaPage from './components/BodaPage';
 import StoriesPage from './components/StoriesPage';
-import { useScrollTrigger } from './hooks/useScrollTrigger';
 import { useBannerSystem } from './hooks/useBannerSystem';
 
 function App() {
@@ -21,6 +20,7 @@ function App() {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [isInputFocused, setIsInputFocused] = useState(false);
   const [hasSubscribed, setHasSubscribed] = useState(false);
+  const [bannersActivated, setBannersActivated] = useState(false);
   const [showLegalPage, setShowLegalPage] = useState(false);
   const [showAboutPage, setShowAboutPage] = useState(false);
   const [showFaqsPage, setShowFaqsPage] = useState(false);
@@ -29,12 +29,9 @@ function App() {
 
   const chapter2Ref = useRef<HTMLDivElement>(null);
   const exploreRef = useRef<HTMLDivElement>(null);
-  const emailButtonRef = useRef<HTMLButtonElement>(null);
-
-  const scrollTriggered = useScrollTrigger(emailButtonRef);
 
   const { currentMessage, currentAvatar, isVisible, closeBanner } = useBannerSystem({
-    scrollTriggered,
+    scrollTriggered: bannersActivated,
     isFormOpen,
     isInputFocused,
     hasSubscribed,
@@ -46,6 +43,7 @@ function App() {
       return;
     }
     setChapter2Visible(true);
+    setBannersActivated(true);
     setTimeout(() => {
       chapter2Ref.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 50);
@@ -164,7 +162,6 @@ function App() {
         <Navbar activePage="home" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} onFaqsClick={handleGoFaqs} onStoriesClick={handleGoStories} />
         <Hero />
         <AboutSection
-          ref={emailButtonRef}
           onRevealChapter2={handleRevealChapter2}
           onFormOpenChange={setIsFormOpen}
           onInputFocusChange={setIsInputFocused}
