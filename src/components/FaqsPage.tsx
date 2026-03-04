@@ -253,7 +253,7 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <button
-                onClick={() => setShowDirectSubscribe(!showDirectSubscribe)}
+                onClick={() => setShowDirectSubscribe(true)}
                 className="px-6 py-3 bg-[#2d6a4f] text-white text-base font-medium rounded hover:bg-[#245a42] dark:bg-[#52b788] dark:text-neutral-900 dark:hover:bg-[#6ec99b] transition-all duration-200 cursor-pointer active:scale-[0.98] shadow-sm hover:shadow-md"
               >
                 Toma mi email
@@ -265,15 +265,33 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
                 Eres un mequetrefe
               </button>
             </div>
-            {showDirectSubscribe && (
-              <div className="pt-4 animate-fade-in">
-                <EmailSubscriptionForm isOpen={true} hideIntroText={true} hideSpamText={true} autoScrollOnOpen={false} />
-              </div>
-            )}
           </RevealBlock>
 
         </div>
       </div>
+
+      {showDirectSubscribe && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in"
+          onClick={() => setShowDirectSubscribe(false)}
+        >
+          <div
+            className="bg-white dark:bg-neutral-900 rounded-xl p-6 md:p-8 max-w-lg w-full shadow-2xl border border-neutral-200 dark:border-neutral-700 animate-scale-in"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <p className="text-[1.2rem] lg:text-[1.3rem] text-neutral-800 dark:text-white mb-6 leading-[1.5]">
+              Vamos a ello. Deja tu email:
+            </p>
+            <EmailSubscriptionForm isOpen={true} hideIntroText={true} hideSpamText={true} autoScrollOnOpen={false} />
+            <button
+              onClick={() => setShowDirectSubscribe(false)}
+              className="mt-4 text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 transition-colors"
+            >
+              Cerrar
+            </button>
+          </div>
+        </div>
+      )}
 
       {showMequetrefeModal && (
         <div
