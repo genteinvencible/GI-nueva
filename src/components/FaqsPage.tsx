@@ -280,7 +280,7 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
             onClick={(e) => e.stopPropagation()}
           >
             <p className="text-[1.2rem] lg:text-[1.3rem] text-neutral-800 dark:text-white mb-6 leading-[1.5]">
-              Vamos a ello. Deja tu email:
+              Lo tomo:
             </p>
             <EmailSubscriptionForm isOpen={true} hideIntroText={true} hideSpamText={true} autoScrollOnOpen={false} />
             <button
