@@ -28,7 +28,7 @@ export default function Navbar({ activePage = 'home', onHomeClick, onAboutClick,
           setIsVisible(currentScrollY <= lastScrollY);
         }
       } else {
-        if (currentScrollY < 10) {
+        if (currentScrollY < 100) {
           setIsVisible(true);
         } else {
           setIsVisible(currentScrollY <= lastScrollY);
