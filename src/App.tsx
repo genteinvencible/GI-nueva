@@ -224,7 +224,7 @@ function App() {
   if (showLegalPage) {
     return (
       <ThemeProvider>
-        <Navbar activePage="home" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} onFaqsClick={handleGoFaqs} onStoriesClick={handleGoStories} onLoginClick={handleGoLogin} />
+        <Navbar activePage="home" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} onFaqsClick={handleGoFaqs} onStoriesClick={handleGoStories} />
         <PrivacyPolicyPage onBack={handleGoHome} />
       </ThemeProvider>
     );
@@ -233,7 +233,7 @@ function App() {
   if (showAboutPage) {
     return (
       <ThemeProvider>
-        <Navbar activePage="about" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} onFaqsClick={handleGoFaqs} onStoriesClick={handleGoStories} onLoginClick={handleGoLogin} />
+        <Navbar activePage="about" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} onFaqsClick={handleGoFaqs} onStoriesClick={handleGoStories} />
         <AboutPage onBack={handleGoHome} onFaqsClick={handleGoFaqs} />
       </ThemeProvider>
     );
@@ -242,7 +242,7 @@ function App() {
   if (showFaqsPage) {
     return (
       <ThemeProvider>
-        <Navbar activePage="faqs" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} onFaqsClick={handleGoFaqs} onStoriesClick={handleGoStories} onLoginClick={handleGoLogin} />
+        <Navbar activePage="faqs" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} onFaqsClick={handleGoFaqs} onStoriesClick={handleGoStories} />
         <FaqsPage onBack={handleGoHome} />
       </ThemeProvider>
     );
@@ -251,7 +251,7 @@ function App() {
   if (showBodaPage) {
     return (
       <ThemeProvider>
-        <Navbar activePage="boda" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} onFaqsClick={handleGoFaqs} onStoriesClick={handleGoStories} onLoginClick={handleGoLogin} />
+        <Navbar activePage="boda" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} onFaqsClick={handleGoFaqs} onStoriesClick={handleGoStories} />
         <BodaPage onBack={handleGoHome} />
       </ThemeProvider>
     );
@@ -260,7 +260,7 @@ function App() {
   return (
     <ThemeProvider>
       <div className="relative">
-        <Navbar activePage="home" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} onFaqsClick={handleGoFaqs} onStoriesClick={handleGoStories} onLoginClick={handleGoLogin} />
+        <Navbar activePage="home" onHomeClick={handleGoHome} onAboutClick={handleGoAbout} onFaqsClick={handleGoFaqs} onStoriesClick={handleGoStories} />
         <Hero />
         <AboutSection
           onRevealChapter2={handleRevealChapter2}

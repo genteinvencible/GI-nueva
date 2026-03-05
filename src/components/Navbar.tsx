@@ -2,27 +2,35 @@ import { useState, useEffect } from 'react';
 import ThemeToggle from './ThemeToggle';
 
 interface NavbarProps {
-  activePage?: 'home' | 'about' | 'faqs' | 'boda' | 'stories' | 'login';
+  activePage?: 'home' | 'about' | 'faqs' | 'boda' | 'stories';
   onHomeClick?: () => void;
   onAboutClick?: () => void;
   onFaqsClick?: () => void;
   onBodaClick?: () => void;
   onStoriesClick?: () => void;
-  onLoginClick?: () => void;
 }
 
-export default function Navbar({ activePage = 'home', onHomeClick, onAboutClick, onFaqsClick, onBodaClick, onStoriesClick, onLoginClick }: NavbarProps) {
+export default function Navbar({ activePage = 'home', onHomeClick, onAboutClick, onFaqsClick, onBodaClick, onStoriesClick }: NavbarProps) {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const controlNavbar = () => {
       const currentScrollY = window.scrollY;
+      const isMobile = window.innerWidth < 768;
 
-      if (currentScrollY < 10) {
-        setIsVisible(true);
+      if (isMobile) {
+        if (currentScrollY < 100) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(currentScrollY <= lastScrollY);
+        }
       } else {
-        setIsVisible(currentScrollY <= lastScrollY);
+        if (currentScrollY < 10) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(currentScrollY <= lastScrollY);
+        }
       }
 
       setLastScrollY(currentScrollY);
@@ -34,21 +42,21 @@ export default function Navbar({ activePage = 'home', onHomeClick, onAboutClick,
 
   const activeClass = 'text-black dark:text-white font-bold';
   const inactiveClass = 'text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white font-medium';
-  const baseClass = 'px-2 sm:px-3 md:px-5 py-1.5 md:py-2 text-[8px] sm:text-[9px] md:text-[11px] tracking-[0.15em] sm:tracking-[0.2em] uppercase transition-colors relative';
+  const baseClass = 'px-3 md:px-5 py-1.5 md:py-2 text-[9px] md:text-[11px] tracking-[0.2em] uppercase transition-colors relative';
 
   return (
     <div
       className={`
-        fixed left-1/2 -translate-x-1/2 top-0 z-50
+        fixed left-1/2 -translate-x-1/2 bottom-0 md:top-0 md:bottom-auto z-50
         flex flex-col items-center
         transition-all duration-500 ease-in-out
-        ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-20 opacity-0'}
-        pt-3 sm:pt-4 md:pt-6
+        ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 md:-translate-y-20 opacity-0'}
+        pb-4 md:pb-0 md:pt-6
       `}
     >
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[100vw] h-[50px] sm:h-[60px] md:h-[80px] bg-[var(--bg-color)] -z-30" />
+      <div className="absolute bottom-0 md:bottom-auto md:top-0 left-1/2 -translate-x-1/2 w-[100vw] h-[60px] md:h-[80px] bg-[var(--bg-color)] -z-30" />
 
-      <div className="absolute top-[50px] sm:top-[60px] md:top-[80px] left-1/2 -translate-x-1/2 w-[100vw] h-[2px] -z-30">
+      <div className="absolute bottom-[60px] md:bottom-auto md:top-[80px] left-1/2 -translate-x-1/2 w-[100vw] h-[2px] -z-30">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-400/40 dark:via-gray-300/45 to-transparent blur-[1px]" />
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-300/50 dark:via-gray-200/55 to-transparent" style={{ width: '60%', left: '20%' }} />
       </div>
@@ -60,7 +68,7 @@ export default function Navbar({ activePage = 'home', onHomeClick, onAboutClick,
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[320px] h-24 bg-gradient-to-b from-amber-200/24 dark:from-amber-100/24 to-transparent blur-xl pointer-events-none" />
       </div>
 
-      <nav className="flex items-center gap-0.5 sm:gap-1 relative">
+      <nav className="flex items-center gap-1 relative">
         <div className="absolute inset-0 left-1/2 -translate-x-1/2 w-[100vw] h-full -z-20" style={{ backgroundColor: 'var(--bg-color)' }} />
 
         <div className="absolute inset-0 left-1/2 -translate-x-1/2 w-[100vw] h-full -z-10">
@@ -92,14 +100,7 @@ export default function Navbar({ activePage = 'home', onHomeClick, onAboutClick,
         >
           STORIES
         </button>
-        <div className="w-px h-3 sm:h-4 bg-black/10 dark:bg-white/10 mx-0.5 sm:mx-1 md:mx-2 relative" />
-        <button
-          onClick={onLoginClick}
-          className={`${baseClass} ${activePage === 'login' ? activeClass : inactiveClass}`}
-        >
-          ACCEDER
-        </button>
-        <div className="w-px h-3 sm:h-4 bg-black/10 dark:bg-white/10 mx-0.5 sm:mx-1 md:mx-2 relative" />
+        <div className="w-px h-4 bg-black/10 dark:bg-white/10 mx-1 md:mx-2 relative" />
         <ThemeToggle />
       </nav>
     </div>
