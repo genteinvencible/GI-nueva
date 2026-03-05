@@ -128,8 +128,11 @@ export default function LoginPage({ onBackClick }: LoginPageProps) {
           ) : (
             <div className="animate-fade-in">
               <div className="text-center mb-10">
-                <p className="text-[#141210] dark:text-[#f7f3ed] text-2xl md:text-3xl leading-relaxed font-bold">
-                  Para acceder, pon aquí tu email y te mando un glorioso enlace.
+                <p className="text-[#141210] dark:text-[#f7f3ed] text-2xl md:text-3xl leading-relaxed font-bold mb-4">
+                  Tambien puedes leer los emails (de pago) desde aqui.
+                </p>
+                <p className="text-[#141210]/70 dark:text-[#f7f3ed]/70 text-lg leading-relaxed">
+                  Para hacerlo, pon aqui tu correo y te mando un enlace de acceso
                 </p>
               </div>
 
@@ -169,13 +172,20 @@ export default function LoginPage({ onBackClick }: LoginPageProps) {
                       Enviando...
                     </>
                   ) : (
-                    'Enviar enlace magico'
+                    'Recibir enlace de acceso'
                   )}
                 </button>
               </form>
 
-              <p className="mt-8 text-center text-sm text-[#141210]/50 dark:text-[#f7f3ed]/50">
-                Sin contrasenas ni gaitas. Simple y seguro.
+              <p className="mt-8 text-center text-[#141210]/60 dark:text-[#f7f3ed]/60">
+                Y si no sabes de que hablo,{' '}
+                <button
+                  type="button"
+                  onClick={onBackClick}
+                  className="underline hover:text-[#141210] dark:hover:text-[#f7f3ed] transition-colors"
+                >
+                  vuelve atras
+                </button>
               </p>
             </div>
           )}
