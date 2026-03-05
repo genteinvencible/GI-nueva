@@ -11,6 +11,7 @@ interface StoriesPageProps {
   onBodaClick: () => void;
   onFaqsClick: () => void;
   onStoriesClick: () => void;
+  onLoginClick?: () => void;
 }
 
 export default function StoriesPage({
@@ -19,6 +20,7 @@ export default function StoriesPage({
   onBodaClick,
   onFaqsClick,
   onStoriesClick,
+  onLoginClick,
 }: StoriesPageProps) {
   const { isDarkMode: isDark } = useTheme();
   const [selectedStoryIndex, setSelectedStoryIndex] = useState<number | null>(null);
@@ -220,6 +222,7 @@ export default function StoriesPage({
         onBodaClick={onBodaClick}
         onFaqsClick={onFaqsClick}
         onStoriesClick={onStoriesClick}
+        onLoginClick={onLoginClick}
         activePage="stories"
       />
 

@@ -1,16 +1,18 @@
 import { useState, useEffect } from 'react';
+import { User } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 
 interface NavbarProps {
-  activePage?: 'home' | 'about' | 'faqs' | 'boda' | 'stories';
+  activePage?: 'home' | 'about' | 'faqs' | 'boda' | 'stories' | 'login';
   onHomeClick?: () => void;
   onAboutClick?: () => void;
   onFaqsClick?: () => void;
   onBodaClick?: () => void;
   onStoriesClick?: () => void;
+  onLoginClick?: () => void;
 }
 
-export default function Navbar({ activePage = 'home', onHomeClick, onAboutClick, onFaqsClick, onBodaClick, onStoriesClick }: NavbarProps) {
+export default function Navbar({ activePage = 'home', onHomeClick, onAboutClick, onFaqsClick, onBodaClick, onStoriesClick, onLoginClick }: NavbarProps) {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -101,6 +103,17 @@ export default function Navbar({ activePage = 'home', onHomeClick, onAboutClick,
           STORIES
         </button>
         <div className="w-px h-4 bg-black/10 dark:bg-white/10 mx-1 md:mx-2 relative" />
+        <button
+          onClick={onLoginClick}
+          className={`p-1.5 md:p-2 rounded-full transition-all duration-200 ${
+            activePage === 'login'
+              ? 'text-black dark:text-white bg-black/5 dark:bg-white/10'
+              : 'text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5'
+          }`}
+          aria-label="Iniciar sesion"
+        >
+          <User className="w-4 h-4 md:w-[18px] md:h-[18px]" strokeWidth={1.5} />
+        </button>
         <ThemeToggle />
       </nav>
     </div>
