@@ -93,10 +93,7 @@ export default function LoginPage({ onBackClick }: LoginPageProps) {
 
       <main className="relative z-10 flex-1 flex items-start md:items-center justify-center md:justify-end px-6 md:pr-8 lg:pr-16 pt-12 md:pt-0">
         <div
-          className="w-full max-w-md rounded-3xl p-8 md:p-12 bg-[#f7f3ed] dark:bg-[#141210] md:bg-black/75 md:dark:bg-black/75 md:backdrop-blur-[16px] border border-[#141210]/5 dark:border-[#f7f3ed]/5 md:border-white/10"
-          style={{
-            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
-          }}
+          className="w-full max-w-md rounded-3xl p-8 md:p-12 bg-[#f7f3ed] dark:bg-[#141210] md:bg-black/75 md:dark:bg-black/75 md:backdrop-blur-[16px] border border-[#141210]/5 dark:border-[#f7f3ed]/5 md:border-white/10 shadow-lg md:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)]"
         >
           {formState === 'success' ? (
             <div className="text-center animate-fade-in">
