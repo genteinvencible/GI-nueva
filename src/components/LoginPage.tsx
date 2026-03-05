@@ -62,7 +62,7 @@ export default function LoginPage({ onBackClick }: LoginPageProps) {
   };
 
   return (
-    <div className="min-h-screen flex flex-col relative">
+    <div className="min-h-[100dvh] md:min-h-screen flex flex-col relative">
       <div
         className="absolute inset-0 hidden md:block"
         style={{
@@ -73,15 +73,10 @@ export default function LoginPage({ onBackClick }: LoginPageProps) {
           filter: 'brightness(0.6)',
         }}
       />
-      <div
-        className="absolute inset-0 md:hidden bg-[#e8e4dd] dark:bg-[#1a1816]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }}
-      />
+      <div className="absolute inset-0 md:hidden bg-gradient-to-b from-[#f7f3ed] via-[#ebe7e0] to-[#ddd8cf] dark:from-[#141210] dark:via-[#1a1816] dark:to-[#0f0e0c]" />
       <div className="absolute inset-0 hidden md:block backdrop-blur-[4px]" />
 
-      <header className="relative z-10 p-6 md:p-8">
+      <header className="relative z-10 p-5 md:p-8">
         <button
           onClick={onBackClick}
           className="flex items-center gap-2 text-[#141210]/70 md:text-white/80 hover:text-[#141210] md:hover:text-white transition-colors"
@@ -91,9 +86,9 @@ export default function LoginPage({ onBackClick }: LoginPageProps) {
         </button>
       </header>
 
-      <main className="relative z-10 flex-1 flex items-start md:items-center justify-center md:justify-end px-6 md:pr-8 lg:pr-16 pt-12 md:pt-0">
+      <main className="relative z-10 flex-1 flex items-end md:items-center justify-center md:justify-end px-5 md:px-0 md:pr-8 lg:pr-16 pb-5 md:pb-0">
         <div
-          className="w-full max-w-md rounded-3xl p-8 md:p-12 bg-[#f7f3ed] dark:bg-[#141210] md:bg-black/75 md:dark:bg-black/75 md:backdrop-blur-[16px] border border-[#141210]/5 dark:border-[#f7f3ed]/5 md:border-white/10 shadow-lg md:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)]"
+          className="w-full max-w-md rounded-2xl rounded-b-none md:rounded-3xl p-6 pb-8 md:p-12 bg-[#f7f3ed] dark:bg-[#141210] md:bg-black/75 md:dark:bg-black/75 md:backdrop-blur-[16px] border border-[#141210]/5 dark:border-[#f7f3ed]/5 md:border-white/10 border-b-0 md:border-b shadow-[0_-4px_20px_-4px_rgba(0,0,0,0.1)] md:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)]"
         >
           {formState === 'success' ? (
             <div className="text-center animate-fade-in">
@@ -128,7 +123,7 @@ export default function LoginPage({ onBackClick }: LoginPageProps) {
               </p>
               <button
                 onClick={handleRetry}
-                className="w-full py-4 bg-[#141210] dark:bg-[#f7f3ed] md:bg-white text-[#f7f3ed] dark:text-[#141210] md:text-black font-bold rounded-xl hover:bg-white/90 hover:scale-[1.02] hover:shadow-lg active:scale-[0.98] transition-all duration-200"
+                className="w-full h-14 md:h-auto md:py-4 bg-[#141210] dark:bg-[#f7f3ed] md:bg-white text-[#f7f3ed] dark:text-[#141210] md:text-black font-bold rounded-xl hover:bg-white/90 hover:scale-[1.02] hover:shadow-lg active:scale-[0.98] transition-all duration-200"
               >
                 Probar con otro email
               </button>
@@ -161,7 +156,7 @@ export default function LoginPage({ onBackClick }: LoginPageProps) {
                     }}
                     placeholder="tu@email.com"
                     disabled={formState === 'loading'}
-                    className="w-full pl-12 pr-4 py-4 bg-white dark:bg-[#1c1a17] md:bg-white/10 md:dark:bg-white/10 border-2 border-[#141210]/10 dark:border-[#f7f3ed]/10 md:border-white/20 rounded-xl text-[#141210] dark:text-[#f7f3ed] md:text-white placeholder:text-[#141210]/40 dark:placeholder:text-[#f7f3ed]/40 md:placeholder:text-white/50 focus:outline-none focus:border-[#141210]/40 dark:focus:border-[#f7f3ed]/40 md:focus:border-white focus:ring-0 transition-all disabled:opacity-50"
+                    className="w-full pl-12 pr-4 py-4 bg-white dark:bg-[#1c1a17] md:bg-white/10 md:dark:bg-white/10 border-2 border-[#141210]/10 dark:border-[#f7f3ed]/10 md:border-white/20 rounded-xl text-[#141210] dark:text-[#f7f3ed] md:text-white placeholder:text-[#141210]/40 dark:placeholder:text-[#f7f3ed]/40 md:placeholder:text-white/50 focus:outline-none focus:border-[#141210]/40 dark:focus:border-[#f7f3ed]/40 md:focus:border-white focus:ring-0 transition-all disabled:opacity-50 text-base"
                   />
                 </div>
 
@@ -175,7 +170,7 @@ export default function LoginPage({ onBackClick }: LoginPageProps) {
                 <button
                   type="submit"
                   disabled={formState === 'loading' || !email}
-                  className="w-full py-4 bg-[#141210] dark:bg-[#f7f3ed] md:bg-white text-[#f7f3ed] dark:text-[#141210] md:text-black font-bold rounded-xl hover:bg-[#2a2825] dark:hover:bg-[#e8e4de] md:hover:bg-white/90 hover:scale-[1.02] hover:shadow-lg active:scale-[0.98] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:shadow-none flex items-center justify-center gap-3"
+                  className="w-full h-14 md:h-auto md:py-4 bg-[#141210] dark:bg-[#f7f3ed] md:bg-white text-[#f7f3ed] dark:text-[#141210] md:text-black font-bold rounded-xl hover:bg-[#2a2825] dark:hover:bg-[#e8e4de] md:hover:bg-white/90 hover:scale-[1.02] hover:shadow-lg active:scale-[0.98] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:shadow-none flex items-center justify-center gap-3"
                 >
                   {formState === 'loading' ? (
                     <>
