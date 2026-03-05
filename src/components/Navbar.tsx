@@ -51,50 +51,28 @@ export default function Navbar({ activePage = 'home', onHomeClick, onAboutClick,
   const iconInactiveClass = 'text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5';
 
   return (
-    <>
-      <div
-        className={`
-          fixed top-0 right-0 z-50 p-3 md:p-5
-          flex items-center gap-1
-          transition-all duration-500 ease-in-out
-          ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 md:-translate-y-20 opacity-0'}
-        `}
-      >
-        <div className="flex items-center gap-1 bg-[var(--bg-color)]/80 backdrop-blur-md rounded-full px-1 py-1 border border-black/5 dark:border-white/10">
-          <button
-            onClick={onLoginClick}
-            className={`${iconButtonClass} ${activePage === 'login' ? iconActiveClass : iconInactiveClass}`}
-            aria-label="Iniciar sesion"
-          >
-            <User className="w-[18px] h-[18px]" strokeWidth={1.5} />
-          </button>
-          <ThemeToggle />
-        </div>
+    <div
+      className={`
+        fixed left-0 right-0 bottom-0 md:top-0 md:bottom-auto z-50
+        transition-all duration-500 ease-in-out
+        ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 md:-translate-y-20 opacity-0'}
+      `}
+    >
+      <div className="absolute bottom-0 md:bottom-auto md:top-0 left-0 right-0 h-[60px] md:h-[80px] bg-[var(--bg-color)] -z-30" />
+
+      <div className="absolute bottom-[60px] md:bottom-auto md:top-[80px] left-0 right-0 h-[2px] -z-30">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-400/40 dark:via-gray-300/45 to-transparent blur-[1px]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-300/50 dark:via-gray-200/55 to-transparent" style={{ width: '60%', left: '20%' }} />
       </div>
 
-      <div
-        className={`
-          fixed left-1/2 -translate-x-1/2 bottom-0 md:top-0 md:bottom-auto z-50
-          flex flex-col items-center
-          transition-all duration-500 ease-in-out
-          ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 md:-translate-y-20 opacity-0'}
-          pb-4 md:pb-0 md:pt-6
-        `}
-      >
-        <div className="absolute bottom-0 md:bottom-auto md:top-0 left-1/2 -translate-x-1/2 w-[100vw] h-[60px] md:h-[80px] bg-[var(--bg-color)] -z-30" />
+      <div className="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-gradient-to-b from-white/10 dark:from-black/10 via-white/5 dark:via-black/5 to-transparent pointer-events-none -z-10" />
 
-        <div className="absolute bottom-[60px] md:bottom-auto md:top-[80px] left-1/2 -translate-x-1/2 w-[100vw] h-[2px] -z-30">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-400/40 dark:via-gray-300/45 to-transparent blur-[1px]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-300/50 dark:via-gray-200/55 to-transparent" style={{ width: '60%', left: '20%' }} />
-        </div>
+      <div className="hidden md:block absolute top-6 left-1/2 -translate-x-1/2 w-[450px]">
+        <div className="absolute top-1 left-1/2 -translate-x-1/2 w-[400px] h-32 bg-gradient-to-b from-amber-300/28 dark:from-amber-200/30 via-amber-200/18 dark:via-amber-100/20 to-transparent blur-2xl pointer-events-none" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[320px] h-24 bg-gradient-to-b from-amber-200/24 dark:from-amber-100/24 to-transparent blur-xl pointer-events-none" />
+      </div>
 
-        <div className="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-gradient-to-b from-white/10 dark:from-black/10 via-white/5 dark:via-black/5 to-transparent pointer-events-none -z-10" />
-
-        <div className="hidden md:block relative w-[450px] mb-3">
-          <div className="absolute top-1 left-1/2 -translate-x-1/2 w-[400px] h-32 bg-gradient-to-b from-amber-300/28 dark:from-amber-200/30 via-amber-200/18 dark:via-amber-100/20 to-transparent blur-2xl pointer-events-none" />
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[320px] h-24 bg-gradient-to-b from-amber-200/24 dark:from-amber-100/24 to-transparent blur-xl pointer-events-none" />
-        </div>
-
+      <div className="flex items-center justify-center pb-4 md:pb-0 md:pt-6">
         <nav className="flex items-center gap-1 relative">
           <div className="absolute inset-0 left-1/2 -translate-x-1/2 w-[100vw] h-full -z-20" style={{ backgroundColor: 'var(--bg-color)' }} />
 
@@ -129,6 +107,32 @@ export default function Navbar({ activePage = 'home', onHomeClick, onAboutClick,
           </button>
         </nav>
       </div>
-    </>
+
+      <div className="absolute top-0 right-0 p-3 md:p-5 md:hidden">
+        <div className="flex items-center gap-1 bg-[var(--bg-color)]/80 backdrop-blur-md rounded-full px-1 py-1 border border-black/5 dark:border-white/10">
+          <button
+            onClick={onLoginClick}
+            className={`${iconButtonClass} ${activePage === 'login' ? iconActiveClass : iconInactiveClass}`}
+            aria-label="Iniciar sesion"
+          >
+            <User className="w-[18px] h-[18px]" strokeWidth={1.5} />
+          </button>
+          <ThemeToggle />
+        </div>
+      </div>
+
+      <div className="hidden md:block absolute top-0 right-0 p-5">
+        <div className="flex items-center gap-1 bg-[var(--bg-color)]/80 backdrop-blur-md rounded-full px-1 py-1 border border-black/5 dark:border-white/10">
+          <button
+            onClick={onLoginClick}
+            className={`${iconButtonClass} ${activePage === 'login' ? iconActiveClass : iconInactiveClass}`}
+            aria-label="Iniciar sesion"
+          >
+            <User className="w-[18px] h-[18px]" strokeWidth={1.5} />
+          </button>
+          <ThemeToggle />
+        </div>
+      </div>
+    </div>
   );
 }
