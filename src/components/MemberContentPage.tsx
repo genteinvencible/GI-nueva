@@ -41,6 +41,7 @@ export default function MemberContentPage({ onBackClick, onLoginClick }: MemberC
   const [selectedPostSlug, setSelectedPostSlug] = useState<string | null>(null);
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const [portalLoading, setPortalLoading] = useState(false);
+  const [portalUrl, setPortalUrl] = useState<string | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -115,6 +116,7 @@ export default function MemberContentPage({ onBackClick, onLoginClick }: MemberC
     if (!session) return;
 
     setPortalLoading(true);
+    setPortalUrl(null);
     try {
       const response = await fetch(
         `${SUPABASE_URL}/functions/v1/stripe-portal`,
@@ -132,7 +134,7 @@ export default function MemberContentPage({ onBackClick, onLoginClick }: MemberC
       console.log('Stripe portal response:', data);
 
       if (data.portalUrl) {
-        window.location.href = data.portalUrl;
+        setPortalUrl(data.portalUrl);
       } else if (data.hasSubscription === false) {
         alert('No se encontro una suscripcion activa para esta cuenta. Si crees que es un error, contacta con soporte.');
       } else if (data.error) {
@@ -229,25 +231,49 @@ export default function MemberContentPage({ onBackClick, onLoginClick }: MemberC
                 </div>
 
                 <div className="py-2">
-                  <button
-                    onClick={() => {
-                      setMenuOpen(false);
-                      handleManageSubscription();
-                    }}
-                    disabled={portalLoading}
-                    className="w-full flex items-center gap-3 px-4 py-2.5 text-sm text-[#141210]/70 dark:text-[#f7f3ed]/70 hover:bg-[#141210]/5 dark:hover:bg-[#f7f3ed]/5 hover:text-[#141210] dark:hover:text-[#f7f3ed] transition-colors disabled:opacity-50"
-                  >
-                    {portalLoading ? (
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                    ) : (
-                      <CreditCard className="w-4 h-4" />
-                    )}
-                    <span>Gestionar suscripcion</span>
-                    <ExternalLink className="w-3 h-3 ml-auto opacity-50" />
-                  </button>
-                  <p className="px-4 py-1.5 text-xs text-[#141210]/40 dark:text-[#f7f3ed]/40">
-                    Metodo de pago, facturas y cancelacion. Se abrira en una ventana segura de Stripe.
-                  </p>
+                  {portalUrl ? (
+                    <div className="px-4 py-2">
+                      <p className="text-xs text-[#141210]/60 dark:text-[#f7f3ed]/60 mb-2">
+                        Haz clic derecho para copiar o abrir en nueva pestana:
+                      </p>
+                      <a
+                        href={portalUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-3 py-2 bg-[#141210]/5 dark:bg-[#f7f3ed]/10 rounded-lg text-sm text-[#141210] dark:text-[#f7f3ed] hover:bg-[#141210]/10 dark:hover:bg-[#f7f3ed]/20 transition-colors break-all"
+                      >
+                        <ExternalLink className="w-4 h-4 flex-shrink-0" />
+                        <span className="truncate">Abrir portal de Stripe</span>
+                      </a>
+                      <button
+                        onClick={() => setPortalUrl(null)}
+                        className="mt-2 text-xs text-[#141210]/50 dark:text-[#f7f3ed]/50 hover:text-[#141210]/70 dark:hover:text-[#f7f3ed]/70"
+                      >
+                        Cerrar
+                      </button>
+                    </div>
+                  ) : (
+                    <>
+                      <button
+                        onClick={() => {
+                          handleManageSubscription();
+                        }}
+                        disabled={portalLoading}
+                        className="w-full flex items-center gap-3 px-4 py-2.5 text-sm text-[#141210]/70 dark:text-[#f7f3ed]/70 hover:bg-[#141210]/5 dark:hover:bg-[#f7f3ed]/5 hover:text-[#141210] dark:hover:text-[#f7f3ed] transition-colors disabled:opacity-50"
+                      >
+                        {portalLoading ? (
+                          <Loader2 className="w-4 h-4 animate-spin" />
+                        ) : (
+                          <CreditCard className="w-4 h-4" />
+                        )}
+                        <span>Gestionar suscripcion</span>
+                        <ExternalLink className="w-3 h-3 ml-auto opacity-50" />
+                      </button>
+                      <p className="px-4 py-1.5 text-xs text-[#141210]/40 dark:text-[#f7f3ed]/40">
+                        Metodo de pago, facturas y cancelacion. Se abrira en una ventana segura de Stripe.
+                      </p>
+                    </>
+                  )}
                 </div>
 
                 <div className="border-t border-[#141210]/5 dark:border-[#f7f3ed]/5 py-2">
