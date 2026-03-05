@@ -62,28 +62,36 @@ export default function LoginPage({ onBackClick }: LoginPageProps) {
   };
 
   return (
-    <div
-      className="min-h-screen flex flex-col relative bg-[position:30%_center] md:bg-[position:left_center]"
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-      }}
-    >
-      <div className="absolute inset-0 bg-black/50" />
+    <div className="min-h-screen flex flex-col relative">
+      <div
+        className="absolute inset-0 hidden md:block"
+        style={{
+          backgroundImage: `url(${backgroundImage})`,
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'left center',
+        }}
+      />
+      <div
+        className="absolute inset-0 md:hidden bg-[#e8e4dd] dark:bg-[#1a1816]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }}
+      />
+      <div className="absolute inset-0 bg-black/50 hidden md:block" />
 
       <header className="relative z-10 p-6 md:p-8">
         <button
           onClick={onBackClick}
-          className="flex items-center gap-2 text-white/80 hover:text-white transition-colors"
+          className="flex items-center gap-2 text-[#141210]/70 md:text-white/80 hover:text-[#141210] md:hover:text-white transition-colors"
         >
           <ArrowLeft className="w-5 h-5" />
           <span className="text-sm font-normal">Volver</span>
         </button>
       </header>
 
-      <main className="relative z-10 flex-1 flex items-start md:items-start justify-center md:justify-end px-6 md:pr-8 lg:pr-12 pt-24 md:pt-16">
-        <div className="w-full max-w-md bg-[#f7f3ed]/95 dark:bg-[#141210]/95 backdrop-blur-md rounded-3xl p-8 md:p-10 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4)] border border-white/20 dark:border-white/5">
+      <main className="relative z-10 flex-1 flex items-start md:items-start justify-center md:justify-end px-6 md:pr-8 lg:pr-12 pt-12 md:pt-16">
+        <div className="w-full max-w-md bg-[#f7f3ed] dark:bg-[#141210] md:bg-[#f7f3ed]/95 md:dark:bg-[#141210]/95 md:backdrop-blur-md rounded-3xl p-8 md:p-10 shadow-[0_8px_30px_rgba(0,0,0,0.12)] md:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4)] border border-[#141210]/5 dark:border-[#f7f3ed]/5 md:border-white/20 md:dark:border-white/5">
           {formState === 'success' ? (
             <div className="text-center animate-fade-in">
               <div className="w-20 h-20 mx-auto mb-8 rounded-full bg-emerald-500/10 flex items-center justify-center ring-4 ring-emerald-500/20">
