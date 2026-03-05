@@ -52,6 +52,19 @@ export default function Navbar({ activePage = 'home', onHomeClick, onAboutClick,
 
   return (
     <>
+      <button
+        onClick={onHomeClick}
+        className={`
+          md:hidden fixed top-0 left-0 z-50 p-3
+          transition-all duration-300 ease-in-out
+          ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}
+        `}
+      >
+        <span className="text-[10px] tracking-[0.15em] uppercase text-black/50 dark:text-white/50 font-medium">
+          Gente Invencible
+        </span>
+      </button>
+
       <div
         className={`
           fixed top-0 right-0 z-50 p-3 md:p-5
