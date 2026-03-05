@@ -108,7 +108,7 @@ export default function Navbar({ activePage = 'home', onHomeClick, onAboutClick,
         </nav>
       </div>
 
-      <div className="absolute top-0 right-0 p-3 md:p-5 md:hidden">
+      <div className="hidden md:block absolute top-0 right-0 p-5">
         <div className="flex items-center gap-1 bg-[var(--bg-color)]/80 backdrop-blur-md rounded-full px-1 py-1 border border-black/5 dark:border-white/10">
           <button
             onClick={onLoginClick}
@@ -121,7 +121,7 @@ export default function Navbar({ activePage = 'home', onHomeClick, onAboutClick,
         </div>
       </div>
 
-      <div className="hidden md:block absolute top-0 right-0 p-5">
+      <div className="md:hidden fixed top-0 right-0 p-3 z-50">
         <div className="flex items-center gap-1 bg-[var(--bg-color)]/80 backdrop-blur-md rounded-full px-1 py-1 border border-black/5 dark:border-white/10">
           <button
             onClick={onLoginClick}
