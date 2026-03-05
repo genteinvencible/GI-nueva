@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ArrowLeft, Mail, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
+import backgroundImage from '/Assests/alvaro_meme_barra_fotoperiodico_optimizada.webp';
 
 interface LoginPageProps {
   onBackClick: () => void;
@@ -61,19 +62,29 @@ export default function LoginPage({ onBackClick }: LoginPageProps) {
   };
 
   return (
-    <div className="min-h-screen bg-[#f7f3ed] dark:bg-[#141210] flex flex-col">
-      <header className="p-6 md:p-8">
+    <div
+      className="min-h-screen flex flex-col relative"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
+      <div className="absolute inset-0 bg-black/50" />
+
+      <header className="relative z-10 p-6 md:p-8">
         <button
           onClick={onBackClick}
-          className="flex items-center gap-2 text-[#141210]/60 dark:text-[#f7f3ed]/60 hover:text-[#141210] dark:hover:text-[#f7f3ed] transition-colors"
+          className="flex items-center gap-2 text-white/80 hover:text-white transition-colors"
         >
           <ArrowLeft className="w-5 h-5" />
           <span className="text-sm font-normal">Volver</span>
         </button>
       </header>
 
-      <main className="flex-1 flex items-center justify-center px-6 pb-20">
-        <div className="w-full max-w-md">
+      <main className="relative z-10 flex-1 flex items-center justify-center px-6 pb-20">
+        <div className="w-full max-w-md bg-[#f7f3ed]/95 dark:bg-[#141210]/95 backdrop-blur-sm rounded-2xl p-8 md:p-10 shadow-2xl">
           {formState === 'success' ? (
             <div className="text-center animate-fade-in">
               <div className="w-20 h-20 mx-auto mb-8 rounded-full bg-emerald-500/10 flex items-center justify-center">
@@ -118,7 +129,7 @@ export default function LoginPage({ onBackClick }: LoginPageProps) {
           ) : (
             <div className="animate-fade-in">
               <div className="text-center mb-10">
-                <p className="text-[#141210]/70 dark:text-[#f7f3ed]/70 text-lg leading-relaxed">
+                <p className="text-[#141210] dark:text-[#f7f3ed] text-2xl md:text-3xl leading-relaxed font-bold">
                   Para acceder, pon aqui tu email y te mando un glorioso enlace.
                 </p>
               </div>
@@ -163,7 +174,7 @@ export default function LoginPage({ onBackClick }: LoginPageProps) {
                 </button>
               </form>
 
-              <p className="mt-8 text-center text-sm text-[#141210]/50 dark:text-[#f7f3ed]/50">
+              <p className="mt-8 text-center text-sm text-[#141210]/60 dark:text-[#f7f3ed]/60">
                 Sin contrasenas ni gaitas. Simple y seguro.
               </p>
             </div>
