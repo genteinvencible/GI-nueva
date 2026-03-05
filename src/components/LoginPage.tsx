@@ -83,10 +83,10 @@ export default function LoginPage({ onBackClick }: LoginPageProps) {
       </header>
 
       <main className="relative z-10 flex-1 flex items-start md:items-start justify-center md:justify-end px-6 md:pr-8 lg:pr-12 pt-24 md:pt-16">
-        <div className="w-full max-w-md bg-[#f7f3ed]/95 dark:bg-[#141210]/95 backdrop-blur-sm rounded-2xl p-8 md:p-10 shadow-2xl">
+        <div className="w-full max-w-md bg-[#f7f3ed]/95 dark:bg-[#141210]/95 backdrop-blur-md rounded-3xl p-8 md:p-10 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.4)] border border-white/20 dark:border-white/5">
           {formState === 'success' ? (
             <div className="text-center animate-fade-in">
-              <div className="w-20 h-20 mx-auto mb-8 rounded-full bg-emerald-500/10 flex items-center justify-center">
+              <div className="w-20 h-20 mx-auto mb-8 rounded-full bg-emerald-500/10 flex items-center justify-center ring-4 ring-emerald-500/20">
                 <CheckCircle className="w-10 h-10 text-emerald-500" />
               </div>
               <h1 className="text-2xl md:text-3xl font-bold text-[#141210] dark:text-[#f7f3ed] mb-4">
@@ -95,7 +95,7 @@ export default function LoginPage({ onBackClick }: LoginPageProps) {
               <p className="text-[#141210]/70 dark:text-[#f7f3ed]/70 text-lg leading-relaxed mb-2">
                 Te hemos enviado un enlace magico a
               </p>
-              <p className="text-[#141210] dark:text-[#f7f3ed] font-semibold text-lg mb-8">
+              <p className="text-[#141210] dark:text-[#f7f3ed] font-semibold text-lg mb-8 bg-[#141210]/5 dark:bg-[#f7f3ed]/5 px-4 py-2 rounded-lg inline-block">
                 {email}
               </p>
               <p className="text-[#141210]/50 dark:text-[#f7f3ed]/50 text-sm">
@@ -106,18 +106,18 @@ export default function LoginPage({ onBackClick }: LoginPageProps) {
             </div>
           ) : formState === 'not_found' ? (
             <div className="text-center animate-fade-in">
-              <div className="w-20 h-20 mx-auto mb-8 rounded-full bg-amber-500/10 flex items-center justify-center">
+              <div className="w-20 h-20 mx-auto mb-8 rounded-full bg-amber-500/10 flex items-center justify-center ring-4 ring-amber-500/20">
                 <AlertCircle className="w-10 h-10 text-amber-500" />
               </div>
               <h1 className="text-2xl md:text-3xl font-bold text-[#141210] dark:text-[#f7f3ed] mb-4">
                 No te encontramos
               </h1>
               <p className="text-[#141210]/70 dark:text-[#f7f3ed]/70 text-lg leading-relaxed mb-8">
-                El email <span className="font-semibold">{email}</span> no esta registrado como miembro.
+                El email <span className="font-semibold bg-[#141210]/5 dark:bg-[#f7f3ed]/5 px-2 py-1 rounded">{email}</span> no esta registrado como miembro.
               </p>
               <button
                 onClick={handleRetry}
-                className="w-full py-4 bg-[#141210] dark:bg-[#f7f3ed] text-[#f7f3ed] dark:text-[#141210] font-bold rounded-xl hover:opacity-90 transition-all"
+                className="w-full py-4 bg-[#141210] dark:bg-[#f7f3ed] text-[#f7f3ed] dark:text-[#141210] font-bold rounded-xl hover:scale-[1.02] hover:shadow-lg active:scale-[0.98] transition-all duration-200"
               >
                 Probar con otro email
               </button>
@@ -129,14 +129,14 @@ export default function LoginPage({ onBackClick }: LoginPageProps) {
             <div className="animate-fade-in">
               <div className="text-center mb-10">
                 <p className="text-[#141210] dark:text-[#f7f3ed] text-2xl md:text-3xl leading-relaxed font-bold">
-                  Para acceder, pon aqui tu email y te mando un glorioso enlace.
+                  Para acceder, pon aquí tu email y te mando un glorioso enlace.
                 </p>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="relative">
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="relative group">
                   <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                    <Mail className="w-5 h-5 text-[#141210]/40 dark:text-[#f7f3ed]/40" />
+                    <Mail className="w-5 h-5 text-[#141210]/40 dark:text-[#f7f3ed]/40 group-focus-within:text-[#141210]/70 dark:group-focus-within:text-[#f7f3ed]/70 transition-colors" />
                   </div>
                   <input
                     type="email"
@@ -147,20 +147,21 @@ export default function LoginPage({ onBackClick }: LoginPageProps) {
                     }}
                     placeholder="tu@email.com"
                     disabled={formState === 'loading'}
-                    className="w-full pl-12 pr-4 py-4 bg-white dark:bg-[#1c1a17] border-2 border-[#141210]/10 dark:border-[#f7f3ed]/10 rounded-xl text-[#141210] dark:text-[#f7f3ed] placeholder:text-[#141210]/40 dark:placeholder:text-[#f7f3ed]/40 focus:outline-none focus:border-[#141210]/30 dark:focus:border-[#f7f3ed]/30 transition-colors disabled:opacity-50"
+                    className="w-full pl-12 pr-4 py-4 bg-white dark:bg-[#1c1a17] border-2 border-[#141210]/10 dark:border-[#f7f3ed]/10 rounded-xl text-[#141210] dark:text-[#f7f3ed] placeholder:text-[#141210]/40 dark:placeholder:text-[#f7f3ed]/40 focus:outline-none focus:border-[#141210]/40 dark:focus:border-[#f7f3ed]/40 focus:ring-4 focus:ring-[#141210]/5 dark:focus:ring-[#f7f3ed]/5 transition-all disabled:opacity-50"
                   />
                 </div>
 
                 {formState === 'error' && (
-                  <p className="text-red-500 text-sm text-center animate-fade-in">
+                  <div className="flex items-center justify-center gap-2 text-red-500 text-sm animate-fade-in bg-red-500/10 py-2 px-4 rounded-lg">
+                    <AlertCircle className="w-4 h-4" />
                     {errorMessage}
-                  </p>
+                  </div>
                 )}
 
                 <button
                   type="submit"
                   disabled={formState === 'loading' || !email}
-                  className="w-full py-4 bg-[#141210] dark:bg-[#f7f3ed] text-[#f7f3ed] dark:text-[#141210] font-bold rounded-xl hover:opacity-90 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+                  className="w-full py-4 bg-[#141210] dark:bg-[#f7f3ed] text-[#f7f3ed] dark:text-[#141210] font-bold rounded-xl hover:scale-[1.02] hover:shadow-lg active:scale-[0.98] transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:shadow-none flex items-center justify-center gap-3"
                 >
                   {formState === 'loading' ? (
                     <>
@@ -173,7 +174,7 @@ export default function LoginPage({ onBackClick }: LoginPageProps) {
                 </button>
               </form>
 
-              <p className="mt-8 text-center text-sm text-[#141210]/60 dark:text-[#f7f3ed]/60">
+              <p className="mt-8 text-center text-sm text-[#141210]/50 dark:text-[#f7f3ed]/50">
                 Sin contrasenas ni gaitas. Simple y seguro.
               </p>
             </div>
