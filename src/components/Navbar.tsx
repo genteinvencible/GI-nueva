@@ -57,7 +57,7 @@ export default function Navbar({ activePage = 'home', onHomeClick, onAboutClick,
           fixed top-0 right-0 z-50 p-3 md:p-5
           flex items-center gap-1
           transition-all duration-500 ease-in-out
-          ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}
+          ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 md:translate-y-0 md:opacity-100 opacity-0'}
         `}
       >
         <div className="flex items-center gap-1 bg-[var(--bg-color)]/80 backdrop-blur-md rounded-full px-1 py-1 border border-black/5 dark:border-white/10">
