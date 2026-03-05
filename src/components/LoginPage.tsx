@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ArrowLeft, Mail, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
-import backgroundImage from '/Assests/alvaro_meme_barra_fotoperiodico_optimizada.webp';
+import backgroundImage from '/Assests/here_in_my_garage_alvaro_b:n.png';
 
 interface LoginPageProps {
   onBackClick: () => void;
@@ -67,7 +67,7 @@ export default function LoginPage({ onBackClick }: LoginPageProps) {
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: 'left center',
         backgroundRepeat: 'no-repeat',
       }}
     >
@@ -83,7 +83,7 @@ export default function LoginPage({ onBackClick }: LoginPageProps) {
         </button>
       </header>
 
-      <main className="relative z-10 flex-1 flex items-center justify-center px-6 pb-20">
+      <main className="relative z-10 flex-1 flex items-center justify-center md:justify-end px-6 md:pr-16 lg:pr-24 pb-20">
         <div className="w-full max-w-md bg-[#f7f3ed]/95 dark:bg-[#141210]/95 backdrop-blur-sm rounded-2xl p-8 md:p-10 shadow-2xl">
           {formState === 'success' ? (
             <div className="text-center animate-fade-in">
