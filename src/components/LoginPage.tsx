@@ -118,11 +118,8 @@ export default function LoginPage({ onBackClick }: LoginPageProps) {
           ) : (
             <div className="animate-fade-in">
               <div className="text-center mb-10">
-                <h1 className="text-3xl md:text-4xl font-bold text-[#141210] dark:text-[#f7f3ed] mb-4">
-                  Accede a tu cuenta
-                </h1>
                 <p className="text-[#141210]/70 dark:text-[#f7f3ed]/70 text-lg leading-relaxed">
-                  Introduce tu email y te enviaremos un enlace magico para acceder.
+                  Para acceder, pon aqui tu email y te mando un glorioso enlace.
                 </p>
               </div>
 
@@ -167,7 +164,7 @@ export default function LoginPage({ onBackClick }: LoginPageProps) {
               </form>
 
               <p className="mt-8 text-center text-sm text-[#141210]/50 dark:text-[#f7f3ed]/50">
-                Sin contrasenas. Simple y seguro.
+                Sin contrasenas ni gaitas. Simple y seguro.
               </p>
             </div>
           )}
