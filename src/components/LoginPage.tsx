@@ -73,13 +73,22 @@ export default function LoginPage({ onBackClick }: LoginPageProps) {
           filter: 'brightness(0.6)',
         }}
       />
-      <div className="absolute inset-0 md:hidden bg-gradient-to-b from-[#f7f3ed] via-[#ebe7e0] to-[#ddd8cf] dark:from-[#141210] dark:via-[#1a1816] dark:to-[#0f0e0c]" />
+      <div
+        className="absolute inset-0 md:hidden"
+        style={{
+          backgroundImage: `url(${backgroundImage})`,
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center center',
+          filter: 'brightness(0.5)',
+        }}
+      />
       <div className="absolute inset-0 hidden md:block backdrop-blur-[4px]" />
 
       <header className="relative z-10 p-5 md:p-8">
         <button
           onClick={onBackClick}
-          className="flex items-center gap-2 text-[#141210]/70 md:text-white/80 hover:text-[#141210] md:hover:text-white transition-colors"
+          className="flex items-center gap-2 text-white/80 hover:text-white transition-colors"
         >
           <ArrowLeft className="w-5 h-5" />
           <span className="text-sm font-normal">Volver</span>
