@@ -63,11 +63,10 @@ export default function LoginPage({ onBackClick }: LoginPageProps) {
 
   return (
     <div
-      className="min-h-screen flex flex-col relative"
+      className="min-h-screen flex flex-col relative bg-[position:30%_center] md:bg-[position:left_center]"
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'left center',
         backgroundRepeat: 'no-repeat',
       }}
     >
