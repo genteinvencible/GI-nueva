@@ -54,7 +54,7 @@ export default function Navbar({ activePage = 'home', onHomeClick, onAboutClick,
     <>
       <div
         className={`
-          md:hidden fixed top-0 right-0 z-50 p-3
+          fixed top-0 right-0 z-50 p-3 md:p-5
           flex items-center gap-1
           transition-all duration-300 ease-in-out
           ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}
@@ -127,18 +127,6 @@ export default function Navbar({ activePage = 'home', onHomeClick, onAboutClick,
           >
             STORIES
           </button>
-
-          <div className="hidden md:block w-px h-4 bg-black/10 dark:bg-white/10 mx-2 relative" />
-          <button
-            onClick={onLoginClick}
-            className={`hidden md:block ${iconButtonClass} ${activePage === 'login' ? iconActiveClass : iconInactiveClass}`}
-            aria-label="Iniciar sesion"
-          >
-            <User className="w-[18px] h-[18px]" strokeWidth={1.5} />
-          </button>
-          <div className="hidden md:block">
-            <ThemeToggle />
-          </div>
         </nav>
       </div>
     </>
