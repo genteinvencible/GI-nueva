@@ -6,6 +6,7 @@ import { useTheme } from '../context/ThemeContext';
 interface MemberContentPageProps {
   onBackClick: () => void;
   onLoginClick: () => void;
+  skipValidation?: boolean;
 }
 
 interface Session {
@@ -35,7 +36,7 @@ interface GhostPost {
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-export default function MemberContentPage({ onBackClick, onLoginClick }: MemberContentPageProps) {
+export default function MemberContentPage({ onBackClick, onLoginClick, skipValidation = false }: MemberContentPageProps) {
   const [session, setSession] = useState<Session | null>(null);
   const [posts, setPosts] = useState<GhostPost[]>([]);
   const [loading, setLoading] = useState(true);
@@ -74,6 +75,12 @@ export default function MemberContentPage({ onBackClick, onLoginClick }: MemberC
           return;
         }
 
+        if (skipValidation) {
+          setSession(parsed);
+          setLoading(false);
+          return;
+        }
+
         const response = await fetch(
           `${SUPABASE_URL}/functions/v1/validate-session`,
           {
@@ -104,7 +111,7 @@ export default function MemberContentPage({ onBackClick, onLoginClick }: MemberC
     };
 
     validateSession();
-  }, []);
+  }, [skipValidation]);
 
   useEffect(() => {
     if (!session) return;

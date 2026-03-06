@@ -33,6 +33,7 @@ function App() {
   const [showMemberContent, setShowMemberContent] = useState(false);
   const [showAuthCallback, setShowAuthCallback] = useState(false);
   const [authToken, setAuthToken] = useState<string | null>(null);
+  const [justLoggedIn, setJustLoggedIn] = useState(false);
 
   useEffect(() => {
     const path = window.location.pathname;
@@ -168,6 +169,7 @@ function App() {
   const handleAuthSuccess = useCallback(() => {
     setShowAuthCallback(false);
     setAuthToken(null);
+    setJustLoggedIn(true);
     setShowMemberContent(true);
     window.history.pushState({}, '', '/miembros');
   }, []);
@@ -202,6 +204,7 @@ function App() {
         <MemberContentPage
           onBackClick={handleGoHome}
           onLoginClick={handleGoLogin}
+          skipValidation={justLoggedIn}
         />
       </ThemeProvider>
     );
