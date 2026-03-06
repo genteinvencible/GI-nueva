@@ -120,7 +120,7 @@ export default function LoginPage({ onBackClick }: LoginPageProps) {
                 <AlertCircle className="w-10 h-10 text-amber-500" />
               </div>
               <p className="text-white/80 text-lg leading-relaxed mb-8">
-                A mi datafono no le consta que este email haya pasado por ahi.
+                A mi datáfono no le consta que este email haya pasado por ahí.
               </p>
               <button
                 onClick={handleRetry}
@@ -129,7 +129,7 @@ export default function LoginPage({ onBackClick }: LoginPageProps) {
                 Prueba con otro
               </button>
               <p className="mt-6 text-sm text-white/60">
-                Y si crees que es un error (que podria ser), escribeme.
+                Y si crees que es un error (que podría ser), escríbeme.
               </p>
             </div>
           ) : (
