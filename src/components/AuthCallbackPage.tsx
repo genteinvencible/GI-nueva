@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Loader2, CheckCircle, XCircle, AlertCircle } from 'lucide-react';
+import { Loader2, XCircle, AlertCircle } from 'lucide-react';
 
 interface AuthCallbackPageProps {
   token: string;
@@ -7,7 +7,7 @@ interface AuthCallbackPageProps {
   onError: (error: string) => void;
 }
 
-type Status = 'verifying' | 'success' | 'error' | 'expired';
+type Status = 'verifying' | 'error' | 'expired';
 
 export default function AuthCallbackPage({ token, onSuccess, onError }: AuthCallbackPageProps) {
   const [status, setStatus] = useState<Status>('verifying');
@@ -41,13 +41,8 @@ export default function AuthCallbackPage({ token, onSuccess, onError }: AuthCall
           return;
         }
 
-        setStatus('success');
-
         localStorage.setItem('gi_session', JSON.stringify(data.session));
-
-        setTimeout(() => {
-          onSuccess(data.session);
-        }, 1500);
+        onSuccess(data.session);
       } catch (err) {
         console.error('Verification error:', err);
         setStatus('error');
@@ -67,26 +62,9 @@ export default function AuthCallbackPage({ token, onSuccess, onError }: AuthCall
             <div className="w-20 h-20 mx-auto mb-8 rounded-full bg-[#141210]/5 dark:bg-[#f7f3ed]/5 flex items-center justify-center">
               <Loader2 className="w-10 h-10 text-[#141210] dark:text-[#f7f3ed] animate-spin" />
             </div>
-            <h1 className="text-2xl md:text-3xl font-bold text-[#141210] dark:text-[#f7f3ed] mb-4">
-              Verificando tu enlace...
+            <h1 className="text-2xl md:text-3xl font-bold text-[#141210] dark:text-[#f7f3ed]">
+              Cargando (grandes) ideas
             </h1>
-            <p className="text-[#141210]/60 dark:text-[#f7f3ed]/60">
-              Un momento, por favor
-            </p>
-          </div>
-        )}
-
-        {status === 'success' && (
-          <div className="animate-fade-in">
-            <div className="w-20 h-20 mx-auto mb-8 rounded-full bg-emerald-500/10 flex items-center justify-center">
-              <CheckCircle className="w-10 h-10 text-emerald-500" />
-            </div>
-            <h1 className="text-2xl md:text-3xl font-bold text-[#141210] dark:text-[#f7f3ed] mb-4">
-              Bienvenido de vuelta
-            </h1>
-            <p className="text-[#141210]/60 dark:text-[#f7f3ed]/60">
-              Redirigiendo a tu biblioteca...
-            </p>
           </div>
         )}
 
