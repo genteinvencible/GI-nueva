@@ -312,7 +312,7 @@ export default function MemberContentPage({ onBackClick, onLoginClick }: MemberC
             Gente Invencible, la casa de las ideas.
           </h1>
           <p className="text-[#141210]/60 dark:text-[#f7f3ed]/60 text-lg">
-            Algunas son buenas, otras no, y otras son directamente terribles. Juzga tu
+            Algunas son buenas, otras no, y otras son directamente terribles. Juzga tú.
           </p>
         </div>
 
