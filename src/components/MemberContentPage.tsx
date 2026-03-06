@@ -309,10 +309,10 @@ export default function MemberContentPage({ onBackClick, onLoginClick }: MemberC
       <main className="max-w-5xl mx-auto px-6 py-12">
         <div className="mb-12">
           <h1 className="text-3xl md:text-4xl font-bold text-[#141210] dark:text-[#f7f3ed] mb-4">
-            Tu biblioteca
+            Gente Invencible, la casa de las ideas.
           </h1>
           <p className="text-[#141210]/60 dark:text-[#f7f3ed]/60 text-lg">
-            Contenido exclusivo para miembros de Gente Invencible
+            Algunas son buenas, otras no, y otras son directamente terribles. Juzga tu
           </p>
         </div>
 
