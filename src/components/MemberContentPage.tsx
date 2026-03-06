@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
-import { ArrowLeft, BookOpen, LogOut, Loader2, ArrowRight, CreditCard, ExternalLink, User, ChevronDown } from 'lucide-react';
+import { ArrowLeft, BookOpen, LogOut, Loader2, ArrowRight, CreditCard, ExternalLink, User, ChevronDown, Moon, Sun } from 'lucide-react';
 import PostViewer from './PostViewer';
+import { useTheme } from '../context/ThemeContext';
 
 interface MemberContentPageProps {
   onBackClick: () => void;
@@ -44,6 +45,7 @@ export default function MemberContentPage({ onBackClick, onLoginClick }: MemberC
   const [portalUrl, setPortalUrl] = useState<string | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const { isDarkMode, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -213,6 +215,15 @@ export default function MemberContentPage({ onBackClick, onLoginClick }: MemberC
             <span className="text-sm font-normal hidden sm:inline">Volver</span>
           </button>
 
+          <div className="flex items-center gap-3">
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-lg text-[#141210]/60 dark:text-[#f7f3ed]/60 hover:text-[#141210] dark:hover:text-[#f7f3ed] hover:bg-[#141210]/5 dark:hover:bg-[#f7f3ed]/5 transition-all"
+              aria-label="Cambiar tema"
+            >
+              {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </button>
+
           <div className="relative" ref={menuRef}>
             <button
               onClick={() => setMenuOpen(!menuOpen)}
@@ -290,6 +301,7 @@ export default function MemberContentPage({ onBackClick, onLoginClick }: MemberC
                 </div>
               </div>
             )}
+          </div>
           </div>
         </div>
       </header>
