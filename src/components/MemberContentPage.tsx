@@ -58,11 +58,40 @@ export default function MemberContentPage({ onBackClick, onLoginClick }: MemberC
   }, []);
 
   useEffect(() => {
-    const storedSession = localStorage.getItem('gi_session');
-    if (storedSession) {
+    const validateSession = async () => {
+      const storedSession = localStorage.getItem('gi_session');
+      if (!storedSession) {
+        setLoading(false);
+        return;
+      }
+
       try {
         const parsed = JSON.parse(storedSession);
-        if (new Date(parsed.expiresAt) > new Date()) {
+
+        if (new Date(parsed.expiresAt) < new Date()) {
+          localStorage.removeItem('gi_session');
+          setLoading(false);
+          return;
+        }
+
+        const response = await fetch(
+          `${SUPABASE_URL}/functions/v1/validate-session`,
+          {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              token: parsed.token,
+              email: parsed.email,
+            }),
+          }
+        );
+
+        const data = await response.json();
+
+        if (data.valid) {
           setSession(parsed);
         } else {
           localStorage.removeItem('gi_session');
@@ -70,8 +99,11 @@ export default function MemberContentPage({ onBackClick, onLoginClick }: MemberC
       } catch {
         localStorage.removeItem('gi_session');
       }
-    }
-    setLoading(false);
+
+      setLoading(false);
+    };
+
+    validateSession();
   }, []);
 
   useEffect(() => {

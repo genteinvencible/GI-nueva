@@ -161,7 +161,7 @@ Deno.serve(async (req: Request) => {
     const token = generateToken();
     const expiresAt = new Date(Date.now() + 15 * 60 * 1000);
 
-    await supabase.from("members_sessions").delete().eq("email", email).eq("verified", false);
+    await supabase.from("members_sessions").delete().eq("email", email);
 
     const { error: insertError } = await supabase.from("members_sessions").insert({
       email,
