@@ -81,14 +81,13 @@ async function sendMagicLinkEmail(email: string, token: string, resendApiKey: st
               <h1 style="margin: 0 0 8px 0; font-size: 28px; font-weight: 700; color: #141210; letter-spacing: -0.5px;">
                 Gente Invencible
               </h1>
-              <p style="margin: 0 0 32px 0; font-size: 14px; color: #141210; opacity: 0.5; text-transform: uppercase; letter-spacing: 2px;">
-                Contenido exclusivo
+              <p style="margin: 0 0 32px 0; font-size: 13px; color: #141210; opacity: 0.5;">
+                La casa de las ideas
               </p>
 
               <div style="margin: 32px 0; padding: 24px; background-color: #f7f3ed; border-radius: 12px;">
                 <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #141210;">
-                  Hola,<br><br>
-                  Alguien (esperemos que tu) ha solicitado acceder a la zona de miembros.
+                  Alguien (espero que tu) ha solicitado acceso a Gente Invencible.
                   Haz clic en el boton para entrar.
                 </p>
               </div>
@@ -98,8 +97,8 @@ async function sendMagicLinkEmail(email: string, token: string, resendApiKey: st
               </a>
 
               <p style="margin: 32px 0 0 0; font-size: 13px; color: #141210; opacity: 0.5; line-height: 1.5;">
-                Este enlace expira en 15 minutos.<br>
-                Si no has solicitado este acceso, ignora este email.
+                Este enlace expira en 10 mas 5 minutos.<br>
+                Si no has solicitado este acceso, ignora este email y sigue tu vida.
               </p>
             </td>
           </tr>
