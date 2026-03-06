@@ -53,7 +53,7 @@ Deno.serve(async (req: Request) => {
 
     if (!session) {
       return new Response(
-        JSON.stringify({ error: "Token invalido o ya utilizado" }),
+        JSON.stringify({ error: "Casi seguro es que el enlace ha expirado o ya ha sido utilizado. Supongo." }),
         { status: 404, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
