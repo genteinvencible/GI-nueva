@@ -223,11 +223,11 @@ export default function MemberContentPage({ onBackClick, onLoginClick, skipValid
             </div>
 
             <h1 className="text-3xl md:text-4xl font-bold text-[#141210] dark:text-[#f7f3ed] mb-4">
-              Contenido exclusivo
+              Para leer esto hay que pagar.
             </h1>
 
             <p className="text-[#141210]/70 dark:text-[#f7f3ed]/70 text-lg mb-10 leading-relaxed">
-              Accede con tu cuenta de miembro para ver articulos exclusivos, historias y mas contenido.
+              Accede si ya lo has hecho.
             </p>
 
             <button
