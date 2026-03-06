@@ -104,19 +104,14 @@ export default function LoginPage({ onBackClick }: LoginPageProps) {
               <div className="w-20 h-20 mx-auto mb-8 rounded-full bg-emerald-500/10 flex items-center justify-center ring-4 ring-emerald-500/20">
                 <CheckCircle className="w-10 h-10 text-emerald-500" />
               </div>
-              <h1 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                Revisa tu bandeja de entrada
-              </h1>
               <p className="text-white/80 text-lg leading-relaxed mb-2">
-                Te hemos enviado un enlace magico a
+                Te he enviado el enlace a:
               </p>
               <p className="text-white font-semibold text-lg mb-8 bg-white/10 px-4 py-2 rounded-lg inline-block">
                 {email}
               </p>
               <p className="text-white/60 text-sm leading-relaxed">
-                El enlace expira en 15 minutos.
-                <br />
-                Revisa tambien la carpeta de spam.
+                El enlace expira en 20 menos 5 minutos. Si no lo ves, podria estar en spam, sin serlo.
               </p>
             </div>
           ) : formState === 'not_found' ? (
