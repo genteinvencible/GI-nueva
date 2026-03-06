@@ -119,20 +119,17 @@ export default function LoginPage({ onBackClick }: LoginPageProps) {
               <div className="w-20 h-20 mx-auto mb-8 rounded-full bg-amber-500/10 flex items-center justify-center ring-4 ring-amber-500/20">
                 <AlertCircle className="w-10 h-10 text-amber-500" />
               </div>
-              <h1 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                No te encontramos
-              </h1>
               <p className="text-white/80 text-lg leading-relaxed mb-8">
-                El email <span className="font-semibold bg-white/10 px-2 py-1 rounded">{email}</span> no esta registrado como miembro.
+                A mi datafono no le consta que este email haya pasado por ahi.
               </p>
               <button
                 onClick={handleRetry}
                 className="w-full h-14 md:h-auto md:py-4 bg-white text-black font-bold rounded-xl hover:bg-white/90 hover:scale-[1.02] hover:shadow-lg active:scale-[0.98] transition-all duration-200"
               >
-                Probar con otro email
+                Prueba con otro
               </button>
               <p className="mt-6 text-sm text-white/60">
-                Si crees que esto es un error, contacta con nosotros.
+                Y si crees que es un error (que podria ser), escribeme.
               </p>
             </div>
           ) : (
