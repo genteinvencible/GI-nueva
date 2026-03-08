@@ -196,7 +196,7 @@ export default function PostViewer({ slug, onBack }: PostViewerProps) {
             {post.title}
           </h1>
 
-          {post.excerpt && (
+          {post.excerpt && post.excerpt.trim() !== '' && (
             <p className="text-lg md:text-xl text-[#141210]/70 dark:text-[#f7f3ed]/70 leading-relaxed mb-6">
               {post.excerpt}
             </p>
