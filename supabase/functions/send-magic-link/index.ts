@@ -97,7 +97,9 @@ async function sendMagicLinkEmail(email: string, token: string, resendApiKey: st
               </a>
 
               <p style="margin: 32px 0 0 0; font-size: 13px; color: #141210; opacity: 0.5; line-height: 1.5;">
-                Este enlace expira en 10 más 5 minutos.<br>
+                Este enlace expira en 10 más 5 minutos.
+              </p>
+              <p style="margin: 16px 0 0 0; font-size: 13px; color: #141210; opacity: 0.5; line-height: 1.5;">
                 Si no has solicitado este acceso, ignora este email y sigue tu vida.
               </p>
             </td>
