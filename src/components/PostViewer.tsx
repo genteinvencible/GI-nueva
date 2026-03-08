@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { ArrowLeft, ArrowUp, Loader2, Clock } from 'lucide-react';
+import { ArrowLeft, ArrowUp, Loader2 } from 'lucide-react';
 
 interface PostViewerProps {
   slug: string;
@@ -13,21 +13,10 @@ interface GhostPost {
   html: string;
   excerpt: string;
   feature_image: string | null;
-  published_at: string;
-  reading_time: number;
 }
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
 const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
-
-function formatDate(dateString: string): string {
-  const date = new Date(dateString);
-  return date.toLocaleDateString('es-ES', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric'
-  });
-}
 
 function addDropCapToHtml(html: string): string {
   const firstParagraphMatch = html.match(/<p[^>]*>([\s\S]*?)<\/p>/);
@@ -202,20 +191,6 @@ export default function PostViewer({ slug, onBack }: PostViewerProps) {
             </p>
           )}
 
-          <div className="flex items-center gap-4 text-sm text-[#141210]/50 dark:text-[#f7f3ed]/50">
-            <time dateTime={post.published_at}>
-              {formatDate(post.published_at)}
-            </time>
-            {post.reading_time > 0 && (
-              <>
-                <span className="w-1 h-1 rounded-full bg-[#141210]/30 dark:bg-[#f7f3ed]/30" />
-                <span className="flex items-center gap-1.5">
-                  <Clock className="w-4 h-4" />
-                  {post.reading_time} min de lectura
-                </span>
-              </>
-            )}
-          </div>
         </header>
 
         <div
