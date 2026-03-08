@@ -63,7 +63,7 @@ async function sendMagicLinkEmail(email: string, token: string, resendApiKey: st
     body: JSON.stringify({
       from: "Alvaro <alvaro@genteinvencible.com>",
       to: [email],
-      subject: "Tu enlace magico para Gente Invencible",
+      subject: "Tu enlace mágico para Gente Invencible",
       html: `
 <!DOCTYPE html>
 <html>
@@ -87,8 +87,8 @@ async function sendMagicLinkEmail(email: string, token: string, resendApiKey: st
 
               <div style="margin: 32px 0; padding: 24px; background-color: #f7f3ed; border-radius: 12px;">
                 <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #141210;">
-                  Alguien (espero que tu) ha solicitado acceso a Gente Invencible.
-                  Haz clic en el boton para entrar.
+                  Alguien (espero que tú) ha solicitado acceso a Gente Invencible.
+                  Haz clic en el botón para entrar.
                 </p>
               </div>
 
@@ -97,7 +97,7 @@ async function sendMagicLinkEmail(email: string, token: string, resendApiKey: st
               </a>
 
               <p style="margin: 32px 0 0 0; font-size: 13px; color: #141210; opacity: 0.5; line-height: 1.5;">
-                Este enlace expira en 10 mas 5 minutos.<br>
+                Este enlace expira en 15 minutos.<br>
                 Si no has solicitado este acceso, ignora este email y sigue tu vida.
               </p>
             </td>
