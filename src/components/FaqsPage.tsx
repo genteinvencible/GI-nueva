@@ -118,7 +118,7 @@ export default function FaqsPage({ onBack }: FaqsPageProps) {
               <div className="my-6 animate-fade-in">
                 <figure>
                   <img
-                    src="/Assests/alvaro_principe_nigeriano_low.png"
+                    src="/Assets/alvaro_principe_nigeriano_low.png"
                     alt="Alvaro principe nigeriano"
                     className="rounded-lg shadow-md max-w-full md:max-w-md"
                   />

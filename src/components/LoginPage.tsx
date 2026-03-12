@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ArrowLeft, Mail, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
-import backgroundImage from '/Assests/here_in_my_garage_perspectiva.png';
+import backgroundImage from '/Assets/here_in_my_garage_perspectiva.png';
 
 interface LoginPageProps {
   onBackClick: () => void;

@@ -1,8 +1,8 @@
 import { forwardRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
-import aboutImage from '../../Assests/about_image.png';
-import faqsImage from '../../Assests/imagen_faqs.png';
-import bodaImage from '../../Assests/imagen_lo_de_la_boda.png';
+import aboutImage from '../../Assets/about_image.png';
+import faqsImage from '../../Assets/imagen_faqs.png';
+import bodaImage from '../../Assets/imagen_lo_de_la_boda.png';
 import CardEmailForm from './CardEmailForm';
 import RevealBlock from './RevealBlock';
 

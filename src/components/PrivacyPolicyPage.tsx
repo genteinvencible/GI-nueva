@@ -4,7 +4,7 @@ import AvisoLegalContent from './legal/AvisoLegalContent';
 import PrivacidadContent from './legal/PrivacidadContent';
 import CookiesContent from './legal/CookiesContent';
 import TerminosContent from './legal/TerminosContent';
-import alvaroPresoImage from '../../Assests/alvaro_preso_textos_legales.png';
+import alvaroPresoImage from '../../Assets/alvaro_preso_textos_legales.png';
 
 interface PrivacyPolicyPageProps {
   onBack: () => void;

@@ -1,4 +1,4 @@
-import dimitriImage from '../../Assests/alvaro_dimitri_baile_low.png';
+import dimitriImage from '../../Assets/alvaro_dimitri_baile_low.png';
 
 export default function FaqsHero() {
   return (

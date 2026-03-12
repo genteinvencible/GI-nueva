@@ -6,19 +6,19 @@ export interface BannerMessage {
 }
 
 const localAvatars = [
-  '/Assests/cara_aleatoria_1.png',
-  '/Assests/cara_aleatoria_2.png',
-  '/Assests/cara_aleatoria_3.png',
-  '/Assests/cara_aleatoria_4.png',
-  '/Assests/cara_aleatoria_5.png',
-  '/Assests/cara_aleatoria_6.png',
-  '/Assests/cara_aleatoria_7.png',
-  '/Assests/cara_aleatoria_8.png',
-  '/Assests/cara_aleatoria_9.png',
-  '/Assests/cara_aleatoria_10.jpg',
-  '/Assests/cara_aleatoria_11.png',
-  '/Assests/cara_aleatoria_12.png',
-  '/Assests/cara_aleatoria_13.png',
+  '/Assets/cara_aleatoria_1.png',
+  '/Assets/cara_aleatoria_2.png',
+  '/Assets/cara_aleatoria_3.png',
+  '/Assets/cara_aleatoria_4.png',
+  '/Assets/cara_aleatoria_5.png',
+  '/Assets/cara_aleatoria_6.png',
+  '/Assets/cara_aleatoria_7.png',
+  '/Assets/cara_aleatoria_8.png',
+  '/Assets/cara_aleatoria_9.png',
+  '/Assets/cara_aleatoria_10.jpg',
+  '/Assets/cara_aleatoria_11.png',
+  '/Assets/cara_aleatoria_12.png',
+  '/Assets/cara_aleatoria_13.png',
 ];
 
 function getAvatarForMessage(messageIndex: number): string {

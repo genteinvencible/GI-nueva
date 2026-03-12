@@ -1,13 +1,13 @@
 import EmailSubscriptionForm from './EmailSubscriptionForm';
 import RevealBlock from './RevealBlock';
-import weddingPhoto1 from '../../Assests/carmen&alvaro_(16).jpg';
-import weddingPhoto2 from '../../Assests/carmen&alvaro_(199).jpg';
-import weddingPhoto3 from '../../Assests/carmen&alvaro_(204).jpg';
-import weddingPhoto4 from '../../Assests/carmen&alvaro_(209).jpg';
-import weddingPhoto5 from '../../Assests/carmen&alvaro_(222).jpg';
-import weddingPhoto6 from '../../Assests/carmen&alvaro_(232).jpg';
-import weddingPhoto7 from '../../Assests/carmen&alvaro_(278).jpg';
-import weddingPhoto8 from '../../Assests/carmen&alvaro_(365).jpg';
+import weddingPhoto1 from '../../Assets/carmen&alvaro_(16).jpg';
+import weddingPhoto2 from '../../Assets/carmen&alvaro_(199).jpg';
+import weddingPhoto3 from '../../Assets/carmen&alvaro_(204).jpg';
+import weddingPhoto4 from '../../Assets/carmen&alvaro_(209).jpg';
+import weddingPhoto5 from '../../Assets/carmen&alvaro_(222).jpg';
+import weddingPhoto6 from '../../Assets/carmen&alvaro_(232).jpg';
+import weddingPhoto7 from '../../Assets/carmen&alvaro_(278).jpg';
+import weddingPhoto8 from '../../Assets/carmen&alvaro_(365).jpg';
 
 interface BodaPageProps {
   onBack: () => void;

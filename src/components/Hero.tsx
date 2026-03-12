@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import alvaroImageNormal from '../../Assests/alvaro_meme_barra_fotoperiodico_optimizada.webp';
-import alvaroImageLooking from '../../Assests/alvaro_meme_barra_fotoperiodico_optimizada_mirando_a_camara.webp';
+import alvaroImageNormal from '../../Assets/alvaro_meme_barra_fotoperiodico_optimizada.webp';
+import alvaroImageLooking from '../../Assets/alvaro_meme_barra_fotoperiodico_optimizada_mirando_a_camara.webp';
 
 export default function Hero() {
   const [isHovering, setIsHovering] = useState(false);
